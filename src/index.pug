@@ -1,0 +1,18 @@
+- var style = css('index');
+
+include ../components/nav/nav
+
+doctype html
+html
+  head
+    include ../components/commonHead/commonHead
+    link(rel='stylesheet' href='/static/style/index.css')
+    title 段昊辰的个人主页
+
+  body
+    +nav(style)
+
+    // 文章列表
+    div(class=style.listBox)
+      div.list-group
+        a.list-group-item(href='/article/queue-in-js.html') 用JS实现多个任务并行执行的队列

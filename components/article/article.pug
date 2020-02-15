@@ -1,0 +1,17 @@
+- var style = css('article');
+
+include ../nav/nav
+
+doctype html
+html
+  head
+    include ../commonHead/commonHead
+    link(rel='stylesheet' href='/static/style/article.css')
+    block head
+
+  body
+    +nav(style)
+
+    block content
+
+  block end
