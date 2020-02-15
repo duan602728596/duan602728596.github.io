@@ -9,8 +9,8 @@ const options = require('./options');
 const webpackConfig = require('./webpack.config');
 const utils = require('./utils');
 
-const { files, postcssConfig } = options;
-const { html, css, javascript, image, webpackEntry } = files;
+const { files, postcssConfig, webpackEntry } = options;
+const { html, css, javascript, image } = files;
 
 /* pug */
 function pugProject() {
