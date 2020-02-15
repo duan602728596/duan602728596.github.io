@@ -19,6 +19,7 @@ module.exports = {
 
   // 静态文件
   staticFiles: [
+    ['src/CNAME', 'dist'],
     ['node_modules/bootstrap/dist/css/bootstrap.min.css', 'dist/static/style'],
     ['node_modules/highlight.js/styles/github.css', 'dist/static/style'],
     ['node_modules/jquery/dist/jquery.min.js', 'dist/static/script']
