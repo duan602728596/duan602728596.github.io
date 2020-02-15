@@ -19,7 +19,6 @@ module.exports = {
 
   // 静态文件
   staticFiles: [
-    ['src/CNAME', 'dist'],
     ['node_modules/bootstrap/dist/css/bootstrap.min.css', 'dist/static/style'],
     ['node_modules/highlight.js/styles/github.css', 'dist/static/style'],
     ['node_modules/jquery/dist/jquery.min.js', 'dist/static/script']
@@ -33,50 +32,54 @@ module.exports = {
   ],
 
   // babel配置
-  babelConfig: {
-    presets: [
-      [
-        '@babel/preset-env',
-        {
-          targets: {
-            browsers: [
-              'last 2 versions',
-              'last 10 Chrome versions',
-              'last 1 year',
-              'IE 11'
-            ]
-          },
-          debug: isDev,
-          modules: false,
-          useBuiltIns: 'usage',
-          corejs: 3
-        }
+  babelConfig(esmodules) {
+    return {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: esmodules ? {
+              esmodules: true // 判断是否支持es6+的特性
+            } : {
+              browsers: [
+                'last 2 versions',
+                'last 10 Chrome versions',
+                'last 1 year',
+                'IE 11'
+              ]
+            },
+            debug: isDev,
+            modules: false,
+            useBuiltIns: 'usage',
+            corejs: 3
+          }
+        ]
+      ],
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-do-expressions',
+        '@babel/plugin-proposal-export-default-from',
+        '@babel/plugin-proposal-nullish-coalescing-operator',
+        '@babel/plugin-proposal-numeric-separator',
+        '@babel/plugin-proposal-optional-chaining',
+        ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
+        '@babel/plugin-proposal-throw-expressions',
+        '@babel/plugin-syntax-bigint',
+        '@babel/plugin-syntax-dynamic-import',
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            corejs: {
+              version: 3,
+              proposals: true
+            },
+            helpers: true,
+            regenerator: true,
+            useESModules: true
+          }
+        ]
       ]
-    ],
-    plugins: [
-      ['@babel/plugin-proposal-decorators', { legacy: true }],
-      '@babel/plugin-proposal-class-properties',
-      '@babel/plugin-proposal-do-expressions',
-      '@babel/plugin-proposal-export-default-from',
-      '@babel/plugin-proposal-nullish-coalescing-operator',
-      '@babel/plugin-proposal-numeric-separator',
-      '@babel/plugin-proposal-optional-chaining',
-      ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
-      '@babel/plugin-proposal-throw-expressions',
-      '@babel/plugin-syntax-bigint',
-      '@babel/plugin-syntax-dynamic-import',
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          corejs: {
-            version: 3,
-            proposals: true
-          },
-          helpers: true,
-          regenerator: true,
-          useESModules: true
-        }
-      ]
-    ]
+    };
   }
 };

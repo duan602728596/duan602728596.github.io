@@ -29,3 +29,14 @@ exports.copyStaticFiles = function(g) {
 
   return func;
 };
+
+exports.modernNameChange = function(p) {
+  if (p.extname === '.js') {
+    return {
+      ...p,
+      basename: `${ p.basename }_modern`
+    };
+  } else {
+    return p;
+  }
+};

@@ -5,6 +5,7 @@ const postcss = require('gulp-postcss');
 const named = require('vinyl-named');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
+const rename = require('gulp-rename');
 const options = require('./options');
 const webpackConfig = require('./webpack.config');
 const utils = require('./utils');
@@ -33,7 +34,16 @@ function sassProject() {
 function webpackProject() {
   return gulp.src(webpackEntry)
     .pipe(named())
-    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(webpackStream(webpackConfig(), webpack))
+    .pipe(gulp.dest(javascript[1]));
+}
+
+/* webpack modern */
+function webpackModernProject() {
+  return gulp.src(webpackEntry)
+    .pipe(named())
+    .pipe(webpackStream(webpackConfig(true), webpack))
+    .pipe(rename(utils.modernNameChange))
     .pipe(gulp.dest(javascript[1]));
 }
 
@@ -45,7 +55,7 @@ function imageProject() {
 
 module.exports = gulp.parallel(
   gulp.series(sassProject, pugProject),
-  webpackProject,
+  gulp.series(webpackProject, webpackModernProject),
   imageProject,
   ...utils.copyStaticFiles(gulp)
 );

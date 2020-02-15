@@ -186,4 +186,6 @@ block content
 
 block end
   script(src='/static/script/jquery.min.js')
-  script(src='/static/script/queueInJs.js' async)
+  script(src='/static/script/queueInJs_modern.js' type='module' crossorigin='anonymous' async)
+  include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/queueInJs.js' type='nomodule' crossorigin='anonymous' async)
