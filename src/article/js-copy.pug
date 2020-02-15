@@ -1,0 +1,70 @@
+extends ../../components/article/article
+
+mixin title
+  | Javascript实现复制功能
+
+mixin code-block-0
+  code.javascript.
+    function copy() {
+      const range = document.createRange();
+
+      range.selectNode(element); // 设定range包含的节点对象
+
+      // 窗口的selection对象，表示用户选择的文本
+      const selection = window.getSelection();
+
+      // 将已经包含的已选择的对象清除掉
+      if (selection.rangeCount > 0) {
+        selection.removeAllRanges();
+      }
+
+      // 将要复制的区域的range对象添加到selection对象中
+      selection.addRange(range);
+      document.execCommand('copy');
+    }
+
+mixin code-block-1
+  code.javascript.
+    function copy() {
+      document.getElementById('textarea').select();
+      document.execCommand('copy');
+    }
+
+block head
+  title
+    + title
+  link(rel='stylesheet' href='/static/style/github.css')
+  meta(name='keywords' content='前端, js, javascript, 复制')
+  meta(name='description' content='Javascript实现复制功能')
+
+block content
+  article(class=style.articleLayout)
+    h1(class=style.articleTitle)
+      + title
+
+    article(class=style.articleParagraph)
+      h2(class=style.articleTitle2) 代码实现
+      p html5的webAPI接口可以很轻松的使用短短的几行代码就实现复制功能，不需要依赖flash。
+      pre#code-block-0
+        +code-block-0
+      p 当element为表单控件时，代码可以简化成：
+      pre#code-block-1
+        +code-block-1
+
+    article(class=style.articleParagraph)
+      h2(class=style.articleTitle2) 代码演示
+      div
+        p 复制下面这句话，然后粘贴到文本框中。
+        blockquote.p-3.blockquot.shadow-none.bg-light.rounded
+          p#copy-text 苟利国家生死以，岂因祸福避趋之。 --林则徐
+        textarea.d-block.mb-3.form-control#copy-textarea(rows='3')
+        div.text-right
+          button.mr-2.btn.btn-danger#btn-clear-textarea(type='button') 清空文本框
+          button.mr-2.btn.btn-secondary#btn-copy-textarea(type='button') 复制文本框内的文本
+          button.btn.btn-primary#btn-copy(type='button') 复制
+
+block end
+  script(src='/static/script/jquery.min.js')
+  script(src='/static/script/jsCopy_modern.js' type='module' crossorigin='anonymous' async)
+  include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/jsCopy.js' type='nomodule' crossorigin='anonymous' async)

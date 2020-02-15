@@ -6,7 +6,8 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   // webpack编译入口
   webpackEntry: [
-    'src/script/queueInJs.js'
+    'src/script/queueInJs.js',
+    'src/script/jsCopy.js'
   ],
 
   // 文件地址

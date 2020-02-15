@@ -1,5 +1,5 @@
-import codeHighlight from './queueInJs/codeHighlight';
+import codeHighlight from './utils/codeHighlight';
 import queueDemoInit from './queueInJs/queueDemo';
 
-codeHighlight();
+codeHighlight(3);
 queueDemoInit();
