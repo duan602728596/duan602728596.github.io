@@ -1,0 +1,38 @@
+- var style = css('index');
+
+include ../components/nav/nav
+
+doctype html
+html
+  head
+    include ../components/commonHead/commonHead.pug
+    link(rel='stylesheet' href='/static/style/index.css')
+    title 开源项目 - 段昊辰的个人主页
+
+  body
+    +nav(style)
+
+    // 项目列表
+    div(class=style.listBox)
+      div.media.mb-4
+        div.media-body
+          h5.mt-0
+           a(href='https://github.com/duan602728596/antd-schema-form' target='_blank') antd-schema-form
+          span 基于Ant Design，可以通过JSON Schema配置生成可交互的表单。
+      div.media.mb-4
+        div.media-body
+          h5.mt-0
+            a(href='https://github.com/duan602728596/gulp-memory-fs' target='_blank') gulp-memory-fs
+          span gulp环境下也可以使用内存文件系统。
+      div.media.mb-4
+        div.media-body
+          h5.mt-0
+            a(href='https://github.com/duan602728596/48tools' target='_blank') 48tools
+          span.
+            48工具，提供公演、口袋直播录源，公演、口袋录播下载，B站直播抓取，B站视频下载，
+            摩点集资统计，视频截取，视频导出gif，视频合并等功能。
+      div.media.mb-4
+        div.media-body
+          h5.mt-0
+            a(href='https://github.com/duan602728596/qqtools' target='_blank') qqtools
+          span QQ群工具，提供摩点监听，48系成员直播监听，48系成员信息监听，微博监听，群成员自动欢迎等功能。
