@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   // webpack编译入口
   webpackEntry: [
+    'src/script/vendor.js',
     'src/script/queueInJs.js',
     'src/script/jsCopy.js'
   ],

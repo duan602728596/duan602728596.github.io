@@ -185,7 +185,10 @@ block content
         span#completed 无
 
 block end
+  script window.__INITIAL_STATE__ = { codeHighlightLength: 3 };
   script(src='/static/script/jquery.min.js')
+  script(src='/static/script/vendor_modern.js' type='module' crossorigin='anonymous' async)
   script(src='/static/script/queueInJs_modern.js' type='module' crossorigin='anonymous' async)
   include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/vendor.js' type='nomodule' crossorigin='anonymous' async)
   script(src='/static/script/queueInJs.js' type='nomodule' crossorigin='anonymous' async)

@@ -1,5 +1,45 @@
-import codeHighlight from './utils/codeHighlight';
-import copyInit from './jsCopy/copy';
+import $ from 'jquery';
 
-codeHighlight(2);
-copyInit();
+const $text = $('#copy-text'),
+  $textarea = $('#copy-textarea'),
+  $btnCopyTextArea = $('#btn-copy-textarea'),
+  $btnCopy = $('#btn-copy'),
+  $btnClearTextarea = $('#btn-clear-textarea');
+
+/* 复制 */
+function handleCopyDefaultClick(event) {
+  const range = document.createRange();
+
+  range.selectNode($text[0]); // 设定range包含的节点对象
+
+  // 窗口的selection对象，表示用户选择的文本
+  const selection = window.getSelection();
+
+  // 将已经包含的已选择的对象清除掉
+  if (selection.rangeCount > 0) {
+    selection.removeAllRanges();
+  }
+
+  // 将要复制的区域的range对象添加到selection对象中
+  selection.addRange(range);
+  document.execCommand('copy');
+}
+
+/* 表单复制 */
+function handleCopyFormControlClick(event) {
+  $textarea[0].select();
+  document.execCommand('copy');
+}
+
+/* 清空 */
+function handleCLearTextareaClick(event) {
+  $textarea.val('');
+}
+
+function init() {
+  $btnCopy.on('click', handleCopyDefaultClick);
+  $btnCopyTextArea.on('click', handleCopyFormControlClick);
+  $btnClearTextarea.on('click', handleCLearTextareaClick);
+}
+
+export default init;

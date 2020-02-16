@@ -64,7 +64,10 @@ block content
           button.btn.btn-primary#btn-copy(type='button') 复制
 
 block end
+  script window.__INITIAL_STATE__ = { codeHighlightLength: 2 };
   script(src='/static/script/jquery.min.js')
+  script(src='/static/script/vendor_modern.js' type='module' crossorigin='anonymous' async)
   script(src='/static/script/jsCopy_modern.js' type='module' crossorigin='anonymous' async)
   include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/vendor.js' type='nomodule' crossorigin='anonymous' async)
   script(src='/static/script/jsCopy.js' type='nomodule' crossorigin='anonymous' async)
