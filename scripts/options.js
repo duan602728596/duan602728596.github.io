@@ -1,15 +1,15 @@
 const process = require('process');
+const path = require('path');
+const glob = require('glob');
 const postcssModules = require('postcss-modules');
 
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   // webpack编译入口
-  webpackEntry: [
-    'src/script/vendor.js',
-    'src/script/queueInJs.js',
-    'src/script/jsCopy.js'
-  ],
+  webpackEntry: glob.sync('src/script/webpackEntry/**/*.js', {
+    cwd: path.join(__dirname, '../')
+  }),
 
   // 文件地址
   files: {

@@ -42,4 +42,4 @@ function init() {
   $btnClearTextarea.on('click', handleCLearTextareaClick);
 }
 
-export default init;
+init();
