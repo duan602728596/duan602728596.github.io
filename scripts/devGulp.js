@@ -53,7 +53,7 @@ function webpackProject() {
     .pipe(mfs.dest(javascript[1]));
 }
 
-/* webpack */
+/* webpack modern */
 function webpackModernProject() {
   return gulp.src(webpackEntry)
     .pipe(mfs.changed('dist'))
