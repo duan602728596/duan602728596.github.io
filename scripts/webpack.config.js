@@ -30,6 +30,17 @@ function webpackConfig(esmodules) {
     .exclude
     .add(/node_modules/);
 
+  /* terser */
+  config
+    .when(!isDev,
+      (config) => {
+        const terserOptions = {
+          ecma: esmodules ? 2017 : 5,
+          safari10: true
+        };
+      }
+    );
+
   return config.toConfig();
 }
 
