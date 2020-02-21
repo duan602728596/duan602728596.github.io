@@ -40,10 +40,18 @@ module.exports = {
         [
           '@babel/preset-env',
           {
-            targets: esmodules ? {
-              esmodules: true // 判断是否支持es6+的特性
-            } : {
-              browsers: [
+            targets: {
+              browsers: esmodules ? [
+                'Chrome >= 61',
+                'Firefox >= 60',
+                'Edge >= 16',
+                'Opera >= 47',
+                'Safari >= 11',
+                'Android >= 61',
+                'IOS >= 11',
+                'ChromeAndroid >= 61',
+                'FirefoxAndroid >= 60'
+              ] : [
                 'last 2 versions',
                 'last 10 Chrome versions',
                 'last 1 year',
