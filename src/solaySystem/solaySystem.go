@@ -264,7 +264,7 @@ func SolarSystem(this js.Value, args []js.Value) interface {} {
   rendererInit()
   controlsInit()
 
-  global.Call("addEventListener", "resize", js.FuncOf(handleWindowResize), false)
+  jQuery.Invoke(global).Call("on", "resize", js.FuncOf(handleWindowResize))
 
   // 初始化星系
   initAmbientLight()
