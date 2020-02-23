@@ -1,9 +1,9 @@
 {
   "name": "solar-system",
   "scripts": {
-    "start": "rimraf dist && gulp",
+    "start": "gulp",
     "build:dev": "GOOS=js GOARCH=wasm go build -o example/solar-system.wasm",
-    "build": "GOOS=js GOARCH=wasm go build -o dist/solar-system.wasm"
+    "build": "rimraf dist && GOOS=js GOARCH=wasm go build -o dist/solar-system.wasm"
   },
   "dependencies": {
     "jquery": "^3.4.1",
