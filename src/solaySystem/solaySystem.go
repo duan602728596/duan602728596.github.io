@@ -245,7 +245,7 @@ func SolarSystem(this js.Value, args []js.Value) interface {} {
   THREE = args[0]        // three.js
   jQuery = args[1]       // jquery
   el := args[2].String() // dom
-  options = args[3]     // 配置项
+  options = args[3]      // 配置项
   /* =============================== */
 
   global := js.Global()

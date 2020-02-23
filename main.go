@@ -14,7 +14,7 @@ func main()  {
 
   globalSolaySystem.Set("SolarSystem", js.FuncOf(solaySystem.SolarSystem))
 
-  fmt.Println("Solar-system -> wasm done.")
+  fmt.Println("Solar-system -> wasm ready.")
 
   <- done
 }
