@@ -1,8 +1,8 @@
 package solarSystem
 
 import (
-  "syscall/js"
   "math"
+  "syscall/js"
 )
 
 /* 定义变量 */

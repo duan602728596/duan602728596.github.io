@@ -1,6 +1,6 @@
 const go = new Go();
 
-globalThis.__SOLAY_SYSTEM__ = {};
+globalThis.__SOLAR_SYSTEM__ = {};
 
 async function main() {
   const result = await WebAssembly.instantiateStreaming(fetch('solar-system.wasm'), go.importObject);
@@ -54,7 +54,8 @@ async function main() {
       { name: 'neptune', rot: 0.003, rev: 0.0003, deg: 0, l: planets[7].position.z }
     ]
   };
-  const data = solarSystem.SolarSystem(THREE, $, '#solay', options);
+
+  solarSystem.SolarSystem(THREE, $, '#solar', options);
 
   const $solar = $('#solar')[0];
 
