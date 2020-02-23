@@ -7,7 +7,7 @@ async function main() {
 
   go.run(result.instance);
 
-  const { __SOLAY_SYSTEM__: solaySystem } = globalThis;
+  const { __SOLAR_SYSTEM__: solarSystem } = globalThis;
 
   const planets = [
     { name: 'mercury', map: 'image/shuixing.jpg', r: 1, position: { x: 0, y: 0, z: 70 } },
@@ -54,12 +54,12 @@ async function main() {
       { name: 'neptune', rot: 0.003, rev: 0.0003, deg: 0, l: planets[7].position.z }
     ]
   };
-  const data = solaySystem.SolarSystem(THREE, $, '#solay', options);
+  const data = solarSystem.SolarSystem(THREE, $, '#solay', options);
 
-  const $solay = $('#solay')[0];
+  const $solar = $('#solar')[0];
 
   $('#btn').on('click', function(event) {
-    $solay.requestFullscreen();
+    $solar.requestFullscreen();
   });
 }
 

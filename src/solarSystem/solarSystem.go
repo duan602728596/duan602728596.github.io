@@ -1,4 +1,4 @@
-package solaySystem
+package solarSystem
 
 import (
   "syscall/js"
