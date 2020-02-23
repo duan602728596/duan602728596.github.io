@@ -52,6 +52,10 @@ async function main() {
       { name: 'uranus', rot: 0.005, rev: 0.0005, deg: 0, l: planets[6].position.z },
       { name: 'uranusRing', rot: 0.005, rev: 0.0005, deg: 0, l: planets[6].position.z },
       { name: 'neptune', rot: 0.003, rev: 0.0003, deg: 0, l: planets[7].position.z }
+    ],
+    bg: [
+      'image/bg0.jpg',
+      'image/bg1.jpg'
     ]
   };
 

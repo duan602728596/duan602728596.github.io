@@ -153,13 +153,14 @@ func universeInit()  {
   PIC2 := math.Pi / 2
   r := 1920 / 2
   loader := THREE.Get("TextureLoader").New()
+  bg := options.Get("bg")
   geometr := THREE.Get("PlaneGeometry").New(r * 2, r * 2, 1, 1)
   materialArgs0 := map [string] interface{} {
-    "map": loader.Call("load", "image/bg0.jpg"),
+    "map": loader.Call("load", bg.Index(0)),
     "side": THREE.Get("DoubleSide"),
   }
   materialArgs1 := map [string] interface{} {
-    "map": loader.Call("load", "image/bg1.jpg"),
+    "map": loader.Call("load", bg.Index(1)),
     "side": THREE.Get("DoubleSide"),
   }
   material := [2] js.Value {
