@@ -13,7 +13,7 @@ const webpackConfig = require('./webpack.config');
 const utils = require('./utils');
 
 const { files, postcssConfig, webpackEntry } = options;
-const { html, css, javascript, image } = files;
+const { html, css, javascript, image, jsFiles } = files;
 
 const mfs = new GulpMemoryFs({
   dir: 'dist',
@@ -73,6 +73,12 @@ function imageProject() {
     .pipe(mfs.dest(image[1]));
 }
 
+/* jsFiles */
+function jsFilesProject() {
+  return gulp.src(jsFiles[0])
+    .pipe(mfs.dest(jsFiles[1]));
+}
+
 /* 监听文件 */
 function watch() {
   gulp.watch([html[0], 'components/**/*.pug'], pugProject);
@@ -91,6 +97,7 @@ module.exports = gulp.series(
     gulp.series(sassProject, pugProject),
     gulp.series(webpackProject, webpackModernProject),
     imageProject,
+    jsFilesProject,
     ...utils.copyStaticFiles(mfs)
   ),
   gulp.parallel(watch, runServer)

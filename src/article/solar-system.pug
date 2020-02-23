@@ -1,0 +1,38 @@
+extends ../../components/article/article
+
+mixin title
+  | 基于Three.js + wasm开发的太阳系动画
+
+block head
+  title
+    + title
+  meta(name='keywords' content='前端, js, javascript, typescript, three.js, wasm')
+  meta(name='description' content='基于Three.js + wasm开发的太阳系动画')
+  style.
+    .solar-box { position: relative; padding-bottom: 50%; }
+    .solar { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+
+block content
+  article(class=style.articleLayout)
+    h1(class=style.articleTitle)
+      + title
+
+    article(class=style.articleParagraph)
+      p
+        | 太阳系动画。基于Three.js和wasm开发。
+        a(href='https://github.com/duan602728596/duan602728596.github.io/tree/solar-system' target='_blank') （代码）
+      div.mb-3.text-right
+        button.btn.btn-primary#fullScreen 全屏运行
+      div.solar-box.border.border-success
+        div.solar#solar
+
+block end
+  script(src='/static/script/jquery.min.js')
+  script(src='/static/script/three.min.js')
+  script(src='/static/script/OrbitControls.js')
+  script(src='/static/script/wasm_exec.js')
+  script(src='/static/script/vendor_modern.js' type='module' crossorigin='anonymous' async)
+  script(src='/static/script/solarSystem_modern.js' type='module' crossorigin='anonymous' async)
+  include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/vendor.js' type='nomodule' crossorigin='anonymous' async)
+  script(src='/static/script/solarSystem.js' type='nomodule' crossorigin='anonymous' async)

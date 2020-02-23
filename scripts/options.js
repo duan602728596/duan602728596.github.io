@@ -16,14 +16,16 @@ module.exports = {
     html: ['src/**/*.pug', 'dist'],
     css: ['src/style/**/*.sass', 'dist/static/style'],
     javascript: ['src/script/**/*.js', 'dist/static/script'],
-    image: ['src/image/**/*.{jpg,jpeg,png,gif,webp,ico}', 'dist/static/image']
+    image: ['src/image/**/*.{jpg,jpeg,png,gif,webp,ico}', 'dist/static/image'],
+    jsFiles: ['src/script/files/**/*.*', 'dist/static/script']
   },
 
   // 静态文件
   staticFiles: [
     ['node_modules/bootstrap/dist/css/bootstrap.min.css', 'dist/static/style'],
     ['node_modules/highlight.js/styles/github.css', 'dist/static/style'],
-    ['node_modules/jquery/dist/jquery.min.js', 'dist/static/script']
+    ['node_modules/jquery/dist/jquery.min.js', 'dist/static/script'],
+    ['node_modules/three/build/three.min.js', 'dist/static/script']
   ],
 
   // postcss配置

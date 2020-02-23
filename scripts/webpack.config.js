@@ -15,7 +15,9 @@ function webpackConfig(esmodules) {
 
   /* externals */
   config.externals({
-    jquery: 'jQuery'
+    jquery: 'jQuery',
+    three: 'THREE',
+    go: 'Go'
   });
 
   /* loader */

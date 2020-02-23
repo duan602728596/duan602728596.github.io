@@ -11,7 +11,7 @@ const webpackConfig = require('./webpack.config');
 const utils = require('./utils');
 
 const { files, postcssConfig, webpackEntry } = options;
-const { html, css, javascript, image } = files;
+const { html, css, javascript, image, jsFiles } = files;
 
 /* pug */
 function pugProject() {
@@ -53,9 +53,16 @@ function imageProject() {
     .pipe(gulp.dest(image[1]));
 }
 
+/* jsFiles */
+function jsFilesProject() {
+  return gulp.src(jsFiles[0])
+    .pipe(gulp.dest(jsFiles[1]));
+}
+
 module.exports = gulp.parallel(
   gulp.series(sassProject, pugProject),
   gulp.series(webpackProject, webpackModernProject),
   imageProject,
+  jsFilesProject,
   ...utils.copyStaticFiles(gulp)
 );
