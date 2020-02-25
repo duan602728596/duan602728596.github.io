@@ -1,0 +1,78 @@
+<!-- - 文章页模板--><!DOCTYPE html><html><head><meta charset="utf-8"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Window-target" content="_top"><meta name="author" content="段昊辰, duanhaochen@126.com"><meta name="copyright" content="段昊辰, duanhaochen@126.com"><link rel="shortcut icon" href="/static/image/favicon.ico"><link rel="icon" href="/static/image/favicon.jpg" type="image/jpeg"><link rel="stylesheet" href="/static/style/bootstrap.min.css"><link rel="stylesheet" href="/static/style/article.css"><title>如何在typescript内引入静态资源</title><link rel="stylesheet" href="/static/style/github.css"><meta name="keywords" content="typescript, webpack"><meta name="description" content="如何在typescript内引入静态资源"></head><body><nav class="position-sticky sticky-top mb-5 navbar navbar-dark bg-dark"><div class="clearfix _H4XNIX"><div class="float-left"><a class="navbar-brand" href="/">文章</a><a class="navbar-brand" href="/project.html">开源项目</a></div><div class="float-right"><a class="navbar-brand" href="https://github.com/duan602728596"><img class="_16A_G6" src="/static/image/github.png" alt="github"/></a></div></div></nav><article class="_39hs-1"><h1 class="_1v21Up">如何在typescript内引入静态资源</h1><article class="_1u30Pl"><p>在ts文件中，如果引入了css模块，会报，错提示找不到模块。</p><pre id="code-block-0"><code class="typescript">// TS2307: Cannot find module './index.css'
+import './index.css';
+</code></pre><P>可以使用全局类型声明写法，来声明类型。<pre id="code-block-1"><code class="typescript">declare module '*.css' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+</code></pre></P></article><article class="_1u30Pl"><h2 class="_20hLl3">一份可用的完整配置</h2><pre id="code-block-2"><code class="typescript">declare module '*.css' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+
+declare module '*.sass' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+
+declare module '*.scss' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+
+declare module '*.less' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+
+declare module '*.styl' {
+  const style: { [key: string]: string };
+
+  export default style;
+}
+
+declare module '*.png' {
+  const url: string;
+
+  export default url;
+}
+
+declare module '*.jpg' {
+  const url: string;
+
+  export default url;
+}
+
+declare module '*.jpeg' {
+  const url: string;
+
+  export default url;
+}
+
+declare module '*.gif' {
+  const url: string;
+
+  export default url;
+}
+
+declare module '*.webp' {
+  const url: string;
+
+  export default url;
+}
+
+declare module '*.svg' {
+  import { FunctionComponent } from 'react';
+
+  const url: string;
+
+  // 如果使用@svgr/webpack加载svg，还会导出ReactComponent组件
+  export const ReactComponent: FunctionComponent;
+
+  export default url;
+}
+</code></pre></article></article><div class="position-fixed _1aW5D0" id="go-to-top" title="返回顶部" role="button" aria-label="返回顶部"><img class="_gVrxCq" src="/static/image/go-to-top.png" alt="返回顶部"></div></body><script>window.__INITIAL_STATE__ = { codeHighlightLength: 3 };</script><script src="/static/script/jquery.min.js"></script><script src="/static/script/vendor_modern.js" type="module" crossorigin="anonymous" async></script><script>!function(){var e=document.createElement("script");if(!("noModule"in e)&&"onbeforeload"in e){var t=!1;document.addEventListener("beforeload",function(n){if(n.target===e)t=!0;else if(!n.target.hasAttribute("nomodule")||!t)return;n.preventDefault()},!0),e.type="module",e.src=".",document.head.appendChild(e),e.remove()}}();</script><script src="/static/script/vendor.js" type="nomodule" crossorigin="anonymous" async></script></html>
