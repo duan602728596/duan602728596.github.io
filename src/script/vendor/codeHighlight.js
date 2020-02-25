@@ -1,7 +1,9 @@
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
 
 hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('typescript', typescript);
 
 /* 代码高亮 */
 function codeHighlight(len) {

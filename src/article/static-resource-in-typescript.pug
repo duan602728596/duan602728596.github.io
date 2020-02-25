@@ -1,0 +1,122 @@
+extends ../../components/article/article
+
+mixin title
+  | 如何在typescript内引入静态资源
+
+mixin code-block-0
+  code.typescript.
+    // TS2307: Cannot find module './index.css'
+    import './index.css';
+
+mixin code-block-1
+  code.typescript.
+    declare module '*.css' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+mixin code-block-2
+  code.typescript.
+    declare module '*.css' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+    declare module '*.sass' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+    declare module '*.scss' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+    declare module '*.less' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+    declare module '*.styl' {
+      const style: { [key: string]: string };
+
+      export default style;
+    }
+
+    declare module '*.png' {
+      const url: string;
+
+      export default url;
+    }
+
+    declare module '*.jpg' {
+      const url: string;
+
+      export default url;
+    }
+
+    declare module '*.jpeg' {
+      const url: string;
+
+      export default url;
+    }
+
+    declare module '*.gif' {
+      const url: string;
+
+      export default url;
+    }
+
+    declare module '*.webp' {
+      const url: string;
+
+      export default url;
+    }
+
+    declare module '*.svg' {
+      import { FunctionComponent } from 'react';
+
+      const url: string;
+
+      // 如果使用@svgr/webpack加载svg，还会导出ReactComponent组件
+      export const ReactComponent: FunctionComponent;
+
+      export default url;
+    }
+
+block head
+  title
+    + title
+  link(rel='stylesheet' href='/static/style/github.css')
+  meta(name='keywords' content='typescript, webpack')
+  meta(name='description' content='如何在typescript内引入静态资源')
+
+block content
+  article(class=style.articleLayout)
+    h1(class=style.articleTitle)
+      + title
+
+    article(class=style.articleParagraph)
+      p 在ts文件中，如果引入了css模块，会报，错提示找不到模块。
+      pre#code-block-0
+        +code-block-0
+      P 可以使用全局类型声明写法，来声明类型。
+        pre#code-block-1
+          +code-block-1
+
+    article(class=style.articleParagraph)
+      h2(class=style.articleTitle2) 一份可用的完整配置
+      pre#code-block-2
+        +code-block-2
+
+block end
+  script window.__INITIAL_STATE__ = { codeHighlightLength: 3 };
+  script(src='/static/script/jquery.min.js')
+  script(src='/static/script/vendor_modern.js' type='module' crossorigin='anonymous' async)
+  include ../../components/safariModern/safariModern.pug
+  script(src='/static/script/vendor.js' type='nomodule' crossorigin='anonymous' async)
