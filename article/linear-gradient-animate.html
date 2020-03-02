@@ -1,0 +1,159 @@
+<!-- - 文章页模板--><!DOCTYPE html><html><head><meta charset="utf-8"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Window-target" content="_top"><meta name="author" content="段昊辰, duanhaochen@126.com"><meta name="copyright" content="段昊辰, duanhaochen@126.com"><link rel="shortcut icon" href="/static/image/favicon.ico"><link rel="icon" href="/static/image/favicon.jpg" type="image/jpeg"><link rel="stylesheet" href="/static/style/bootstrap.min.css"><link rel="stylesheet" href="/static/style/article.css"><title>使用SVG，让渐变的背景也能动起来</title><link rel="stylesheet" href="/static/style/github.css"><meta name="keywords" content="前端, SVG"><meta name="description" content="使用SVG，让渐变的背景也能动起来"><style>.demo-btn { position: relative; padding: 0; margin: 0; width: 120px; height: 50px; font-size: 26px;
+  background-color: transparent; border: none; outline: none; cursor: pointer; }
+.demo-space { width: 100%; height: 100%; }
+.demo-btn-text { position: relative; z-index: 2; display: block; line-height: 50px; text-align: center;
+  pointer-events: none; }
+.demo-btn .demo-btn-text { color: #e9e9e9; transition: color .3s; }
+.demo-btn:hover .demo-btn-text { color: #fff; }
+.demo-svg { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; display: block;
+  transform: translate3d(0, 0, 0); }
+</style></head><body><nav class="position-sticky sticky-top mb-5 navbar navbar-dark bg-dark"><div class="clearfix _H4XNIX"><div class="float-left"><a class="navbar-brand" href="/">文章</a><a class="navbar-brand" href="/project.html">开源项目</a></div><div class="float-right"><a class="navbar-brand" href="https://github.com/duan602728596"><img class="_16A_G6" src="/static/image/github.png" alt="github"/></a></div></div></nav><article class="_39hs-1"><h1 class="_1v21Up">使用SVG，让渐变的背景也能动起来</h1><article class="_1u30Pl"><p>当背景是渐变色时，如果想实现过渡动画。直接使用css的<code>transition</code>是不行的。所以考虑使用svg来实现功能。</p></article><article class="_1u30Pl"><h2 class="_20hLl3">代码演示和实现</h2><div class="mb-5"><b>实现的效果：<button class="demo-btn" type="button"><span class="demo-btn-text demo-space">Button</span><svg class="demo-svg demo-space" xmlns="http://www.w3.org/2000/svg" version="1.1"><!-- 过渡动画模板1，过渡动画--><linearGradient id="linear_gradient_0" x1="0" y1="0" x2="100%" y2="100%"><stop offset="0%" stop-color="#13f5ff"><animate attributeName="stop-color" from="#13f5ff" to="#fff713" dur=".3s" repeatCount="1" fill="freeze" begin="backgroundRect.mouseover"></animate></stop><stop offset="100%" stop-color="#0017c0"><animate attributeName="stop-color" from="#0017c0" to="#ff0005" dur=".3s" repeatCount="1" fill="freeze" begin="backgroundRect.mouseover"></animate></stop></linearGradient><!-- 过渡动画模板1，过渡动画--><linearGradient id="linear_gradient_1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff713"><animate attributeName="stop-color" from="#fff713" to="#13f5ff" dur=".3s" repeatCount="1" fill="freeze" begin="backgroundRect.mouseout"></animate></stop><stop offset="100%" stop-color="#ff0005"><animate attributeName="stop-color" from="#ff0005" to="#0017c0" dur=".3s" repeatCount="1" fill="freeze" begin="backgroundRect.mouseout"></animate></stop></linearGradient><g><rect class="demo-space" id="backgroundRect" fill="url(#linear_gradient_0)"></rect></g><script><![CDATA[
+const background = document.getElementById('backgroundRect');
+
+// 鼠标移入时
+function handleBackgroundMouseOver(event) {
+  setTimeout(function() {
+    background.setAttribute('fill', 'url(#linear_gradient_0)');
+  }, 0);
+}
+
+// 鼠标移出时
+function handleBackgroundMouseOut(event) {
+  setTimeout(function() {
+    background.setAttribute('fill', 'url(#linear_gradient_1)');
+  }, 0);
+}
+
+background.addEventListener('mouseover', handleBackgroundMouseOver, false);
+background.addEventListener('mouseout', handleBackgroundMouseOut, false);
+// ]]>
+</script></svg></button></b></div><pre id="code-block-0"><code class="xml">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+  &lt;style&gt;
+  .btn {
+    padding: 0;
+    width: 120px;
+    height: 50px;
+    font-size: 26px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .space {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .btn .btn-text {
+    color: #e9e9e9;
+    transition: color .3s;
+  }
+
+  .btn:hover .btn-text {
+    color: #fff;
+  }
+
+  .svg {
+    display: block;
+    margin-top: -50px;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button class="btn" type="button"&gt;
+  &lt;span class="space btn-text"&gt;Button&lt;/span&gt;
+  &lt;svg class="space svg" xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+    &lt;!-- 过渡动画模板1，过渡动画 --&gt;
+    &lt;linearGradient id="linear_gradient_0" x1="0" y1="0" x2="100%" y2="100%"&gt;
+      &lt;stop offset="0" stop-color="#13f5ff"&gt;
+        &lt;animate attributeName="stop-color"
+          from="#13f5ff"
+          to="#fff713"
+          dur=".3s"
+          repeatCount="1"
+          fill="freeze"
+          begin="background.mouseover"
+        /&gt;
+      &lt;/stop&gt;
+      &lt;stop offset="100%" stop-color="#0017c0"&gt;
+        &lt;animate attributeName="stop-color"
+          from="#0017c0"
+          to="#ff0005"
+          dur=".3s"
+          repeatCount="1"
+          fill="freeze"
+          begin="background.mouseover"
+        /&gt;
+    &lt;/stop&gt;
+    &lt;/linearGradient&gt;
+
+    &lt;!-- 过渡动画模板2，还原动画 --&gt;
+    &lt;linearGradient id="linear_gradient_1" x1="0" y1="0" x2="100%" y2="100%"&gt;
+      &lt;stop offset="0" stop-color="#fff713"&gt;
+        &lt;animate attributeName="stop-color"
+          from="#fff713"
+          to="#13f5ff"
+          dur=".3s"
+          repeatCount="1"
+          fill="freeze"
+        /&gt;
+      &lt;/stop&gt;
+      &lt;stop offset="100%" stop-color="#ff0005"&gt;
+        &lt;animate attributeName="stop-color"
+          from="#ff0005"
+          to="#0017c0"
+          dur=".3s"
+          repeatCount="1"
+          fill="freeze"
+          begin="background.mouseout"
+        /&gt;
+      &lt;/stop&gt;
+    &lt;/linearGradient&gt;
+
+    &lt;g&gt;
+      &lt;rect class="space" id="background" fill="url(#linear_gradient_0)" /&gt;
+    &lt;/g&gt;
+
+    &lt;!-- 脚本 --&gt;
+    &lt;script type="text/javascript"&gt;
+      &lt;![CDATA[
+      const background = document.getElementById('background');
+
+      // 鼠标移入时
+      function handleBackgroundMouseOver(event) {
+        // 使用setTimeout防止动画闪烁
+        setTimeout(function() {
+          background.setAttribute('fill', 'url(#linear_gradient_0)');
+        }, 0);
+      }
+
+      // 鼠标移出时
+      function handleBackgroundMouseOut(event) {
+        // 使用setTimeout防止动画闪烁
+        setTimeout(function() {
+          background.setAttribute('fill', 'url(#linear_gradient_1)');
+        }, 0);
+      }
+
+      background.addEventListener('mouseover', handleBackgroundMouseOver, false);
+      background.addEventListener('mouseout', handleBackgroundMouseOut, false);
+      // ]]&gt;
+    &lt;/script&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></article></article><div class="position-fixed _1aW5D0" id="go-to-top" title="返回顶部" tabindex="0" role="button" aria-label="返回顶部"><img class="_gVrxCq" src="/static/image/go-to-top.png" alt="返回顶部"></div></body><script>window.__INITIAL_STATE__ = { codeHighlightLength: 1 };</script><script src="/static/script/jquery.min.js"></script><script src="/static/script/vendor_modern.js" type="module" crossorigin="anonymous" async></script><script>!function(){var e=document.createElement("script");if(!("noModule"in e)&&"onbeforeload"in e){var t=!1;document.addEventListener("beforeload",function(n){if(n.target===e)t=!0;else if(!n.target.hasAttribute("nomodule")||!t)return;n.preventDefault()},!0),e.type="module",e.src=".",document.head.appendChild(e),e.remove()}}();</script><script src="/static/script/vendor.js" type="nomodule" crossorigin="anonymous" async></script></html>
