@@ -5,13 +5,18 @@ const $body = $('body, html'),
 
 /* 返回顶部 */
 function handleGoToTopClick(event) {
-  $body.animate({
-    scrollTop: 0
-  }, 300);
+  const { keyCode, type } = event;
+
+  if ((type === 'keyup' && keyCode === 13) || type === 'click') {
+    $body.animate({
+      scrollTop: 0
+    }, 300);
+  }
 }
 
 function init() {
   $goToTop.on('click', handleGoToTopClick);
+  $goToTop.on('keyup', handleGoToTopClick);
 }
 
 export default init;
