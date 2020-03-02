@@ -27,33 +27,18 @@ mixin code-block-0
       }
 
       .btn-text {
-        position: relative;
-        z-index: 1;
-        display: block;
-        line-height: 50px;
-        text-align: center;
         pointer-events: none;
-      }
-
-      .btn .btn-text {
-        color: #e9e9e9;
-        transition: color .3s;
-      }
-
-      .btn:hover .btn-text {
-        color: #fff;
       }
 
       .svg {
         display: block;
-        margin-top: -50px;
       }
       &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;button class="btn" type="button"&gt;
       &lt;span class="space btn-text"&gt;Button&lt;/span&gt;
-      &lt;svg class="space svg" xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+      &lt;svg class="space svg" id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
         &lt;!-- 过渡动画模板1，过渡动画 --&gt;
         &lt;linearGradient id="linear_gradient_0" x1="0" y1="0" x2="100%" y2="100%"&gt;
           &lt;stop offset="0" stop-color="#13f5ff"&gt;
@@ -101,20 +86,80 @@ mixin code-block-0
           &lt;/stop&gt;
         &lt;/linearGradient&gt;
 
+        &lt;!-- 文字动画1 --&gt;
+        &lt;linearGradient id="linear_gradient_2" x1="0" y1="0" x2="100%" y2="100%"&gt;
+          &lt;stop offset="0" stop-color="#ff00ff"&gt;
+            &lt;animate attributeName="stop-color"
+              from="#ff00ff"
+              to="#4dff27"
+              dur=".3s"
+              repeatCount="1"
+              fill="freeze"
+              begin="svg.mouseover"
+            /&gt;
+          &lt;/stop&gt;
+          &lt;stop offset="100%" stop-color="#f9ff7c"&gt;
+            &lt;animate attributeName="stop-color"
+              from="#f9ff7c"
+              to="#b29fff"
+              dur=".3s"
+              repeatCount="1"
+              fill="freeze"
+              begin="svg.mouseover"
+            /&gt;
+          &lt;/stop&gt;
+        &lt;/linearGradient&gt;
+
+        &lt;!-- 文字动画2，还原动画 --&gt;
+        &lt;linearGradient id="linear_gradient_3" x1="0" y1="0" x2="100%" y2="100%"&gt;
+          &lt;stop offset="0" stop-color="#4dff27"&gt;
+            &lt;animate attributeName="stop-color"
+              from="#4dff27"
+              to="#ff00ff"
+              dur=".3s"
+              repeatCount="1"
+              fill="freeze"
+              begin="svg.mouseout"
+            /&gt;
+          &lt;/stop&gt;
+          &lt;stop offset="100%" stop-color="#b29fff"&gt;
+            &lt;animate attributeName="stop-color"
+              from="#b29fff"
+              to="#f9ff7c"
+              dur=".3s"
+              repeatCount="1"
+              fill="freeze"
+              begin="svg.mouseout"
+            /&gt;
+          &lt;/stop&gt;
+        &lt;/linearGradient&gt;
+
         &lt;g&gt;
-          &lt;rect class="space" id="background" fill="url(#linear_gradient_0)" /&gt;
+          &lt;rect class="space" id="background-rect" fill="url(#linear_gradient_0)" /&gt;
+          &lt;text class="btn-text"
+            id="background-text"
+            x="50%" y="50%"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            fill="url(#linear_gradient_2)"
+          &gt;
+            Button
+          &lt;/text&gt;
         &lt;/g&gt;
 
         &lt;!-- 脚本 --&gt;
         &lt;script type="text/javascript"&gt;
           &lt;![CDATA[
-          const background = document.getElementById('background');
+          const svg = document.getElementById('svg'),
+            rect = document.getElementById('background-rect'),
+            text = document.getElementById('background-text');
 
           // 鼠标移入时
           function handleBackgroundMouseOver(event) {
             // 使用setTimeout防止动画闪烁
             setTimeout(function() {
               background.setAttribute('fill', 'url(#linear_gradient_0)');
+              text.setAttribute('fill', 'url(#linear_gradient_2)');
             }, 0);
           }
 
@@ -123,6 +168,7 @@ mixin code-block-0
             // 使用setTimeout防止动画闪烁
             setTimeout(function() {
               background.setAttribute('fill', 'url(#linear_gradient_1)');
+              text.setAttribute('fill', 'url(#linear_gradient_3)');
             }, 0);
           }
 
@@ -145,12 +191,8 @@ block head
     .demo-btn { position: relative; padding: 0; margin: 0; width: 120px; height: 50px; font-size: 26px;
       background-color: transparent; border: none; outline: none; cursor: pointer; }
     .demo-space { width: 100%; height: 100%; }
-    .demo-btn-text { position: relative; z-index: 2; display: block; line-height: 50px; text-align: center;
-      pointer-events: none; }
-    .demo-btn .demo-btn-text { color: #e9e9e9; transition: color .3s; }
-    .demo-btn:hover .demo-btn-text { color: #fff; }
-    .demo-svg { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; display: block;
-      transform: translate3d(0, 0, 0); }
+    .demo-svg { display: block; transform: translate3d(0, 0, 0); }
+    .demo-btn-text { pointer-events: none; }
 
 block content
   article(class=style.articleLayout)
@@ -167,8 +209,7 @@ block content
       div.mb-5
         b 实现的效果：
           button.demo-btn(type='button')
-            span.demo-btn-text.demo-space Button
-            svg.demo-svg.demo-space(xmlns='http://www.w3.org/2000/svg' version='1.1')
+            svg.demo-svg.demo-space#svg(xmlns='http://www.w3.org/2000/svg' version='1.1')
               // 过渡动画模板1，过渡动画
               linearGradient#linear_gradient_0(x1='0' y1='0' x2='100%' y2='100%')
                 stop(offset='0%' stop-color='#13f5ff')
@@ -178,7 +219,7 @@ block content
                     dur='.3s'
                     repeatCount='1'
                     fill='freeze'
-                    begin='backgroundRect.mouseover')
+                    begin='svg.mouseover')
                 stop(offset='100%' stop-color='#0017c0')
                   animate(attributeName='stop-color'
                     from='#0017c0'
@@ -186,7 +227,7 @@ block content
                     dur='.3s'
                     repeatCount='1'
                     fill='freeze'
-                    begin='backgroundRect.mouseover')
+                    begin='svg.mouseover')
 
               // 过渡动画模板1，过渡动画
               linearGradient#linear_gradient_1(x1='0%' y1='0%' x2='100%' y2='100%')
@@ -197,7 +238,7 @@ block content
                     dur='.3s'
                     repeatCount='1'
                     fill='freeze'
-                    begin='backgroundRect.mouseout')
+                    begin='svg.mouseout')
                 stop(offset="100%" stop-color="#ff0005")
                   animate(attributeName='stop-color'
                     from='#ff0005'
@@ -205,18 +246,65 @@ block content
                     dur='.3s'
                     repeatCount='1'
                     fill='freeze'
-                    begin='backgroundRect.mouseout')
+                    begin='svg.mouseout')
 
+              // 文字动画1
+              linearGradient#linear_gradient_2(x1='0' y1='0' x2='100%' y2='100%')
+                stop(offset='0' stop-color='#ff00ff')
+                  animate(attributeName='stop-color'
+                    from='#ff00ff'
+                    to='#4dff27'
+                    dur='.3s'
+                    repeatCount='1'
+                    fill='freeze'
+                    begin='svg.mouseover')
+                stop(offset='100%' stop-color='#f9ff7c')
+                  animate(attributeName='stop-color'
+                    from='#f9ff7c'
+                    to='#b29fff'
+                    dur='.3s'
+                    repeatCount='1'
+                    fill='freeze'
+                    begin='svg.mouseover')
+
+              // 文字动画2，还原动画
+              linearGradient#linear_gradient_3(x1='0' y1='0' x2='100%' y2='100%')
+                stop(offset='0' stop-color='#4dff27')
+                  animate(attributeName='stop-color'
+                    from='#4dff27'
+                    to='#ff00ff'
+                    dur='.3s'
+                    repeatCount='1'
+                    fill='freeze'
+                    begin='svg.mouseout')
+                stop(offset='100%' stop-color='#b29fff')
+                  animate(attributeName='stop-color'
+                    from='#b29fff'
+                    to='#f9ff7c'
+                    dur='.3s'
+                    repeatCount='1'
+                    fill='freeze'
+                    begin='svg.mouseout')
               g
-                rect.demo-space#backgroundRect(fill='url(#linear_gradient_0)')
+                rect.demo-space#background-rect(fill='url(#linear_gradient_0)')
+                text.demo-btn-text#background-text(
+                  x='50%'
+                  y='50%'
+                  text-anchor='middle'
+                  dominant-baseline='middle'
+                  fill='url(#linear_gradient_2)') Button
+
               script.
                 <![CDATA[
-                const background = document.getElementById('backgroundRect');
+                const svg = document.getElementById('svg'),
+                  background = document.getElementById('background-rect'),
+                  text = document.getElementById('background-text');
 
                 // 鼠标移入时
                 function handleBackgroundMouseOver(event) {
                   setTimeout(function() {
                     background.setAttribute('fill', 'url(#linear_gradient_0)');
+                    text.setAttribute('fill', 'url(#linear_gradient_2)');
                   }, 0);
                 }
 
@@ -224,12 +312,13 @@ block content
                 function handleBackgroundMouseOut(event) {
                   setTimeout(function() {
                     background.setAttribute('fill', 'url(#linear_gradient_1)');
+                    text.setAttribute('fill', 'url(#linear_gradient_3)');
                   }, 0);
                 }
 
-                background.addEventListener('mouseover', handleBackgroundMouseOver, false);
-                background.addEventListener('mouseout', handleBackgroundMouseOut, false);
-                // ]]>
+                svg.addEventListener('mouseover', handleBackgroundMouseOver, false);
+                svg.addEventListener('mouseout', handleBackgroundMouseOut, false);
+                // ]]>;
 
       pre#code-block-0
         +code-block-0
