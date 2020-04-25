@@ -4,11 +4,13 @@
     <div class="list-group">
       <a class="list-group-item" href="/article/queue-in-js.html">用JS实现多个任务并行执行的队列</a>
       <a class="list-group-item" href="/article/js-copy.html">Javascript实现复制功能</a>
+      <a class="list-group-item" href="/article/dom-to-image.html">用Javascript将DOM绘制成图片</a>
+      <a class="list-group-item" href="/article/solar-system.html">基于Three.js + wasm开发的太阳系动画</a>
       <a class="list-group-item bg-light text-success"
         href="https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5"
         target="_blank"
       >
-        用JS实现多个任务并行执行的队列
+        2020年10个有用的Web API (10-useful-web-apis-for-2020)
       </a>
       <a class="list-group-item" href="/article/static-resource-in-typescript.html">如何在typescript内引入静态资源</a>
       <a class="list-group-item" href="/article/linear-gradient-animate.html">使用SVG，让渐变的背景也能动起来</a>
