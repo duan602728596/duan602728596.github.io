@@ -20,7 +20,7 @@
       <p>定义一个延迟执行的异步函数，并执行任务，测试代码是否满足需求：</p>
       <HighLight type="javascript">{{ codeText[1] }}</HighLight>
       <p>在控制台上会输出：</p>
-      <HighLight>{{ codeText[2] }}</HighLight>
+      <HighLight type="javascript">{{ codeText[2] }}</HighLight>
       <p>可以看到，开始时执行了三个任务；每当有任务执行完毕，就会执行下一个任务。这样就满足了并行执行队列内的任务的需求。</p>
     </article>
 

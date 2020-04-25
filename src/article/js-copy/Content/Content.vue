@@ -6,9 +6,9 @@
     <article class="articleParagraph">
       <h2 class="articleTitle2">代码实现</h2>
       <p>html5的webAPI接口可以很轻松的使用短短的几行代码就实现复制功能，不需要依赖flash。</p>
-      <HighLight>{{ codeText[0] }}</HighLight>
+      <HighLight type="javascript">{{ codeText[0] }}</HighLight>
       <p>当element为表单控件时，代码可以简化成：</p>
-      <HighLight>{{ codeText[1] }}</HighLight>
+      <HighLight type="javascript">{{ codeText[1] }}</HighLight>
     </article>
 
     <!-- 代码演示 -->

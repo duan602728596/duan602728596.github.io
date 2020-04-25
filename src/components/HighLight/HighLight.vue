@@ -1,6 +1,6 @@
 <template>
   <!-- 代码高亮 -->
-  <pre ref="codeBlockRef"><code :class="type"><slot></slot></code></pre>
+  <pre ref="codeBlockRef" :class="type"><code><slot></slot></code></pre>
 </template>
 
 <script>
