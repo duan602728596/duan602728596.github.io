@@ -1,0 +1,33 @@
+- var options = htmlWebpackPlugin.options;
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='renderer' content='webkit')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(http-equiv='Window-target' content='_top')
+    meta(name='author' content='段昊辰, duanhaochen@126.com')
+    meta(name='copyright' content='段昊辰, duanhaochen@126.com')
+    //- 文章关键词
+    if options.keywords
+      meta(name='keywords' content=options.keywords)
+    //- 文章介绍
+    if options.description
+      meta(name='description' content=options.description)
+    link(rel='shortcut icon' href='/static/images/favicon.ico')
+    link(rel='icon' href='/static/images/favicon.jpg' type='image/jpeg')
+    link(rel='stylesheet' href='/static/styles/bootstrap.min.css')
+    //- 代码高亮
+    if options.highlight
+      link(rel='stylesheet' href='/static/styles/github.css')
+    //- 标题
+    if options.title
+      title=options.title
+
+  body
+    div#app
+    script(src=`/static/scripts/${ options.key }_modern.js` type='module' crossorigin='anonymous' async)
+    script.
+      !function(){var e=document.createElement("script");if(!("noModule"in e)&&"onbeforeload"in e){var t=!1;document.addEventListener("beforeload",function(n){if(n.target===e)t=!0;else if(!n.target.hasAttribute("nomodule")||!t)return;n.preventDefault()},!0),e.type="module",e.src=".",document.head.appendChild(e),e.remove()}}();
+    script(src=`/static/scripts/${ options.key }.js` type='nomodule' crossorigin='anonymous' async)

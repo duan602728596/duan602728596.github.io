@@ -1,0 +1,27 @@
+# node
+node_modules
+npm-debug.log
+package-lock.json
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# webstorm
+.idea
+
+# build
+build
+buildServer
+dist
+dist-server
+Dockerfile-sss
+
+# cache
+.sweet/*
+
+# https
+*.crt
+*.key
+
+.DS_Store

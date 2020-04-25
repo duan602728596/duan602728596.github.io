@@ -1,0 +1,23 @@
+.articleLayout {
+  margin: 32px auto;
+  width: 800px;
+}
+
+.articleTitle {
+  margin-bottom: 64px;
+}
+
+.articleTitle2 {
+  margin-bottom: 16px;
+}
+
+.articleParagraph {
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 832px) {
+  .articleLayout {
+    padding: 0 16px;
+    width: 100%;
+  }
+}
