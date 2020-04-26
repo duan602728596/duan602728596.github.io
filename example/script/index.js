@@ -59,7 +59,7 @@ async function main() {
     ]
   };
 
-  solarSystem.SolarSystem(THREE, $, '#solar', options);
+  solarSystem.SolarSystem(THREE, 'solar', options);
 
   const $solar = $('#solar')[0];
 
