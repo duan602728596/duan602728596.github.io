@@ -45,7 +45,6 @@
   }
 
   export default defineComponent({
-    name: 'ArticleComponent',
     setup() {
       return {
         handleGoToTopClick

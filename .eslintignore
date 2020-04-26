@@ -6,3 +6,5 @@ build
 buildServer
 dist
 dist-server
+src/static/scripts/OrbitControls.js
+src/static/scripts/wasm_exec.js

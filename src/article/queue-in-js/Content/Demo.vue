@@ -50,7 +50,6 @@
   const queue = new Queue();
 
   export default defineComponent({
-    name: 'Demo',
     setup() {
       // 定义任务，0：未执行 1：执行中 2：执行完毕
       const tasks = ref([

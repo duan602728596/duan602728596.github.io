@@ -42,7 +42,6 @@
   import codeText from './codeText';
 
   export default defineComponent({
-    name: 'Content',
     components: {
       HighLight,
       Demo

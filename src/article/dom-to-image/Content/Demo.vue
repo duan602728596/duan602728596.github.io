@@ -93,7 +93,6 @@
   }
 
   export default defineComponent({
-    name: 'Demo',
     setup(props, { refs }) {
       const imgUrl = ref(undefined); // 生成的图片地址
 

@@ -17,7 +17,6 @@
   hljs.registerLanguage('css', css);
 
   export default defineComponent({
-    name: 'HighLight',
     props: {
       type: String
     },

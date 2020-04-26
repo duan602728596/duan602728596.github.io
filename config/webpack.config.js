@@ -28,6 +28,12 @@ module.exports = function({ entry, output, template, esModule }) {
     .mode(mode)
     .devtool(isDev ? 'eval-source-map' : false);
 
+  // externals
+  config.externals({
+    three: 'THREE',
+    go: 'Go'
+  });
+
   // output
   config
     .output
