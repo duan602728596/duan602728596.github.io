@@ -9,7 +9,6 @@ import (
 var (
   element js.Value
   THREE js.Value
-  jQuery js.Value
   options js.Value
   scene js.Value    // 场景
   camera js.Value   // 照相机
@@ -244,13 +243,12 @@ func SolarSystem(this js.Value, args []js.Value) interface {} {
   /* =============================== */
   // 参数
   THREE = args[0]        // three.js
-  jQuery = args[1]       // jquery
-  el := args[2].String() // dom
-  options = args[3]      // 配置项
+  el := args[1].String() // dom
+  options = args[2]      // 配置项
   /* =============================== */
 
   global := js.Global()
-  element = jQuery.Invoke(el).Index(0)
+  element = global.Get("document").Call("getElementById", el)
 
   sceneInit()
   cameraInit()
@@ -265,7 +263,7 @@ func SolarSystem(this js.Value, args []js.Value) interface {} {
   rendererInit()
   controlsInit()
 
-  jQuery.Invoke(global).Call("on", "resize", js.FuncOf(handleWindowResize))
+  global.Call("addEventListener", "resize", js.FuncOf(handleWindowResize))
 
   // 初始化星系
   initAmbientLight()
