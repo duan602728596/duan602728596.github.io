@@ -15,7 +15,7 @@ module.exports = withSass({
     const { use } = rules[rules.length - 1];
     const loaders = options.isServer
       ? ['css-loader/locals']
-      : use.slice(0, isDev ? 2 : 1).concat(['css-loader']);
+      : [isDev ? 'style-loader' : use[0], 'css-loader'];
 
     config.module.rules.push({
       test: /.*\.less$/,
