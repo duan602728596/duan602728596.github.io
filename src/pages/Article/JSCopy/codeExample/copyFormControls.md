@@ -1,0 +1,4 @@
+function copy() {
+  document.getElementById('textarea').select();
+  document.execCommand('copy');
+}
