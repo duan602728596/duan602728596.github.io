@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import Nav from '../../components/Nav/Nav';
-import Main from '../../components/Main/Main';
+import Nav from '../../../components/Nav/Nav';
+import Main from '../../../components/Main/Main';
 import Article from './Article';
 
 /* 用JS实现多个任务并行执行的队列 */
-function DomToImage(props) {
+function QueueInJs(props) {
   return (
     <Fragment>
       <Nav />
@@ -15,4 +15,4 @@ function DomToImage(props) {
   );
 }
 
-export default DomToImage;
+export default QueueInJs;

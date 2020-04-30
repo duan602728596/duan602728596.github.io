@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
-import QueueInJs from '../../src/pages/QueueInJs/Index';
+import QueueInJs from '../../src/pages/Article/QueueInJs/QueueInJs';
 
 export default function(props) {
   return (

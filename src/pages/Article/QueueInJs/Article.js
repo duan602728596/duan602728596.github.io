@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Typography } from 'antd';
-import HighLight from '../../components/HighLight/HighLight';
+import HighLight from '../../../components/HighLight/HighLight';
 import Demo from './Demo/Demo';
 import queueExample from './codeExample/queue.md';
 import resultExample from './codeExample/result.md';
