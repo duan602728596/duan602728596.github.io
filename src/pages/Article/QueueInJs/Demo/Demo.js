@@ -129,7 +129,10 @@ function Demo(props) {
         pagination={ false }
         rowKey="id"
       />
-      <p className={ style.result }>{ completedResultRender() }</p>
+      <p className={ style.result }>
+        <b>已完成任务：</b>
+        { completedResultRender() }
+      </p>
     </Fragment>
   );
 }
