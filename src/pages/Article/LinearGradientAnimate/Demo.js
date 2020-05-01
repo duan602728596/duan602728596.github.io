@@ -114,8 +114,6 @@ function SvgAnimate(props) {
           id="background-text"
           x="50%"
           y="50%"
-          textAnchor="middle"
-          dominantBaseline="middle"
           fill="url(#linear_gradient_2)"
         >
           Button
