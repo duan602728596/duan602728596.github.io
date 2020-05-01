@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "rimraf .next && cross-env NODE_ENV=development next",
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
-    "export": "rimraf out && cross-env NODE_ENV=production next export",
+    "export": "rimraf out && cross-env NODE_ENV=production next export && node nojekyll.js",
     "server": "serve out",
     "eslint": "eslint ./ --fix"
   },
