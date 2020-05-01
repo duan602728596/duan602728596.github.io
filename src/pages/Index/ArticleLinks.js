@@ -14,7 +14,8 @@ const links = [
     title: '2020年10个有用的Web API (10-useful-web-apis-for-2020)',
     blank: true
   },
-  { href: '/article/static-resource-in-typescript', title: '如何在typescript内引入静态资源' }
+  { href: '/article/static-resource-in-typescript', title: '如何在typescript内引入静态资源' },
+  { href: '/article/linear-gradient-animate', title: '使用SVG，让渐变的背景也能动起来' }
 ];
 
 /* 文章链接列表 */
