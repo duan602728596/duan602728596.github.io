@@ -23,6 +23,7 @@ function separatorToCamelNaming(name) {
 
   return newName;
 }
+
 /* 将style转换成字符串 */
 function style2String(node, styleNames) {
   const css = window.getComputedStyle(node);
@@ -41,6 +42,7 @@ function style2String(node, styleNames) {
 
   return style.join(' ');
 }
+
 /* dom转字符串 */
 function html2Text(node) {
   let txt = '';
