@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { List } from 'antd';
 
+/* 项目信息 */
 const projectList = [
   {
     title: 'antd-schema-form',
@@ -22,7 +23,8 @@ const projectList = [
   {
     title: '48tools',
     href: 'https://github.com/duan602728596/48tools',
-    description: '48工具，提供公演、口袋直播录源，公演、口袋录播下载，B站直播抓取，B站视频下载， 摩点集资统计，视频截取，视频导出gif，视频合并等功能。'
+    description: '48工具，提供公演、口袋直播录源，公演、口袋录播下载，B站直播抓取，B站视频下载，摩点集资统计，视频截取，'
+      + '视频导出gif，视频合并等功能。'
   },
   {
     title: 'qqtools',
