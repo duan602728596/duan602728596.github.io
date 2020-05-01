@@ -1,5 +1,6 @@
 const process = require('process');
 const withSass = require('@zeit/next-sass');
+const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -14,6 +15,8 @@ const nextConfig = withSass({
         react: 'preact/compat',
         'react-dom': 'preact/compat'
       });
+
+      config.plugins.push(new OptimizeCssAssets());
     }
 
     // loader
