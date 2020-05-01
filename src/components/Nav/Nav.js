@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout } from 'antd';
-import Link from 'next/link';
 import style from './nav.sass';
 
 /* 导航地址 */
@@ -16,9 +15,7 @@ function Nav(props) {
     return navs.map((item, index) => {
       return (
         <li key={ item.href } className={ style.navListItem }>
-          <Link href={ item.href }>
-            <a>{ item.title }</a>
-          </Link>
+          <a href={ item.href }>{ item.title }</a>
         </li>
       );
     });

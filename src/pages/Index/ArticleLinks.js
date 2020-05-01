@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { List } from 'antd';
 import style from './articleLinks.sass';
 
@@ -29,9 +28,7 @@ function ArticleLinks(props) {
             item.blank ? (
               <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
             ) : (
-              <Link href={ item.href }>
-                <a>{ item.title }</a>
-              </Link>
+              <a href={ item.href }>{ item.title }</a>
             )
           }
         </List.Item>
