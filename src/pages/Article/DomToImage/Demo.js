@@ -86,8 +86,6 @@ function Demo(props) {
           </foreignObject>
         </svg>`;
 
-    console.log(html);
-
     const svg = new Blob(html.split(''), {
       type: 'image/svg+xml;charset=utf-8'
     });
