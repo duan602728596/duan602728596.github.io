@@ -34,8 +34,6 @@ function Article(props) {
         可以看到，开始时执行了三个任务；每当有任务执行完毕，就会执行下一个任务。这样就满足了并行执行队列内的任务的需求。
       </Paragraph>
       {/* 代码演示 */}
-      <Title level={ 2 }>代码演示</Title>
-      <Paragraph>共有6个任务，每个任务过一定时间后完成。任务执行完成后执行下一个任务，最多有3个任务在执行。</Paragraph>
       <Demo />
     </Fragment>
   );

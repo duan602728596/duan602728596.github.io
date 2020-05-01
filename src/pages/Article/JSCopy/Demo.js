@@ -1,5 +1,6 @@
 import React, { Fragment, useRef } from 'react';
 import { Typography, Button, Input, message } from 'antd';
+import { CopyOutlined as IconCopyOutlined } from '@ant-design/icons';
 import style from './demo.sass';
 
 const { Title, Paragraph, Text } = Typography;
@@ -47,7 +48,7 @@ function Demo(props) {
       <div className={ style.btnBox }>
         <Button.Group>
           <Button onClick={ handleCopyInputValueClick }>复制文本框内的文本</Button>
-          <Button type="primary" onClick={ handleCopyTextClick }>复制文字</Button>
+          <Button type="primary" icon={ <IconCopyOutlined /> } onClick={ handleCopyTextClick }>复制文字</Button>
         </Button.Group>
       </div>
     </Fragment>

@@ -22,6 +22,7 @@ function JSCopy(props) {
         <HighLight type="javascript">{ copyExample }</HighLight>
         <Paragraph>当element为表单控件时，代码可以简化成：</Paragraph>
         <HighLight type="javascript">{ copyFormControls }</HighLight>
+        {/* 代码演示 */}
         <Demo />
       </Main>
     </Fragment>

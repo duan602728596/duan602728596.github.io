@@ -1,0 +1,13 @@
+/* 如何转换成图片 */
+const html = `
+  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+      <div xmlns="http://www.w3.org/1999/xhtml">Hello, world!</div>
+    </foreignObject>
+  </svg>`;
+
+const svg = new Blob(html.split(''), {
+  type: 'image/svg+xml;charset=utf-8'
+});
+
+const url = window.URL.createObjectURL(svg); // 生成的图片地址

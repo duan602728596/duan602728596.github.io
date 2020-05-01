@@ -5,7 +5,8 @@ import { List } from 'antd';
 /* 列表配置 */
 const links = [
   { href: '/article/queue-in-js', title: '用JS实现多个任务并行执行的队列' },
-  { href: '/article/js-copy', title: 'Javascript实现复制功能' }
+  { href: '/article/js-copy', title: 'Javascript实现复制功能' },
+  { href: '/article/dom-to-image', title: '用Javascript将DOM绘制成图片' }
 ];
 
 /* 文章链接列表 */

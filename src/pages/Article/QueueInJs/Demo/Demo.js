@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import { Button, Table, Tag } from 'antd';
+import { Button, Table, Tag, Typography } from 'antd';
 import style from './demo.sass';
 import Queue from './Queue';
 
+const { Title, Paragraph } = Typography;
 const queue = new Queue();
 
 /* 代码演示 */
@@ -115,6 +116,8 @@ function Demo(props) {
 
   return (
     <Fragment>
+      <Title level={ 2 }>代码演示</Title>
+      <Paragraph>共有6个任务，每个任务过一定时间后完成。任务执行完成后执行下一个任务，最多有3个任务在执行。</Paragraph>
       <div className={ style.tools }>
         {
           displayReset
