@@ -1,12 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { List } from 'antd';
+import style from './articleLinks.sass';
 
 /* 列表配置 */
 const links = [
   { href: '/article/queue-in-js', title: '用JS实现多个任务并行执行的队列' },
   { href: '/article/js-copy', title: 'Javascript实现复制功能' },
-  { href: '/article/dom-to-image', title: '用Javascript将DOM绘制成图片' }
+  { href: '/article/dom-to-image', title: '用Javascript将DOM绘制成图片' },
+  { href: 'article/solar-system', title: '基于Three.js + wasm开发的太阳系动画' },
+  {
+    href: 'https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5',
+    title: '2020年10个有用的Web API (10-useful-web-apis-for-2020)',
+    blank: true
+  }
 ];
 
 /* 文章链接列表 */
@@ -15,10 +22,16 @@ function ArticleLinks(props) {
   function linksRender() {
     return links.map((item, index) => {
       return (
-        <List.Item key={ item.href }>
-          <Link href={ item.href }>
-            <a>{ item.title }</a>
-          </Link>
+        <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
+          {
+            item.blank ? (
+              <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
+            ) : (
+              <Link href={ item.href }>
+                <a>{ item.title }</a>
+              </Link>
+            )
+          }
         </List.Item>
       );
     });

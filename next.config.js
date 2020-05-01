@@ -11,6 +11,7 @@ module.exports = withSass({
     localIdentName: isDev ? '[path][name]__[local]___[hash:base64:6]' : '_[hash:base64:6]'
   },
   webpack(config, options) {
+    // loader
     const { rules } = config.module;
     const { use } = rules[rules.length - 1];
     const loaders = options.isServer
