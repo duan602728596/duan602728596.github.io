@@ -10,13 +10,11 @@ const nextConfig = withSass({
     localIdentName: isDev ? '[path][name]__[local]___[hash:base64:6]' : '_[hash:base64:6]'
   },
   webpack(config, options) {
-    Object.assign(config.resolve.alias, {
-      react: 'preact/compat',
-      'react-dom': 'preact/compat'
-    });
-
     if (!isDev) {
-
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom': 'preact/compat'
+      });
 
       config.plugins.push(new OptimizeCssAssets());
     }
