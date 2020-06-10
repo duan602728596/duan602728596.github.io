@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="renderer" content="webkit"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><link rel="shortcut icon" href="/images/favicon.ico"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><title>如何使用css和js来固定table的表头</title><meta name="keywords" content="css, javascript"/><meta name="description" content="如何使用css和js来固定table的表头"/><link rel="stylesheet" href="/styles/github-gist.css"/><meta name="next-head-count" content="12"/><link rel="preload" href="/_next/static/css/static/4XRRq_HAoNqEP-txctqB7/pages/_app.js.568cdd08.chunk.css" as="style"/><link rel="stylesheet" href="/_next/static/css/static/4XRRq_HAoNqEP-txctqB7/pages/_app.js.568cdd08.chunk.css"/><link rel="preload" href="/_next/static/css/70c5da920b26d7a8e15eb279b2001a4afd3db448_CSS.ba4bbb1f.chunk.css" as="style"/><link rel="stylesheet" href="/_next/static/css/70c5da920b26d7a8e15eb279b2001a4afd3db448_CSS.ba4bbb1f.chunk.css"/><link rel="preload" href="/_next/static/css/5998ec0ba41334a3739d671dbcabe457399a1bfe_CSS.fcb42df2.chunk.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5998ec0ba41334a3739d671dbcabe457399a1bfe_CSS.fcb42df2.chunk.css"/><link rel="preload" href="/_next/static/css/styles.bbf75fc2.chunk.css" as="style"/><link rel="stylesheet" href="/_next/static/css/styles.bbf75fc2.chunk.css"/><link rel="preload" href="/_next/static/4XRRq_HAoNqEP-txctqB7/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/4XRRq_HAoNqEP-txctqB7/pages/article/table-fixed-header.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-83bd83ab777f80a6c75c.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.6d6bf74d2db423dd35e8.js" as="script"/><link rel="preload" href="/_next/static/chunks/1e8698fd3a8b56a25d5ce4c47954c1d190b83bc2.5bb019236f5710781e01.js" as="script"/><link rel="preload" href="/_next/static/chunks/c14ba4bfffd75fb1e01716cae0536031c2ba9858.7c5308416790f2b9a650.js" as="script"/><link rel="preload" href="/_next/static/chunks/f9710f1338b71ee1c37541431adbceb6e5ae36f4.64ce3b9b3f12f02d1601.js" as="script"/><link rel="preload" href="/_next/static/chunks/83750bf63a9cfbba614ea4f98ea21ec8b9a74d74.d62667b17918e53466be.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-630eaf85edfa4b43eb0b.js" as="script"/><link rel="preload" href="/_next/static/chunks/70c5da920b26d7a8e15eb279b2001a4afd3db448.306d1f1845b8e0ed0a4c.js" as="script"/><link rel="preload" href="/_next/static/chunks/70c5da920b26d7a8e15eb279b2001a4afd3db448_CSS.e05b9cac0aab3e16d0b1.js" as="script"/><link rel="preload" href="/_next/static/chunks/5998ec0ba41334a3739d671dbcabe457399a1bfe.3f15444aea24bc56498e.js" as="script"/><link rel="preload" href="/_next/static/chunks/5998ec0ba41334a3739d671dbcabe457399a1bfe_CSS.ae226c74e10a6a4b10b8.js" as="script"/><link rel="preload" href="/_next/static/chunks/f5e93e419510b88bfc87419560af65ceb12307f8.8ef8b2a5f98b0c5e253c.js" as="script"/><link rel="preload" href="/_next/static/chunks/styles.e00c2704b9b8e38a459d.js" as="script"/></head><body><div id="__next"><header class="ant-layout-header _xmbW7x"><div class="_1mko77"><nav class="_2bQYyT"><ul class="_3r0ti3"><li class="_2DnmSn"><a href="/">文章</a></li><li class="_2DnmSn"><a href="/project">开源项目</a></li></ul></nav><div class="_2-KA_v"><a class="_1fD1RQ" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><img class="_1sylsn" src="/images/github.png" alt="github"/></a></div></div></header><div class="_G__ojM"><h1 class="ant-typography">如何使用css和js来固定table的表头</h1><div class="ant-typography">一个简单的Demo来实现固定table的表头。</div><h2 class="ant-typography">代码演示</h2><div class="_3NcvM2"><table class="_2vTnCF"><thead class="_2fFtMW"><tr><th>表头1</th><th>表头2</th><th>表头3</th></tr></thead><tbody><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr><tr><td>数据1</td><td>数据2</td><td>数据3</td></tr></tbody></table></div><h2 class="ant-typography">代码实现</h2><div class="_2LzL0z"><pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;style&gt;
+    .layout {
+      width: 300px;
+      height: 130px;
+      overflow: auto;
+    }
+
+    .table {
+      width: 100%;
+      border-left: 1px solid #1890ff;
+      border-collapse: separate; /* 保证设置了translate3d后，td的border不会消失 */
+      border-spacing: 0;
+    }
+
+    .table th, .table td {
+      border-right: 1px solid #1890ff;
+      border-bottom: 1px solid #1890ff;
+      padding: 5px 8px;
+    }
+
+    .table th {
+      border-top: 1px solid #1890ff;
+    }
+
+    .thead {
+      transform-style: preserve-3d;
+    }
+
+    .thead tr {
+      background-color: #ffe58f;
+      transform: translate3d(0, 0, 3px); /* z轴保证类似z-index的图层设置 */
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;layout&quot; id=&quot;layout&quot;&gt;
+  &lt;table class=&quot;table&quot;&gt;
+    &lt;thead class=&quot;thead&quot;&gt;
+      &lt;tr id=&quot;theadTr&quot;&gt;
+        &lt;th&gt;表头1&lt;/th&gt;
+        &lt;th&gt;表头2&lt;/th&gt;
+        &lt;th&gt;表头3&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;数据1&lt;/td&gt;
+        &lt;td&gt;数据2&lt;/td&gt;
+        &lt;td&gt;数据3&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  const layout = document.getElementById(&#x27;layout&#x27;);
+  const theadTr = document.getElementById(&#x27;theadTr&#x27;);
+
+  function handleLayoutScroll(event) {
+    theadTr.style.transform = `translate3d(0, ${ event.target.scrollTop }px, 3px)`;
+  }
+
+  layout.addEventListener(&#x27;scroll&#x27;, handleLayoutScroll, false);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/table-fixed-header","query":{},"buildId":"4XRRq_HAoNqEP-txctqB7","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/runtime/polyfills-d4f5125ac451f7d9b26b.js"></script><script async="" data-next-page="/_app" src="/_next/static/4XRRq_HAoNqEP-txctqB7/pages/_app.js"></script><script async="" data-next-page="/article/table-fixed-header" src="/_next/static/4XRRq_HAoNqEP-txctqB7/pages/article/table-fixed-header.js"></script><script src="/_next/static/runtime/webpack-83bd83ab777f80a6c75c.js" async=""></script><script src="/_next/static/chunks/commons.6d6bf74d2db423dd35e8.js" async=""></script><script src="/_next/static/chunks/1e8698fd3a8b56a25d5ce4c47954c1d190b83bc2.5bb019236f5710781e01.js" async=""></script><script src="/_next/static/chunks/c14ba4bfffd75fb1e01716cae0536031c2ba9858.7c5308416790f2b9a650.js" async=""></script><script src="/_next/static/chunks/f9710f1338b71ee1c37541431adbceb6e5ae36f4.64ce3b9b3f12f02d1601.js" async=""></script><script src="/_next/static/chunks/83750bf63a9cfbba614ea4f98ea21ec8b9a74d74.d62667b17918e53466be.js" async=""></script><script src="/_next/static/runtime/main-630eaf85edfa4b43eb0b.js" async=""></script><script src="/_next/static/chunks/70c5da920b26d7a8e15eb279b2001a4afd3db448.306d1f1845b8e0ed0a4c.js" async=""></script><script src="/_next/static/chunks/70c5da920b26d7a8e15eb279b2001a4afd3db448_CSS.e05b9cac0aab3e16d0b1.js" async=""></script><script src="/_next/static/chunks/5998ec0ba41334a3739d671dbcabe457399a1bfe.3f15444aea24bc56498e.js" async=""></script><script src="/_next/static/chunks/5998ec0ba41334a3739d671dbcabe457399a1bfe_CSS.ae226c74e10a6a4b10b8.js" async=""></script><script src="/_next/static/chunks/f5e93e419510b88bfc87419560af65ceb12307f8.8ef8b2a5f98b0c5e253c.js" async=""></script><script src="/_next/static/chunks/styles.e00c2704b9b8e38a459d.js" async=""></script><script src="/_next/static/4XRRq_HAoNqEP-txctqB7/_buildManifest.js" async=""></script><script src="/_next/static/4XRRq_HAoNqEP-txctqB7/_ssgManifest.js" async=""></script></body></html>
