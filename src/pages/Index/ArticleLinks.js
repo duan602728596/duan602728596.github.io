@@ -14,7 +14,8 @@ const links = [
     blank: true
   },
   { href: '/article/static-resource-in-typescript', title: '如何在typescript内引入静态资源' },
-  { href: '/article/linear-gradient-animate', title: '使用SVG，让渐变的背景也能动起来' }
+  { href: '/article/linear-gradient-animate', title: '使用SVG，让渐变的背景也能动起来' },
+  { href: '/article/table-fixed-header', title: '如何使用css和js来固定table的表头' }
 ];
 
 /* 文章链接列表 */
