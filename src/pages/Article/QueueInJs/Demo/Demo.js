@@ -83,17 +83,6 @@ function Demo(props) {
     return completedList.map((o, i) => <Tag key={ o } color={ i % 2 === 0 ? 'magenta' : 'purple' }>任务{ o }</Tag>);
   }
 
-  // 重新定义td的渲染方法，修复在preact中的渲染错误
-  const tableComponents = {
-    body: {
-      cell(item) {
-        const { className, children } = item;
-
-        return <td className={ className }>{ children }</td>;
-      }
-    }
-  };
-
   const columns = [
     {
       title: '任务ID',
@@ -136,7 +125,6 @@ function Demo(props) {
         }
       </div>
       <Table size="middle"
-        components={ tableComponents }
         bordered={ true }
         columns={ columns }
         dataSource={ tasks }
