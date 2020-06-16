@@ -3,12 +3,18 @@
   z-index: 5
   top: 0
   margin-bottom: 16px
+  padding: 0 !important
 
 .header
   display: flex
   margin: 0 auto
   width: 800px
   height: 100%
+
+@media (max-width: 800px)
+  .header
+    width: 100%
+    padding: 0 16px
 
 .headerLeft, .headerRight
   flex-shrink: 0
