@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import TableFixedHeader from '../../src/pages/Article/TableFixedHeader/TableFixedHeader';
 
-export default function(props) {
+export default function TableFixedHeaderPage(props) {
   return (
     <Fragment>
       <Head>

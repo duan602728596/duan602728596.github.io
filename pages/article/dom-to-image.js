@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import DomToImage from '../../src/pages/Article/DomToImage/DomToImage';
 
-export default function(props) {
+export default function DomToImagePage(props) {
   return (
     <Fragment>
       <Head>

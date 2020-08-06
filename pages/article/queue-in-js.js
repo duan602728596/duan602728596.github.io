@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import QueueInJs from '../../src/pages/Article/QueueInJs/QueueInJs';
 
-export default function(props) {
+export default function QueueInJsPage(props) {
   return (
     <Fragment>
       <Head>

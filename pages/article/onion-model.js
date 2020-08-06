@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import OnionModel from '../../src/pages/Article/OnionModel/OnionModel';
 
-export default function(props) {
+export default function OnionModelPage(props) {
   return (
     <Fragment>
       <Head>

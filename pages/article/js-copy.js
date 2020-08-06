@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import JSCopy from '../../src/pages/Article/JSCopy/JSCopy';
 
-export default function(props) {
+export default function JSCopyPage(props) {
   return (
     <Fragment>
       <Head>

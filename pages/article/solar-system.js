@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import SolarSystem from '../../src/pages/Article/SolarSystem/SolarSystem';
 
-export default function(props) {
+export default function SolarSystemPage(props) {
   return (
     <Fragment>
       <Head>

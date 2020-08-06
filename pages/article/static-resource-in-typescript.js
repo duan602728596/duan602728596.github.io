@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import StaticResourceInTypescript from '../../src/pages/Article/StaticResourceInTypescript/StaticResourceInTypescript';
 
-export default function(props) {
+export default function StaticResourceInTypescriptPage(props) {
   return (
     <Fragment>
       <Head>
