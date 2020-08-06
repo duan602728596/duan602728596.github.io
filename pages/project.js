@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
-import Index from '../src/pages/Project/Index';
+import Index from '../src/pages/Project/index';
 
 export default function(props) {
   return (
