@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 
-export default function(props) {
+export default function App(props) {
   const { Component, pageProps } = props;
 
   return (
