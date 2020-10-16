@@ -4,7 +4,7 @@ class App {
     this.state = {}; // 挂载的其他状态
   }
   
-  // 讲方法添加到队列
+  // 将方法添加到队列
   use(...taskFunc) {
     this.tasks.push(...taskFunc);
   }
