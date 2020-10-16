@@ -1,0 +1,8 @@
+// 异步函数
+const { constructor: AsyncFunction } = Object.getPrototypeOf(async function(){});
+
+// 浏览器内运行 await func(12)
+// 返回 12
+// 浏览器内运行 func(12)
+// 返回Promise
+const func = new AsyncFunction('arg', 'return await arg;');

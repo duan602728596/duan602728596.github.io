@@ -16,7 +16,8 @@ const links = [
   { href: '/article/static-resource-in-typescript', title: '如何在typescript内引入静态资源' },
   { href: '/article/linear-gradient-animate', title: '使用SVG，让渐变的背景也能动起来' },
   { href: '/article/table-fixed-header', title: '如何使用css和js来固定table的表头' },
-  { href: '/article/onion-model', title: '洋葱模型的简单实现' }
+  { href: '/article/onion-model', title: '洋葱模型的简单实现' },
+  { href: '/article/how-to-create-async-function', title: '如何通过类似"new Function"创建异步函数' }
 ];
 
 /* 文章链接列表 */
