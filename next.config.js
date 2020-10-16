@@ -3,7 +3,6 @@ const withSass = require('@zeit/next-sass');
 const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
-const isPreact = process.env.PREACT === '1';
 
 const nextConfig = withSass({
   cssModules: true,
@@ -11,14 +10,6 @@ const nextConfig = withSass({
     localIdentName: isDev ? '[path][name]__[local]___[hash:base64:6]' : '_[hash:base64:6]'
   },
   webpack(config, options) {
-    // preact
-    if (!isDev || isPreact) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom': 'preact/compat'
-      });
-    }
-
     // loader
     const { rules } = config.module;
     const { use } = rules[rules.length - 1];

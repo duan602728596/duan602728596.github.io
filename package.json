@@ -1,7 +1,6 @@
 {
   "scripts": {
     "dev": "rimraf .next && cross-env NODE_ENV=development next",
-    "dev:preact": "rimraf .next && cross-env NODE_ENV=development PREACT=1 next",
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
     "export": "rimraf out && cross-env NODE_ENV=production next export && node nojekyll.js",
     "server": "serve out",
@@ -13,7 +12,6 @@
     "antd": "^4.7.0",
     "highlight.js": "^10.2.1",
     "next": "^9.5.5",
-    "preact": "^10.5.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.0-rc.3",
     "react-dom": "^17.0.0-rc.3",
