@@ -1,6 +1,6 @@
 const process = require('process');
 const withSass = require('@zeit/next-sass');
-const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -55,8 +55,7 @@ const nextConfig = withSass({
     }
 
     if (!isDev) {
-      // plugins
-      config.plugins.push(new OptimizeCssAssets());
+      config.optimization.minimizer[1] = new CssMinimizerPlugin();
     }
 
     return config;
