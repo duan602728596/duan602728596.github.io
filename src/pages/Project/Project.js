@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { List } from 'antd';
 
 /* 项目信息 */

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Head from 'next/head';
 import LinearGradientAnimate from '../../src/pages/Article/LinearGradientAnimate/LinearGradientAnimate';
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import hljs from 'highlight.js/lib/core';

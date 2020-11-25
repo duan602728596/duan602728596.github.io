@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Head from 'next/head';
 import QueueInJs from '../../src/pages/Article/QueueInJs/QueueInJs';
 

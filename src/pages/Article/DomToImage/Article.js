@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { Typography } from 'antd';
 import HighLight from '../../../components/HighLight/HighLight';
 import Demo from './Demo';

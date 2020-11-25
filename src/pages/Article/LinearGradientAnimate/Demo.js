@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { Typography } from 'antd';
 import style from './demo.sass';
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';

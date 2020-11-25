@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { Typography, Button, Input, message } from 'antd';
 import { CopyOutlined as IconCopyOutlined } from '@ant-design/icons';
 import style from './demo.sass';

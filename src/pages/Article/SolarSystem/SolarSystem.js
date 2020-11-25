@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { Typography, Button } from 'antd';
 import style from './solarSystem.sass';
 import Nav from '../../../components/Nav/Nav';

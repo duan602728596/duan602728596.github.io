@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Typography, Empty, Button } from 'antd';
 import { FileImageFilled as IconFileImageFilled } from '@ant-design/icons';
 import style from './demo.sass';

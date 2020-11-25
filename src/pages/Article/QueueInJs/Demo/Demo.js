@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Table, Tag, Typography } from 'antd';
 import style from './demo.sass';
 import Queue from './Queue';
