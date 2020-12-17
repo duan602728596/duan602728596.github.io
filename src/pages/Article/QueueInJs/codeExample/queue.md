@@ -24,7 +24,7 @@ class Queue {
 
   /**
    * 添加到任务队列
-   * @param { Array<object> } list: 任务队列
+   * @param { Array<any[]> } list: 任务队列
    */
   addList(list) {
     for (const item of list) {
