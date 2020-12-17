@@ -16,7 +16,7 @@ class App {
   
   // 创建洋葱模型
   createNext(i, max) {
-    return () => {
+    return async () => {
       return await this.tasks[i](
         this.state,
         i === max ? this.do : this.createNext(i + 1, max) // next
