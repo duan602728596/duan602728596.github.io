@@ -1,7 +1,6 @@
 class App {
   constructor() {
     this.tasks = []; // 执行的方法队列
-    this.state = {}; // 挂载的其他状态
   }
   
   // 将方法添加到队列
@@ -15,17 +14,17 @@ class App {
   }
   
   // 创建洋葱模型
-  createNext(i, max) {
+  createNext(ctx, i) {
     return async () => {
       return await this.tasks[i](
-        this.state,
-        i === max ? this.do : this.createNext(i + 1, max) // next
+        ctx,
+        i === (this.tasks.length - 1) ? this.do(ctx) : this.createNext(ctx, i + 1) // next
       );
     };
   }
   
   // 执行方法
-  async run() {
-    await this.createNext(0, this.tasks.length - 1)();
+  async run(ctx) {
+    await this.createNext(Object.assign({}, ctx), 0)();
   }
 }
