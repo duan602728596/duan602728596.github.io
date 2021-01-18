@@ -18,7 +18,7 @@ class App {
     return async () => {
       return await this.tasks[i](
         ctx,
-        i === (this.tasks.length - 1) ? this.do(ctx) : this.createNext(ctx, i + 1) // next
+        i === (this.tasks.length - 1) ? this.do(ctx) : this.createNext(ctx, i + 1)
       );
     };
   }
