@@ -15,12 +15,14 @@ class App {
   
   // 创建洋葱模型
   createNext(ctx, i) {
-    return async () => {
-      return await this.tasks[i](
-        ctx,
-        i === (this.tasks.length - 1) ? this.do(ctx) : this.createNext(ctx, i + 1)
-      );
-    };
+
+    if (i === this.tasks.length) {
+      return this.do;
+    } else {
+      return async () => {
+        return await this.tasks[i](ctx, this.dispatch(ctx, i + 1));
+      };
+    }
   }
   
   // 执行方法
