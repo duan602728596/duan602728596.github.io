@@ -9,14 +9,17 @@ class App {
   }
   
   // 最中心执行的函数
-  do() {
-    console.log('do');
+  // 最中心执行的函数
+  do(ctx): Function {
+    return async (): Promise<void> => {
+      console.log('do');
+    };
   }
   
   // 创建洋葱模型
   createNext(ctx, i) {
     if (i === this.tasks.length) {
-      return this.do;
+      return this.do(ctx);
     } else {
       return async () => {
         return await this.tasks[i](ctx, this.dispatch(ctx, i + 1));
