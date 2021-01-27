@@ -9,7 +9,6 @@ class App {
   }
   
   // 最中心执行的函数
-  // 最中心执行的函数
   do(ctx): Function {
     return async (): Promise<void> => {
       console.log('do');
