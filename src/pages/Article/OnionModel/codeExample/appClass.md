@@ -15,7 +15,6 @@ class App {
   
   // 创建洋葱模型
   createNext(ctx, i) {
-
     if (i === this.tasks.length) {
       return this.do;
     } else {
