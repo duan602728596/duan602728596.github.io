@@ -12,7 +12,7 @@ module.exports = function(api) {
   }
 
   return {
-    presets: ['next/babel'],
+    presets: ['@sweet-milktea/babel-preset-sweet'],
     plugins
   };
 };
