@@ -3,29 +3,27 @@
   "scripts": {
     "start": "gulp",
     "build:dev": "GOOS=js GOARCH=wasm go build -o example/solar-system.wasm",
-    "build": "rimraf dist && GOOS=js GOARCH=wasm go build -o dist/solar-system.wasm"
+    "build": "rimraf dist && GOOS=js GOARCH=wasm go build -o dist/solar-system.wasm",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
-    "three": "^0.113.2"
+    "three": "^0.127.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "chalk": "^3.0.0",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.1.0",
-    "eslint": "^7.0.0-alpha.1",
+    "@babel/core": "^7.13.15",
+    "@babel/eslint-parser": "^7.13.14",
+    "chalk": "^4.1.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.23.2",
     "gulp": "^4.0.2",
-    "gulp-memory-fs": "^0.4.0",
+    "gulp-memory-fs": "^2.0.0",
     "gulp-plumber": "^1.2.1",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
     "rimraf": "^3.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "**/*.{js,jsx}": "eslint"
