@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "rimraf .next && cross-env NODE_ENV=development next",
+    "dev": "rimraf .next && cross-env NODE_ENV=development next -p 5047",
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
     "export": "rimraf out && cross-env NODE_ENV=production next export && node nojekyll.js",
-    "server": "serve out",
+    "server": "serve out -p 5048",
     "eslint": "eslint ./ --fix",
     "updateVersion": "milktea update",
     "prepare": "husky install"
