@@ -2,38 +2,30 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ ghpages ]
+    branches:
+      - ghpages
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v2
-      with:
-        path: ghpages
-        persist-credentials: false
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: ghpages
+          persist-credentials: false
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - run: yarn install --ignore-scripts
+      - run: npm run build
+      - run: npm run export
+      - run: node nojekyll.js
 
-    - run: cd /home/runner/work/duan602728596.github.io/duan602728596.github.io
-    - run: yarn install --ignore-scripts
-    - run: npm run build
-    - run: npm run export
-    - run: node nojekyll.js
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: master
-        folder: out
-        silent: true
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          folder: out
+          silent: true
