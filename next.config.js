@@ -106,8 +106,8 @@ module.exports = function() {
       // css
       config.plugins.push(
         new MiniCssExtractPlugin({
-          filename: '[name]_[chunkhash:15].css',
-          chunkFilename: '[name]_[chunkhash:15].css',
+          filename: 'static/css/[name]_[chunkhash:15].css',
+          chunkFilename: 'static/css/[name]_[chunkhash:15].css',
           ignoreOrder: true
         })
       );
