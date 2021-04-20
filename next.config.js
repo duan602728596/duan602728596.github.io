@@ -5,6 +5,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig = withSass({
+  future: {
+    webpack5: true
+  },
   cssModules: true,
   cssLoaderOptions: {
     localIdentName: isDev ? '[path][name]__[local]___[hash:base64:6]' : '_[hash:base64:6]'
@@ -40,17 +43,12 @@ const nextConfig = withSass({
       // antd
       const externalsFunc = config.externals[config.externals.length - 1];
 
-      config.externals[config.externals.length - 1] = function(context, request, callback) {
-        if (/(antd|rc-|css-animation|@ant-design|highlight)/i.test(request)) {
+      config.externals[config.externals.length - 1] = function(ctx, callback) {
+        if (/(antd|rc-|css-animation|@ant-design|highlight)/i.test(ctx.request)) {
           return callback();
         }
 
-        return externalsFunc(context, request, callback);
-      };
-    } else {
-      config.node = {
-        fs: 'empty',
-        path: 'empty'
+        return externalsFunc(ctx, callback);
       };
     }
 
