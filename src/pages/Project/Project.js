@@ -32,7 +32,7 @@ const projectList = [
     href: 'https://github.com/duan602728596/qqtools',
     description: (
       <Fragment>
-        <p>QQ群工具，提供摩点监听，48系成员直播监听，48系成员信息监听，微博监听，群成员自动欢迎等功能。</p>
+        <p>QQ群工具，提供48系成员直播监听，48系成员信息监听，微博监听，B站直播监听，群成员自动欢迎等功能。</p>
         <b className={ style.linkTitle }>使用手册：</b>
         <a href="https://www.yuque.com/bbkkbkk/qqtools" target="_blank" rel="noopener noreferrer">
           https://www.yuque.com/bbkkbkk/qqtools
