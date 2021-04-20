@@ -4,6 +4,7 @@
     "start": "rimraf .babel-build-cache && cross-env NODE_ENV=development gulp",
     "build:dev": "GOOS=js GOARCH=wasm go build -o example/solar-system.wasm",
     "build": "rimraf dist && GOOS=js GOARCH=wasm go build -o dist/solar-system.wasm",
+    "build:tinygo": "rimraf dist && mkdir dist && tinygo build -o dist/solar-system.wasm -target=wasm",
     "prepare": "husky install"
   },
   "dependencies": {
