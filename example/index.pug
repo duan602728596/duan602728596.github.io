@@ -1,0 +1,15 @@
+- var style = css('index')
+
+doctype html
+html
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet' href='index.css')
+body
+  div(class=style.box)
+    div(class=style.solar)#solar
+    button#btn 全屏
+  script(src='statics/wasm_exec.js')
+  script(src='statics/three.js')
+  script(src='statics/OrbitControls.js')
+  script(src='index.js')

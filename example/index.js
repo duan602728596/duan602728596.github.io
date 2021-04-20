@@ -1,8 +1,11 @@
 const go = new Go();
+const solar = document.getElementById('solar');
+const btn = document.getElementById('btn');
 
 globalThis.__SOLAR_SYSTEM__ = {};
 
-async function main() {
+/* 初始化wasm */
+async function wasmInit() {
   const result = await WebAssembly.instantiateStreaming(fetch('solar-system.wasm'), go.importObject);
 
   go.run(result.instance);
@@ -60,12 +63,13 @@ async function main() {
   };
 
   solarSystem.SolarSystem(THREE, 'solar', options);
-
-  const $solar = $('#solar')[0];
-
-  $('#btn').on('click', function(event) {
-    $solar.requestFullscreen();
-  });
 }
 
-main();
+wasmInit();
+
+/* 全屏 */
+function handleFullscreen(event) {
+  solar.requestFullscreen();
+}
+
+btn.addEventListener('click', handleFullscreen, false);

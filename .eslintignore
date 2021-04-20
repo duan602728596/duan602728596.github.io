@@ -3,7 +3,4 @@ node_modules
 
 # build
 dist
-
-example/script/wasm_exec.js
-example/script/three.js
-example/script/OrbitControls.js
+example/statics

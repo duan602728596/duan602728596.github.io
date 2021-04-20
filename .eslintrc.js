@@ -21,6 +21,10 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['import'],
+  globals: {
+    Go: 'readonly',
+    THREE: 'readonly'
+  },
   overrides: [
     {
       files: ['*.js', '*.jsx'],

@@ -13,5 +13,7 @@ yarn-error.log
 # build
 dist
 example/*.wasm
+.babel-build-cache
+*.css.json
 
 .DS_Store
