@@ -4,7 +4,11 @@ import { BackTop } from 'antd';
 import NoSSR from 'react-no-ssr';
 import style from './main.sass';
 
-/* 网站整体布局 */
+/**
+ * 网站整体布局
+ * @param { React.ReactNode } props.children: 子元素
+ * @param { boolean } props.goToTop: 显示返回顶部
+ */
 function Main(props) {
   function goToTopRender() {
     if (typeof document === 'object') {

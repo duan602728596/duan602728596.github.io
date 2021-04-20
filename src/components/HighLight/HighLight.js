@@ -13,7 +13,11 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('css', css);
 
-/* 代码高亮 */
+/**
+ * 代码高亮组件
+ * @param { string } props.type: 语言类型
+ * @param { React.ReactNode } props.children: 代码
+ */
 function HighLight(props) {
   const codeRef = useRef(null);
 
