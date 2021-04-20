@@ -59,7 +59,7 @@ declare module '*.webp' {
 }
 
 declare module '*.svg' {
-  import { FunctionComponent } from 'react';
+  import type { FunctionComponent } from 'react';
 
   const url: string;
 
