@@ -26,6 +26,10 @@ module.exports = {
       version: 'detect'
     }
   },
+  globals: {
+    Go: 'readonly',
+    THREE: 'readonly'
+  },
   overrides: [
     {
       files: ['*.js', '*.jsx'],

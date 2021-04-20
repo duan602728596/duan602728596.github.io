@@ -100,7 +100,12 @@ function SolarSystem(props) {
         <Title>基于Three.js + wasm开发的太阳系动画</Title>
         <Paragraph>
           太阳系动画。基于Three.js和wasm开发。
-          <a href="" target="_blank" rel="noopener noreferrer">（代码）</a>
+          <a href="https://github.com/duan602728596/duan602728596.github.io/tree/dev/solar-system"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            （代码）
+          </a>
         </Paragraph>
         <div className={ style.tools }>
           <Button type="primary" onClick={ handleRequestFullscreenClick }>全屏运行</Button>
