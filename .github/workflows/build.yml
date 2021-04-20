@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - run: cd duan602728596.github.io/duan602728596.github.io
     - run: yarn install --ignore-scripts
     - run: npm run build
     - run: npm run export
