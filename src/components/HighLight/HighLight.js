@@ -22,7 +22,7 @@ function HighLight(props) {
   const codeRef = useRef(null);
 
   useEffect(function() {
-    hljs.highlightBlock(codeRef.current);
+    hljs.highlightElement(codeRef.current);
   }, []);
 
   return (
