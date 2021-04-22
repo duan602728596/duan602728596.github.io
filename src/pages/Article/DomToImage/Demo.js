@@ -27,7 +27,7 @@ function separatorToCamelNaming(name) {
 /* 将style转换成字符串 */
 function style2String(node, styleNames) {
   const css = window.getComputedStyle(node);
-  const style = [];
+  const styleArr = [];
 
   for (const name of styleNames) {
     const fName = separatorToCamelNaming(name);
@@ -37,10 +37,10 @@ function style2String(node, styleNames) {
       value = value.replace(/"/g, '');
     }
 
-    style.push(`${ name }: ${ value };`);
+    styleArr.push(`${ name }: ${ value };`);
   }
 
-  return style.join(' ');
+  return styleArr.join(' ');
 }
 
 /* dom转字符串 */
@@ -49,12 +49,12 @@ function html2Text(node) {
 
   if (node.nodeName !== '#text') {
     const nodeName = node.nodeName.toLowerCase();
-    const style = style2String(node, [
+    const styleStr = style2String(node, [
       'box-sizing', 'padding', 'margin', 'width', 'height', 'font-size', 'font-family',
       'border-radius', 'color', 'text-align', 'background-color'
     ]);
 
-    txt += `<${ nodeName } style="${ style }">`;
+    txt += `<${ nodeName } style="${ styleStr }">`;
 
     if (!tags.includes(nodeName)) {
       // 子节点
