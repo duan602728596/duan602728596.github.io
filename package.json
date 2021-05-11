@@ -2,10 +2,10 @@
   "scripts": {
     "dev": "rimraf .next && cross-env NODE_ENV=development next -p 5047",
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
-    "export": "rimraf out && cross-env NODE_ENV=production next export && node nojekyll.js",
+    "export": "rimraf out && cross-env NODE_ENV=production next export && node nojekyll.mjs",
     "server": "serve out -p 5048",
     "eslint": "eslint ./ --fix",
-    "updateVersion": "milktea update",
+    "updateVersion": "milktea-esm update",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -48,7 +48,7 @@
     "style-loader": "^2.0.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": "eslint"
+    "**/*.{js,jsx,mjs,cjs}": "eslint"
   },
   "config": {
     "commitizen": {
