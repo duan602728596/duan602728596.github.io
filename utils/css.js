@@ -1,6 +1,5 @@
 const process = require('process');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Fiber = require('fibers');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -63,7 +62,7 @@ function sassLoader(config, options) {
       loader: 'sass-loader',
       options: {
         sassOptions: {
-          fiber: Fiber
+          fiber: false
         }
       }
     }

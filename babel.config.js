@@ -1,4 +1,5 @@
 const process = require('process');
+const babelPresetSweet = require('./utils/babel');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -12,7 +13,7 @@ module.exports = function(api) {
   }
 
   return {
-    presets: ['@sweet-milktea/babel-preset-sweet'],
+    presets: [babelPresetSweet],
     plugins
   };
 };
