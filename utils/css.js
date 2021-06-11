@@ -1,5 +1,5 @@
-import process from 'process';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const process = require('process');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -31,7 +31,7 @@ function cssLoader(config, options) {
 }
 
 /* 添加less-loader */
-export function lessLoader(config, options) {
+function lessLoader(config, options) {
   const use = [
     cssLoader(config, options),
     {
@@ -55,7 +55,7 @@ export function lessLoader(config, options) {
 }
 
 /* 添加sass-loader */
-export function sassLoader(config, options) {
+function sassLoader(config, options) {
   const use = [
     cssLoader(config, options),
     {
@@ -77,3 +77,6 @@ export function sassLoader(config, options) {
     use.unshift(isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader);
   }
 }
+
+exports.lessLoader = lessLoader;
+exports.sassLoader = sassLoader;

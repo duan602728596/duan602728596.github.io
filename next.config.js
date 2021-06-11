@@ -1,6 +1,7 @@
 const process = require('process');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { lessLoader, sassLoader } = require('./utils/css.js');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -9,9 +10,7 @@ module.exports = function() {
     future: {
       webpack5: true
     },
-    async webpack(config, options) {
-      const { lessLoader, sassLoader } = await import('./utils/css.mjs');
-
+    webpack(config, options) {
       config.module.rules.splice(2); // 移除已有的css配置
 
       // 文本文件处理
