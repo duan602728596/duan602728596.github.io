@@ -12,6 +12,8 @@ module.exports = function() {
     async webpack(config, options) {
       const { lessLoader, sassLoader } = await import('./utils/css.mjs');
 
+      config.module.rules.splice(2); // 移除已有的css配置
+
       // 文本文件处理
       config.module.rules.push({
         test: /.*\.md/,
