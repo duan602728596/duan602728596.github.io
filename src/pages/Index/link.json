@@ -19,6 +19,7 @@
       "title": "如何释放 MacBook 的磁盘空间 (macos-free-disk-space)",
       "blank": true
     },
-    { "href": "/article/number-is-timestamp", "title": "判断一串数字是有效的时间戳" }
+    { "href": "/article/number-is-timestamp", "title": "判断一串数字是有效的时间戳" },
+    { "href": "/article/css-img-centered", "title": "使用css让图片自适应居中" }
   ]
 }
