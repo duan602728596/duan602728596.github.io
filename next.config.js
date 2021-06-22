@@ -7,11 +7,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = function() {
   return {
-    future: {
-      webpack5: true
-    },
     webpack(config, options) {
-      config.module.rules.splice(2); // 移除已有的css配置
+      config.module.rules.pop(); // 移除已有的css配置
 
       // 文本文件处理
       config.module.rules.push({
