@@ -3,8 +3,8 @@ const babelPresetSweet = require('@sweet-milktea/babel-preset-sweet');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-module.exports = function(api1) {
-  api1.cache(true);
+module.exports = function(a) {
+  a.cache(true);
 
   const plugins = [['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }]];
 
