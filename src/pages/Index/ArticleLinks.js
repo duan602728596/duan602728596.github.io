@@ -1,12 +1,14 @@
+import PropTypes from 'prop-types';
 import { List } from 'antd';
 import style from './articleLinks.sass';
-import link from './link.json';
 
 /* 文章链接列表 */
 function ArticleLinks(props) {
+  const { data } = props;
+
   // 渲染列表
   function linksRender() {
-    return link.navLink.map((item, index) => {
+    return data.map((item, index) => {
       return (
         <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
           {
@@ -23,5 +25,9 @@ function ArticleLinks(props) {
 
   return <List bordered={ true }>{ linksRender() }</List>;
 }
+
+ArticleLinks.propTypes = {
+  data: PropTypes.array
+};
 
 export default ArticleLinks;

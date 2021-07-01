@@ -4,6 +4,7 @@ import style from './nav.sass';
 /* 导航地址 */
 const navs = [
   { href: '/', title: '文章' },
+  { href: '/favorites', title: '收藏夹' },
   { href: '/project', title: '开源项目' }
 ];
 
