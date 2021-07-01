@@ -28,7 +28,7 @@ function HighLight(props) {
   return (
     <Fragment>
       <Head>
-        <link rel="stylesheet" href="/styles/github-gist.css" />
+        <link rel="stylesheet" href="/styles/github.css" />
       </Head>
       <div className={ style.highLight }>
         <pre ref={ codeRef } className={ props?.type }>
