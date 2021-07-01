@@ -6,7 +6,7 @@ export default function IndexPage(props) {
   return (
     <Fragment>
       <Head>
-        <title>收藏夹</title>
+        <title>收藏夹 - 段昊辰的个人主页</title>
       </Head>
       <Index type="favorites" />
     </Fragment>
