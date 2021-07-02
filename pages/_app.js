@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { ConfigProvider } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
 
 export default function App(props) {
