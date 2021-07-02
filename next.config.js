@@ -13,7 +13,7 @@ module.exports = function() {
       // 文本文件处理
       config.module.rules.push({
         test: /.*\.md/,
-        use: ['raw-loader']
+        type: 'asset/source'
       });
 
       // antd
