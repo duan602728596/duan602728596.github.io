@@ -81,10 +81,10 @@ function Demo(props) {
   function handleToImageClick(event) {
     const toImageText = document.getElementById('toImageText');
     const html = `<svg xmlns="http://www.w3.org/2000/svg">
-          <foreignObject width="100%" height="100%">
-            <div xmlns="http://www.w3.org/1999/xhtml">${ html2Text(toImageText) }</div>
-          </foreignObject>
-        </svg>`;
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">${ html2Text(toImageText) }</div>
+  </foreignObject>
+</svg>`;
 
     const svg = new Blob(html.split(''), {
       type: 'image/svg+xml;charset=utf-8'
