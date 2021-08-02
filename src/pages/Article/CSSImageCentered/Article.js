@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Typography } from 'antd';
 import style from './article.sass';
 import HighLight from '../../../components/HighLight/HighLight';
+import Picture from '../../../components/Picture/Picture';
 
 const { Title, Paragraph } = Typography;
 
@@ -37,16 +38,18 @@ function Article(props) {
     <Fragment>
       <Title>使用css让图片自适应居中</Title>
       <Paragraph>通过CSS，让图片自适应居中，效果如下：</Paragraph>
-      <picture className={ style.picture }>
-        <source srcSet="/images/css-img-centered/css-img-centered-1.avif" type="image/avif" />
-        <source srcSet="/images/css-img-centered/css-img-centered-1.webp" type="image/webp" />
-        <img className={ style.image } src="/images/css-img-centered/css-img-centered-1.png" />
-      </picture>
-      <picture className={ style.picture }>
-        <source srcSet="/images/css-img-centered/css-img-centered-2.avif" type="image/avif" />
-        <source srcSet="/images/css-img-centered/css-img-centered-2.webp" type="image/webp" />
-        <img className={ style.image } src="/images/css-img-centered/css-img-centered-2.png" />
-      </picture>
+      <Picture className={ style.picture }
+        imageClassName={ style.image }
+        avifSrc="/images/css-img-centered/css-img-centered-1.avif"
+        webpSrc="/images/css-img-centered/css-img-centered-1.webp"
+        src="/images/css-img-centered/css-img-centered-1.png"
+      />
+      <Picture className={ style.picture }
+        imageClassName={ style.image }
+        avifSrc="/images/css-img-centered/css-img-centered-2.avif"
+        webpSrc="/images/css-img-centered/css-img-centered-2.webp"
+        src="/images/css-img-centered/css-img-centered-2.png"
+      />
       {/* 代码演示 */}
       <Title level={ 2 }>代码演示</Title>
       <Paragraph>实现这种特效有两种方式。</Paragraph>

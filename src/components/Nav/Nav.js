@@ -1,5 +1,6 @@
 import { Layout } from 'antd';
 import style from './nav.sass';
+import Picture from '../Picture/Picture';
 
 /* 导航地址 */
 const navs = [
@@ -33,7 +34,12 @@ function Nav(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img className={ style.githubImage } src="/images/github.png" alt="github" />
+            <Picture className={ style.githubImage }
+              imageClassName={ style.githubImage }
+              avifSrc="/images/github.avif"
+              webpSrc="/images/github.webp"
+              src="/images/github.png"
+            />
           </a>
         </div>
       </div>
