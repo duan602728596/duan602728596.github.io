@@ -39,6 +39,11 @@ const projectList = [
         </a>
       </Fragment>
     )
+  },
+  {
+    title: 'umi-plugin-redux-toolkit',
+    href: 'https://github.com/duan602728596/umi-plugin-redux-toolkit',
+    description: 'umi3的插件，使用@reduxjs/toolkit。'
   }
 ];
 
