@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import style from './index.sass';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
@@ -19,11 +20,21 @@ const linkObject = {
 function Index(props) {
   const { type = 'articles' } = props;
 
+  // 渲染文章列表
+  function articlesRender() {
+    return linkObject[type].map((item, index) => {
+      return [
+        <h1 key={ `${ item.title }-title` } className={ style.title }>{ item.title }</h1>,
+        <ArticleLinks key={ `${ item.title }-article` } data={ item.children } />
+      ];
+    });
+  }
+
   return (
     <Fragment>
       <Nav />
       <Main goToTop={ true }>
-        <ArticleLinks data={ linkObject[type] } />
+        { type === 'favorites' ? <ArticleLinks data={ linkObject[type] } /> : articlesRender() }
       </Main>
     </Fragment>
   );

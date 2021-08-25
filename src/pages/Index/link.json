@@ -1,16 +1,26 @@
 {
   "articles": [
-    { "href": "/article/queue-in-js", "title": "用JS实现多个任务并行执行的队列" },
-    { "href": "/article/js-copy", "title": "Javascript实现复制功能" },
-    { "href": "/article/dom-to-image", "title": "用Javascript将DOM绘制成图片" },
-    { "href": "/article/solar-system", "title": "基于Three.js + wasm开发的太阳系动画" },
-    { "href": "/article/static-resource-in-typescript", "title": "如何在typescript内引入静态资源" },
-    { "href": "/article/linear-gradient-animate", "title": "使用SVG，让渐变的背景也能动起来" },
-    { "href": "/article/onion-model", "title": "洋葱模型的简单实现" },
-    { "href": "/article/how-to-create-async-function", "title": "如何通过类似\"new Function\"创建异步函数" },
-    { "href": "/article/number-is-timestamp", "title": "判断一串数字是有效的时间戳" },
-    { "href": "/article/css-img-centered", "title": "使用css让图片自适应居中" },
-    { "href": "/article/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" }
+    {
+      "title": "前端开发",
+      "children": [
+        { "href": "/article/web/queue-in-js", "title": "用JS实现多个任务并行执行的队列" },
+        { "href": "/article/web/js-copy", "title": "Javascript实现复制功能" },
+        { "href": "/article/web/dom-to-image", "title": "用Javascript将DOM绘制成图片" },
+        { "href": "/article/web/solar-system", "title": "基于Three.js + wasm开发的太阳系动画" },
+        { "href": "/article/web/static-resource-in-typescript", "title": "如何在typescript内引入静态资源" },
+        { "href": "/article/web/linear-gradient-animate", "title": "使用SVG，让渐变的背景也能动起来" },
+        { "href": "/article/web/onion-model", "title": "洋葱模型的简单实现" },
+        { "href": "/article/web/how-to-create-async-function", "title": "如何通过类似\"new Function\"创建异步函数" },
+        { "href": "/article/web/number-is-timestamp", "title": "判断一串数字是有效的时间戳" },
+        { "href": "/article/web/css-img-centered", "title": "使用css让图片自适应居中" }
+      ]
+    },
+    {
+      "title": "Flutter",
+      "children": [
+        { "href": "/article/flutter/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" }
+      ]
+    }
   ],
   "favorites": [
     { "href": "https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5", "title": "2020年10个有用的Web API (10-useful-web-apis-for-2020)" },

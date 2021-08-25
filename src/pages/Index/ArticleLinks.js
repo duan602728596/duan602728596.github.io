@@ -12,18 +12,16 @@ function ArticleLinks(props) {
       return (
         <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
           {
-            item.blank ? (
-              <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
-            ) : (
-              <a href={ item.href }>{ item.title }</a>
-            )
+            item.blank
+              ? <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
+              : <a href={ item.href }>{ item.title }</a>
           }
         </List.Item>
       );
     });
   }
 
-  return <List bordered={ true }>{ linksRender() }</List>;
+  return <List className={ style.list } size="small" bordered={ true }>{ linksRender() }</List>;
 }
 
 ArticleLinks.propTypes = {

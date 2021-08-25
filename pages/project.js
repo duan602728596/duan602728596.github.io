@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import Index from '../src/pages/Project/index';
 
-export default function Project(props) {
+export default function ProjectPage(props) {
   return (
     <Fragment>
       <Head>
