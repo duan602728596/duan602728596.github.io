@@ -18,7 +18,8 @@
     {
       "title": "Flutter",
       "children": [
-        { "href": "/article/flutter/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" }
+        { "href": "/article/flutter/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" },
+        { "href": "/article/flutter/dio-upload-file", "title": "使用dio上传文件" }
       ]
     }
   ],

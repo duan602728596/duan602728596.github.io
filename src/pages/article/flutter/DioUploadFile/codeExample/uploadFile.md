@@ -1,0 +1,23 @@
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:dio/dio.dart';
+
+Future<Response<dynamic>> requestUploadFile(filePath) async {
+  Dio dio = Dio();
+  File file = File(filePath);
+  Uint8List bytes = await file.readAsBytes();
+  Stream<List<int>> stream = MultipartFile.fromBytes(bytes).finalize();
+
+  Response<dynamic> response = await dio.put(
+    'https://xxxxxx.com/upload',
+    data: stream,
+    options: Options(
+      contentType: mimeType,
+      headers: {
+        'content-length': (await file.length()).toString()
+      }
+    )
+  );
+
+  return response;
+}
