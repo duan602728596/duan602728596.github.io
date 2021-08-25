@@ -18,7 +18,7 @@ function Index(props) {
             src="/images/404/nengdai.jpg"
           />
         }
-        extra={ <Button type="primary" href="/">返回</Button> }
+        extra={ <Button type="primary" href="/">返回首页</Button> }
       />
     </Fragment>
   );
