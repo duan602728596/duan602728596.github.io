@@ -9,7 +9,8 @@
     { "href": "/article/onion-model", "title": "洋葱模型的简单实现" },
     { "href": "/article/how-to-create-async-function", "title": "如何通过类似\"new Function\"创建异步函数" },
     { "href": "/article/number-is-timestamp", "title": "判断一串数字是有效的时间戳" },
-    { "href": "/article/css-img-centered", "title": "使用css让图片自适应居中" }
+    { "href": "/article/css-img-centered", "title": "使用css让图片自适应居中" },
+    { "href": "/article/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" }
   ],
   "favorites": [
     { "href": "https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5", "title": "2020年10个有用的Web API (10-useful-web-apis-for-2020)" },

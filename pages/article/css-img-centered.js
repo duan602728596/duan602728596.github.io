@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import CSSImageCentered from '../../src/pages/Article/CSSImageCentered/CSSImageCentered';
 
-export default function DomToImagePage(props) {
+export default function CSSImgCenteredPage(props) {
   return (
     <Fragment>
       <Head>
