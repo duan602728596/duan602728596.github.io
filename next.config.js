@@ -1,7 +1,7 @@
 const process = require('process');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { lessLoader, sassLoader } = require('./utils/css.js');
+const { lessLoader, sassLoader } = require('./scripts/css.js');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
