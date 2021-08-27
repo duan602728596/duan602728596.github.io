@@ -6,9 +6,9 @@ export default function GetImageSizePage(props) {
   return (
     <Fragment>
       <Head>
-        <title>在Flutter中如何获取图片的尺寸</title>
+        <title>在Flutter的开发中，如何获取图片的尺寸</title>
         <meta name="keywords" content="前端, Flutter, Dart" />
-        <meta name="在Flutter中如何获取图片的尺寸" />
+        <meta name="在Flutter的开发中，如何获取图片的尺寸" />
       </Head>
       <GetImageSize />
     </Fragment>
