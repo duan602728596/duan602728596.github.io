@@ -20,9 +20,9 @@ function CSSImageCentered(props) {
       />
       <Picture className={ style.picture }
         imageClassName={ style.image }
-        avifSrc="/images/css-img-centered/33.avif"
-        webpSrc="/images/css-img-centered/33.webp"
-        src="/images/css-img-centered/33.png"
+        avifSrc="/images/css-img-centered/32.avif"
+        webpSrc="/images/css-img-centered/32.webp"
+        src="/images/css-img-centered/32.png"
       />
       {/* 代码演示 */}
       <Title level={ 2 }>代码演示</Title>
