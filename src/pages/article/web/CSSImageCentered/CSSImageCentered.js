@@ -14,15 +14,15 @@ function CSSImageCentered(props) {
       <Paragraph>通过CSS，让图片自适应居中，效果如下：</Paragraph>
       <Picture className={ style.picture }
         imageClassName={ style.image }
-        avifSrc="/images/css-img-centered/css-img-centered-1.avif"
-        webpSrc="/images/css-img-centered/css-img-centered-1.webp"
-        src="/images/css-img-centered/css-img-centered-1.png"
+        avifSrc="/images/css-img-centered/31.avif"
+        webpSrc="/images/css-img-centered/31.webp"
+        src="/images/css-img-centered/31.jpg"
       />
       <Picture className={ style.picture }
         imageClassName={ style.image }
-        avifSrc="/images/css-img-centered/css-img-centered-2.avif"
-        webpSrc="/images/css-img-centered/css-img-centered-2.webp"
-        src="/images/css-img-centered/css-img-centered-2.png"
+        avifSrc="/images/css-img-centered/33.avif"
+        webpSrc="/images/css-img-centered/33.webp"
+        src="/images/css-img-centered/33.png"
       />
       {/* 代码演示 */}
       <Title level={ 2 }>代码演示</Title>
