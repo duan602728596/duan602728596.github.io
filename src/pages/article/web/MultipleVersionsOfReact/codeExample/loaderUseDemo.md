@@ -1,0 +1,13 @@
+function App(props) {
+  function handleClick(event) {
+    alert('你点击了按钮。');
+  }
+
+  return (
+    <div>
+      <Loader loader={ () => import('project/module') }
+        moduleProps={{ onClick: handleClick }}
+      />
+    </div>
+  );
+}

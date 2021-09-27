@@ -1,0 +1,38 @@
+import { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+/**
+ * 加载联邦模块
+ * @param { Function } props.loader: 加载的联邦模块
+ * @param { object } props.moduleProps
+ */
+function Loader(props) {
+  const { loader, moduleProps } = props;
+  const containerRef = useRef(), // dom，ReactDOM.render渲染的节点
+    rootRef = useRef(); // 保存root对象
+
+    // 加载并渲染模块
+  async function loadModule() {
+    const { createLegacyRoot } = await loader();
+
+    rootRef.current = createLegacyRoot(containerRef.current);
+    rootRef.current.render(moduleProps);
+  }
+
+  useEffect(function() {
+    loadModule();
+
+    return function() {
+      rootRef.current.unmount();
+    };
+  }, [loader, moduleProps]);
+
+  return <div ref={ containerRef } />;
+}
+
+Loader.propTypes = {
+  loader: PropTypes.func,
+  moduleProps: PropTypes.object
+};
+
+export default Loader;

@@ -16,7 +16,7 @@ function HowToCreateAsyncFunction(props) {
       <Alert type="info"
         message={ [
           '参考地址：',
-          <a key="link" href="https://davidwalsh.name/async-function-class" target="_blank" rel="noreferrer">
+          <a key="link" href="https://davidwalsh.name/async-function-class" target="_blank" rel="noopener noreferrer">
             https://davidwalsh.name/async-function-class
           </a>
         ] }
