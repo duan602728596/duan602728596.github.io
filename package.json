@@ -9,6 +9,10 @@
     "update-version": "milktea-esm update",
     "prepare": "husky install"
   },
+  "packageManager": "yarn@3.0.2",
+  "engines": {
+    "pm": "yarn@^3.0.2"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.16.13",
@@ -56,6 +60,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "packageManager": "yarn@3.0.0"
+  }
 }
