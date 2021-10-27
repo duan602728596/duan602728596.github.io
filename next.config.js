@@ -1,8 +1,8 @@
 const process = require('process');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { lessLoader, sassLoader } = require('./scripts/css.js');
+const MiniCssExtractPlugin = require('next/dist/compiled/mini-css-extract-plugin');
+const { lessLoader } = require('./scripts/css.js');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -32,8 +32,7 @@ module.exports = function() {
       config.plugins.push(
         new MiniCssExtractPlugin({
           filename: 'static/css/[name]_[chunkhash:15].css',
-          chunkFilename: 'static/css/[name]_[chunkhash:15].css',
-          ignoreOrder: true
+          chunkFilename: 'static/css/[name]_[chunkhash:15].css'
         })
       );
 
