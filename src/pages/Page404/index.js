@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Result, Button } from 'antd';
-import style from './index.sass';
+import style from './index.module.sass';
 import Nav from '../../components/Nav/Nav';
 import Picture from '../../components/Picture/Picture';
 

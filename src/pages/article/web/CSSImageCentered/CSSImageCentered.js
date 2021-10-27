@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-import style from './CSSImageCentered.sass';
+import style from './CSSImageCentered.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
 import Picture from '../../../../components/Picture/Picture';

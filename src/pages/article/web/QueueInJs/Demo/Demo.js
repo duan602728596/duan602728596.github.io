@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Button, Table, Tag, Typography } from 'antd';
-import style from './demo.sass';
+import style from './demo.module.sass';
 import Queue from './Queue';
 
 const { Title, Paragraph } = Typography;

@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Typography, Input, Button, Alert } from 'antd';
-import style from './demo.sass';
+import style from './demo.module.sass';
 
 const { Title, Paragraph } = Typography;
 

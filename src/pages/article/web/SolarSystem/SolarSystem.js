@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Typography, Button } from 'antd';
-import style from './solarSystem.sass';
+import style from './solarSystem.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 
 const { Title, Paragraph } = Typography;

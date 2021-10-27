@@ -1,4 +1,5 @@
 const process = require('process');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { lessLoader, sassLoader } = require('./scripts/css.js');
@@ -8,8 +9,6 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 module.exports = function() {
   return {
     webpack(config, options) {
-      config.module.rules.pop(); // 移除已有的css配置
-
       // 文本文件处理
       config.module.rules.push({
         test: /.*\.md/,
@@ -43,9 +42,11 @@ module.exports = function() {
       }
 
       lessLoader(config, options);
-      sassLoader(config, options);
 
       return config;
+    },
+    sassOptions: {
+      includePaths: [path.join(__dirname, 'src')]
     }
   };
 };

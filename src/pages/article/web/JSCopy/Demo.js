@@ -1,7 +1,7 @@
 import { Fragment, useRef } from 'react';
 import { Typography, Button, Input, message } from 'antd';
 import { CopyOutlined as IconCopyOutlined } from '@ant-design/icons';
-import style from './demo.sass';
+import style from './demo.module.sass';
 
 const { Title, Paragraph, Text } = Typography;
 

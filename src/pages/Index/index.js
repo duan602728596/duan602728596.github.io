@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import style from './index.sass';
+import style from './index.module.sass';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';

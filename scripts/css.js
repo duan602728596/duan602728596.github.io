@@ -1,4 +1,5 @@
 const process = require('process');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
@@ -46,31 +47,8 @@ function lessLoader(config, options) {
 
   config.module.rules.push({
     test: /^.*\.(le|c)ss$/i,
-    use
-  });
-
-  if (!options.isServer) {
-    use.unshift(isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader);
-  }
-}
-
-/* 添加sass-loader */
-function sassLoader(config, options) {
-  const use = [
-    cssLoader(config, options),
-    {
-      loader: 'sass-loader',
-      options: {
-        sassOptions: {
-          fiber: false
-        }
-      }
-    }
-  ];
-
-  config.module.rules.push({
-    test: /^.*\.s(a|c)ss$/i,
-    use
+    use,
+    include: /node_modules/
   });
 
   if (!options.isServer) {
@@ -79,4 +57,3 @@ function sassLoader(config, options) {
 }
 
 exports.lessLoader = lessLoader;
-exports.sassLoader = sassLoader;

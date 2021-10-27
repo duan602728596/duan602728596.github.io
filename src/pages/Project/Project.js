@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { List } from 'antd';
-import style from './project.sass';
+import style from './project.module.sass';
 
 /* 项目信息 */
 const projectList = [

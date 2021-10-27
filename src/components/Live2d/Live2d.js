@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react';
 import { Button, Tooltip } from 'antd';
 import { SettingOutlined as IconSettingOutlined } from '@ant-design/icons';
-import style from './live2d.sass';
+import style from './live2d.module.sass';
 
 /* 判断是否为移动端 */
 function isMobile() {

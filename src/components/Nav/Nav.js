@@ -1,6 +1,6 @@
 import { Layout, Tooltip, Space } from 'antd';
 import { InteractionOutlined as IconInteractionOutlined } from '@ant-design/icons';
-import style from './nav.sass';
+import style from './nav.module.sass';
 import Picture from '../Picture/Picture';
 
 /* 导航地址 */

@@ -2,7 +2,7 @@ import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
 import Picture from '../../../../components/Picture/Picture';
-import style from './article.sass';
+import style from './article.module.sass';
 import TextEditingControllerExample from './codeExample/TextEditingController.md';
 import TextFieldExample from './codeExample/TextField.md';
 

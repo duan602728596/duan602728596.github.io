@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { List } from 'antd';
-import style from './articleLinks.sass';
+import style from './articleLinks.module.sass';
 
 /* 文章链接列表 */
 function ArticleLinks(props) {

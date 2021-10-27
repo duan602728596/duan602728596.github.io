@@ -1,6 +1,6 @@
 import { Fragment, useRef } from 'react';
 import { Typography } from 'antd';
-import style from './demo.sass';
+import style from './demo.module.sass';
 
 const { Title, Paragraph } = Typography;
 

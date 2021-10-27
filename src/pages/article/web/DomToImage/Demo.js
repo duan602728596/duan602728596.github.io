@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Typography, Empty, Button } from 'antd';
 import { FileImageFilled as IconFileImageFilled } from '@ant-design/icons';
-import style from './demo.sass';
+import style from './demo.module.sass';
 
 const { Title, Paragraph } = Typography;
 const tags = ['br', 'hr', 'img', 'input', 'param', 'meta', 'link'];

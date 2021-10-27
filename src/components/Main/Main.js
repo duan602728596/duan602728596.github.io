@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { BackTop } from 'antd';
 import NoSSR from 'react-no-ssr';
-import style from './main.sass';
+import style from './main.module.sass';
 
 /**
  * 网站整体布局

@@ -1,5 +1,5 @@
 import { Tag, Typography } from 'antd';
-import style from './dioUploadFile.sass';
+import style from './dioUploadFile.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
 import uploadFileExample from './codeExample/uploadFile.md';
