@@ -3,7 +3,7 @@ import Head from 'next/head';
 import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
 import NoSSR from 'react-no-ssr';
-import Live2d from '../src/components/Live2d/Live2d';
+import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
 
 export default function App(props) {
   const { Component, pageProps } = props;
@@ -22,7 +22,7 @@ export default function App(props) {
       <ConfigProvider locale={ zhCN }>
         <Component { ...pageProps } />
         <NoSSR>
-          <Live2d />
+          <Live2dSuspense />
         </NoSSR>
       </ConfigProvider>
     </Fragment>
