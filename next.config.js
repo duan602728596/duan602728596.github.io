@@ -17,9 +17,10 @@ module.exports = function() {
 
       // antd
       if (options.isServer) {
-        const externalsFunc = config.externals[config.externals.length - 1];
+        const endIndex = config.externals.length - 1;
+        const externalsFunc = config.externals[endIndex];
 
-        config.externals[config.externals.length - 1] = function(ctx, callback) {
+        config.externals[endIndex] = function(ctx, callback) {
           if (/(antd|rc-|css-animation|@ant-design|highlight)/i.test(ctx.request)) {
             return callback();
           }
