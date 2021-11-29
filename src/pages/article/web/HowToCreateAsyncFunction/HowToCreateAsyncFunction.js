@@ -1,7 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
-import codeExample from './code/code.md';
+import CodeExample from './code/code.mdx';
 
 const { Title } = Typography;
 
@@ -12,7 +11,7 @@ function HowToCreateAsyncFunction(props) {
       <Title>如何通过类似"new Function"创建异步函数</Title>
       {/* 代码实现 */}
       <Title level={ 2 }>代码实现</Title>
-      <HighLight type="javascript">{ codeExample }</HighLight>
+      <CodeExample />
       <Alert type="info"
         message={ [
           '参考地址：',

@@ -1,10 +1,9 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
 import Demo from './Demo/Demo';
-import queueExample from './codeExample/queue.md';
-import resultExample from './codeExample/result.md';
-import consoleExample from './codeExample/console.md';
+import QueueExample from './codeExample/queue.mdx';
+import ResultExample from './codeExample/result.mdx';
+import ConsoleExample from './codeExample/console.mdx';
 
 const { Title, Paragraph } = Typography;
 
@@ -25,11 +24,11 @@ function QueueInJs(props) {
       {/* 代码实现 */}
       <Title level={ 2 }>代码实现</Title>
       <Paragraph>首先定义一个类：</Paragraph>
-      <HighLight type="javascript">{ queueExample }</HighLight>
+      <QueueExample />
       <Paragraph>定义一个延迟执行的异步函数，并执行任务，测试代码是否满足需求：</Paragraph>
-      <HighLight type="javascript">{ resultExample }</HighLight>
+      <ResultExample />
       <Paragraph>在控制台上会输出：</Paragraph>
-      <HighLight>{ consoleExample }</HighLight>
+      <ConsoleExample />
       <Paragraph>
         可以看到，开始时执行了三个任务；每当有任务执行完毕，就会执行下一个任务。这样就满足了并行执行队列内的任务的需求。
       </Paragraph>

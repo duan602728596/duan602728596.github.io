@@ -1,8 +1,7 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
 import Demo from './Demo';
-import htmlExample from './codeExample/html.md';
+import HtmlExample from './codeExample/html.mdx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -20,7 +19,7 @@ function LinearGradientAnimate(props) {
       <Demo />
       {/* 实现代码 */}
       <Title level={ 2 }>实现代码</Title>
-      <HighLight type="html">{ htmlExample }</HighLight>
+      <HtmlExample />
     </ArticleLayout>
   );
 }

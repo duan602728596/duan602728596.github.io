@@ -1,10 +1,9 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
 import Picture from '../../../../components/Picture/Picture';
-import style from './article.module.sass';
-import TextEditingControllerExample from './codeExample/TextEditingController.md';
-import TextFieldExample from './codeExample/TextField.md';
+import style from './complexStyleInTextField.module.sass';
+import TextEditingControllerExample from './codeExample/TextEditingController.mdx';
+import TextFieldExample from './codeExample/TextField.mdx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -28,9 +27,9 @@ function ComplexStyleInTextField() {
         为了实现这样的效果，我们需要扩展
         <Text strong={ true }>TextEditingController</Text>：
       </Paragraph>
-      <HighLight type="dart">{ TextEditingControllerExample }</HighLight>
+      <TextEditingControllerExample />
       <Paragraph>之后用它来创建TextField的controller：</Paragraph>
-      <HighLight type="dart">{ TextFieldExample }</HighLight>
+      <TextFieldExample />
     </ArticleLayout>
   );
 }

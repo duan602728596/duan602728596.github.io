@@ -1,8 +1,7 @@
 import { Tag, Typography } from 'antd';
 import style from './dioUploadFile.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
-import uploadFileExample from './codeExample/uploadFile.md';
+import UploadFileExample from './codeExample/uploadFile.mdx';
 
 const { Title, Paragraph } = Typography;
 
@@ -16,7 +15,7 @@ function DioUploadFile() {
         <a href="https://github.com/flutterchina/dio" target="_blank" rel="noopener noreferrer">dio</a>
         实现上传文件的功能：
       </Paragraph>
-      <HighLight type="dart">{ uploadFileExample }</HighLight>
+      <UploadFileExample />
       <Paragraph>
         由于dio会将请求转换成
         <Tag className={ style.tag }>String</Tag>类型，所以需要将

@@ -1,9 +1,9 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
-import legacyDemo from './codeExample/legacyDemo.md';
-import loaderDemo from './codeExample/loaderDemo.md';
-import loaderUseDemo from './codeExample/loaderUseDemo.md';
+import LegacyDemoExample from './codeExample/legacyDemo.mdx';
+import LoaderDemoExample from './codeExample/loaderDemo.mdx';
+import LoaderUseDemoExample from './codeExample/loaderUseDemo.mdx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -28,14 +28,14 @@ function MultipleVersionsOfReact(props) {
       </Paragraph>
       <Title level={ 2 }>导出组件出口</Title>
       <Paragraph>我们创建一个函数，来包裹我们需要导出的组件出口。</Paragraph>
-      <HighLight type="typescript">{ legacyDemo }</HighLight>
+      <LegacyDemoExample />
       <Paragraph>然后导出一个方法，供其他位置调用。</Paragraph>
       <HighLight type="javascript">export const createLegacyRoot = legacy(Component);</HighLight>
       <Title level={ 2 }>在其他项目调用方法</Title>
       <Paragraph>我们创建一个Loader函数，来加载导出的方法。</Paragraph>
-      <HighLight type="javascript">{ loaderDemo }</HighLight>
+      <LoaderDemoExample />
       <Paragraph>然后加载组件并调用。</Paragraph>
-      <HighLight type="javascript">{ loaderUseDemo }</HighLight>
+      <LoaderUseDemoExample />
       <Alert type="info"
         message={ [
           '参考地址：',

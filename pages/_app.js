@@ -2,7 +2,9 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
+import { MDXProvider } from '@mdx-js/react';
 import NoSSR from 'react-no-ssr';
+import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
 
 export default function App(props) {
@@ -20,10 +22,12 @@ export default function App(props) {
         <script src="/scripts/live2dcubismcore.min.js" />
       </Head>
       <ConfigProvider locale={ zhCN }>
-        <Component { ...pageProps } />
-        <NoSSR>
-          <Live2dSuspense />
-        </NoSSR>
+        <MDXProvider components={{ code: MdxCodeHighLight }}>
+          <Component { ...pageProps } />
+          <NoSSR>
+            <Live2dSuspense />
+          </NoSSR>
+        </MDXProvider>
       </ConfigProvider>
     </Fragment>
   );

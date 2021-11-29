@@ -1,8 +1,7 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import HighLight from '../../../../components/HighLight/HighLight';
 import Demo from './Demo';
-import domToImageExample from './codeExample/domToImage.md';
+import DomToImageExample from './codeExample/domToImage.mdx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -42,7 +41,7 @@ function DomToImage(props) {
         库。
       </Paragraph>
       <Paragraph>SVG内DOM节点的xmlns属性不能省略。</Paragraph>
-      <HighLight type="javascript">{ domToImageExample }</HighLight>
+      <DomToImageExample />
       {/* 代码演示 */}
       <Demo />
     </ArticleLayout>

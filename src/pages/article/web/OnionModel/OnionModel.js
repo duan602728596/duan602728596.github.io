@@ -1,8 +1,8 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
-import appClassExample from './codeExample/appClass.md';
-import runExample from './codeExample/run.md';
+import AppClassExample from './codeExample/appClass.mdx';
+import RunExample from './codeExample/run.mdx';
 
 const { Title, Paragraph } = Typography;
 
@@ -12,9 +12,9 @@ function OnionModel(props) {
     <ArticleLayout>
       <Title>洋葱模型的简单实现</Title>
       <Paragraph>用一段简单的代码，实现洋葱模型。</Paragraph>
-      <HighLight type="javascript">{ appClassExample }</HighLight>
+      <AppClassExample />
       <Paragraph>执行代码，</Paragraph>
-      <HighLight type="javascript">{ runExample }</HighLight>
+      <RunExample />
       <Paragraph>会打印出如下结果。</Paragraph>
       <HighLight>{ '0\n1\ndo\n2' }</HighLight>
     </ArticleLayout>
