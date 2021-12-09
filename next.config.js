@@ -1,15 +1,10 @@
-const process = require('process');
 const path = require('path');
 const withMdx = require('@next/mdx');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('next/dist/compiled/mini-css-extract-plugin');
-const { lessLoader } = require('./scripts/css.js');
-
-const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = withMdx({ extension: /\.mdx?$/ })({
   webpack(config, options) {
-    // antd
+    // 将antd打包到服务端生成的文件中
     if (options.isServer) {
       const endIndex = config.externals.length - 1;
       const externalsFunc = config.externals[endIndex];
@@ -23,22 +18,42 @@ module.exports = withMdx({ extension: /\.mdx?$/ })({
       };
     }
 
-    // css
-    config.plugins.push(
-      new MiniCssExtractPlugin({
-        filename: 'static/css/[name]_[chunkhash:15].css',
-        chunkFilename: 'static/css/[name]_[chunkhash:15].css'
-      })
-    );
+    // 为antd添加less-loader
+    const lessUse = [
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            mode: 'global',
+            exportOnlyLocals: options.isServer
+          }
+        }
+      },
+      {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        }
+      }
+    ];
 
-    if (!isDevelopment) {
-      config.optimization.minimizer[1] = new CssMinimizerPlugin();
+    if (!options.isServer) {
+      lessUse.unshift(options.dev ? 'style-loader' : MiniCssExtractPlugin.loader);
     }
 
-    lessLoader(config, options);
+    const rule = config.module.rules.find((o) => 'oneOf' in o);
+
+    rule && rule.oneOf.push({
+      test: /^.*\.less$/i,
+      use: lessUse,
+      include: /node_modules/
+    });
 
     return config;
   },
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'src')]
   }
