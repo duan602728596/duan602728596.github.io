@@ -12,7 +12,7 @@ function Loader(props) {
   const containerRef = useRef(), // dom，ReactDOM.render渲染的节点
     rootRef = useRef(); // 保存root对象
 
-    // 加载并渲染模块
+  // 加载并渲染模块
   async function loadModule() {
     const { createLegacyRoot } = await loader();
 
