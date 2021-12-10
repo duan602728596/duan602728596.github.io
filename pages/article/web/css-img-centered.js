@@ -8,7 +8,7 @@ export default function CSSImgCenteredPage(props) {
       <Head>
         <title>使用css让图片自适应居中</title>
         <meta name="keywords" content="前端, css, 图片自适应, 图片居中" />
-        <meta name="使用css让图片自适应居中" />
+        <meta name="description" content="使用css让图片自适应居中" />
       </Head>
       <CSSImageCentered />
     </Fragment>

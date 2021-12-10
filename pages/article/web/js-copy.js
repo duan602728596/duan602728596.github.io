@@ -8,7 +8,7 @@ export default function JSCopyPage(props) {
       <Head>
         <title>Javascript实现复制功能</title>
         <meta name="keywords" content="前端, js, javascript, 复制" />
-        <meta name="Javascript实现复制功能" />
+        <meta name="description" content="Javascript实现复制功能" />
       </Head>
       <JSCopy />
     </Fragment>

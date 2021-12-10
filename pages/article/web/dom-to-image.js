@@ -8,7 +8,7 @@ export default function DomToImagePage(props) {
       <Head>
         <title>用Javascript将DOM绘制成图片</title>
         <meta name="keywords" content="前端, js, javascript, DOM转图片, canvas, svg" />
-        <meta name="用Javascript将DOM绘制成图片" />
+        <meta name="description" content="用Javascript将DOM绘制成图片" />
       </Head>
       <DomToImage />
     </Fragment>

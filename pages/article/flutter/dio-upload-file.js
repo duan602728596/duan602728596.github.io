@@ -8,7 +8,7 @@ export default function DioUploadFilePage(props) {
       <Head>
         <title>使用dio上传文件</title>
         <meta name="keywords" content="前端, Flutter, Dart, dio" />
-        <meta name="使用dio上传文件" />
+        <meta name="description" content="使用dio上传文件" />
       </Head>
       <DioUploadFile />
     </Fragment>

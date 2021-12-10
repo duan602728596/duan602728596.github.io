@@ -8,7 +8,7 @@ export default function NumberIsTimeStampPage(props) {
       <Head>
         <title>判断一串数字是有效的时间戳</title>
         <meta name="keywords" content="前端, js, javascript" />
-        <meta name="判断一串数字是有效的时间戳" />
+        <meta name="description" content="判断一串数字是有效的时间戳" />
       </Head>
       <NumberIsTimeStamp />
     </Fragment>

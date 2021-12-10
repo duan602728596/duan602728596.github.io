@@ -1,0 +1,17 @@
+```javascript
+import { Suspense } from 'react';
+
+function Child(props) {
+  const data = wrapPromise(getData).read();
+
+  return <div>{ data }</div>;
+}
+
+function Demo(props) {
+  return (
+    <Suspense fallback="Loading...">
+      <Child />
+    </Suspense>
+  );
+}
+```

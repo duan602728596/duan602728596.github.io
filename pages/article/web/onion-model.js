@@ -8,7 +8,7 @@ export default function OnionModelPage(props) {
       <Head>
         <title>洋葱模型的简单实现</title>
         <meta name="keywords" content="前端, js, javascript" />
-        <meta name="洋葱模型的简单实现" />
+        <meta name="description" content="洋葱模型的简单实现" />
       </Head>
       <OnionModel />
     </Fragment>

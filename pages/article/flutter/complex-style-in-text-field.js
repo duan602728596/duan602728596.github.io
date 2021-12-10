@@ -8,7 +8,7 @@ export default function ComplexStyleInTextFieldPage(props) {
       <Head>
         <title>在TextField中实现复杂的样式</title>
         <meta name="keywords" content="前端, Flutter, Dart" />
-        <meta name="在TextField中实现复杂的样式" />
+        <meta name="description" content="在TextField中实现复杂的样式" />
       </Head>
       <ComplexStyleInTextField />
     </Fragment>

@@ -1,0 +1,49 @@
+```typescript jsx
+interface WrapPromise<T> {
+  read(): T | undefined;
+}
+
+enum WrapStatus {
+  Pending = 'pending',
+  Success = 'success',
+  Error = 'error'
+}
+
+/**
+ * 加载器
+ * @param { () => Promise<T> } promise: 一个返回Promise的函数
+ */
+function wrapPromise<T = unknown>(promise: () => Promise<T>): WrapPromise<T> {
+  let status: WrapStatus = WrapStatus.Pending;
+  let result: T | Error;
+  let suspender: Promise<void>;
+
+  // 第一次读取read时运行promise
+  function runPromise(): void {
+    suspender ??= promise().then<void, void>(
+      (value: T): void => {
+        status = WrapStatus.Success;
+        result = value;
+      },
+      (err: Error): void => {
+        status = WrapStatus.Error;
+        result = err;
+      }
+    );
+  }
+
+  return {
+    read(): T | undefined {
+      runPromise();
+
+      if (status === WrapStatus.Pending) {
+        throw suspender;
+      } else if (status === WrapStatus.Error) {
+        throw result;
+      } else if (status === WrapStatus.Success) {
+        return result as T;
+      }
+    }
+  };
+}
+```

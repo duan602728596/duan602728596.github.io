@@ -8,7 +8,7 @@ export default function HowToCreateAsyncFunctionPage(props) {
       <Head>
         <title>如何通过类似"new Function"创建异步函数</title>
         <meta name="keywords" content="前端, js, javascript" />
-        <meta name={ '如何通过类似"new Function"创建异步函数' } />
+        <meta name="description" content='如何通过类似"new Function"创建异步函数' />
       </Head>
       <HowToCreateAsyncFunction />
     </Fragment>
