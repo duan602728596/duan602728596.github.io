@@ -23,8 +23,8 @@
     "pixi-live2d-display": "^0.3.1",
     "pixi.js": "^6.2.0",
     "prop-types": "^15.7.2",
-    "react": "beta",
-    "react-dom": "beta",
+    "react": "rc",
+    "react-dom": "rc",
     "react-no-ssr": "^1.1.0"
   },
   "devDependencies": {
