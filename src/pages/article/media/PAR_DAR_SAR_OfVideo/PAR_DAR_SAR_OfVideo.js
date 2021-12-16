@@ -1,5 +1,5 @@
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import { Typography } from 'antd';
+import { Typography, Alert } from 'antd';
 import style from './parDarSarOfVideo.module.sass';
 import HighLight from '../../../../components/HighLight/HighLight';
 
@@ -49,6 +49,29 @@ function PAR_DAR_SAR_OfVideo(props) {
         <Text className={ style.inlineBlockCode } code={ true }>PAR x SAR = DAR</Text>或者
         <Text className={ style.inlineBlockCode } code={ true }>PAR = DAR / SAR</Text>。
       </Paragraph>
+      <Alert type="info"
+        message={ [
+          '参考地址：',
+          <div key="stackoverflow">
+            相同的问题：
+            <a href="https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl
+            </a>
+          </div>,
+          <div key="ffmpeg">
+            FFmpeg基础概念之PAR，DAR和SAR：
+            <a href="https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/
+            </a>
+          </div>
+        ] }
+      />
     </ArticleLayout>
   );
 }
