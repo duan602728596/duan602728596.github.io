@@ -2,7 +2,7 @@ import { Application } from '@pixi/app';
 import { Renderer } from '@pixi/core';
 import { Ticker, TickerPlugin } from '@pixi/ticker';
 import { InteractionManager } from '@pixi/interaction';
-import { Live2DModel } from 'pixi-live2d-display/lib/cubism4';
+import { Live2DModel, MotionPreloadStrategy } from 'pixi-live2d-display/lib/cubism4';
 
 // 注册 Ticker 以支持 Live2D 模型的自动更新
 Application.registerPlugin(TickerPlugin);
@@ -31,8 +31,29 @@ function randomIndex() {
 /* app */
 let app = null;
 let modelsIndex = randomIndex(); // 当前的模型index
+let animationTimer = null; // 定时器
 
-/* 加载模型 */
+/* 循环 */
+async function cycleFrame() {
+  const finish = models[modelsIndex].model3.internalModel.motionManager.isFinished();
+
+  if (finish) {
+    models[modelsIndex].mainIndexItem ??= 0;
+    await models[modelsIndex].model3.internalModel.motionManager.startMotion('', models[modelsIndex].mainIndexItem);
+    models[modelsIndex].mainIndexItem += 1;
+
+    if (models[modelsIndex].mainIndexItem >= models[modelsIndex].mainIndex.length) {
+      models[modelsIndex].mainIndexItem = 0;
+    }
+  }
+
+  animationTimer = requestAnimationFrame(cycleFrame);
+}
+
+/**
+ * 加载模型
+ * https://guansss.github.io/pixi-live2d-display/api/classes/index.motionmanager.html
+ */
 export async function loadModel() {
   const item = models[modelsIndex];
   const { name, x, y, scale } = item;
@@ -42,14 +63,28 @@ export async function loadModel() {
     item.model3.x = x;
     item.model3.y = y;
     item.model3.scale.set(scale, scale);
+    item.loginIndex ??= item.model3.internalModel.motionManager.definitions[''].findIndex((o) => o.File.includes('login'));
+
+    item.mainIndex ??= do {
+      const indexArr = [];
+
+      item.model3.internalModel.motionManager.definitions[''].forEach((o, i) => {
+        o.File.includes('main_') && indexArr.push(i);
+      });
+
+      indexArr;
+    };
   }
 
+  await item.model3.internalModel.motionManager.startMotion('', item.loginIndex);
+  animationTimer = requestAnimationFrame(cycleFrame);
   app.stage.addChild(models[modelsIndex].model3);
 }
 
 /* 切换模型 */
 export async function switchModel() {
   app.stage.removeChild(models[modelsIndex].model3);
+  animationTimer !== null && cancelAnimationFrame(animationTimer);
 
   let newIndex = modelsIndex + 1;
 
