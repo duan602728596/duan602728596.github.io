@@ -1,4 +1,4 @@
-import { Typography } from 'antd';
+import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
 import PromiseRunExample from './codeExample/promiseRun.mdx';
@@ -31,6 +31,14 @@ function BrowserEventLoop(props) {
       <PromiseRunExample />
       <Paragraph>输出：</Paragraph>
       <HighLight>{ '1\n2\n5\n3\n6\n4' }</HighLight>
+      <Alert type="info"
+        message={ [
+          '参考地址：',
+          <a key="link" href="https://febook.hzfe.org/awesome-interview/book3/browser-event-loop" target="_blank" rel="noopener noreferrer">
+            https://febook.hzfe.org/awesome-interview/book3/browser-event-loop
+          </a>
+        ] }
+      />
     </ArticleLayout>
   );
 }
