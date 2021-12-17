@@ -1,0 +1,35 @@
+```javascript
+function Person(name) {
+  this.name = name;
+
+  this.setName = function(newName) {
+    this.name = newName;
+  };
+}
+
+Person.prototype.getName = function() {
+  return this.name;
+};
+
+console.log(Person.prototype);
+/**
+ * 输出 { getName: ƒ, constructor: ƒ }
+ */
+
+console.log(Person.__proto__);
+/**
+ * 输出 { [native code] }
+ */
+
+const person = new Person('Tom');
+
+console.log(person);
+/**
+ * 输出 Person { name: 'Tom', setName: ƒ }
+ */
+
+console.log(person.__proto__);
+/**
+ * 输出 Person { getName: ƒ, constructor: ƒ }
+ */
+```

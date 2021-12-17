@@ -1,0 +1,24 @@
+```javascript
+function Man(name) {
+  Person.call(this, name);
+
+  this.isMale = true;
+}
+
+const man = new Man('LiLei');
+
+console.log(man);
+/**
+ * Man { name: 'LiLei', isMale: true, setName: ƒ }
+ */
+
+console.log(man.getName?.());
+/**
+ * undefined
+ */
+
+console.log(man.__proto__);
+/**
+ * { constructor: ƒ }
+ */
+```
