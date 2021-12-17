@@ -24,21 +24,27 @@ function ObjectPrototypes(props) {
       <Alert type="info"
         message={ [
           '参考地址：',
-          <a key="febook" href="https://febook.hzfe.org/awesome-interview/book2/js-inherite" target="_blank" rel="noopener noreferrer">
-            https://febook.hzfe.org/awesome-interview/book2/js-inherite
-          </a>,
-          <a key="object-proto" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
-          </a>,
-          <a key="object-getPrototypeOf" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf
-          </a>
+          <div key="febook">
+            <a href="https://febook.hzfe.org/awesome-interview/book2/js-inherite" target="_blank" rel="noopener noreferrer">
+              https://febook.hzfe.org/awesome-interview/book2/js-inherite
+            </a>,
+          </div>,
+          <div key="object-proto">
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
+            </a>
+          </div>,
+          <div key="object-getPrototypeOf">
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf
+            </a>
+          </div>
         ] }
       />
     </ArticleLayout>
