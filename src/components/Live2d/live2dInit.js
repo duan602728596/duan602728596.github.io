@@ -83,6 +83,7 @@ export async function loadModel() {
 
 /* 切换模型 */
 export async function switchModel() {
+  models[modelsIndex].model3.internalModel.motionManager.stopAllMotions();
   app.stage.removeChild(models[modelsIndex].model3);
   animationTimer !== null && cancelAnimationFrame(animationTimer);
 
