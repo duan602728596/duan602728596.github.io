@@ -40,15 +40,14 @@ function Live2d(props) {
     <Fragment>
       <div className={ style.root }>
         <canvas ref={ canvasRef } className={ style.canvas } width={ 230 } height={ 230 } />
-        <Tooltip title="切换舰娘" placement="right">
-          <Button className={ style.tapBtn }
-            type="primary"
-            size="small"
-            icon={ <IconSettingOutlined /> }
-            shape="circle"
-            onClick={ handleSwitchClick }
-          />
-        </Tooltip>
+        <Button className={ style.tapBtn }
+          type="primary"
+          size="small"
+          icon={ <IconSettingOutlined /> }
+          shape="circle"
+          title="切换舰娘"
+          onClick={ handleSwitchClick }
+        />
       </div>
       { isMobile() ? <div className={ style.mobileSpace } /> : null }
     </Fragment>
