@@ -28,6 +28,12 @@
       ]
     },
     {
+      "title": "算法",
+      "children": [
+        { "href": "/article/algorithm/palindrome", "title": "实现一个回文算法" }
+      ]
+    },
+    {
       "title": "视频技术",
       "children": [
         { "href": "/article/media/par-dar-sar-of-video", "title": "视频参数PAR、DAR、SAR的区别" }

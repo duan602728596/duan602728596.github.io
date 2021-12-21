@@ -1,0 +1,45 @@
+```typescript
+function palindrome(str: string): Array<[number, number]> {
+  const palindromeIndex: Array<[number, number]> = [];
+  const strLength: number = str.length;
+
+  if (strLength < 3) {
+    return palindromeIndex;
+  }
+
+  for (let i: number = 1; i < strLength - 1; i++) {
+    // 奇数
+    let startIndex: number | null = null,
+      endIndex: number | null = null;
+
+    for (let k: number = i - 1, m: number = i + 1; k >= 0 && m < strLength; k--, m++) {
+      if (str[k] === str[m]) {
+        [startIndex, endIndex] = [k, m];
+      } else {
+        break;
+      }
+    }
+
+    if (startIndex !== null && endIndex !== null) {
+      palindromeIndex.push([startIndex, endIndex]);
+    }
+
+    // 偶数
+    [startIndex, endIndex] = [null, null];
+
+    for (let p: number = i, t: number = i + 1; p >= 0 && t < strLength; p--, t++) {
+      if (str[p] === str[t]) {
+        [startIndex, endIndex] = [p, t];
+      } else {
+        break;
+      }
+    }
+
+    if (startIndex !== null && endIndex !== null) {
+      palindromeIndex.push([startIndex, endIndex]);
+    }
+  }
+
+  return palindromeIndex;
+}
+```
