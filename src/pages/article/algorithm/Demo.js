@@ -67,7 +67,7 @@ function Demo(props) {
   // 重置
   function handleResetClick(event) {
     setInputValue('');
-    setResult('');
+    setResult([]);
   }
 
   // 渲染结果
