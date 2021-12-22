@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Layout, Tooltip, Space } from 'antd';
 import { InteractionOutlined as IconInteractionOutlined } from '@ant-design/icons';
 import style from './nav.module.sass';
@@ -12,6 +13,15 @@ const navs = [
 /* 域名 */
 const domain = ['github.io', 'vercel.app'];
 
+/* 渲染导航 */
+const navsRender = navs.map((item, index) => {
+  return (
+    <li key={ item.href } className={ style.navListItem }>
+      <Link href={ item.href }>{ item.title }</Link>
+    </li>
+  );
+});
+
 /* 网站导航 */
 function Nav(props) {
   // 切换网站地址
@@ -22,22 +32,11 @@ function Nav(props) {
     window.location.href = new URL(pathname, `https://duan602728596.${ domain[isGithub ? 1 : 0] }/`);
   }
 
-  // 渲染导航
-  function navsRender() {
-    return navs.map((item, index) => {
-      return (
-        <li key={ item.href } className={ style.navListItem }>
-          <a href={ item.href }>{ item.title }</a>
-        </li>
-      );
-    });
-  }
-
   return (
     <Layout.Header className={ style.antdHeader }>
       <div className={ style.header }>
         <nav className={ style.headerLeft }>
-          <ul className={ style.navList }>{ navsRender() }</ul>
+          <ul className={ style.navList }>{ navsRender }</ul>
         </nav>
         <div className={ style.headerRight }>
           <Space size={ 16 }>

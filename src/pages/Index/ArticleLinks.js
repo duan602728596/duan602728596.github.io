@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import { List } from 'antd';
 import style from './articleLinks.module.sass';
 
@@ -14,7 +15,7 @@ function ArticleLinks(props) {
           {
             item.blank
               ? <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
-              : <a href={ item.href }>{ item.title }</a>
+              : <Link href={ item.href }>{ item.title }</Link>
           }
         </List.Item>
       );
