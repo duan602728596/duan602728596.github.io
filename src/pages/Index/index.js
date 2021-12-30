@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import style from './index.module.sass';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
@@ -24,7 +23,7 @@ function Index(props) {
   function articlesRender() {
     return linkObject[type].map((item, index) => {
       return [
-        <h1 key={ `${ item.title }-title` } className={ style.title }>{ item.title }</h1>,
+        <h1 key={ `${ item.title }-title` } className="text-[18px]">{ item.title }</h1>,
         <ArticleLinks key={ `${ item.title }-article` } data={ item.children } />
       ];
     });

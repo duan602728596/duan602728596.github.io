@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Typography, Button } from 'antd';
+import classNames from 'classnames';
 import style from './solarSystem.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import loadPublicScript from '../../../../utils/loadPublicScript';
@@ -119,10 +120,10 @@ function SolarSystem(props) {
           （代码）
         </a>
       </Paragraph>
-      <div className={ style.tools }>
+      <div className="mb-[16px] text-right">
         <Button type="primary" onClick={ handleRequestFullscreenClick }>全屏运行</Button>
       </div>
-      <div ref={ canvasBoxRef } className={ style.canvasBox } id="solar" />
+      <div ref={ canvasBoxRef } className={ classNames('h-[400px]', style.canvasBox) } id="solar" />
     </ArticleLayout>
   );
 }

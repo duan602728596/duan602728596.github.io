@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import { List } from 'antd';
-import style from './project.module.sass';
 
 /* 项目信息 */
 const projectList = [
@@ -33,7 +32,7 @@ const projectList = [
     description: (
       <Fragment>
         <p>QQ群工具，提供48系成员直播监听，48系成员信息监听，微博监听，B站直播监听，群成员自动欢迎等功能。</p>
-        <b className={ style.linkTitle }>使用手册：</b>
+        <b className="color-[rgba(0, 0, 0, .85)]">使用手册：</b>
         <a href="https://www.yuque.com/bbkkbkk/qqtools" target="_blank" rel="noopener noreferrer">
           https://www.yuque.com/bbkkbkk/qqtools
         </a>

@@ -97,19 +97,19 @@ function Demo(props) {
     <Fragment>
       <Title level={ 2 }>代码演示</Title>
       <Paragraph>这是一段古诗，准备转换成图片。</Paragraph>
-      <Paragraph className={ style.text } id="toImageText">
+      <Paragraph className="p-[16px] bg-[#f8f9fa]" id="toImageText">
         <Title className={ style.textTitle } level={ 3 }>八阵图</Title>
         <Title className={ style.textTitle2 } level={ 4 }>[唐] 杜甫</Title>
         <p>功盖三分国，名成八阵图。</p>
         <p>江流石不转，遗恨失吞吴。</p>
       </Paragraph>
-      <div className={ style.tools }>
+      <div className="mb-[16px] text-right">
         <Button type="primary" icon={ <IconFileImageFilled /> } onClick={ handleToImageClick }>生成图片</Button>
       </div>
       <div>
         {
           imgUrl
-            ? <img className={ style.image } src={ imgUrl } />
+            ? <img className="w-full h-[186px]" src={ imgUrl } />
             : <Empty description="图片预览" />
         }
       </div>

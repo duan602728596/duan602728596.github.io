@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import { Button, Table, Tag, Typography } from 'antd';
-import style from './demo.module.sass';
 import Queue from './Queue';
 
 const { Title, Paragraph } = Typography;
@@ -117,7 +116,7 @@ function Demo(props) {
     <Fragment>
       <Title level={ 2 }>代码演示</Title>
       <Paragraph>共有6个任务，每个任务过一定时间后完成。任务执行完成后执行下一个任务，最多有3个任务在执行。</Paragraph>
-      <div className={ style.tools }>
+      <div className="text-right mb-[16px]">
         {
           displayReset
             ? <Button type="primary" danger={ true } disabled={ status } onClick={ handleResetClick }>重置任务</Button>
@@ -131,7 +130,7 @@ function Demo(props) {
         rowKey="id"
         pagination={ false }
       />
-      <p className={ style.result }>
+      <p className="py-[16px] px-0">
         <b>已完成任务：</b>
         { completedResultRender() }
       </p>

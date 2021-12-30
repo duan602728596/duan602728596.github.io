@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import Demo from './Demo';
+import Demo from './Demo/Demo';
 import DomToImageExample from './codeExample/domToImage.mdx';
 
 const { Title, Paragraph, Text } = Typography;

@@ -1,7 +1,6 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import Picture from '../../../../components/Picture/Picture';
-import style from './complexStyleInTextField.module.sass';
 import TextEditingControllerExample from './codeExample/TextEditingController.mdx';
 import TextFieldExample from './codeExample/TextField.mdx';
 
@@ -13,8 +12,8 @@ function ComplexStyleInTextField() {
     <ArticleLayout>
       <Title>在TextField中实现复杂的样式</Title>
       <Paragraph>在Flutter开发中，如果想要用TextField实现复杂的样式，比如：</Paragraph>
-      <Picture className={ style.picture }
-        imageClassName={ style.image }
+      <Picture className="block m-[16px]"
+        imageClassName="block my-0 mx-auto"
         avifSrc="/images/complex-style-in-text-field/tangshi.avif"
         webpSrc="/images/complex-style-in-text-field/tangshi.webp"
         src="/images/complex-style-in-text-field/tangshi.png"

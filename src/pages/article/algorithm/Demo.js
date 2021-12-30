@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import { Typography, Input, Button } from 'antd';
-import style from './demo.module.sass';
 
 const { Title } = Typography;
 
@@ -78,11 +77,11 @@ function Demo(props) {
   return (
     <Fragment>
       <Title level={ 2 }>代码演示</Title>
-      <div className={ style.formInput }>
-        <div className={ style.inputBox }>
-          <Input className={ style.input } value={ inputValue } placeholder="请输入字符串" onChange={ handleInputChange } />
+      <div className="mb-[8px] flex">
+        <div className="grow">
+          <Input className="w-full" value={ inputValue } placeholder="请输入字符串" onChange={ handleInputChange } />
         </div>
-        <div className={ style.buttonBox }>
+        <div className="shrink-0">
           <Button.Group>
             <Button onClick={ handleGetPalindromeClick }>获取回文字符串</Button>
             <Button onClick={ handleResetClick }>重置</Button>

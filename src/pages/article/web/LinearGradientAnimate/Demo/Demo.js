@@ -1,5 +1,6 @@
 import { Fragment, useRef } from 'react';
 import { Typography } from 'antd';
+import classNames from 'classnames';
 import style from './demo.module.sass';
 
 const { Title, Paragraph } = Typography;
@@ -47,7 +48,7 @@ function SvgAnimate(props) {
 
   return (
     <svg ref={ svgRef }
-      className={ style.svg }
+      className="block w-full h-full"
       id="svg"
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
@@ -108,9 +109,9 @@ function SvgAnimate(props) {
       </linearGradient>
       {/* 文字 */}
       <g>
-        <rect ref={ rectRef } className={ style.space } id="background-rect" fill="url(#linear_gradient_0)" />
+        <rect ref={ rectRef } className="w-full h-full" id="background-rect" fill="url(#linear_gradient_0)" />
         <text ref={ textRef }
-          className={ style.buttonText }
+          className={ classNames('pointer-events-none', style.buttonText) }
           id="background-text"
           x="50%"
           y="50%"

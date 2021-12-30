@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import Demo from './Demo';
+import Demo from './Demo/Demo';
 import CopyExample from './codeExample/copy.mdx';
 import CopyFormControlsExample from './codeExample/copyFormControls.mdx';
 

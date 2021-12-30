@@ -42,10 +42,10 @@ function Demo(props) {
         复制这句话，然后粘贴到文本框中。
         <Text className={ style.copyText } id="copyText" mark={ true }>苟利国家生死以，岂因祸福避趋之。 --林则徐</Text>
       </Paragraph>
-      <div className={ style.inputBox }>
+      <div className="mb-[16px]">
         <Input ref={ inputRef } allowClear={ true } />
       </div>
-      <div className={ style.btnBox }>
+      <div className="text-right">
         <Button.Group>
           <Button onClick={ handleCopyInputValueClick }>复制文本框内的文本</Button>
           <Button type="primary" icon={ <IconCopyOutlined /> } onClick={ handleCopyTextClick }>复制文字</Button>

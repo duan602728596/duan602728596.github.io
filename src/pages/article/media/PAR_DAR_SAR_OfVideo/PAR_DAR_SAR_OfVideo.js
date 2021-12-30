@@ -41,13 +41,13 @@ function PAR_DAR_SAR_OfVideo(props) {
           <li className={ style.keepAll }>
             SAR - Sample aspect ratio，采样纵横比，表示横向的像素点数和纵向的像素点数的比值，即为我们通常提到的分辨率宽高比。就是对图像
             采集时，横向采集与纵向采集构成的点阵，横向点数与纵向点数的比值。比如VGA图像
-            <Text className={ style.inlineBlockCode } code={ true }>640 / 480 = 4 : 3</Text>，D-1 PAL图像
-            <Text className={ style.inlineBlockCode } code={ true }>720 / 576 = 5 : 4</Text>，高清视频等。
+            <Text className="inline-block" code={ true }>640 / 480 = 4 : 3</Text>，D-1 PAL图像
+            <Text className="inline-block" code={ true }>720 / 576 = 5 : 4</Text>，高清视频等。
           </li>
         </ol>
         三者的关系：
-        <Text className={ style.inlineBlockCode } code={ true }>PAR x SAR = DAR</Text>或者
-        <Text className={ style.inlineBlockCode } code={ true }>PAR = DAR / SAR</Text>。
+        <Text className="inline-block" code={ true }>PAR x SAR = DAR</Text>或者
+        <Text className="inline-block" code={ true }>PAR = DAR / SAR</Text>。
       </Paragraph>
       <Alert type="info"
         message={ [
