@@ -6,6 +6,7 @@ import { MDXProvider } from '@mdx-js/react';
 import NoSSR from 'react-no-ssr';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
+import '../src/main.tailwindcss';
 
 export default function App(props) {
   const { Component, pageProps } = props;
