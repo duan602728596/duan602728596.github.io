@@ -28,6 +28,12 @@
       ]
     },
     {
+      "title": "HTTP",
+      "children": [
+        { "href": "/article/http/http-cache", "title": "HTTP缓存策略" }
+      ]
+    },
+    {
       "title": "算法",
       "children": [
         { "href": "/article/algorithm/palindrome", "title": "实现一个回文算法" }
