@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react';
-import { Button, Tooltip } from 'antd';
+import { Button } from 'antd';
 import { SettingOutlined as IconSettingOutlined } from '@ant-design/icons';
 import style from './live2d.module.sass';
 
@@ -39,7 +39,7 @@ function Live2d(props) {
   return (
     <Fragment>
       <div className={ style.root }>
-        <canvas ref={ canvasRef } className={ style.canvas } width={ 230 } height={ 230 } />
+        <canvas ref={ canvasRef } className="w-full h-full" width={ 230 } height={ 230 } />
         <Button className={ style.tapBtn }
           type="primary"
           size="small"
@@ -49,7 +49,7 @@ function Live2d(props) {
           onClick={ handleSwitchClick }
         />
       </div>
-      { isMobile() ? <div className={ style.mobileSpace } /> : null }
+      { isMobile() ? <div className="h-[240px]" /> : null }
     </Fragment>
   );
 }

@@ -54,8 +54,8 @@ function Nav(props) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Picture className={ style.githubImage }
-                imageClassName={ style.githubImage }
+              <Picture className="block w-full h-full"
+                imageClassName="block w-full h-full"
                 avifSrc="/images/github.avif"
                 webpSrc="/images/github.webp"
                 src="/images/github.png"
