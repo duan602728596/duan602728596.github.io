@@ -93,10 +93,10 @@ function SolarSystem(props) {
   // 加载脚本
   async function loadScript() {
     await Promise.all([
-      loadPublicScript('/scripts/tinygo_wasm_exec.min.js'),
-      loadPublicScript('/scripts/three.min.js')
+      loadPublicScript('/scripts/tinygo_wasm_exec.min.js', 'tinygo_wasm_exec'),
+      loadPublicScript('/scripts/three.min.js', 'three')
     ]);
-    await loadPublicScript('/scripts/OrbitControls.js');
+    await loadPublicScript('/scripts/OrbitControls.js', 'three-orbitControls');
     solarInit();
   }
 
