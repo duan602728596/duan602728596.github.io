@@ -14,12 +14,12 @@ function PAR_DAR_SAR_OfVideo(props) {
         昨天接到编辑的反馈，尺寸524×360的视频，转码后给到的尺寸变成了640x360。
         我将视频下载下来后，通过FFmpeg来获取视频的编码，得到了如下信息：
       </Paragraph>
-      <HighLight type="xml">
+      <HighLight type="text">
         { `Stream #0:0(eng): Video: h264 (Main) (avc1 / 0x31637661), yuv420p,
 640x360 [SAR 59:72 DAR 118:81],646 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc (default)` }
       </HighLight>
       <Paragraph>我又将A站的视频通过FFmpeg来获取视频的编码，得到了如下信息：</Paragraph>
-      <HighLight type="xml">
+      <HighLight type="text">
         { `Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p,
 3840x2160 [SAR 1:1 DAR 16:9], 7555 kb/s, 25 fps, 25 tbr, 90k tbn, 50 tbc (default)` }
       </HighLight>

@@ -30,7 +30,7 @@ function BrowserEventLoop(props) {
       <Paragraph>这是一个经典的题目：</Paragraph>
       <PromiseRunExample />
       <Paragraph>输出：</Paragraph>
-      <HighLight>{ '1\n2\n5\n3\n6\n4' }</HighLight>
+      <HighLight type="text">{ '1\n2\n5\n3\n6\n4' }</HighLight>
       <Title level={ 2 }>setTimeout和setInterval</Title>
       <Paragraph>
         setTimeout和setInterval的运行机制是，将指定的代码移出本次执行，等到下一轮Event Loop时，再检查是否到了指定时间。

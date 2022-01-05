@@ -24,7 +24,9 @@ function HighLight(props) {
   const codeRef = useRef(null);
 
   useEffect(function() {
-    hljs.highlightElement(codeRef.current);
+    if (props.type !== 'text') {
+      hljs.highlightElement(codeRef.current);
+    }
   }, []);
 
   return (
