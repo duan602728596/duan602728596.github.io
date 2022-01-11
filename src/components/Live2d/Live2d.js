@@ -2,17 +2,7 @@ import { Fragment, useEffect, useRef } from 'react';
 import { Button } from 'antd';
 import { SettingOutlined as IconSettingOutlined } from '@ant-design/icons';
 import style from './live2d.module.sass';
-
-/* 判断是否为移动端 */
-function isMobile() {
-  if (typeof window === 'object') {
-    const ua = window.navigator.userAgent;
-
-    return /iphone|ipad|ipod|ios|android/i.test(ua);
-  } else {
-    return false;
-  }
-}
+import isMobile from '../../utils/isMobile';
 
 /* 界面展示live2d */
 function Live2d(props) {

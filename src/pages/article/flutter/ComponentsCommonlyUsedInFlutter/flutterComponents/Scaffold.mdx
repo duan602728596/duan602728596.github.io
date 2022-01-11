@@ -1,0 +1,32 @@
+## Scaffold
+
+基本的视觉布局结构。此类提供用于显示抽屉和底部工作表的API。
+
+### API
+
+* { AppBar } appBar: 顶部
+* body
+
+```dart
+import 'package:flutter/material.dart';
+
+class Scaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0, // 去除阴影
+        backgroundColor: Colors.white, // 修改主体颜色
+        shape: Border(bottom: BorderSide(color: Color(0x000000), width: 1)), // 下边框
+        title: Text('标题', style: TextStyle(color: Colors.black)),
+        actions: <Widget>[SendButton(buttonText: '按钮')],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {}
+        )
+      ),
+      body: Component()
+    );
+  }
+}
+```

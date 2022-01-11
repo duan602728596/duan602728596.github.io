@@ -1,0 +1,37 @@
+## MaterialApp
+
+它是应用程序的入口。
+
+### API
+
+* { ThemeData } theme: 默认视觉属性，例如颜色字体和形状。
+* initialRoute: 初始化路由。
+* onGenerateRoute: 路由生成器。建议路由使用beamer。
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:beamer/beamer.dart';
+
+class Routes {
+  static String home = '/';
+
+  static final routerDelegate = BeamerDelegate(
+    locationBuilder: SimpleLocationBuilder(
+      routes: {
+        home: (BuildContext context, BeamState state) => Home()
+      }
+    )
+  );
+}
+
+class MaterialAppExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      theme: ThemeData(primaryColor: Colors.white), // 修改主体颜色
+      routeInformationParser: BeamerParser(),
+      routerDelegate: Routes.routerDelegate
+    );
+  }
+}
+```

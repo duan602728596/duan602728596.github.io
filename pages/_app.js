@@ -2,10 +2,13 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
+import { Typography } from 'antd';
 import { MDXProvider } from '@mdx-js/react';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
 import '../src/main.tailwindcss';
+
+const { Title, Paragraph } = Typography;
 
 export default function App(props) {
   const { Component, pageProps } = props;
@@ -22,7 +25,11 @@ export default function App(props) {
         <script src="/scripts/live2dcubismcore.min.js" />
       </Head>
       <ConfigProvider locale={ zhCN }>
-        <MDXProvider components={{ code: MdxCodeHighLight }}>
+        <MDXProvider components={{
+          code: MdxCodeHighLight,
+          p: Paragraph,
+          h2: (p) => <Title level={ 2 } id={ p.children }>{ p.children }</Title>
+        }}>
           <Component { ...pageProps } />
           <Live2dSuspense />
         </MDXProvider>

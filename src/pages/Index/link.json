@@ -24,7 +24,8 @@
       "children": [
         { "href": "/article/flutter/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" },
         { "href": "/article/flutter/dio-upload-file", "title": "使用dio上传文件" },
-        { "href": "/article/flutter/get-image-size", "title": "在Flutter的开发中，如何获取图片的尺寸" }
+        { "href": "/article/flutter/get-image-size", "title": "在Flutter的开发中，如何获取图片的尺寸" },
+        { "href": "/article/flutter/components-commonly-used-in-flutter", "title": "Flutter常用的组件" }
       ]
     },
     {
