@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
-import link from './link.json';
+import link from './link.json' assert { type: 'json' };
 
 const linkObject = {
   articles: link.articles,
