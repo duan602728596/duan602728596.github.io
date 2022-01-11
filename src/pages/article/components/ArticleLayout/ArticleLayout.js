@@ -8,7 +8,7 @@ function ArticleLayout(props) {
   return (
     <Fragment>
       <Nav />
-      <Main goToTop={ true }>{ props.children }</Main>
+      <Main goToTop={ true } goBack={ true }>{ props.children }</Main>
     </Fragment>
   );
 }
