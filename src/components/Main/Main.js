@@ -37,7 +37,7 @@ function Main(props) {
     <div key="main" className={ style.main }>
       {
         props.goBack ? (
-          <div className="mb-[16px]">
+          <div className="mb-[16px] text-right">
             <Button onClick={ handleGoBackClick }>
               <IconLeftOutlined className="mr-[6px]" />
               返回
