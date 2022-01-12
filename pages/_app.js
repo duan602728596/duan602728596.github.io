@@ -28,7 +28,8 @@ export default function App(props) {
         <MDXProvider components={{
           code: MdxCodeHighLight,
           p: Paragraph,
-          h2: (p) => <Title level={ 2 } id={ p.children }>{ p.children }</Title>
+          h3: (p) => <Title level={ 3 } id={ p.children }>{ p.children }</Title>,
+          h4: (p) => <Title level={ 4 }>{ p.children }</Title>
         }}>
           <Component { ...pageProps } />
           <Live2dSuspense />

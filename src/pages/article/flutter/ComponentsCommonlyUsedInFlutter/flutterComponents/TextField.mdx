@@ -1,0 +1,27 @@
+### TextField
+
+表单input输入组件。
+
+```dart
+import 'package:flutter/material.dart';
+
+final TextEditingController controller = TextEditingController();
+final FocusNode focusNode = FocusNode();
+
+class TextFieldExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      focusNode: focusNode,
+      autofocus: true,
+      minLines: 5,
+      maxLines: 10,
+      keyboardType: TextInputType.multiline,
+      textInputAction: TextInputAction.newline,
+      decoration: InputDecoration.collapsed(hintText: '请输入文字'),
+      onChanged: (String value) {}
+    );
+  }
+}
+```

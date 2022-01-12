@@ -17,7 +17,7 @@ function Main(props) {
 
   // 点击返回上一页
   function handleGoBackClick(event) {
-    router.back();
+    router.push('/');
   }
 
   function goToTopRender() {

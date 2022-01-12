@@ -1,0 +1,41 @@
+### InheritedWidget
+
+状态管理。
+
+```dart
+class InheritedWidgetProvider extends StatefulWidget {
+  @override
+  _InheritedWidgetProvider createState() => _InheritedWidgetProvider();
+}
+
+class _InheritedWidgetProvider extends State<InheritedWidgetProvider> {
+  String value = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return InheritedWidgetExample(value: value);
+  }
+}
+
+class InheritedWidgetExample extends InheritedWidget {
+  String value;
+
+  InheritedWidgetExample({
+    Key? key,
+    required Widget child,
+    required String this.value
+  }): super(key: key, child: child);
+
+  static InheritedWidgetExample of(BuildContext context) {
+    final FormValueContext? ctx
+      = context.dependOnInheritedWidgetOfExactType<FormValueContext>();
+
+    return ctx!;
+  }
+
+  @override
+  bool updateShouldNotify(FormValueContext oldWidget) {
+    return oldWidget.value != value;
+  }
+}
+```

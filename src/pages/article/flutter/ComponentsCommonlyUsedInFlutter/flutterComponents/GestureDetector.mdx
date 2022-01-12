@@ -1,0 +1,22 @@
+### GestureDetector
+
+手势检测的部件。
+
+```dart
+import 'package:flutter/material.dart';
+
+/// 取消input的焦点
+class GestureDetectorExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        // 触摸收起键盘
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Text('')
+    );
+  }
+}
+```

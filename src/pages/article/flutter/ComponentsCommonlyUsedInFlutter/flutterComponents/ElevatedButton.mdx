@@ -1,0 +1,45 @@
+### ElevatedButton
+
+按钮组件。
+
+```dart
+import 'package:flutter/material.dart';
+
+class ElevatedButtonExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(245, 67, 67, 1)), // 颜色
+        shape: MaterialStateProperty.all( // 带有圆角的矩形边框
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+        ),
+        side: MaterialStateProperty.all(BorderSide(color: Colors.purple, width: 3))
+      ),
+      child: Padding(
+        child: Text('按钮')
+      ),
+      onPressed: () {}
+    );
+  }
+}
+```
+
+#### ElevatedButton.icon
+
+带图标的按钮组件。
+
+```dart
+import 'package:flutter/material.dart';
+
+class ElevatedButtonIconExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      icon: Icon(Icons.g_mobiledata),
+      label: Text('按钮'),
+      onPressed: () {},
+    );
+  }
+}
+```

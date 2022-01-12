@@ -1,0 +1,28 @@
+### showDialog
+
+展示弹出框。
+
+```dart
+import 'package:flutter/material.dart';
+
+/// 弹出框
+/// @param { BuildContext } context
+/// @param { String } message: 文本
+void alert(BuildContext context, String message) {
+  showDialog(
+    context: context,
+    barrierColor: Color.fromRGBO(0, 0, 0, 0),
+    builder: (c) {
+      return AlertDialog(
+        backgroundColor: Color.fromRGBO(33, 34, 35, 0.9),
+        elevation: 0,
+        content: Text(
+          message,
+          style: TextStyle(color: Colors.white),
+          textAlign: TextAlign.center
+        )
+      );
+    }
+  );
+}
+```
