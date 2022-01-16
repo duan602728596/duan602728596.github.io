@@ -69,4 +69,10 @@ declare module '*.svg' {
 
   export default url;
 }
+
+declare module '*.vue' {
+  import { defineComponent } from 'vue';
+
+  export default ReturnType<typeof defineComponent>;
+}
 ```
