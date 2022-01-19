@@ -1,7 +1,7 @@
 {
   "articles": [
     {
-      "title": "前端开发",
+      "title": "Web开发",
       "children": [
         { "href": "/article/web/queue-in-js", "title": "用JS实现多个任务并行执行的队列" },
         { "href": "/article/web/js-copy", "title": "Javascript实现复制功能" },
