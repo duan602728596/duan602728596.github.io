@@ -1,0 +1,41 @@
+```javascript
+import { graphql } from 'graphql';
+import { addResolversToSchema } from '@graphql-tools/schema'
+import { getSchema } from './utils.js';
+
+const resolvers = {
+  Query: {
+    hello(obj, args, context, info) {
+      return '你好';
+    },
+    human(obj, args, context, info) {
+      return {
+        name: '小明',
+        age: args.age + obj.$add()
+      };
+    }
+  }
+};
+const schema = await getSchema('./query.graphql', import.meta.url);
+const schemaWithResolvers = addResolversToSchema({ schema, resolvers });
+
+const response = await graphql({
+  schema: schemaWithResolvers,
+  source: /* GraphQL */ `
+    {
+      hello
+      human(age: 56) {
+        name
+        age
+      }
+    }
+  `,
+  rootValue: {
+    $add() {
+      return 32;
+    }
+  }
+});
+
+console.log(response.data);
+```

@@ -8,12 +8,14 @@ import xml from 'highlight.js/lib/languages/xml';
 import css from 'highlight.js/lib/languages/css';
 import dart from 'highlight.js/lib/languages/dart';
 import style from './highLight.module.sass';
+import graphql from './languages/graphql';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('dart', dart);
+hljs.registerLanguage('graphql', graphql);
 
 /**
  * 代码高亮组件

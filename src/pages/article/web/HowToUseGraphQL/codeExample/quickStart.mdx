@@ -1,0 +1,22 @@
+```javascript
+import { graphql, buildSchema } from 'graphql';
+
+const schema = buildSchema(/* GraphQL */ `
+  type Query {
+    hello: String
+  }
+`);
+const root = { hello: () => 'Hello world!' };
+
+const response = await graphql({
+  schema,
+  source: /* GraphQL */ `
+    {
+      hello
+    }
+  `,
+  rootValue: root
+});
+
+console.log(response);
+```

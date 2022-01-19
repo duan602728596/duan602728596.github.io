@@ -1,0 +1,13 @@
+```javascript
+import { URL } from 'node:url';
+import { loadSchema } from '@graphql-tools/load';
+import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
+
+export async function getSchema(file, importMetaUrl) {
+  const urlResult = decodeURIComponent(new URL(file, importMetaUrl).pathname);
+
+  return loadSchema(urlResult, {
+    loaders: [new GraphQLFileLoader()]
+  });
+}
+```
