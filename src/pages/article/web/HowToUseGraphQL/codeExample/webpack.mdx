@@ -1,0 +1,16 @@
+```javascript
+export default {
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /^.*\.(gql|graphql)$/,
+        loader: '@graphql-tools/webpack-loader',
+        options: {
+          importHelpers: true
+        }
+      }
+    ]
+  }
+};
+```

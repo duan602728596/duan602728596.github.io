@@ -1,0 +1,32 @@
+```javascript
+import { graphql, buildASTSchema } from 'graphql';
+import query from './query.graphql';
+
+const root = {
+  hello() {
+    return '你好';
+  },
+  human() {
+    return {
+      name: '小明',
+      age: 14
+    };
+  }
+}
+
+graphql({
+  schema: buildASTSchema(query),
+  source: /* GraphQL */ `
+    {
+        hello
+        human {
+            name
+            age
+        }
+    }
+  `,
+  rootValue: root
+}).then((response) => {
+  console.log(response);
+});
+```
