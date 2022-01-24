@@ -1,0 +1,142 @@
+<script>
+  class Node {
+    constructor(key, value, next = null) {
+      this.key = key;
+      this.value = value;
+      this.next = next;
+    }
+  }
+
+  class HashMap {
+    constructor(size = 16) {
+      this.size = 0;
+      this.table = [];
+
+      for (let i = 0; i < size; i++) {
+        this.table[i] = [null, 0];
+      }
+    }
+
+    hashConversion(key) {
+      let keyCode = 0;
+
+      for(const item of key) {
+        keyCode += item.charCodeAt(0)
+      }
+
+      return keyCode % this.table.length;
+    }
+
+    set(key, value) {
+      const index = this.hashConversion(key);
+      const indexValue = this.table[index][0];
+
+      if (indexValue === null) {
+        this.table[index][0] = new Node(key, value);
+        this.table[index][1] += 1;
+        this.size += 1;
+
+        return;
+      }
+
+      let currentBefore = null;
+      let current = indexValue;
+
+      while (current) {
+        if (current.key === key) {
+          current.value = value;
+          break;
+        } else {
+          currentBefore = current;
+          current = current.next;
+        }
+      }
+
+      if (current === null) {
+        currentBefore.next = new Node(key, value);
+        this.table[index][1] += 1;
+        this.size += 1;
+      }
+    }
+
+    get(key) {
+      let result = null;
+      const index = this.hashConversion(key);
+      const indexValue = this.table[index][0];
+
+      if (indexValue === null) {
+        return result;
+      }
+
+      let current = indexValue;
+
+      while (current) {
+        if (current.key === key) {
+          result = current.value;
+          break;
+        }
+      }
+
+      return result;
+    }
+
+    remove(key) {
+      const index = this.hashConversion(key);
+      const indexValue = this.table[index][0];
+
+      if (indexValue === null) {
+        return;
+      }
+
+      let currentBefore = null;
+      let current = indexValue;
+
+      while (current) {
+        if (current.key === key) {
+          if (currentBefore === null) {
+            this.table[index][0] = current.next;
+          } else {
+            currentBefore.next = current.next;
+          }
+
+          this.table[index][1] -= 1;
+          this.size -= 1;
+
+          break;
+        } else {
+          currentBefore = current;
+          current = current.next;
+        }
+      }
+    }
+  }
+
+
+  const hashmap = new HashMap(16);
+
+  hashmap.set('a', 1385);
+  hashmap.set('b', 1386);
+  hashmap.set('c', 7895);
+  hashmap.set('d', 1385);
+  hashmap.set('e', 1386);
+  hashmap.set('f', 7895);
+  hashmap.set('g', 1385);
+  hashmap.set('h', 1386);
+  hashmap.set('i', 7895);
+  hashmap.set('j', 1385);
+  hashmap.set('k', 1386);
+  hashmap.set('l', 7895);
+  hashmap.set('m', 1385);
+  hashmap.set('n', 1386);
+  hashmap.set('o', 7895);
+  hashmap.set('p', 1385);
+  hashmap.set('q', 1386);
+  hashmap.set('r', 1386);
+  hashmap.set('s', 1386);
+  hashmap.set('t', 1386);
+  hashmap.remove('b');
+  hashmap.remove('r');
+  hashmap.set('b', 'sssss');
+
+  console.log(hashmap);
+</script>
