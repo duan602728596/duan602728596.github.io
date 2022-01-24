@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-import ArticleLayout from '../components/ArticleLayout/ArticleLayout';
+import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import Demo from './Demo';
 import PalindromeExample from './codeExample/palindrome.mdx';
 
