@@ -36,9 +36,9 @@
       ]
     },
     {
-      "title": "算法",
+      "title": "算法和数据结构",
       "children": [
-        { "href": "/article/algorithm/palindrome", "title": "实现一个回文算法" }
+        { "href": "/article/algorithms-and-data-structures/palindrome", "title": "实现一个回文算法" }
       ]
     },
     {
