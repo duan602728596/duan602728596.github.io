@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "rimraf .next && cross-env NODE_ENV=development next -p 5057",
+    "dev:https": "rimraf .next && cross-env NODE_ENV=development node devServer.mjs",
     "deploy": "npm run build && npm run export",
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
     "export": "rimraf out && cross-env NODE_ENV=production next export && node scripts/nojekyll.mjs",
