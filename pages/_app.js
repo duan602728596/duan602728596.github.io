@@ -10,6 +10,22 @@ import '../src/main.tailwindcss';
 
 const { Title, Paragraph } = Typography;
 
+/**
+ * mdx h3组件
+ * @param { React.ReactNode } props.children
+ */
+function MdxH3(props) {
+  return <Title level={ 3 } id={ props.children }>{ props.children }</Title>;
+}
+
+/**
+ * mdx h4组件
+ * @param { React.ReactNode } props.children
+ */
+function MdxH4(props) {
+  return <Title level={ 4 }>{ props.children }</Title>;
+}
+
 export default function App(props) {
   const { Component, pageProps } = props;
 
@@ -26,8 +42,8 @@ export default function App(props) {
         <MDXProvider components={{
           code: MdxCodeHighLight,
           p: Paragraph,
-          h3: (p) => <Title level={ 3 } id={ p.children }>{ p.children }</Title>,
-          h4: (p) => <Title level={ 4 }>{ p.children }</Title>
+          h3: MdxH3,
+          h4: MdxH4
         }}>
           <Component { ...pageProps } />
           <Live2dSuspense />
