@@ -21,8 +21,6 @@ export default function App(props) {
         <meta httpEquiv="Window-target" content="_top" />
         <meta name="author" content="段昊辰, duanhaochen@126.com" />
         <meta name="copyright" content="段昊辰, duanhaochen@126.com" />
-        <link rel="icon" href="/images/favicon.jpg" type="image/jpeg" />
-        <script src="/scripts/live2dcubismcore.min.js" />
       </Head>
       <ConfigProvider locale={ zhCN }>
         <MDXProvider components={{

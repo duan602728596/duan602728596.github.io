@@ -1,6 +1,5 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -32,16 +31,11 @@ function HighLight(props) {
   }, []);
 
   return (
-    <Fragment>
-      <Head>
-        <link rel="stylesheet" href="/styles/github.css" />
-      </Head>
-      <div className={ style.highLight }>
-        <pre ref={ codeRef } className={ props?.type }>
-          <code>{ props?.children }</code>
-        </pre>
-      </div>
-    </Fragment>
+    <div className={ style.highLight }>
+      <pre ref={ codeRef } className={ props?.type }>
+        <code>{ props?.children }</code>
+      </pre>
+    </div>
   );
 }
 
