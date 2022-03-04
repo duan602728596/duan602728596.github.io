@@ -1,0 +1,29 @@
+```javascript
+// 自定义call的实现
+Function.prototype.customCall = function(thisArg, ...args) {
+  const thisObject = Object(thisArg);
+  const symbol = Symbol('func');
+
+  thisObject[symbol] = this;
+
+  const result = thisObject[symbol](...args);
+
+  delete thisObject[symbol];
+
+  return result;
+};
+
+// 自定义apply的实现
+Function.prototype.customApply = function(thisArg, args = []) {
+  const thisObject = Object(thisArg);
+  const symbol = Symbol('func');
+
+  thisObject[symbol] = this;
+
+  const result = thisObject[symbol](...args);
+
+  delete thisObject[symbol];
+
+  return result;
+};
+```
