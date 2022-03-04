@@ -1,0 +1,12 @@
+```javascript
+async function screenSharing() {
+  const video = document.querySelector('video');
+  const stream = await navigator.mediaDevices.getDisplayMedia({
+    video: { cursor: 'always' },
+    audio: false
+  });
+
+  video.srcObject = stream;
+  video.play();
+}
+```

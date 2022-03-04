@@ -18,7 +18,8 @@
         { "href": "/article/web/object-prototypes", "title": "【JavaScript基础】对象原型" },
         { "href": "/article/web/browser-event-loop", "title": "【JavaScript基础】浏览器事件循环" },
         { "href": "/article/web/how-to-use-graphql", "title": "如何使用GraphQL" },
-        { "href": "/article/web/implement-call-and-apply", "title": "实现call和apply方法" }
+        { "href": "/article/web/implement-call-and-apply", "title": "实现call和apply方法" },
+        { "href": "/article/web/browser-screen-sharing", "title": "浏览器中实现屏幕共享功能" }
       ]
     },
     {
