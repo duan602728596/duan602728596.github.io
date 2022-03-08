@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
-import link from './link.json' assert { type: 'json' };
+import linkArticles from './link/articles.json' assert { type: 'json' };
+import linkFavorites from './link/favorites.json' assert { type: 'json' };
 
 const linkObject = {
-  articles: link.articles,
-  favorites: link.favorites.map((o) => Object.assign(o, {
+  articles: linkArticles.data,
+  favorites: linkFavorites.data.map((o) => Object.assign(o, {
     blank: true
   }))
 };
