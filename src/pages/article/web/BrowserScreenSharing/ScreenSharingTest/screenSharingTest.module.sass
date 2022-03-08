@@ -1,5 +1,7 @@
-.video
-  $bgUrl: '/images/browser-screen-sharing/zyyw-wxjt.png'
+@mixin ScreenVideo($bgUrl)
   width: 100%
   background-image: url($bgUrl)
   background-size: 100%
+
+.video
+  @include ScreenVideo('/images/browser-screen-sharing/zyyw-wxjt.png')

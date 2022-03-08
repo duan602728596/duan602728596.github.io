@@ -12,11 +12,14 @@ function BrowserScreenSharing(props) {
       <Title>浏览器中实现屏幕共享功能</Title>
       <Paragraph>
         在面试中，会出现一个经常用到的功能，就是在浏览器中实现屏幕共享。该功能使用了
-        <Text>navigator.mediaDevices.getDisplayMedia</Text>API。
+        <Text code={ true }>navigator.mediaDevices.getDisplayMedia</Text>API。
       </Paragraph>
       <Title level={ 2 }>基本代码</Title>
+      <Paragraph>
+        使用<Text code={ true }>navigator.mediaDevices.getDisplayMedia</Text>录制，并放到video中。
+      </Paragraph>
       <ScreenSharingExample />
-      <Title level={ 2 }>实现效果</Title>
+      <Title level={ 2 }>实现效果：屏幕共享并放到video中</Title>
       <div className="mb-[16px]">
         <ScreenSharingTest />
       </div>
