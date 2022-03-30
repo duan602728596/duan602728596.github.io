@@ -10,13 +10,13 @@
     "update-version": "milktea-esm update",
     "prepare": "husky install"
   },
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.2.0",
   "engines": {
-    "pm": "yarn@^3.1.0"
+    "pm": "yarn@^3.2.0"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@mdx-js/react": "^2.1.0",
+    "@mdx-js/react": "^1.6.22",
     "antd": "^4.19.3",
     "classnames": "^2.3.1",
     "highlight.js": "^11.5.0",
@@ -24,8 +24,8 @@
     "pixi-live2d-display": "^0.3.1",
     "pixi.js": "^6.2.0",
     "prop-types": "^15.8.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-no-ssr": "^1.1.0"
   },
   "devDependencies": {
