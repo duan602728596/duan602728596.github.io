@@ -27,6 +27,10 @@
     {
       "href": "https://css-speedrun.netlify.app/",
       "title": "CSS测验"
+    },
+    {
+      "href": "https://copilot.github.com/",
+      "title": "Github Copilot"
     }
   ]
 }
