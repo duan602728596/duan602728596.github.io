@@ -1,8 +1,10 @@
 ```javascript
 import { Suspense } from 'react';
 
+const g = wrapPromise(getData);
+
 function Child(props) {
-  const data = wrapPromise(getData).read();
+  const data = g.read();
 
   return <div>{ data }</div>;
 }
