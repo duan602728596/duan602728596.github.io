@@ -1,4 +1,4 @@
-import { Typography } from 'antd';
+import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import Demo from './Demo/Demo';
 import ReadFileExample from './codeExample/readFile.mdx';
@@ -24,6 +24,35 @@ function FileSystemAccessApi(props) {
       <WriteFileExample />
       <Paragraph>这个Demo展示了如何加载图片和保存图片。</Paragraph>
       <Demo />
+      <Alert type="info"
+        message={ [
+          '参考地址：',
+          <div key="getting-started-with-the-file-system-access-api">
+            Getting Started With the File System Access API：
+            <a href="https://css-tricks.com/getting-started-with-the-file-system-access-api/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://css-tricks.com/getting-started-with-the-file-system-access-api/
+            </a>
+          </div>,
+          <div key="file">
+            File_System_Access_API：
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
+            </a>
+          </div>,
+          <div key="file">
+            FileAPI：
+            <a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener noreferrer">
+              https://w3c.github.io/FileAPI/
+            </a>
+          </div>
+        ] }
+      />
     </ArticleLayout>
   );
 }

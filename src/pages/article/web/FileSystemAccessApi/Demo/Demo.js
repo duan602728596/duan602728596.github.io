@@ -52,7 +52,9 @@ function Demo(props) {
       <Button onClick={ handleLoadFileClick }>加载图片</Button>
       <Button onClick={ handleSaveFileClick }>保存图片</Button>
     </Button.Group>,
-    image?.src ? <img key="image" className="block max-w-full my-[16px]" src={ image.src } /> : null
+    <div key="image" className="my-[16px]">
+      { image?.src ? <img className="block max-w-full" src={ image.src } /> : null }
+    </div>
   ];
 }
 
