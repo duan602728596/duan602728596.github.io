@@ -1,0 +1,10 @@
+```javascript
+const [fileHandle] = await window.showOpenFilePicker();
+const file = await fileHandle.getFile();
+const content = await file.arrayBuffer();
+const blob = new Blob([content], { type: 'image/png' });
+const img = document.createElement('img');
+
+document.body.appendChild(img);
+img.src = URL.createObjectURL(blob);
+```

@@ -1,7 +1,7 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
-import Demo from './Demo';
+import Demo from './Demo/Demo';
 
 const { Title, Paragraph } = Typography;
 

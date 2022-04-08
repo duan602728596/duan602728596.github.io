@@ -1,0 +1,14 @@
+```javascript
+const handle = await window.showSaveFilePicker({
+  types: [{
+    description: 'Test files',
+    accept: {
+      'image/png': ['.png']
+    }
+  }]
+});
+const writable = await handle.createWritable();
+
+await writable.write(content);
+await writable.close();
+```
