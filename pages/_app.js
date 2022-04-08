@@ -26,6 +26,13 @@ function MdxH4(props) {
   return <Title level={ 4 }>{ props.children }</Title>;
 }
 
+const MDXComponents = {
+  code: MdxCodeHighLight,
+  p: Paragraph,
+  h3: MdxH3,
+  h4: MdxH4
+};
+
 export default function App(props) {
   const { Component, pageProps } = props;
 
@@ -39,16 +46,11 @@ export default function App(props) {
         <meta name="copyright" content="段昊辰, duanhaochen@126.com" />
       </Head>
       <ConfigProvider locale={ zhCN }>
-        <MDXProvider components={{
-          code: MdxCodeHighLight,
-          p: Paragraph,
-          h3: MdxH3,
-          h4: MdxH4
-        }}>
+        <MDXProvider components={ MDXComponents }>
           <Component { ...pageProps } />
-          <Live2dSuspense />
         </MDXProvider>
       </ConfigProvider>
+      <Live2dSuspense />
     </Fragment>
   );
 }

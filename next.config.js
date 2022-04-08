@@ -4,7 +4,12 @@ const MiniCssExtractPlugin = require('next/dist/compiled/mini-css-extract-plugin
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 
-module.exports = withMdx({ extension: /\.mdx?$/ })({
+module.exports = withMdx({
+  extension: /\.mdx?$/,
+  options: {
+    providerImportSource: '@mdx-js/react'
+  }
+})({
   webpack(config, options) {
     /* 将antd打包到服务端生成的文件中 */
     if (options.isServer) {
