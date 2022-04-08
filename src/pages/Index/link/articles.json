@@ -4,8 +4,8 @@
       "title": "Web开发",
       "children": [
         { "href": "/article/web/queue-in-js", "title": "用JS实现多个任务并行执行的队列" },
-        { "href": "/article/web/js-copy", "title": "Javascript实现复制功能" },
-        { "href": "/article/web/dom-to-image", "title": "用Javascript将DOM绘制成图片" },
+        { "href": "/article/web/js-copy", "title": "JavaScript实现复制功能" },
+        { "href": "/article/web/dom-to-image", "title": "用JavaScript将DOM绘制成图片" },
         { "href": "/article/web/solar-system", "title": "基于Three.js + wasm开发的太阳系动画" },
         { "href": "/article/web/static-resource-in-typescript", "title": "如何在typescript内引入静态资源" },
         { "href": "/article/web/linear-gradient-animate", "title": "使用SVG，让渐变的背景也能动起来" },

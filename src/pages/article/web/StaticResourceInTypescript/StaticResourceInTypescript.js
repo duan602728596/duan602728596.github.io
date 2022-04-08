@@ -10,7 +10,7 @@ const { Title, Paragraph } = Typography;
 function StaticResourceInTypescript(props) {
   return (
     <ArticleLayout>
-      <Title>如何在typescript内引入静态资源</Title>
+      <Title>如何在TypeScript内引入静态资源</Title>
       <Paragraph>在ts文件中，如果引入了静态资源模块（比如css、图片等），会报错，提示找不到模块。</Paragraph>
       <ErrorExample />
       <Paragraph>可以使用全局类型声明写法，来声明类型。</Paragraph>

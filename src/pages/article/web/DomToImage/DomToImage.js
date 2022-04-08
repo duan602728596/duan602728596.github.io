@@ -9,7 +9,7 @@ const { Title, Paragraph, Text } = Typography;
 function DomToImage(props) {
   return (
     <ArticleLayout>
-      <Title>用Javascript将DOM绘制成图片</Title>
+      <Title>用JavaScript将DOM绘制成图片</Title>
       <Paragraph>
         之前看到了一个动画，
         <a href="https://jdc.jd.com/lab/2018-ae2css/washer/" target="_blank" rel="noopener noreferrer">
