@@ -9,7 +9,7 @@ import linkFavorites from './link/favorites.json' assert { type: 'json' };
 const linkObject = {
   articles: linkArticles.data,
   favorites: linkFavorites.data.map((o) => Object.assign(o, {
-    blank: true
+    children: o.children.map((p) => Object.assign(p, { blank: true }))
   }))
 };
 
@@ -34,7 +34,7 @@ function Index(props) {
     <Fragment>
       <Nav />
       <Main goToTop={ true }>
-        { type === 'favorites' ? <ArticleLinks data={ linkObject[type] } /> : articlesRender() }
+        { articlesRender() }
       </Main>
     </Fragment>
   );

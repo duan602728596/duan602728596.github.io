@@ -1,48 +1,35 @@
 {
   "data": [
     {
-      "href": "https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5",
-      "title": "2020年10个有用的Web API (10-useful-web-apis-for-2020)"
+      "title": "前端技术",
+      "children": [
+        { "href": "https://blog.bitsrc.io/10-useful-web-apis-for-2020-8e43905cbdc5", "title": "2020年10个有用的Web API (10-useful-web-apis-for-2020)" },
+        { "href": "https://juejin.cn/post/7033615049721806879", "title": "怎样判断面试者是否有扎实的前端基础？" },
+        { "href": "https://css-speedrun.netlify.app/", "title": "CSS测验" },
+        { "href": "https://www.w3cschool.cn/jdgasx/", "title": "前后端分离的思考与实践" },
+        { "href": "https://zhuanlan.zhihu.com/p/483199541", "title": "2022年的CSS" }
+      ]
     },
     {
-      "href": "https://pawelurbanek.com/macos-free-disk-space",
-      "title": "如何释放 MacBook 的磁盘空间 (macos-free-disk-space)"
+      "title": "工具网站",
+      "children": [
+        { "href": "https://fonts.google.com/icons", "title": "谷歌图标搜索" },
+        { "href": "https://copilot.github.com/", "title": "Github Copilot" },
+        { "href": "https://carbon.now.sh/", "title": "Carbon" }
+      ]
     },
     {
-      "href": "https://gowa.club/macOS/macOS的networksetup命令来管理网络.html",
-      "title": "macOS的networksetup命令来管理网络"
+      "title": "算法和数据结构",
+      "children": [
+        { "href": "https://jelly.jd.com/article/60c88cad22bc900171d19fbd", "title": "实现SLIC算法生成像素画" }
+      ]
     },
     {
-      "href": "https://jelly.jd.com/article/60c88cad22bc900171d19fbd",
-      "title": "实现SLIC算法生成像素画"
-    },
-    {
-      "href": "https://juejin.cn/post/7033615049721806879",
-      "title": "怎样判断面试者是否有扎实的前端基础？"
-    },
-    {
-      "href": "https://fonts.google.com/icons",
-      "title": "谷歌图标搜索"
-    },
-    {
-      "href": "https://css-speedrun.netlify.app/",
-      "title": "CSS测验"
-    },
-    {
-      "href": "https://copilot.github.com/",
-      "title": "Github Copilot"
-    },
-    {
-      "href": "https://www.w3cschool.cn/jdgasx/",
-      "title": "前后端分离的思考与实践"
-    },
-    {
-      "href": "https://carbon.now.sh/",
-      "title": "Carbon"
-    },
-    {
-      "href": "https://zhuanlan.zhihu.com/p/483199541",
-      "title": "2022年的CSS"
+      "title": "Mac相关",
+      "children": [
+        { "href": "https://pawelurbanek.com/macos-free-disk-space", "title": "如何释放 MacBook 的磁盘空间 (macos-free-disk-space)" },
+        { "href": "https://gowa.club/macOS/macOS的networksetup命令来管理网络.html", "title": "macOS的networksetup命令来管理网络" }
+      ]
     }
   ]
 }
