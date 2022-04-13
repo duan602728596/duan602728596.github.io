@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import ReactGetDataWithSuspense from '../../../src/pages/article/web/ReactGetDataWithSuspense/ReactGetDataWithSuspense';
+import ReactGetDataWithSuspense from '../../../src/pages/article/react/ReactGetDataWithSuspense/ReactGetDataWithSuspense';
 
 export default function ReactGetDataWithSuspensePage(props) {
   return (

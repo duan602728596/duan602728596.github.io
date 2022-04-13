@@ -41,13 +41,13 @@ function MultipleVersionsOfReact(props) {
           '参考地址：',
           <div key="react-gradual-upgrade-demo">
             React多版本的Demo：
-            <a href="https://github.com/reactjs/react-gradual-upgrade-demo/" target="_blank" rel="noopener noreferrer">
+            <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
               https://github.com/reactjs/react-gradual-upgrade-demo/
             </a>
           </div>,
           <div key="webpack-module-federation">
             webpack联邦模块官方文档：
-            <a href="https://webpack.js.org/concepts/module-federation/" target="_blank" rel="noopener noreferrer">
+            <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
               https://webpack.js.org/concepts/module-federation/
             </a>
           </div>

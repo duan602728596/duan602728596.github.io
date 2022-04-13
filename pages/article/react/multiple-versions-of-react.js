@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import MultipleVersionsOfReact from '../../../src/pages/article/web/MultipleVersionsOfReact/MultipleVersionsOfReact';
+import MultipleVersionsOfReact from '../../../src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact';
 
 export default function MultipleVersionsOfReactPage(props) {
   return (

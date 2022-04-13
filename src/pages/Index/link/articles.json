@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "title": "Web开发",
+      "title": "前端技术",
       "children": [
         { "href": "/article/web/queue-in-js", "title": "用JS实现多个任务并行执行的队列" },
         { "href": "/article/web/js-copy", "title": "JavaScript实现复制功能" },
@@ -13,14 +13,19 @@
         { "href": "/article/web/how-to-create-async-function", "title": "如何通过类似\"new Function\"创建异步函数" },
         { "href": "/article/web/number-is-timestamp", "title": "判断一串数字是有效的时间戳" },
         { "href": "/article/web/css-img-centered", "title": "使用css让图片自适应居中" },
-        { "href": "/article/web/multiple-versions-of-react", "title": "如何使用多版本的React" },
-        { "href": "/article/web/react18-get-data-with-suspense", "title": "在React18中，配合Suspense来获取数据" },
         { "href": "/article/web/object-prototypes", "title": "【JavaScript基础】对象原型" },
         { "href": "/article/web/browser-event-loop", "title": "【JavaScript基础】浏览器事件循环" },
         { "href": "/article/web/how-to-use-graphql", "title": "如何使用GraphQL" },
         { "href": "/article/web/implement-call-and-apply", "title": "实现call和apply方法" },
         { "href": "/article/web/browser-screen-sharing", "title": "浏览器中实现屏幕共享功能" },
         { "href": "/article/web/file-system-access-api", "title": "使用File System Access API访问文件" }
+      ]
+    },
+    {
+      "title": "React",
+      "children": [
+        { "href": "/article/react/multiple-versions-of-react", "title": "如何使用多版本的React" },
+        { "href": "/article/react/react18-get-data-with-suspense", "title": "在React18中，配合Suspense来获取数据" }
       ]
     },
     {
