@@ -6,10 +6,8 @@ class Store {
   valueCache = null;
   update = null;
 
-  subscribe = (v) => {
-    if (!this.update) {
-      this.update = v;
-    }
+  subscribe = (func) => {
+    this.update = func;
   };
 
   getState = () => {

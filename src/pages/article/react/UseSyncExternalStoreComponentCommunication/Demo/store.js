@@ -3,10 +3,8 @@ class Store {
   update = null;     // 执行更新的函数
 
   // 注册
-  subscribe = (v) => {
-    if (!this.update) {
-      this.update = v;
-    }
+  subscribe = (listener) => {
+    this.update = listener;
   };
 
   // 获取valueCache的值

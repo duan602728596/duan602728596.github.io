@@ -12,7 +12,7 @@ function InputText(props) {
     if (value && !/^\s*$/i.test(value)) {
       store.setValueCache({
         value,
-        id: `${ Math.random() }`.replace(/0./, '')
+        id: `${ Math.random() }`.replace(/^0./, '')
       });
       setValue('');
     }
