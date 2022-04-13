@@ -25,7 +25,8 @@
       "title": "React",
       "children": [
         { "href": "/article/react/multiple-versions-of-react", "title": "如何使用多版本的React" },
-        { "href": "/article/react/react18-get-data-with-suspense", "title": "在React18中，配合Suspense来获取数据" }
+        { "href": "/article/react/react18-get-data-with-suspense", "title": "在React18中，配合Suspense来获取数据" },
+        { "href": "/article/react/useSyncExternalStore-component-communication", "title": "使用useSyncExternalStore实现组件通信" }
       ]
     },
     {

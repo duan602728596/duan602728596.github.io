@@ -1,0 +1,76 @@
+```javascript
+import { Fragment, useState, useMemo, useSyncExternalStore, useId } from 'react';
+import { createRoot } from 'react-dom/client';
+
+class Store {
+  valueCache = null;
+  update = null;
+
+  subscribe = (v) => {
+    if (!this.update) {
+      this.update = v;
+    }
+  };
+
+  getState = () => {
+    return this.valueCache;
+  };
+
+  addValue(value) {
+    this.valueCache = { value };
+    this.update?.();
+  }
+
+  clearValue() {
+    this.valueCache = null;
+  }
+}
+
+const store = new Store();
+
+function View(props) {
+  const valueCache = useSyncExternalStore(store.subscribe, () => store.getState());
+  const [state, setState] = useState([]);
+
+  useMemo(function() {
+    if (valueCache !== null && valueCache.value) {
+      setState((prevState) => [...prevState, valueCache.value]);
+      store.clearValue();
+    }
+  }, [valueCache]);
+
+  return <div>{ state.join(', ') }</div>;
+}
+
+function AddValue(props) {
+  const id = useId();
+
+  function handleClick(event) {
+    const value = document.getElementById(`${ id }-input`).value;
+
+    if (value && value !== '') {
+      store.addValue(value);
+    }
+  }
+
+  return (
+    <Fragment>
+      <input id={ `${ id }-input` } />
+      <button type="button" onClick={ handleClick }>点击</button>
+    </Fragment>
+);
+}
+
+function App(props) {
+  return (
+    <div>
+      <AddValue />
+      <View />
+    </div>
+  );
+}
+
+const root = createRoot(document.getElementById('app'));
+
+root.render(<App />);
+```
