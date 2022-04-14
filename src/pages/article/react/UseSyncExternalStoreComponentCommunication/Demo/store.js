@@ -1,10 +1,10 @@
 class Store {
   valueCache = null; // 缓存值
-  update = null;     // 执行更新的函数
+  listener = null;   // 执行更新的函数
 
   // 注册
   subscribe = (listener) => {
-    this.update = listener;
+    this.listener = listener;
   };
 
   // 获取valueCache的值
@@ -15,7 +15,7 @@ class Store {
   // 添加值
   setValueCache(value) {
     this.valueCache = { value };
-    this.update?.();
+    this.listener?.();
   }
 
   // 清除缓存
