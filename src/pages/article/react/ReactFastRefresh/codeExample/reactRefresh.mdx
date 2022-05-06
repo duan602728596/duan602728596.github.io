@@ -1,0 +1,40 @@
+```javascript
+/* 代码头部添加 */
+let __$prevRefreshReg$__;
+let __$prevRefreshSig$__;
+
+if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && module.hot) {
+  __$prevRefreshReg$__ = window.$RefreshReg$;
+  __$prevRefreshSig$__ = window.$RefreshSig$;
+
+  const ReactRefresh = require('react-refresh/runtime');
+       
+  window.$RefreshReg$ = (type, id) => {
+    const fullId = module.id + ' ' + id;
+                
+    ReactRefresh.register(type, fullId);
+  }
+
+  window.$RefreshSig$ = ReactRefresh.createSignatureFunctionForTransform;
+}
+
+// ====================
+// 你的代码
+// ====================
+
+/* 代码尾部添加 */
+if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && module.hot) {
+  const ReactRefresh = require('react-refresh/runtime');
+
+  window.$RefreshReg$ = __$prevRefreshReg$__;
+  window.$RefreshSig$ = __$prevRefreshSig$__;
+  module.hot.accept();
+
+  if (window.$RefreshTime$ === null) {
+    window.$RefreshTime$ = setTimeout(() => {
+      window.$RefreshTime$ = null;
+      ReactRefresh.performReactRefresh();
+    }, 30);
+  }
+}
+```
