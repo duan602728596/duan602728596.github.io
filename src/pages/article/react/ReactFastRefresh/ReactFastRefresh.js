@@ -17,7 +17,8 @@ function ReactFastRefresh(props) {
       </Paragraph>
       <Title level={ 2 }>在项目中使用react-refresh（webpack）</Title>
       <Paragraph>
-        在babel配置中，需要添加babel插件<Text className="inline-block" code={ true }>react-refresh/babel</Text>。
+        在babel配置中，需要添加babel插件
+        <Text className="inline-block" code={ true }>react-refresh/babel</Text>。
       </Paragraph>
       <Paragraph>添加全局代码。</Paragraph>
       <GlobalExample />
