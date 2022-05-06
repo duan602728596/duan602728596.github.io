@@ -1,5 +1,5 @@
 import https from 'node:https';
-import * as fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import url from 'node:url';
 import next from 'next';
@@ -10,8 +10,8 @@ const app = next({ dev: true, port: 5057 });
 const handle = app.getRequestHandler();
 
 const httpsConfig = {
-  key: await fs.promises.readFile(path.join(__dirname, 'dev.key')),
-  cert: await fs.promises.readFile(path.join(__dirname, 'dev.crt'))
+  key: await fs.readFile(path.join(__dirname, 'dev.key')),
+  cert: await fs.readFile(path.join(__dirname, 'dev.crt'))
 };
 
 await app.prepare();
