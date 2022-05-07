@@ -1,11 +1,12 @@
 ```javascript
 // global
-if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && module.hot) {
+if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && !window.$RefreshInstall$ && module.hot) {
   const ReactRefresh = require('react-refresh/runtime');
   
   ReactRefresh.injectIntoGlobalHook(window);
   window.$RefreshReg$ = () => {};
   window.$RefreshSig$ = () => (type) => type;
   window.$RefreshTime$ = null;
+  window.$RefreshInstall$ = true;
 }
 ```
