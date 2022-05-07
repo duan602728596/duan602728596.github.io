@@ -1,0 +1,14 @@
+```javascript
+function ReactRefreshLoader(source, sourcemap) {
+  const callback = this.async();
+  let sourceData = source;
+
+  if (source.includes('= $RefreshSig$()')) {
+    sourceData =  `${ ReactRefreshPrev }\n\n${ source }\n\n${ ReactRefreshEnd }`;
+  }
+  
+  callback(null, sourceData, sourcemap);
+}
+
+module.exports = ReactRefreshLoader;
+```

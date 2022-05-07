@@ -3,7 +3,11 @@
 let __$prevRefreshReg$__;
 let __$prevRefreshSig$__;
 
-if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && module.hot) {
+if (
+  process.env.NODE_ENV !== 'production'
+  && typeof window !== 'undefined'
+  && module.hot
+) {
   __$prevRefreshReg$__ = window.$RefreshReg$;
   __$prevRefreshSig$__ = window.$RefreshSig$;
 
@@ -23,7 +27,11 @@ if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && mo
 // ====================
 
 /* 代码尾部添加 */
-if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && module.hot) {
+if (
+  process.env.NODE_ENV !== 'production'
+  && typeof window !== 'undefined'
+  && module.hot
+) {
   const ReactRefresh = require('react-refresh/runtime');
 
   window.$RefreshReg$ = __$prevRefreshReg$__;

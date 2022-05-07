@@ -2,6 +2,7 @@ import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import GlobalExample from './codeExample/global.mdx';
 import ReactRefreshExample from './codeExample/reactRefresh.mdx';
+import ReactRefreshLoaderExample from './codeExample/ReactRefreshLoader.mdx';
 import WebpackExample from './codeExample/webpack.mdx';
 
 const { Title, Paragraph, Text } = Typography;
@@ -29,6 +30,9 @@ function ReactFastRefresh(props) {
         <Text className="inline-block" code={ true }>react-refresh/babel</Text>编译后的代码之前，否则不生效。所以在webpack中，我们可以通过
         <Text className="inline-block" code={ true }>string-replace-loader</Text>来注入这段代码。
       </Paragraph>
+      <Paragraph>可以通过开发loader，来添加这段代码。</Paragraph>
+      <ReactRefreshLoaderExample />
+      <Paragraph>或者使用其他的方法来添加代码。</Paragraph>
       <WebpackExample />
       <Alert type="info"
         message={ [
