@@ -13,7 +13,8 @@ function ReactFastRefresh(props) {
     <ArticleLayout>
       <Title>如何使用React Fast Refresh</Title>
       <Paragraph>
-        <Text className="inline-block" code={ true }>react-refresh</Text>是react官方实现的热替换方案，用于替换其他的方案，如
+        <Text className="inline-block" code={ true }>react-refresh</Text>
+        是react官方实现的热替换方案，用于替换其他的方案，如
         <Text className="inline-block" code={ true }>react-hot-loader</Text>等。
       </Paragraph>
       <Title level={ 2 }>在项目中使用react-refresh（webpack）</Title>
@@ -27,12 +28,16 @@ function ReactFastRefresh(props) {
       <ReactRefreshExample />
       <Paragraph>
         这段代码必须在被
-        <Text className="inline-block" code={ true }>react-refresh/babel</Text>编译后的代码之前，否则不生效。所以在webpack中，我们可以通过
-        <Text className="inline-block" code={ true }>string-replace-loader</Text>来注入这段代码。
+        <Text className="inline-block" code={ true }>react-refresh/babel</Text>
+        编译后的代码之前，否则不生效。
       </Paragraph>
-      <Paragraph>可以通过开发loader，来添加这段代码。</Paragraph>
+      <Paragraph>所以在webpack中，可以通过开发loader，来添加这段代码。</Paragraph>
       <ReactRefreshLoaderExample />
-      <Paragraph>或者使用其他的方法来添加代码。</Paragraph>
+      <Paragraph>
+        也可以通过
+        <Text className="inline-block" code={ true }>string-replace-loader</Text>
+        来注入这段代码。
+      </Paragraph>
       <WebpackExample />
       <Alert type="info"
         message={ [
