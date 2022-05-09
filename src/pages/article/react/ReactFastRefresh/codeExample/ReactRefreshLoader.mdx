@@ -4,9 +4,9 @@ function ReactRefreshLoader(source, sourcemap) {
   let sourceData = source;
 
   if (source.includes('= $RefreshSig$()')) {
-    sourceData =  `${ ReactRefreshPrev }\n\n${ source }\n\n${ ReactRefreshEnd }`;
+    sourceData = `${ ReactRefreshPrev }\n\n${ source }\n\n${ ReactRefreshEnd }`;
   }
-  
+
   callback(null, sourceData, sourcemap);
 }
 
