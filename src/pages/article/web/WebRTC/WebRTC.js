@@ -4,7 +4,7 @@ import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 
 const { Title, Paragraph, Text } = Typography;
 
-/* 在浏览器中触发事件 */
+/* 浏览器中使用WebRTC进行通信 */
 function WebRTC(props) {
   return (
     <ArticleLayout>
