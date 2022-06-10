@@ -1,0 +1,40 @@
+```javascript
+import http from 'node:http';
+import { PassThrough } from 'node:stream';
+import Koa from 'koa';
+import serve from 'koa-static';
+
+const app = new Koa();
+
+app.use(serve('lib', { maxage: 0 }));
+
+let stream;
+
+setInterval(() => {
+  if (stream) {
+    stream.write(`event: message
+data: ${ JSON.stringify({ date: new Date().toString() }) }\n\n`);
+  }
+}, 1500);
+
+app.use(async function(ctx, next) {
+  if (ctx.url === '/ssg') {
+    ctx.request.socket.setTimeout(0);
+    ctx.req.socket.setNoDelay(true);
+    ctx.req.socket.setKeepAlive(true);
+
+    ctx.set({
+      'Content-Type': 'text/event-stream; charset=utf-8',
+      'Cache-Control': 'no-cache, no-transform',
+      'X-Accel-Buffering': 'no',
+      Connection: 'keep-alive'
+    });
+
+    stream = new PassThrough();
+    ctx.status = 200;
+    ctx.body = stream;
+  }
+});
+
+http.createServer(app.callback()).listen(5050);
+```

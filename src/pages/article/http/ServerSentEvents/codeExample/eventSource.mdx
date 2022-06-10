@@ -1,0 +1,11 @@
+```javascript
+const evtSource = new EventSource('/ssg');
+
+evtSource.addEventListener('open', function(event) {
+  console.log('open');
+});
+
+evtSource.addEventListener('message', function(event) {
+  console.log('message: ', event.data);
+});
+```

@@ -1,0 +1,42 @@
+import { Typography, Alert } from 'antd';
+import ServerSourceExample from './codeExample/server.mdx';
+import EventSourceExample from './codeExample/eventSource.mdx';
+
+export const { Text } = Typography;
+
+# 使用Server-sent events，和浏览器单向通信
+
+一个网页获取新的数据通常需要发送一个请求到服务器，也就是向服务器请求的页面。 使用Server-sent events，
+服务器可以在任何时刻向我们的Web页面推送数据。webpack-hot-middleware就是使用Server-sent events来发送热替换消息。
+
+<ServerSourceExample />
+
+在浏览器中，通过
+<Text className="inline-block" code={ true }>EventSource</Text>
+来创建一个连接，并监听事件。
+
+<EventSourceExample />
+
+<Alert type="info"
+  message={ [
+    '参考地址：',
+    <div key="server-sent-events">
+      Server-sent events：
+      <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events" target="_blank" rel="noopener noreferrer">
+        https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events
+      </a>
+    </div>,
+    <div key="server-sent-events-sse-streams-with-node-and-koa">
+      Server Sent Events (SSE) Streams with Node and Koa：
+      <a href="https://medium.com/trabe/server-sent-events-sse-streams-with-node-and-koa-d9330677f0bf" target="_blank" rel="noopener noreferrer">
+        https://medium.com/trabe/server-sent-events-sse-streams-with-node-and-koa-d9330677f0bf
+      </a>
+    </div>,
+    <div key="webpack-hot-middleware">
+      webpack-hot-middleware：
+      <a href="https://github.com/webpack-contrib/webpack-hot-middleware" target="_blank" rel="noopener noreferrer">
+        https://github.com/webpack-contrib/webpack-hot-middleware
+      </a>
+    </div>
+  ] }
+/>
