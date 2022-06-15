@@ -7,7 +7,14 @@
         { "href": "https://juejin.cn/post/7033615049721806879", "title": "怎样判断面试者是否有扎实的前端基础？" },
         { "href": "https://css-speedrun.netlify.app/", "title": "CSS测验" },
         { "href": "https://www.w3cschool.cn/jdgasx/", "title": "前后端分离的思考与实践" },
-        { "href": "https://zhuanlan.zhihu.com/p/483199541", "title": "2022年的CSS" }
+        { "href": "https://zhuanlan.zhihu.com/p/483199541", "title": "2022年的CSS" },
+        { "href": "https://q.shanyue.tech/", "title": "互联网大厂面试每日一题" }
+      ]
+    },
+    {
+      "title": "Web3.0",
+      "children": [
+        { "href": "https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek", "title": "Web3 DApp 最佳编程实践指南" }
       ]
     },
     {
