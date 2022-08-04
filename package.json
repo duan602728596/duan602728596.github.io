@@ -8,7 +8,7 @@
     "server": "serve out -p 5058",
     "eslint": "eslint ./ --fix",
     "update-version": "milktea-esm update",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "packageManager": "yarn@3.2.0",
   "engines": {
