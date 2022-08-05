@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react';
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 import classNames from 'classnames';
 import style from './clipPathImageMixDemo.module.sass';
 import Picture from '../../../../../components/Picture/Picture';
@@ -26,59 +26,50 @@ function ClipPathImageMixDemo(props) {
     setIndex((prevState) => prevState === 0 ? 1 : 0);
   }
 
-  // 设置css变量的值
-  function setStyleProperty(x, y, radius) {
-    containerRef.current.style.setProperty('--x', `${ x }px`);
-    containerRef.current.style.setProperty('--y', `${ y }px`);
-    typeof radius === 'number' && containerRef.current.style.setProperty('--radius', `${ radius }px`);
-  }
-
   const handleMouseMove = useCallback(function(event) {
-    const bounding = event.target.getBoundingClientRect();
-    const [x, y] = [event.pageX - bounding.left, event.pageY - bounding.top];
+    if (containerRef.current) {
+      const bounding = containerRef.current.getBoundingClientRect();
+      const [x, y] = [event.clientX - bounding.left, event.clientY - bounding.top];
 
-    setStyleProperty(x, y, 150);
-  }, []);
-
-  const handleMouseOut = useCallback(function(event) {
-    setStyleProperty(0, 0, 0);
-    containerRef.current.removeEventListener('mousemove', handleMouseMove);
-    containerRef.current.removeEventListener('mouseout', handleMouseOut);
+      containerRef.current.style.setProperty('--x', `${ x }px`);
+      containerRef.current.style.setProperty('--y', `${ y }px`);
+    }
   }, []);
 
   const handleMouseOver = useCallback(function(event) {
-    const bounding = event.target.getBoundingClientRect();
-    const [x, y] = [event.pageX - bounding.left, event.pageY - bounding.top];
-
-    setStyleProperty(x, y, 150);
-    containerRef.current.addEventListener('mousemove', handleMouseMove);
-    containerRef.current.addEventListener('mouseout', handleMouseOut);
+    containerRef.current.style.setProperty('--radius', '100px');
+    handleMouseMove(event);
+    document.addEventListener('mousemove', handleMouseMove);
   }, []);
 
   useEffect(function() {
-    containerRef.current.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseover', handleMouseOver, { once: true });
 
     return function() {
-      handleMouseOut();
-      containerRef.current.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
     <Fragment>
-      <div ref={ containerRef } className={ classNames('relative mx-auto max-w-[600px]', style.container) }>
-        <Picture className="block w-full pointer-events-none"
-          imageClassName="w-full"
-          { ...picArr[index] }
-        />
-        <Picture className={ classNames('block absolute top-0 left-0 w-full pointer-events-none', style.mix) }
-          imageClassName="w-full"
-          { ...picArr[index === 0 ? 1 : 0] }
-        />
-      </div>
-      <div className="pt-[16px] text-center">
-        <Button onClick={ switchIndex }>切换图片</Button>
-      </div>
+      <Card className={ style.card }
+        bodyStyle={{ textAlign: 'center' }}
+        extra={ <Button onClick={ switchIndex }>切换图片</Button> }
+      >
+        <div ref={ containerRef } className={ classNames('inline-block', style.container) }>
+          <div className="relative inline-block max-w-[500px] pointer-events-none">
+            <Picture className="block w-full"
+              imageClassName="w-full"
+              { ...picArr[index] }
+            />
+            <Picture className={ classNames('block absolute top-0 left-0 w-full pointer-events-none', style.mix) }
+              imageClassName="w-full"
+              { ...picArr[index === 0 ? 1 : 0] }
+            />
+          </div>
+        </div>
+      </Card>
     </Fragment>
   );
 }
