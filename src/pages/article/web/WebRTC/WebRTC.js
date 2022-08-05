@@ -31,11 +31,11 @@ function WebRTC(props) {
       </Paragraph>
       <div className={ style.iframeBox }>
         {/**
-          * 编辑地址：https://www.yuque.com/bbkkbkk/github/bkszne
+          * 编辑地址：https://www.yuque.com/bbkkbkk/github/oss89z
           * 参考文档：https://www.yuque.com/yuque/developer/embed
           */}
         <iframe className={ style.iframe }
-          src="https://www.yuque.com/bbkkbkk/github/bkszne?view=doc_embed&from=duan602728596"
+          src="https://www.yuque.com/bbkkbkk/github/oss89z?view=doc_embed&from=duan602728596"
           name="webrtc-flow-chart"
           referrerPolicy="no-referrer"
         />
@@ -61,6 +61,12 @@ function WebRTC(props) {
             STUN+TURN servers list：
             <a href="https://gist.github.com/yetithefoot/7592580" target="_blank" rel="noopener noreferrer">
               https://gist.github.com/yetithefoot/7592580
+            </a>
+          </div>,
+          <div key="WebRTC-stun-turn-servers-list">
+            WebRTC stun / turn server list：
+            <a href="https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b" target="_blank" rel="noopener noreferrer">
+              https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b
             </a>
           </div>
         ] }
