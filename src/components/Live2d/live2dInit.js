@@ -1,15 +1,14 @@
 import { Application } from '@pixi/app';
-import { Renderer } from '@pixi/core';
+import { extensions } from '@pixi/core';
 import { Ticker, TickerPlugin } from '@pixi/ticker';
 import { InteractionManager } from '@pixi/interaction';
-import { Live2DModel, MotionPreloadStrategy } from 'pixi-live2d-display/lib/cubism4';
+// eslint-disable-next-line import/no-unresolved
+import { Live2DModel } from 'pixi-live2d-display/cubism4';
+
+extensions.add(TickerPlugin, InteractionManager /* 注册 InteractionManager 以支持 Live2D 模型的自动交互 */);
 
 // 注册 Ticker 以支持 Live2D 模型的自动更新
-Application.registerPlugin(TickerPlugin);
 Live2DModel.registerTicker(Ticker);
-
-// 注册 InteractionManager 以支持 Live2D 模型的自动交互
-Renderer.registerPlugin('interaction', InteractionManager);
 
 /* 模型 */
 const models = [
