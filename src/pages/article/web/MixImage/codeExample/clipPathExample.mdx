@@ -1,0 +1,62 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .bottomBg {
+        --topX: 0px;
+        --topY: 0px;
+
+        width: 720px;
+        height: 911px;
+        background-image: url('./2.jpg');
+    }
+
+    .upBg {
+        width: 100%;
+        height: 100%;
+        background-image: url('./3.jpg');
+        pointer-events: none;
+        clip-path: circle(0 at 0 0);
+    }
+
+    .clip {
+        clip-path: circle(150px at var(--topX) var(--topY));
+    }
+  </style>
+</head>
+<body>
+<div class="bottomBg" id="bottomBg">
+  <div class="upBg" id="upBg"></div>
+</div>
+
+<script>
+  const bottomBg = document.getElementById('bottomBg');
+  const upBg = document.getElementById('upBg');
+
+  function handleMouseOut(event) {
+    upBg.classList.remove('clip');
+    bottomBg.removeEventListener('mousemove', handleMouseMove);
+    bottomBg.removeEventListener('mouseout', handleMouseOut);
+  }
+
+  function handleMouseMove(event) {
+    const bounding = event.target.getBoundingClientRect();
+    const [x, y] = [event.pageX - bounding.left, event.pageY - bounding.top];
+
+    bottomBg.style.setProperty('--topX', `${ x }px`);
+    bottomBg.style.setProperty('--topY', `${ y }px`);
+  }
+
+  function handleMouseOver(event) {
+    upBg.classList.add('clip');
+    bottomBg.addEventListener('mousemove', handleMouseMove);
+    bottomBg.addEventListener('mouseout', handleMouseOut);
+  }
+
+  bottomBg.addEventListener('mouseover', handleMouseOver);
+</script>
+</body>
+</html>
+```

@@ -76,8 +76,8 @@ module.exports = withMdx({
             plugins: [
               tailwindcss({
                 content: [
-                  './src/**/*.{ts,tsx,js,jsx}',
-                  './pages/**/*.{ts,tsx,js,jsx}'
+                  './src/**/*.{ts,tsx,js,jsx,mdx}',
+                  './pages/**/*.{ts,tsx,js,jsx,mdx}'
                 ]
               }),
               autoprefixer()
