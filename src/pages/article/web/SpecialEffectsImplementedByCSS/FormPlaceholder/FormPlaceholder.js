@@ -15,8 +15,8 @@ function FormPlaceholder(props) {
       <Title level={ 2 }>表单占位符</Title>
       <div className="p-[16px]">
         <div className={ style.formPlaceholder }>
-          <input className={ style.formPlaceholderInputText } id={ inputTextId } type="text" placeholder="姓名" />
-          <label className={ style.formPlaceholderLabel } htmlFor={ inputTextId }>姓名</label>
+          <input className={ style.formPlaceholderInputText } id={ inputTextId } type="text" placeholder="输入框" />
+          <label className={ style.formPlaceholderLabel } htmlFor={ inputTextId }>输入框</label>
         </div>
       </div>
       <FormPlaceholderExample />
