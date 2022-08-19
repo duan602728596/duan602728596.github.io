@@ -1,0 +1,113 @@
+```html
+<style>
+.search {
+  --search-input-width: 200px;  /* 搜索框的宽度 */
+  --search-input-height: 45px;  /* 搜索框的高度 */
+  --search-label-padding: 18px; /* 按钮相对于搜索框的扩展 */
+
+  /* 按钮的宽度 */
+  --search-label-width: calc(var(--search-input-height) + var(--search-label-padding));
+  --search-icon-width: 24px;    /* 图标的宽度 */
+  --search-icon-thickness: 2px; /* 图标的粗细 */
+  --search-animate-time: .4s;   /* 动画时间 */
+}
+
+.search {
+  display: inline-block;
+  position: relative;
+  width: var(--search-input-width);
+}
+
+.search-text {
+  position: relative;
+  right: 0;
+  padding: 0 calc(var(--search-label-width) / 2 + 10px) 0 10px;
+  width: var(--search-input-width);
+  height: var(--search-input-height);
+  border: none;
+  border-top-left-radius: calc(var(--search-input-height) / 2);
+  border-bottom-left-radius: calc(var(--search-input-height) / 2);
+  outline: 1px solid #d9d9d9;
+  transition: right var(--search-animate-time),
+              width var(--search-animate-time),
+              outline-color var(--search-animate-time);
+}
+
+.search-text:focus, .search-text:hover {
+  outline-color: #40a9ff;
+}
+
+.search-text::-webkit-input-placeholder {
+  color: #8d8d8d;
+}
+
+.search-label {
+  position: absolute;
+  right: calc(var(--search-label-width) / -2);
+  top: calc(var(--search-label-padding) / -2);
+  display: inline-block;
+  width: var(--search-label-width);
+  height: var(--search-label-width);
+  border-radius: var(--search-label-width);
+  background-color: #ffa300;
+  cursor: pointer;
+  transition: right var(--search-animate-time),
+              background-color var(--search-animate-time);
+  transform: rotate(225deg);
+}
+
+.search-label:before, .search-label:after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  display: block;
+  border-radius: var(--search-icon-width);
+  box-shadow: 0 0 0 var(--search-icon-thickness) #fff inset;
+}
+
+.search-label:before {
+  left: calc(var(--search-label-width) / 2 - 2px);
+  top: calc((var(--search-label-width) - 24px) / 2);
+  width: calc(var(--search-icon-thickness) * 2);
+  height: var(--search-icon-width);
+  transition: width var(--search-animate-time);
+}
+
+.search-label:after {
+  top: calc(var(--search-label-width) / 2 - 2px);
+  left: calc((var(--search-label-width) - 24px) / 2);
+  width: var(--search-icon-width);
+  height: calc(var(--search-icon-thickness) * 2);
+  transition: left var(--search-animate-time);
+}
+
+.search-checkbox {
+  display: none;
+}
+
+.search-checkbox:checked ~ .search-text {
+  right: calc(var(--search-label-width) / 2 - var(--search-input-width) / 2 - 1px);
+  width: 0
+}
+
+.search-checkbox:checked ~ .search-label {
+  right: calc((var(--search-input-width) - var(--search-label-width)) / 2);
+  background-color: #1890ff;
+}
+
+.search-checkbox:checked ~ .search-label:before {
+  width: var(--search-icon-width);
+}
+
+.search-checkbox:checked ~ .search-label:after {
+  left: calc((var(--search-label-width) - var(--search-icon-width) * 2) / 2);
+}
+</style>
+
+<!-- html -->
+<div class="search">
+  <input class="search-checkbox" id="search-checkbox" type="checkbox">
+  <input class="search-text" type="text" placeholder="搜索">
+  <label class="search-label" for="search-checkbox"></label>
+</div>
+```

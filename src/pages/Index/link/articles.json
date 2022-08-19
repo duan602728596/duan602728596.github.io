@@ -21,7 +21,8 @@
         { "href": "/article/web/file-system-access-api", "title": "使用File System Access API访问文件" },
         { "href": "/article/web/trigger-event", "title": "在浏览器中触发事件" },
         { "href": "/article/web/webrtc", "title": "浏览器中使用WebRTC进行通信" },
-        { "href": "/article/web/mix-image", "title": "使用CSS的clip-path属性实现图片探照灯效果" }
+        { "href": "/article/web/mix-image", "title": "使用CSS的clip-path属性实现图片探照灯效果" },
+        { "href": "/article/web/special-effects-implemented-by-css", "title": "使用CSS动画实现各种特效" }
       ]
     },
     {
