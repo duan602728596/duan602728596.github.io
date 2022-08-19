@@ -1,0 +1,60 @@
+```html
+<!-- css -->
+<style>
+.form-placeholder {
+  --form-placeholder-animate-time: .3s; /* 动画时间 */
+}
+
+.form-placeholder {
+  position: relative;
+  display: inline-block;
+}
+
+.form-placeholder-input-text {
+  padding: 20px 10px;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color var(--form-placeholder-animate-time);
+}
+
+.form-placeholder-input-text:placeholder-shown::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-placeholder-input-text:focus, .form-placeholder-input-text:hover {
+  border-color: #40a9ff;
+}
+
+.form-placeholder-label {
+  position: absolute;
+  left: 6px;
+  top: 11px;
+  padding: 0 5px;
+  color: #a4a4a4;
+  pointer-events: none;
+  transition: top var(--form-placeholder-animate-time),
+              font-size var(--form-placeholder-animate-time),
+              color var(--form-placeholder-animate-time);
+}
+
+.form-placeholder-input-text, .form-placeholder-label {
+  font-size: 14px;
+}
+
+.form-placeholder-input-text:focus + .form-placeholder-label,
+.form-placeholder-input-text:not(:placeholder-shown) + .form-placeholder-label {
+  top: -8px;
+  font-size: 12px;
+  color: #40a9ff;
+  background-color: #fff;
+}
+</style>
+
+<!-- html -->
+<div class="form-placeholder">
+  <input class="form-placeholder-input-text" id="input-text" type="text" placeholder="输入框">
+  <label class="form-placeholder-label" for="input-text">输入框</label>
+</div>
+```

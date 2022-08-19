@@ -1,0 +1,39 @@
+.formPlaceholder
+  --form-placeholder-animate-time: .3s /* 动画时间 */
+
+.formPlaceholder
+  position: relative
+  display: inline-block
+
+  &InputText
+    padding: 20px 10px
+    width: 250px
+    height: 30px
+    border: 1px solid #ababab
+    outline: none
+    transition: border-color var(--form-placeholder-animate-time)
+
+    &:focus, &:hover
+      border-color: #40a9ff
+
+    &:placeholder-shown::-webkit-input-placeholder
+      color: transparent
+
+    &:focus, &:not(:placeholder-shown)
+      & + .formPlaceholderLabel
+        top: -8px
+        font-size: 12px
+        color: #40a9ff
+        background-color: #fff
+
+  &Label
+    position: absolute
+    left: 6px
+    top: 11px
+    padding: 0 5px
+    color: #a4a4a4
+    pointer-events: none
+    transition: top var(--form-placeholder-animate-time), font-size var(--form-placeholder-animate-time), color var(--form-placeholder-animate-time)
+
+  &InputText, &Label
+    font-size: 14px

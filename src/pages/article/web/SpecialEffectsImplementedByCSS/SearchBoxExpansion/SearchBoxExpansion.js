@@ -13,7 +13,7 @@ function SearchBoxExpansion(props) {
   return (
     <Fragment>
       <Title level={ 2 }>可伸缩的搜索框</Title>
-      <div className={ style.root }>
+      <div className="p-[16px]">
         <div className={ style.search }>
           <input className={ style.searchCheckbox } id={ checkboxId } type="checkbox" />
           <input className={ style.searchText } type="text" placeholder="搜索" />

@@ -1,6 +1,7 @@
 import { Typography } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import SearchBoxExpansion from './SearchBoxExpansion/SearchBoxExpansion';
+import FormPlaceholder from './FormPlaceholder/FormPlaceholder';
 
 const { Title } = Typography;
 
@@ -10,6 +11,7 @@ function SpecialEffectsImplementedByCSS(props) {
     <ArticleLayout>
       <Title>使用CSS动画实现各种特效</Title>
       <SearchBoxExpansion />
+      <FormPlaceholder />
     </ArticleLayout>
   );
 }
