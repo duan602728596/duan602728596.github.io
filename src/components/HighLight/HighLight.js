@@ -6,6 +6,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import css from 'highlight.js/lib/languages/css';
 import dart from 'highlight.js/lib/languages/dart';
+import bash from 'highlight.js/lib/languages/bash';
 import style from './highLight.module.sass';
 import graphql from './languages/graphql';
 
@@ -15,6 +16,7 @@ hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('dart', dart);
 hljs.registerLanguage('graphql', graphql);
+hljs.registerLanguage('bash', bash);
 
 /**
  * 代码高亮组件

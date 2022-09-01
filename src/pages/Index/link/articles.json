@@ -58,6 +58,12 @@
       ]
     },
     {
+      "title": "操作系统",
+      "children": [
+        { "href": "/article/operating-system/win11-right-click-menu-restore-to-win10", "title": "将Win11的右键菜单还原到Win10的样式" }
+      ]
+    },
+    {
       "title": "视频技术",
       "children": [
         { "href": "/article/media/par-dar-sar-of-video", "title": "视频参数PAR、DAR、SAR的区别" }

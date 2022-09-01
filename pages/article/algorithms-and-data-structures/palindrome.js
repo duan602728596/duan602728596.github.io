@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import Palindrome from '../../../src/pages/article/algorithms-and-data-structures/Palindrome/Palindrome';
+import Palindrome from '../../../src/pages/article/algorithmsAndDataStructures/Palindrome/Palindrome';
 
 export default function PalindromePage(props) {
   return (

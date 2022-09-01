@@ -1,0 +1,21 @@
+# 将Win11的右键菜单还原到Win10的样式
+
+管理员运行如下命令：
+
+* Win11还原到Win10
+
+```bash
+reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+```
+
+* 恢复到Win11
+
+```bash
+reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /va /f
+```
+
+* 运行后重新启动资源管理器
+
+```bash
+taskkill /f /im explorer.exe & start explorer.exe
+```
