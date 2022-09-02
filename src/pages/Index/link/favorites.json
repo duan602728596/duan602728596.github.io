@@ -43,10 +43,12 @@
     {
       "title": "云服务",
       "children": [
-        { "href": "https://fauna.com/", "title": "fauna（作为云 API 交付的分布式文档关系数据库）" },
+        { "href": "https://fauna.com/", "title": "fauna - 作为云 API 交付的分布式文档关系数据库" },
         { "href": "https://imgur.com/", "title": "Imgur" },
-        { "href": "https://www.loginradius.com/", "title": "LoginRadius (No-code Customer IAM Platform)" },
-        { "href": "https://auth0.com/", "title": "Auth0（Auth0 是一个易于实现、适应性强的认证和授权平台）" }
+        { "href": "https://www.loginradius.com/", "title": "LoginRadius - No-code Customer IAM Platform" },
+        { "href": "https://auth0.com/", "title": "Auth0 - Auth0 是一个易于实现、适应性强的认证和授权平台" },
+        { "href": "https://xirsys.com/", "title": "Xirsys - TURN Server Cloud" },
+        { "href": "https://pusher.com/", "title": "Pusher" }
       ]
     }
   ]
