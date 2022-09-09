@@ -1,6 +1,6 @@
-import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import { Typography, Alert } from 'antd';
 import style from './parDarSarOfVideo.module.sass';
+import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
 
 const { Title, Paragraph, Text } = Typography;

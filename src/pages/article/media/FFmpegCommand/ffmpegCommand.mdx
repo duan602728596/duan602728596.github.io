@@ -1,0 +1,80 @@
+import { Typography } from 'antd';
+
+export const { Text } = Typography;
+
+# FFmpeg常用的命令
+
+## 1、在下载视频时添加Headers
+
+通过
+<Text code={ true }>-headers</Text>参数可以在下载视频时添加Headers，header之间用
+<Text>\r\n</Text>分隔。例如：
+
+```bash
+ffmpeg -headers "Referer: https://video.com/\r\nHost: video.com\r\n" -i https://video.com/1.mp4 -c copy 1.mp4
+```
+
+如果视频格式是m3u8，则headers只对m3u8文件有效，对切片的ts文件无效。
+
+
+## 2、下载本地m3u8文件
+
+当m3u8为本地文件时，通过
+<Text code={ true }>-protocol_whitelist</Text>参数添加协议的白名单，可以正常下载视频。例如：
+
+```bash
+ffmpeg -protocol_whitelist "file,http,https,tcp,tls" -i c:\video\1.m3u8 -c copy 1.mp4
+```
+
+## 3、视频裁剪
+
+通过
+<Text code={ true }>-ss</Text>和
+<Text code={ true }>-t</Text>参数来裁剪视频。例如：
+
+```bash
+ffmpeg -ss 00:00:10 -t 00:00:10 -accurate_seek -i 1.mp4 --avoid_negative_ts 1 1_cut.mp4
+```
+
+命令的具体功能可以在
+<a href="https://ffmpeg.org/ffmpeg-all.html" target="_blank" rel="noopener noreferrer">FFmpeg Documentation</a>找到。
+
+对于视频时长的计算可以使用这段代码：
+
+```typescript
+type Time = [number, number, number];
+
+/**
+ * 计算时间差
+ * @param { Time } startTime: 开始时间
+ * @param { Time } endTime  : 结束时间
+ * @return { Time }
+ */
+function computingTime(startTime: Time, endTime: Time): Time {
+  const startS: number = (startTime[0] * 3600) + (startTime[1] * 60) + startTime[2]; // 开始时间转换到秒
+  const endS: number = (endTime[0] * 3600) + (endTime[1] * 60) + endTime[2];         // 结束时间转换到秒
+  const cha: number = endS - startS;                                                 // 计算时间差
+  const h: number = Number(`${ cha / 3600 }`.match(/\d+/g)![0]);                     // 时取整数
+  const hp: number = cha % 3600;                                                     // 时取余
+  const m: number = Number(`${ hp / 60 }`.match(/\d+/g)![0]);                        // 分取整数
+  const s: number = hp % 60;                                                         // 分取余 => 秒
+
+  return [h, m, s];
+}
+```
+
+## 4、视频合并
+
+首先创建一个txt文件，写入要合并的文件。
+
+```
+file '1.mp4'
+file '2.mp4'
+file '3.mp4'
+```
+
+然后执行命令：
+
+```bash
+ffmpeg -f concat -safe 0 -i list.txt -c copy 1.mp4
+```
