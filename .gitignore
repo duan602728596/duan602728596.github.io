@@ -19,6 +19,7 @@ yarn-error.log
 .next
 out
 public/m
+.analyzes-report
 
 dev.key
 dev.crt
