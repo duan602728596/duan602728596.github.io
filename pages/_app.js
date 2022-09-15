@@ -4,6 +4,7 @@ import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
 import { Typography } from 'antd';
 import { MDXProvider } from '@mdx-js/react';
+import '../src/utils/AccessibilityKeyboard';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
 import '../src/main.tailwindcss';

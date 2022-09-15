@@ -36,8 +36,12 @@
   a
     color: rgba(255, 255, 255, .7)
 
-    &:hover
+    &:hover, &:focus
       color: rgba(255, 255, 255, .9)
+
+    &:focus
+      outline: 1px solid rgba(255, 255, 255, .9)
+      outline-offset: 5px
 
 /* 切换地址 */
 .switchAddress, .githubLink
@@ -45,6 +49,10 @@
   margin-top: 16px
   width: 30px
   height: 30px
+
+  &:focus
+    outline: 1px solid rgba(255, 255, 255, .9)
+    outline-offset: 5px
 
 .switchAddress
   color: rgba(255, 255, 255, .7)

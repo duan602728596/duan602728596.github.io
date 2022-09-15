@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { List } from 'antd';
+import classNames from 'classnames';
 import style from './articleLinks.module.sass';
 
 /* 文章链接列表 */
@@ -11,11 +12,11 @@ function ArticleLinks(props) {
   function linksRender() {
     return data.map((item, index) => {
       return (
-        <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
+        <List.Item key={ item.href } className={ classNames(style.listItem, item.blank ? style.blank : undefined) }>
           {
             item.blank
-              ? <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
-              : <Link href={ item.href }>{ item.title }</Link>
+              ? <a className={ style.link } href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
+              : <Link className={ style.link } href={ item.href }>{ item.title }</Link>
           }
         </List.Item>
       );

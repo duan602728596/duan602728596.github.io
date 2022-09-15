@@ -23,7 +23,7 @@ function Main(props) {
   function goToTopRender() {
     if (typeof document === 'object') {
       return createPortal(
-        <BackTop title="返回顶部" role="button" aria-label="返回顶部">
+        <BackTop title="返回顶部" tabIndex={ 0 } role="button" aria-label="返回顶部">
           <div className={ style.goToTop }>UP</div>
         </BackTop>,
         document.body

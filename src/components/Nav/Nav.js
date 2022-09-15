@@ -43,6 +43,7 @@ function Nav(props) {
             <Tooltip title="切换网站地址">
               <a className={ style.switchAddress }
                 role="button"
+                tabIndex={ 0 }
                 aria-label="切换网站地址"
                 onClick={ handleSwitchAddressClick }
               >
