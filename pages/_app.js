@@ -4,11 +4,11 @@ import ConfigProvider from 'antd/es/config-provider';
 import zhCN from 'antd/es/locale/zh_CN';
 import { Typography } from 'antd';
 import { MDXProvider } from '@mdx-js/react';
-import '../src/utils/Accessibility';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
-import '../src/main.tailwindcss';
+import '../src/utils/Accessibility';
 import '../src/Accessibility.sass';
+import '../src/main.tailwindcss';
 
 const { Title, Paragraph } = Typography;
 
