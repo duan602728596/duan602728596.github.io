@@ -22,7 +22,7 @@ function InputText(props) {
     <Card className={ style.mb16 } title="输入文本">
       <div className="flex">
         <div className="grow">
-          <Input value={ value } onChange={ (event) => setValue(event.target.value) } />
+          <Input value={ value } aria-label="输入文本" onChange={ (event) => setValue(event.target.value) } />
         </div>
         <div className="shrink-0">
           <Button onClick={ handleAddTextClick }>添加</Button>

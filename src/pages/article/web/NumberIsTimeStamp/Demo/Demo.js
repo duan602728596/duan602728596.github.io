@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useId } from 'react';
 import { Typography, Input, Button, Alert } from 'antd';
 import style from './demo.module.sass';
 
@@ -8,6 +8,7 @@ const { Title, Paragraph } = Typography;
 function Demo(props) {
   const [value, setValue] = useState('');
   const [result, setResult] = useState(undefined);
+  const id = useId();
 
   // 输出判断结果
   function handleOutResultClick(event) {
@@ -26,8 +27,12 @@ function Demo(props) {
       <Title level={ 2 }>代码演示</Title>
       <Paragraph>输入时间戳，判断时间戳是否有效。</Paragraph>
       <div className={ style.marginBottom }>
-        <label>时间戳：</label>
-        <Input className={ style.timeInput } value={ value } onChange={ (event) => setValue(event.target.value) } />
+        <label htmlFor={ `${ id }-time-input` }>时间戳：</label>
+        <Input className={ style.timeInput }
+          id={ `${ id }-time-input` }
+          value={ value }
+          onChange={ (event) => setValue(event.target.value) }
+        />
         <Button type="primary" onClick={ handleOutResultClick }>判断结果</Button>
       </div>
       { result !== undefined && <Alert type={ result.result ? 'success' : 'error' } description={ result.text } /> }

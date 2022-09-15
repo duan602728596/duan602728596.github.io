@@ -40,7 +40,10 @@ module.exports = withMdx({
         loader: 'less-loader',
         options: {
           lessOptions: {
-            javascriptEnabled: true
+            javascriptEnabled: true,
+            modifyVars: {
+              '@primary-color': '#2f54eb'
+            }
           }
         }
       }

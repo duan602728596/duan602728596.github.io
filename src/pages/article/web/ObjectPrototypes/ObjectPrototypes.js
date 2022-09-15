@@ -24,12 +24,12 @@ function ObjectPrototypes(props) {
       <Alert type="info"
         message={ [
           '参考地址：',
-          <div key="febook">
+          <div key="febook" className="my-[8px]">
             <a href="https://febook.hzfe.org/awesome-interview/book2/js-inherite" target="_blank" rel="noopener noreferrer">
               https://febook.hzfe.org/awesome-interview/book2/js-inherite
             </a>,
           </div>,
-          <div key="object-proto">
+          <div key="object-proto" className="my-[8px]">
             <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"
               target="_blank"
               rel="noopener noreferrer"
@@ -37,7 +37,7 @@ function ObjectPrototypes(props) {
               https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
             </a>
           </div>,
-          <div key="object-getPrototypeOf">
+          <div key="object-getPrototypeOf" className="my-[8px]">
             <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf"
               target="_blank"
               rel="noopener noreferrer"

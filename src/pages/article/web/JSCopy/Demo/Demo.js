@@ -43,7 +43,7 @@ function Demo(props) {
         <Text className={ style.copyText } id="copyText" mark={ true }>苟利国家生死以，岂因祸福避趋之。 --林则徐</Text>
       </Paragraph>
       <div className="mb-[16px]">
-        <Input ref={ inputRef } allowClear={ true } />
+        <Input ref={ inputRef } aria-label="文本框" allowClear={ true } />
       </div>
       <div className="text-right">
         <Button.Group>

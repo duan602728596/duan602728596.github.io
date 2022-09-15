@@ -21,9 +21,9 @@ function HowToUseGraphQL(props) {
       <Title level={ 2 }>使用graphql-tools</Title>
       <Paragraph>我们可以使用graphql-tools来使用GraphQL。</Paragraph>
       <Paragraph>首先我们先创建两个GraphQL文件。</Paragraph>
-      <Title level={ 5 }>query.graphql</Title>
+      <Title level={ 3 }>query.graphql</Title>
       <QueryGraphQLExample />
-      <Title level={ 5 }>human.graphql</Title>
+      <Title level={ 3 }>human.graphql</Title>
       <HumanGraphQLExample />
       <Paragraph>创建一个方法，用于加载GraphQL文件。</Paragraph>
       <UtilsExample />

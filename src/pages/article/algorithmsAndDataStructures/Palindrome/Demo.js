@@ -88,7 +88,7 @@ function Demo(props) {
           </Button.Group>
         </div>
       </div>
-      <Title level={ 5 }>输出结果：</Title>
+      <Title level={ 3 }>输出结果：</Title>
       { result.length <= 0 ? <p>无结果</p> : <ul>{ resultRender() }</ul> }
     </Fragment>
   );

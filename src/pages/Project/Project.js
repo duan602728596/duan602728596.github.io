@@ -51,7 +51,7 @@ function Project(props) {
   // 列表渲染
   function projectListRender(item) {
     const title = <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>,
-      description = <div>{ item.description }</div>;
+      description = <div className="text-[#595959]">{ item.description }</div>;
 
     return (
       <List.Item>

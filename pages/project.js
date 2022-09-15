@@ -7,6 +7,7 @@ export default function ProjectPage(props) {
     <Fragment>
       <Head>
         <title>开源项目 - 段昊辰的个人主页</title>
+        <meta name="description" content="段昊辰的开源项目" />
       </Head>
       <Index />
     </Fragment>

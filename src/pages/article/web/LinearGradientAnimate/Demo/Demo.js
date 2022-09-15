@@ -131,7 +131,7 @@ function Demo(props) {
       <Title level={ 2 }>代码演示</Title>
       <Paragraph>
         实现的效果：
-        <button className={ style.button } type="button">
+        <button className={ style.button } type="button" aria-label="具有渐变效果的按钮">
           {/* svg动画 */}
           <SvgAnimate />
         </button>
