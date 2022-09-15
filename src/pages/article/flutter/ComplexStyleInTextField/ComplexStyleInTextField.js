@@ -17,6 +17,7 @@ function ComplexStyleInTextField() {
         avifSrc="/images/complex-style-in-text-field/tangshi.avif"
         webpSrc="/images/complex-style-in-text-field/tangshi.webp"
         src="/images/complex-style-in-text-field/tangshi.png"
+        alt="Flutter开发的App的截图"
       />
       <Paragraph>
         两个<Text strong={ true }>#</Text>

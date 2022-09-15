@@ -17,12 +17,14 @@ function CSSImageCentered(props) {
         avifSrc="/images/css-img-centered/31.avif"
         webpSrc="/images/css-img-centered/31.webp"
         src="/images/css-img-centered/31.jpg"
+        alt="魔法少女小圆"
       />
       <Picture className={ style.picture }
         imageClassName={ style.image }
         avifSrc="/images/css-img-centered/32.avif"
         webpSrc="/images/css-img-centered/32.webp"
         src="/images/css-img-centered/32.png"
+        alt="阿米莉亚·华生"
       />
       {/* 代码演示 */}
       <Title level={ 2 }>代码演示</Title>

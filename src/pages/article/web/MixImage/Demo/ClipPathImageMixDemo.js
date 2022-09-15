@@ -8,12 +8,14 @@ const picArr = [
   {
     avifSrc: '/images/mix-image/3.avif',
     webpSrc: '/images/mix-image/3.webp',
-    src: '/images/mix-image/3.jpg'
+    src: '/images/mix-image/3.jpg',
+    alt: '吹响吧！上低音号 吉川优子'
   },
   {
     avifSrc: '/images/mix-image/2.avif',
     webpSrc: '/images/mix-image/2.webp',
-    src: '/images/mix-image/2.jpg'
+    src: '/images/mix-image/2.jpg',
+    alt: '吹响吧！上低音号 中川夏纪'
   }
 ];
 

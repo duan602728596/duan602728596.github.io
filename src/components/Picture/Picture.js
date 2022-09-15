@@ -7,15 +7,16 @@ import PropTypes from 'prop-types';
  * @param { string } props.avifSrc: avif的地址
  * @param { string } props.webpSrc: webp的地址
  * @param { string } props.src: 图片地址
+ * @param { string } props.alt: alt属性
  */
 function Picture(props) {
-  const { className, imageClassName, avifSrc, webpSrc, src } = props;
+  const { className, imageClassName, avifSrc, webpSrc, src, alt } = props;
 
   return (
     <picture className={ className }>
       { avifSrc && <source srcSet={ avifSrc } type="image/avif" /> }
       { webpSrc && <source srcSet={ webpSrc } type="image/webp" /> }
-      <img className={ imageClassName } src={ src } />
+      <img className={ imageClassName } src={ src } alt={ alt } />
     </picture>
   );
 }

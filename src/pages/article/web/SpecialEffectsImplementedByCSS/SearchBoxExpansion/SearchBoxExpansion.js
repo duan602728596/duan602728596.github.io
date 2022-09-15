@@ -17,7 +17,7 @@ function SearchBoxExpansion(props) {
         <div className={ style.search }>
           <input className={ style.searchCheckbox } id={ checkboxId } type="checkbox" />
           <input className={ style.searchText } type="text" placeholder="搜索" />
-          <label className={ style.searchLabel } htmlFor={ checkboxId } />
+          <label className={ style.searchLabel } htmlFor={ checkboxId } tabIndex={ 0 } />
         </div>
       </div>
       <SearchBoxExpansionExample />

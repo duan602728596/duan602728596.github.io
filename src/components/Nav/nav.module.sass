@@ -39,9 +39,9 @@
     &:hover, &:focus
       color: rgba(255, 255, 255, .9)
 
-    &:focus
-      outline: 1px solid rgba(255, 255, 255, .9)
-      outline-offset: 5px
+\:global(.accessibility) .navListItem a:focus
+  outline: 1px solid rgba(255, 255, 255, .9)
+  outline-offset: 5px
 
 /* 切换地址 */
 .switchAddress, .githubLink
@@ -63,3 +63,9 @@
   &Icon
     display: block !important
     font-size: 30px
+
+\:global(.accessibility)
+  .switchAddress, .githubLink
+    &:focus
+      outline: 1px solid rgba(255, 255, 255, .9)
+      outline-offset: 5px

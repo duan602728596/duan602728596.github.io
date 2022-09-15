@@ -60,6 +60,7 @@ function Nav(props) {
                 avifSrc="/images/github.avif"
                 webpSrc="/images/github.webp"
                 src="/images/github.png"
+                alt="github"
               />
             </a>
           </Space>

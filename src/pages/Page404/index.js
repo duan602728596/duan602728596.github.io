@@ -16,6 +16,7 @@ function Index(props) {
             avifSrc="/images/404/nengdai.avif"
             webpSrc="/images/404/nengdai.webp"
             src="/images/404/nengdai.jpg"
+            alt="能代"
           />
         }
         extra={ <Button type="primary" href="/">返回首页</Button> }
