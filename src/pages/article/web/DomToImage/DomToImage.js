@@ -1,4 +1,5 @@
 import { Typography } from 'antd';
+import articleStyle from '../../article.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import Demo from './Demo/Demo';
 import DomToImageExample from './codeExample/domToImage.mdx';
@@ -31,7 +32,9 @@ function DomToImage(props) {
       </Paragraph>
       <Paragraph>
         不过要注意的是，
-        <Text type="warning" strong={ true }>如果样式在样式表内，则svg里面对应的class是无效的</Text>
+        <Text className={ articleStyle.textWarning } type="warning" strong={ true }>
+          如果样式在样式表内，则svg里面对应的class是无效的
+        </Text>
         ，Chrome下可以把包含样式的style标签内容一并加进去，然后就可以通过类名来设置样式了，也可以通过遍历样式并添加
         <Text strong={ true } underline={ true }>style="key: value;"</Text>
         使样式生效。可以使用

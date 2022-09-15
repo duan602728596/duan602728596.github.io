@@ -1,4 +1,5 @@
 import { Typography } from 'antd';
+import articleStyle from '../../article.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import Demo from './Demo/Demo';
 import HtmlExample from './codeExample/html.mdx';
@@ -12,7 +13,7 @@ function LinearGradientAnimate(props) {
       <Title>使用SVG，让渐变的背景也能动起来</Title>
       <Paragraph>
         当背景是渐变色时，如果想实现过渡动画。直接使用css的
-        <Text type="warning">transition</Text>
+        <Text className={ articleStyle.textWarning } type="warning">transition</Text>
         是不行的。所以考虑使用svg来实现功能。
       </Paragraph>
       {/* 代码演示 */}
