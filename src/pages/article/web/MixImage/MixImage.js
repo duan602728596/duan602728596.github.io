@@ -20,14 +20,14 @@ function MixImage(props) {
       <ClipPathExample />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="browser_in_the_dark">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="browser_in_the_dark" className="py-[8px]">
             Browser in the Dark: flashlights with CSS and canvas：
             <a href="https://voussoir.net/writing/browser_in_the_dark" target="_blank" rel="noopener noreferrer">
               https://voussoir.net/writing/browser_in_the_dark
             </a>
           </div>,
-          <div key="clip-path">
+          <div key="clip-path" className="py-[8px]">
             clip-path：
             <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path" target="_blank" rel="noopener noreferrer">
               https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path

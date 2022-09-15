@@ -51,8 +51,8 @@ function PAR_DAR_SAR_OfVideo(props) {
       </Paragraph>
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="stackoverflow">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="stackoverflow" className="py-[8px]">
             相同的问题：
             <a href="https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl"
               target="_blank"
@@ -61,7 +61,7 @@ function PAR_DAR_SAR_OfVideo(props) {
               https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl
             </a>
           </div>,
-          <div key="ffmpeg">
+          <div key="ffmpeg" className="py-[8px]">
             FFmpeg基础概念之PAR，DAR和SAR：
             <a href="https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/"
               target="_blank"

@@ -38,14 +38,14 @@ function MultipleVersionsOfReact(props) {
       <LoaderUseDemoExample />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="react-gradual-upgrade-demo">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React多版本的Demo：
             <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
               https://github.com/reactjs/react-gradual-upgrade-demo/
             </a>
           </div>,
-          <div key="webpack-module-federation">
+          <div key="webpack-module-federation" className="py-[8px]">
             webpack联邦模块官方文档：
             <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
               https://webpack.js.org/concepts/module-federation/

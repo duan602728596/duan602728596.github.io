@@ -72,20 +72,20 @@ function ComponentsCommonlyUsedInFlutter(props) {
       <FlutterRawKeyboardListener />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="flutter-in-action">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="flutter-in-action" className="py-[8px]">
             Flutter实战：
             <a href="https://book.flutterchina.club/" target="_blank" rel="noopener noreferrer">
               https://book.flutterchina.club/
             </a>
           </div>,
-          <div key="rich_code_editor">
+          <div key="rich_code_editor" className="py-[8px]">
             Flutter富文本编辑器：
             <a href="https://pub.dev/packages/rich_code_editor" target="_blank" rel="noopener noreferrer">
               https://pub.dev/packages/rich_code_editor
             </a>
           </div>,
-          <div key="FlutterTextSpanField">
+          <div key="FlutterTextSpanField" className="py-[8px]">
             Flutter自定义块样式输入框：
             <a href="https://github.com/JiangJuHong/FlutterTextSpanField" target="_blank" rel="noopener noreferrer">
               https://github.com/JiangJuHong/FlutterTextSpanField

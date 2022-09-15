@@ -26,8 +26,8 @@ function FileSystemAccessApi(props) {
       <Demo />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="getting-started-with-the-file-system-access-api">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="getting-started-with-the-file-system-access-api" className="py-[8px]">
             Getting Started With the File System Access API：
             <a href="https://css-tricks.com/getting-started-with-the-file-system-access-api/"
               target="_blank"
@@ -36,7 +36,7 @@ function FileSystemAccessApi(props) {
               https://css-tricks.com/getting-started-with-the-file-system-access-api/
             </a>
           </div>,
-          <div key="file">
+          <div key="file" className="py-[8px]">
             File_System_Access_API：
             <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API"
               target="_blank"
@@ -45,7 +45,7 @@ function FileSystemAccessApi(props) {
               https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
             </a>
           </div>,
-          <div key="file">
+          <div key="fileAPI" className="py-[8px]">
             FileAPI：
             <a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener noreferrer">
               https://w3c.github.io/FileAPI/

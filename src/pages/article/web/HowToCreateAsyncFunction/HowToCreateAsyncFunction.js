@@ -14,10 +14,12 @@ function HowToCreateAsyncFunction(props) {
       <CodeExample />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <a key="link" href="https://davidwalsh.name/async-function-class" target="_blank" rel="noopener noreferrer">
-            https://davidwalsh.name/async-function-class
-          </a>
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="async-function-class" className="py-[8px]">
+            <a href="https://davidwalsh.name/async-function-class" target="_blank" rel="noopener noreferrer">
+              https://davidwalsh.name/async-function-class
+            </a>
+          </div>
         ] }
       />
     </ArticleLayout>

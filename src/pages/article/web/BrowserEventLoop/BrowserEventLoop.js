@@ -44,13 +44,13 @@ function BrowserEventLoop(props) {
       </Paragraph>
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="febook" className="my-[8px]">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="febook" className="py-[8px]">
             <a href="https://febook.hzfe.org/awesome-interview/book3/browser-event-loop" target="_blank" rel="noopener noreferrer">
               https://febook.hzfe.org/awesome-interview/book3/browser-event-loop
             </a>
           </div>,
-          <div key="jianshu" className="my-[8px]">
+          <div key="jianshu" className="py-[8px]">
             <a href="https://www.jianshu.com/p/73164966c6fe" target="_blank" rel="noopener noreferrer">
               https://www.jianshu.com/p/73164966c6fe
             </a>

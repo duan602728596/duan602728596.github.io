@@ -21,14 +21,14 @@ function ReactGetDataWithSuspense(props) {
       <WrapPromiseGetDataExample />
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="react-gradual-upgrade-demo">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React使用Suspense来获取数据的Demo：
             <a href="https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js" target="_blank" rel="noopener noreferrer">
               https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js
             </a>
           </div>,
-          <div key="webpack-module-federation">
+          <div key="webpack-module-federation" className="py-[8px]">
             React Suspense for Data Fetching官方文档：
             <a href="https://reactjs.org/docs/concurrent-mode-suspense.html" target="_blank" rel="noopener noreferrer">
               https://reactjs.org/docs/concurrent-mode-suspense.html

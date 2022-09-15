@@ -50,20 +50,20 @@ function WebRTC(props) {
       </Paragraph>
       <Alert type="info"
         message={ [
-          '参考地址：',
-          <div key="WebRTC_API">
+          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <div key="WebRTC_API" className="py-[8px]">
             WebRTC_API：
             <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API" target="_blank" rel="noopener noreferrer">
               https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API
             </a>
           </div>,
-          <div key="STUN+TURN-servers-list">
+          <div key="STUN+TURN-servers-list" className="py-[8px]">
             STUN+TURN servers list：
             <a href="https://gist.github.com/yetithefoot/7592580" target="_blank" rel="noopener noreferrer">
               https://gist.github.com/yetithefoot/7592580
             </a>
           </div>,
-          <div key="WebRTC-stun-turn-servers-list">
+          <div key="WebRTC-stun-turn-servers-list" className="py-[8px]">
             WebRTC stun / turn server list：
             <a href="https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b" target="_blank" rel="noopener noreferrer">
               https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b
