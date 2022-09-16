@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 /* 表单占位符 */
 function FormPlaceholder(props) {
-  const id = useId();
+  const id = useId().replace(/:/g, '');
   const inputTextId = `${ id }-input-text`;
 
   return (

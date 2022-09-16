@@ -8,7 +8,7 @@ const { Title, Paragraph } = Typography;
 function Demo(props) {
   const [value, setValue] = useState('');
   const [result, setResult] = useState(undefined);
-  const id = useId();
+  const id = useId().replace(/:/g, '');
 
   // 输出判断结果
   function handleOutResultClick(event) {

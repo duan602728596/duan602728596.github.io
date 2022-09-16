@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 /* 搜索框伸缩 */
 function SearchBoxExpansion(props) {
-  const id = useId();
+  const id = useId().replace(/:/g, '');
   const checkboxId = `${ id }-checkbox`;
 
   return (
