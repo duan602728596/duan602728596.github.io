@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { metaHelper } from '@sweet-milktea/utils';
 
 const { __dirname } = metaHelper(import.meta.url);
