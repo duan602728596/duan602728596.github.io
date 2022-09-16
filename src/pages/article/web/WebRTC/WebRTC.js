@@ -51,7 +51,7 @@ function WebRTC(props) {
       </Paragraph>
       <Alert type="info"
         message={ [
-          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="WebRTC_API" className="py-[8px]">
             WebRTC_API：
             <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API" target="_blank" rel="noopener noreferrer">

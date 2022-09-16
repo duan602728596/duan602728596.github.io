@@ -38,7 +38,7 @@ function MultipleVersionsOfReact(props) {
       <LoaderUseDemoExample />
       <Alert type="info"
         message={ [
-          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React多版本的Demo：
             <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">

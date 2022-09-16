@@ -44,7 +44,7 @@ function BrowserEventLoop(props) {
       </Paragraph>
       <Alert type="info"
         message={ [
-          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="febook" className="py-[8px]">
             <a href="https://febook.hzfe.org/awesome-interview/book3/browser-event-loop" target="_blank" rel="noopener noreferrer">
               https://febook.hzfe.org/awesome-interview/book3/browser-event-loop

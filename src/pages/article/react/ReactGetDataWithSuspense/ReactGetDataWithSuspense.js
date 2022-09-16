@@ -21,7 +21,7 @@ function ReactGetDataWithSuspense(props) {
       <WrapPromiseGetDataExample />
       <Alert type="info"
         message={ [
-          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React使用Suspense来获取数据的Demo：
             <a href="https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js" target="_blank" rel="noopener noreferrer">

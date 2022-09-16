@@ -26,7 +26,7 @@ function FileSystemAccessApi(props) {
       <Demo />
       <Alert type="info"
         message={ [
-          <b key="cankaodizhi" className="block py-[8px]">参考地址：</b>,
+          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="getting-started-with-the-file-system-access-api" className="py-[8px]">
             Getting Started With the File System Access API：
             <a href="https://css-tricks.com/getting-started-with-the-file-system-access-api/"
