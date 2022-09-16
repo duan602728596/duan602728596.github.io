@@ -7,6 +7,7 @@ import articlesJson from '../src/pages/Index/link/articles.json' assert { type: 
 
 const { __dirname } = metaHelper(import.meta.url);
 
+/* 获取结果 */
 async function launchChromeAndRunLighthouse(url, fileName) {
   const chrome = await chromeLauncher.launch({
     chromeFlags: ['--headless']
@@ -30,16 +31,17 @@ async function launchChromeAndRunLighthouse(url, fileName) {
   await chrome.kill();
 }
 
-await launchChromeAndRunLighthouse('http://localhost:5057/', 'index.html');
-await launchChromeAndRunLighthouse('http://localhost:5057/favorites', 'favorites.html');
-await launchChromeAndRunLighthouse('http://localhost:5057/project', 'project.html');
+/* 查询 */
+const hostname = 'https://duan602728596.github.io'; // or http://localhost:5057
 
-const articles = articlesJson.data.map((group) => {
-  return group.children.map((item) => item.href);
-}).flat();
+await launchChromeAndRunLighthouse(`${ hostname }/`, 'index.html');
+await launchChromeAndRunLighthouse(`${ hostname }/favorites`, 'favorites.html');
+await launchChromeAndRunLighthouse(`${ hostname }/project`, 'project.html');
+
+const articles = articlesJson.data.map((group) => (group.children.map((item) => item.href))).flat();
 
 for (const item of articles) {
   const name = item.replace(/^\//, '').replace(/\//g, '_');
 
-  await launchChromeAndRunLighthouse(`http://localhost:5057${ item }`, `${ name }.html`);
+  await launchChromeAndRunLighthouse(`${ hostname }${ item }`, `${ name }.html`);
 }
