@@ -7,6 +7,8 @@ export default function HashMapPages(props) {
     <Fragment>
       <Head>
         <title>数据结构之HashMap</title>
+        <meta name="keywords" content="算法, HashMap" />
+        <meta name="description" content="数据结构之HashMap" />
       </Head>
       <HashMap />
     </Fragment>
