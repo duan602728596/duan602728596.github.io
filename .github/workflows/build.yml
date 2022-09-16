@@ -2,8 +2,7 @@ name: Build gh-pages CI
 on:
   push:
     branches:
-      - dev/nextjs
-      - ghpages
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +26,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: gh-pages
           folder: out
           silent: true
