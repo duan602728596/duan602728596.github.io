@@ -37,6 +37,7 @@ function WebRTC(props) {
         <iframe className={ style.iframe }
           src="https://www.yuque.com/bbkkbkk/github/oss89z?view=doc_embed&from=duan602728596"
           name="webrtc-flow-chart"
+          title="webrtc流程图"
           referrerPolicy="no-referrer"
         />
       </div>
