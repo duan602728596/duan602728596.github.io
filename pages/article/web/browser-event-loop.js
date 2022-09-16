@@ -7,6 +7,8 @@ export default function BrowserEventLoopPage(props) {
     <Fragment>
       <Head>
         <title>浏览器事件循环</title>
+        <meta name="keywords" content="浏览器事件循环" />
+        <meta name="description" content="浏览器事件循环" />
       </Head>
       <BrowserEventLoop />
     </Fragment>
