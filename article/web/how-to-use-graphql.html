@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charSet="utf-8"/><meta name="renderer" content="webkit"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><title>如何使用GraphQL</title><meta name="next-head-count" content="7"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><link rel="stylesheet" href="/styles/github.css"/><script src="/scripts/live2dcubismcore.min.js"></script><link rel="preload" href="/_next/static/css/87a20ae219495992.css" as="style"/><link rel="stylesheet" href="/_next/static/css/87a20ae219495992.css" data-n-g=""/><link rel="preload" href="/_next/static/css/f59715632fc0d335.css" as="style"/><link rel="stylesheet" href="/_next/static/css/f59715632fc0d335.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-eb25b9c801229373.js" defer=""></script><script src="/_next/static/chunks/framework-4ed89e9640adfb9e.js" defer=""></script><script src="/_next/static/chunks/main-846684b14167b237.js" defer=""></script><script src="/_next/static/chunks/pages/_app-7862fb1b49f88f02.js" defer=""></script><script src="/_next/static/chunks/2806-4c23bc690f47be07.js" defer=""></script><script src="/_next/static/chunks/542-ef49054f083e6f0b.js" defer=""></script><script src="/_next/static/chunks/7161-e7c65fd1cdc5407e.js" defer=""></script><script src="/_next/static/chunks/pages/article/web/how-to-use-graphql-2e5d25504d6ecb72.js" defer=""></script><script src="/_next/static/V1NM5DBh80CUpwnKxbtvX/_buildManifest.js" defer=""></script><script src="/_next/static/V1NM5DBh80CUpwnKxbtvX/_ssgManifest.js" defer=""></script></head><body><div id="__next"><header class="ant-layout-header nav_antdHeader__pc6AA"><div class="nav_header__K7RoR"><nav class="nav_headerLeft__D5kPR"><ul class="nav_navList__iDQNr"><li class="nav_navListItem__UblqT"><a href="/">文章</a></li><li class="nav_navListItem__UblqT"><a href="/favorites">收藏夹</a></li><li class="nav_navListItem__UblqT"><a href="/project">开源项目</a></li></ul></nav><div class="nav_headerRight__plZ1z"><div class="ant-space ant-space-horizontal ant-space-align-center"><div class="ant-space-item" style="margin-right:16px"><a class="nav_switchAddress__vhjXS" role="button" tabindex="0" aria-label="切换网站地址"><span role="img" aria-label="interaction" class="anticon anticon-interaction nav_switchAddressIcon__e5KfQ"><svg viewBox="64 64 896 896" focusable="false" data-icon="interaction" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM304.8 524h50.7c3.7 0 6.8-3 6.8-6.8v-78.9c0-19.7 15.9-35.6 35.5-35.6h205.7v53.4c0 5.7 6.5 8.8 10.9 5.3l109.1-85.7c3.5-2.7 3.5-8 0-10.7l-109.1-85.7c-4.4-3.5-10.9-.3-10.9 5.3V338H397.7c-55.1 0-99.7 44.8-99.7 100.1V517c0 4 3 7 6.8 7zm-4.2 134.9l109.1 85.7c4.4 3.5 10.9.3 10.9-5.3v-53.4h205.7c55.1 0 99.7-44.8 99.7-100.1v-78.9c0-3.7-3-6.8-6.8-6.8h-50.7c-3.7 0-6.8 3-6.8 6.8v78.9c0 19.7-15.9 35.6-35.5 35.6H420.6V568c0-5.7-6.5-8.8-10.9-5.3l-109.1 85.7c-3.5 2.5-3.5 7.8 0 10.5z"></path></svg></span></a></div><div class="ant-space-item"><a class="nav_githubLink__1sY1n" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><picture class="block w-full h-full"><source srcSet="/images/github.avif" type="image/avif"/><source srcSet="/images/github.webp" type="image/webp"/><img class="block w-full h-full" src="/images/github.png" alt="github"/></picture></a></div></div></div></div></header><div class="main_main__ovwFV"><div class="mb-[16px] text-right"><button type="button" class="ant-btn ant-btn-default"><span role="img" aria-label="left" class="anticon anticon-left mr-[6px]"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span><span>返回</span></button></div><h1 class="ant-typography">如何使用GraphQL</h1><h2 class="ant-typography">快速开始</h2><div class="ant-typography">通过下面的代码，我们可以快速使用GraphQL实现查询。</div><pre><div class="highLight_highLight__ZYqTW"><pre class="javascript"><code>import { graphql, buildSchema } from &#x27;graphql&#x27;;
+
+const schema = buildSchema(/* GraphQL */ `
+  type Query {
+    hello: String
+  }
+`);
+const root = { hello: () =&gt; &#x27;Hello world!&#x27; };
+
+const response = await graphql({
+  schema,
+  source: /* GraphQL */ `
+    {
+      hello
+    }
+  `,
+  rootValue: root
+});
+
+console.log(response);
+</code></pre></div></pre><h2 class="ant-typography">使用graphql-tools</h2><div class="ant-typography">我们可以使用graphql-tools来使用GraphQL。</div><div class="ant-typography">首先我们先创建两个GraphQL文件。</div><h3 class="ant-typography">query.graphql</h3><pre><div class="highLight_highLight__ZYqTW"><pre class="graphql"><code>#import &#x27;./human.graphql&#x27;
+
+type Query {
+    hello: String
+    human(age: Int): Human
+}
+</code></pre></div></pre><h3 class="ant-typography">human.graphql</h3><pre><div class="highLight_highLight__ZYqTW"><pre class="graphql"><code>type Human {
+    name: String
+    age: Int
+}
+</code></pre></div></pre><div class="ant-typography">创建一个方法，用于加载GraphQL文件。</div><pre><div class="highLight_highLight__ZYqTW"><pre class="javascript"><code>import { URL } from &#x27;node:url&#x27;;
+import { loadSchema } from &#x27;@graphql-tools/load&#x27;;
+import { GraphQLFileLoader } from &#x27;@graphql-tools/graphql-file-loader&#x27;;
+
+export async function getSchema(file, importMetaUrl) {
+  const urlResult = decodeURIComponent(new URL(file, importMetaUrl).pathname);
+
+  return loadSchema(urlResult, {
+    loaders: [new GraphQLFileLoader()]
+  });
+}
+</code></pre></div></pre><div class="ant-typography">实现查询。</div><pre><div class="highLight_highLight__ZYqTW"><pre class="javascript"><code>import { graphql } from &#x27;graphql&#x27;;
+import { addResolversToSchema } from &#x27;@graphql-tools/schema&#x27;
+import { getSchema } from &#x27;./utils.js&#x27;;
+
+const resolvers = {
+  Query: {
+    hello(obj, args, context, info) {
+      return &#x27;你好&#x27;;
+    },
+    human(obj, args, context, info) {
+      return {
+        name: &#x27;小明&#x27;,
+        age: args.age + obj.$add()
+      };
+    }
+  }
+};
+const schema = await getSchema(&#x27;./query.graphql&#x27;, import.meta.url);
+const schemaWithResolvers = addResolversToSchema({ schema, resolvers });
+
+const response = await graphql({
+  schema: schemaWithResolvers,
+  source: /* GraphQL */ `
+    {
+      hello
+      human(age: 56) {
+        name
+        age
+      }
+    }
+  `,
+  rootValue: {
+    $add() {
+      return 32;
+    }
+  }
+});
+
+console.log(response.data);
+</code></pre></div></pre><h2 class="ant-typography">webpack配置</h2><div class="ant-typography">如果要通过webpack来配置使用，首先要配置loader。</div><pre><div class="highLight_highLight__ZYqTW"><pre class="javascript"><code>export default {
+  mode: &#x27;development&#x27;,
+  module: {
+    rules: [
+      {
+        test: /^.*\.(gql|graphql)$/,
+        loader: &#x27;@graphql-tools/webpack-loader&#x27;,
+        options: {
+          importHelpers: true
+        }
+      }
+    ]
+  }
+};
+</code></pre></div></pre><div class="ant-typography">然后在项目中使用。</div><pre><div class="highLight_highLight__ZYqTW"><pre class="javascript"><code>import { graphql, buildASTSchema } from &#x27;graphql&#x27;;
+import query from &#x27;./query.graphql&#x27;;
+
+const root = {
+  hello() {
+    return &#x27;你好&#x27;;
+  },
+  human() {
+    return {
+      name: &#x27;小明&#x27;,
+      age: 14
+    };
+  }
+}
+
+graphql({
+  schema: buildASTSchema(query),
+  source: /* GraphQL */ `
+    {
+        hello
+        human {
+            name
+            age
+        }
+    }
+  `,
+  rootValue: root
+}).then((response) =&gt; {
+  console.log(response);
+});
+</code></pre></div></pre></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/web/how-to-use-graphql","query":{},"buildId":"V1NM5DBh80CUpwnKxbtvX","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
