@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import { BackTop, Button } from 'antd';
+import { FloatButton, Button } from 'antd';
 import { LeftOutlined as IconLeftOutlined } from '@ant-design/icons';
 import NoSSR from 'react-no-ssr';
 import style from './main.module.sass';
@@ -23,9 +23,9 @@ function Main(props) {
   function goToTopRender() {
     if (typeof document === 'object') {
       return createPortal(
-        <BackTop title="返回顶部" tabIndex={ 0 } role="button" aria-label="返回顶部">
+        <FloatButton.BackTop title="返回顶部" tabIndex={ 0 } role="button" aria-label="返回顶部">
           <div className={ style.goToTop }>UP</div>
-        </BackTop>,
+        </FloatButton.BackTop>,
         document.body
       );
     } else {

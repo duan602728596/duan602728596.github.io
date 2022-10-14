@@ -21,7 +21,7 @@ function InputText(props) {
   return (
     <Card className={ style.mb16 } title="输入文本">
       <div className="flex">
-        <div className="grow">
+        <div className="grow mr-[6px]">
           <Input value={ value } aria-label="输入文本" onChange={ (event) => setValue(event.target.value) } />
         </div>
         <div className="shrink-0">
