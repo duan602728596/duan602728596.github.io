@@ -39,7 +39,7 @@ function Nav(props) {
           <ul className={ style.navList }>{ navsRender }</ul>
         </nav>
         <div className={ style.headerRight }>
-          <Space className="mt-[-6px]" size={ 16 }>
+          <Space size={ 16 }>
             <Tooltip title="切换网站地址">
               <a className={ style.switchAddress }
                 role="button"
