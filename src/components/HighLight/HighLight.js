@@ -10,6 +10,7 @@ import bash from 'highlight.js/lib/languages/bash';
 import style from './highLight.module.sass';
 import graphql from './languages/graphql';
 
+hljs.configure({ ignoreUnescapedHTML: true });
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
