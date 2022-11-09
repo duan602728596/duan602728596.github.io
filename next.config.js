@@ -25,42 +25,6 @@ module.exports = withMdx({
       };
     }
 
-    /* 为antd添加less-loader */
-    const lessUse = [
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            mode: 'global',
-            exportOnlyLocals: options.isServer
-          }
-        }
-      },
-      {
-        loader: 'less-loader',
-        options: {
-          lessOptions: {
-            javascriptEnabled: true,
-            modifyVars: {
-              '@primary-color': '#2f54eb'
-            }
-          }
-        }
-      }
-    ];
-
-    if (!options.isServer) {
-      lessUse.unshift(options.dev ? 'style-loader' : MiniCssExtractPlugin.loader);
-    }
-
-    const rule = config.module.rules.find((o) => 'oneOf' in o);
-
-    rule && rule.oneOf.push({
-      test: /^.*\.less$/i,
-      use: lessUse,
-      include: /node_modules/
-    });
-
     /* tailwindcss */
     const tailwindcssUse = [
       {
