@@ -1,10 +1,12 @@
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import { BackTop, Button } from 'antd';
-import { LeftOutlined as IconLeftOutlined } from '@ant-design/icons';
+import { FloatButton, Button } from 'antd';
+import { LeftOutlined as IconLeftOutlined, ToTopOutlined as IconToTopOutlined } from '@ant-design/icons';
 import NoSSR from 'react-no-ssr';
 import style from './main.module.sass';
+
+const { BackTop } = FloatButton;
 
 /**
  * 网站整体布局
@@ -23,9 +25,7 @@ function Main(props) {
   function goToTopRender() {
     if (typeof document === 'object') {
       return createPortal(
-        <BackTop title="返回顶部" tabIndex={ 0 } role="button" aria-label="返回顶部">
-          <div className={ style.goToTop }>UP</div>
-        </BackTop>,
+        <BackTop type="primary" icon={ <IconToTopOutlined /> } title="返回顶部" tabIndex={ 0 } role="button" aria-label="返回顶部" />,
         document.body
       );
     } else {

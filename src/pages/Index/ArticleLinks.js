@@ -13,8 +13,8 @@ function ArticleLinks(props) {
       <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
         {
           item.blank
-            ? <a href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
-            : <Link href={ item.href }>{ item.title }</Link>
+            ? <a className={ style.blankLink } href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
+            : <Link className={ style.link } href={ item.href }>{ item.title }</Link>
         }
       </List.Item>
     );
