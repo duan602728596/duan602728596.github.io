@@ -1,0 +1,48 @@
+import { Typography } from 'antd';
+
+export const { Text, Paragraph } = Typography;
+
+# Git的一些常用命令
+
+## 项目体积过大的解决方案
+
+Git的配置：
+
+```
+set GIT_TRACE_PACKET=1
+set GIT_TRACE=1
+set GIT_CURL_VERBOSE=1
+
+git config --global http.postBuffer 200000000
+```
+
+采用断点续传的方式拉取代码：
+
+<Paragraph>
+  1. 新建目录, 命令行进入目录，执行
+  <Text code={ true }>git init</Text>
+  2. 命令行执行：
+  <Text code={ true }>git fetch [项目地址]</Text>
+  3. 命令行执行
+  <Text code={ true }>git checkout FETCH_HEAD</Text>
+  4. 命令行执行
+  <Text code={ true }>git remote add origin [项目地址]</Text>
+  5. 命令行执行
+  <Text code={ true }>git pull origin main</Text>
+  6. 命令行执行
+  <Text code={ true }>git checkout main</Text>
+</Paragraph>
+
+## 拉取远程分支的代码
+
+拉取代码：
+
+```
+git fetch origin 远程分支名:本地分支名
+```
+
+然后关联分支：
+
+```
+git branch --set-upstream 本地分支名 origin/原生分支名
+```

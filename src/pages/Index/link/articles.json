@@ -58,6 +58,12 @@
       ]
     },
     {
+      "title": "Git",
+      "children": [
+        { "href": "/article/git/git-common-commands", "title": "Git的一些常用命令" }
+      ]
+    },
+    {
       "title": "操作系统",
       "children": [
         { "href": "/article/operating-system/win11-right-click-menu-restore-to-win10", "title": "将Win11的右键菜单还原到Win10的样式" }
