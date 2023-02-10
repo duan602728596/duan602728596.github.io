@@ -47,7 +47,8 @@
       "title": "HTTP",
       "children": [
         { "href": "/article/http/http-cache", "title": "HTTP缓存策略" },
-        { "href": "/article/http/server-sent-events", "title": "使用Server-sent events技术，与浏览器单向通信" }
+        { "href": "/article/http/server-sent-events", "title": "使用Server-sent events技术，与浏览器单向通信" },
+        { "href": "/article/http/node-native-websocket", "title": "Nodejs原生实现WebSocket服务" }
       ]
     },
     {
