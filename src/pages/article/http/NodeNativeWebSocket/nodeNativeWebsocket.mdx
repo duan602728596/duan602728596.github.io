@@ -1,23 +1,41 @@
 import { Alert } from 'antd';
+import UtilsExample from './codeExample/utils.mdx';
 import WebsocketServerExample from './codeExample/webSocketServer.mdx';
+import WebsocketClientExample from './codeExample/webSocketClient.mdx';
 
 # Nodejs原生实现WebSocket服务
 
 这段Demo展示了如何使用Nodejs原生实现WebSocket服务。
 
+加密和data处理的算法。
+<UtilsExample />
+
+服务端的实现。
 <WebsocketServerExample />
+
+客户端的实现。
+<WebsocketClientExample />
 
 <Alert type="info"
   message={ [
     <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
     <div key="rfc6455" className="py-[8px]">
-      The WebSocket Protocol：
-      <a href="https://tools.ietf.org/html/rfc6455#section-5.5.2" target="_blank" rel="noopener noreferrer">
-        https://tools.ietf.org/html/rfc6455#section-5.5.2
+      The WebSocket Protocol:
+      <a href="https://tools.ietf.org/html/rfc6455" target="_blank" rel="noopener noreferrer">
+        https://tools.ietf.org/html/rfc6455
+      </a>
+    </div>,
+    <div key="rfc6455" className="py-[8px]">
+      nodejs net sockets + websocket without socket.io:
+      <a href="https://stackoverflow.com/questions/32808988/nodejs-net-sockets-websocket-without-socket-io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://stackoverflow.com/questions/32808988/nodejs-net-sockets-websocket-without-socket-io
       </a>
     </div>,
     <div key="stackoverflow" className="py-[8px]">
-      What does "258EAFA5-E914-47DA-95CA-C5AB0DC85B11" means in WebSocket Protocol：
+      What does "258EAFA5-E914-47DA-95CA-C5AB0DC85B11" means in WebSocket Protocol:
       <a href="https://stackoverflow.com/questions/13456017/what-does-258eafa5-e914-47da-95ca-c5ab0dc85b11-means-in-websocket-protocol"
         target="_blank"
         rel="noopener noreferrer"
