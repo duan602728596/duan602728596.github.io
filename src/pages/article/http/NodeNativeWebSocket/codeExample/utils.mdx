@@ -39,7 +39,7 @@ export function decodeWsFrame(data) {
 
       frame.maskingKey = maskingKey;
       frame.payloadData = data
-        .slice(start, start + frame.payloadLen)
+        .subarray(start, start + frame.payloadLen)
         .map((byte, index) => byte ^ maskingKey[index % 4]);
     } else {
       frame.payloadData = data.slice(start, start + frame.payloadLen);
