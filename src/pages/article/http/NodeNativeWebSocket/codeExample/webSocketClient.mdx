@@ -1,8 +1,7 @@
 ```javascript
 import net from 'node:net';
-import { randomUUID } from 'node:crypto';
 import { setInterval } from 'node:timers';
-import { encryptSocketKey, encodeWsFrame, decodeWsFrame } from './utils.js';
+import { encryptSocketKey, encodeWsFrame, decodeWsFrame, rStr } from './utils.js';
 
 const client = new net.Socket();
 
@@ -39,7 +38,7 @@ function createConnect(client, uuid) {
 }
 
 client.connect(5059, '127.0.0.1', async function() {
-  const uuid = randomUUID();
+  const uuid = btoa(rStr(16));
 
   client.write(`GET /index.html HTTP/1.1\r
 Connection: Upgrade\r
