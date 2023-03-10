@@ -1,83 +1,6 @@
 ```javascript
 import net from 'node:net';
-import { createHash } from 'node:crypto';
-
-/* 对Sec-Websocket-Key进行加密，作为Sec-Websocket-Accept的值 */
-function encryptSocketKey(key) {
-  const WEBSOCKET_GUID = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
-  const sha1Hash = createHash('sha1');
-
-  sha1Hash.update(`${ key }${ WEBSOCKET_GUID }`);
-
-  return sha1Hash.digest('base64');
-}
-
-/* 处理接收到的数据 */
-function decodeWsFrame(data) {
-  let start = 0;
-  const frame = {
-    isFinal: (data[start] & 0x80) === 0x80,
-    opcode: data[start++] & 0xF,
-    masked: (data[start] & 0x80) === 0x80,
-    payloadLen: data[start++] & 0x7F,
-    maskingKey: '',
-    payloadData: null
-  };
-
-  if (frame.payloadLen === 126) {
-    frame.payloadLen = (data[start++] << 8) + data[start++];
-  } else if (frame.payloadLen === 127) {
-    frame.payloadLen = 0;
-
-    for (let i = 7; i >= 0; i--) {
-      frame.payloadLen += (data[start++] << (i * 8));
-    }
-  }
-
-  if (frame.payloadLen) {
-    if (frame.masked) {
-      const maskingKey = [data[start++], data[start++], data[start++], data[start++]];
-
-      frame.maskingKey = maskingKey;
-      frame.payloadData = data
-        .slice(start, start + frame.payloadLen)
-        .map((byte, index) => byte ^ maskingKey[index % 4]);
-    } else {
-      frame.payloadData = data.slice(start, start + frame.payloadLen);
-    }
-  }
-
-  return frame;
-}
-
-/* 处理发送的数据 */
-function encodeWsFrame(data) {
-  const isFinal = data.isFinal !== undefined ? data.isFinal : true,
-    opcode = data.opcode !== undefined ? data.opcode : 1,
-    payloadData = data.payloadData ? Buffer.from(data.payloadData) : null,
-    payloadLen = payloadData ? payloadData.length : 0;
-  const frame = [];
-
-  if (isFinal) {
-    frame.push((1 << 7) + opcode);
-  } else {
-    frame.push(opcode);
-  }
-
-  if (payloadLen < 126) {
-    frame.push(payloadLen);
-  } else if (payloadLen < 65536) {
-    frame.push(126, payloadLen >> 8, payloadLen & 0xFF);
-  } else {
-    frame.push(127);
-
-    for (let i = 7; i >= 0; i--) {
-      frame.push((payloadLen & (0xFF << (i * 8))) >> (i * 8));
-    }
-  }
-
-  return payloadData ? Buffer.concat([Buffer.from(frame), payloadData]) : Buffer.from(frame);
-}
+import { encodeWsFrame, decodeWsFrame, encryptSocketKey } from './utils.js';
 
 /* 建立请求 */
 function createConnect(socket) {
@@ -96,8 +19,12 @@ function createConnect(socket) {
         }, {});
 
       // 判断是否为websocket并检查版本
-      if (!(headers.upgrade === 'websocket' && headers['sec-websocket-version'] === '13')) {
+      if (!(
+        headers.upgrade === 'websocket'
+        && headers['sec-websocket-version'] === '13'
+      )) {
         socket.end();
+        resolve(false);
 
         return;
       }
@@ -108,13 +35,15 @@ Connection: Upgrade\r
 Sec-Websocket-Accept: ${ encryptSocketKey(headers['sec-websocket-key']) }\r\n\r\n`
 
       socket.write(responseHeader);
-      resolve();
+      resolve(true);
     });
   });
 }
 
 const server = net.createServer(async function(socket) {
-  await createConnect(socket);
+  const createResult = await createConnect(socket);
+
+  if (!createResult) return;
 
   socket.on('data', function(buffer) {
     const data = decodeWsFrame(buffer);
@@ -125,7 +54,7 @@ const server = net.createServer(async function(socket) {
     } else {
       socket.write(encodeWsFrame({
         opcode: 1,
-        payloadData: `接收到的消息：${ payloadData.toString() }`
+        payloadData: `接收：${ payloadData.toString() }`
       }));
     }
   });

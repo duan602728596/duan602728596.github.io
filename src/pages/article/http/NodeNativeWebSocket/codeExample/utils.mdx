@@ -1,0 +1,95 @@
+```javascript
+import { createHash } from 'node:crypto';
+
+/* 对Sec-Websocket-Key进行加密，作为Sec-Websocket-Accept的值 */
+export function encryptSocketKey(key) {
+  const WEBSOCKET_GUID = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
+  const sha1Hash = createHash('sha1');
+
+  sha1Hash.update(`${ key }${ WEBSOCKET_GUID }`);
+
+  return sha1Hash.digest('base64');
+}
+
+/* 处理接收到的数据 */
+export function decodeWsFrame(data) {
+  let start = 0;
+  const frame = {
+    isFinal: (data[start] & 0x80) === 0x80,
+    opcode: data[start++] & 0xF,
+    masked: (data[start] & 0x80) === 0x80,
+    payloadLen: data[start++] & 0x7F,
+    maskingKey: '',
+    payloadData: null
+  };
+
+  if (frame.payloadLen === 126) {
+    frame.payloadLen = (data[start++] << 8) + data[start++];
+  } else if (frame.payloadLen === 127) {
+    frame.payloadLen = 0;
+
+    for (let i = 7; i >= 0; i--) {
+      frame.payloadLen += (data[start++] << (i * 8));
+    }
+  }
+
+  if (frame.payloadLen) {
+    if (frame.masked) {
+      const maskingKey = [data[start++], data[start++], data[start++], data[start++]];
+
+      frame.maskingKey = maskingKey;
+      frame.payloadData = data
+        .subarray(start, start + frame.payloadLen)
+        .map((byte, index) => byte ^ maskingKey[index % 4]);
+    } else {
+      frame.payloadData = data.slice(start, start + frame.payloadLen);
+    }
+  }
+
+  return frame;
+}
+
+/* 处理发送的数据 */
+export function encodeWsFrame(data) {
+  const isFinal = data.isFinal !== undefined ? data.isFinal : true,
+    opcode = data.opcode !== undefined ? data.opcode : 1,
+    payloadData = data.payloadData ? Buffer.from(data.payloadData) : null,
+    payloadLen = payloadData ? payloadData.length : 0;
+  const frame = [];
+
+  if (isFinal) {
+    frame.push((1 << 7) + opcode);
+  } else {
+    frame.push(opcode);
+  }
+
+  if (payloadLen < 126) {
+    frame.push(payloadLen);
+  } else if (payloadLen < 65536) {
+    frame.push(126, payloadLen >> 8, payloadLen & 0xFF);
+  } else {
+    frame.push(127);
+
+    for (let i = 7; i >= 0; i--) {
+      frame.push((payloadLen & (0xFF << (i * 8))) >> (i * 8));
+    }
+  }
+
+  return payloadData
+    ? Buffer.concat([Buffer.from(frame), payloadData])
+    : Buffer.from(frame);
+}
+
+export function rStr(len: number): string {
+  const str: string = 'QWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+  let result: string = '';
+
+  for (let i: number = 0; i < len; i++) {
+    const rIndex: number = Math.floor(Math.random() * str.length);
+
+    result += str[rIndex];
+  }
+
+  return result;
+}
+```

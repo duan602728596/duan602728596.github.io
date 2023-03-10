@@ -4,6 +4,7 @@ import { ConfigProvider, Typography } from 'antd';
 import 'antd/dist/reset.css';
 import zhCN from 'antd/locale/zh_CN';
 import { geekblue } from '@ant-design/colors';
+import { StyleProvider } from '@ant-design/cssinjs';
 import { MDXProvider } from '@mdx-js/react';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
@@ -49,9 +50,11 @@ export default function App(props) {
         <meta name="copyright" content="段昊辰, duanhaochen@126.com" />
       </Head>
       <ConfigProvider locale={ zhCN } theme={{ token: { colorPrimary: geekblue.primary } }}>
-        <MDXProvider components={ MDXComponents }>
-          <Component { ...pageProps } />
-        </MDXProvider>
+        <StyleProvider ssrInline={ true }>
+          <MDXProvider components={ MDXComponents }>
+            <Component { ...pageProps } />
+          </MDXProvider>
+        </StyleProvider>
       </ConfigProvider>
       <Live2dSuspense />
     </Fragment>
