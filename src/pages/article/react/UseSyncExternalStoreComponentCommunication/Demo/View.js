@@ -5,7 +5,7 @@ import store from './store';
 
 /* 展示文字 */
 function View(props) {
-  const valueCache = useSyncExternalStore(store.subscribe, store.getState, store.getState);
+  const valueCache = useSyncExternalStore(store.subscribe, store.getSnapshot, store.getSnapshot);
   const [value, setValue] = useState([]);
 
   // 渲染文字

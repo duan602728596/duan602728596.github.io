@@ -1,22 +1,30 @@
 ```javascript
-import { Fragment, useState, useMemo, useSyncExternalStore, useId } from 'react';
+import { Fragment, useState, useEffect, useSyncExternalStore, useId } from 'react';
 import { createRoot } from 'react-dom/client';
 
 class Store {
   valueCache = null;
-  listener = null;
+  listeners = [];
 
   subscribe = (listener) => {
-    this.listener = listener;
+    this.listeners.push(listener);
+
+    return () => {
+      this.listeners.splice(this.listeners.indexOf(listener), 1);
+    };
   };
 
-  getState = () => {
+  getSnapshot = () => {
     return this.valueCache;
   };
 
+  emit() {
+    this.listeners.forEach((listener) => listener());
+  }
+
   addValue(value) {
     this.valueCache = { value };
-    this.listener?.();
+    this.emit();
   }
 
   clearValue() {
@@ -27,10 +35,10 @@ class Store {
 const store = new Store();
 
 function View(props) {
-  const valueCache = useSyncExternalStore(store.subscribe, () => store.getState());
+  const valueCache = useSyncExternalStore(store.subscribe, store.getSnapshot);
   const [state, setState] = useState([]);
 
-  useMemo(function() {
+  useEffect(function() {
     if (valueCache !== null && valueCache.value) {
       setState((prevState) => [...prevState, valueCache.value]);
       store.clearValue();

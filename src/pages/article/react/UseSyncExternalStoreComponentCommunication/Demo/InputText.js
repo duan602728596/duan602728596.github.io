@@ -24,7 +24,7 @@ function InputText(props) {
         <div className="grow">
           <Input value={ value } aria-label="输入文本" onChange={ (event) => setValue(event.target.value) } />
         </div>
-        <div className="shrink-0">
+        <div className="shrink-0 ml-[6px]">
           <Button onClick={ handleAddTextClick }>添加</Button>
         </div>
       </div>
