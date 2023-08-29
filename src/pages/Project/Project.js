@@ -23,18 +23,25 @@ const projectList = [
   {
     title: '48tools',
     href: 'https://github.com/duan602728596/48tools',
-    description: '48工具，提供公演、口袋直播录源，公演、口袋录播下载，B站直播抓取，B站视频下载，摩点集资统计，视频截取，'
-      + '视频导出gif，视频合并等功能。'
+    description: (
+      <Fragment>
+        <p>48工具，提供公演、口袋48直播录源，公演、口袋48录播下载，封面下载，B站直播抓取，B站视频下载，A站直播抓取，A站视频下载，抖音视频下载，视频截取，视频导出gif，视频合并等功能。口袋48的pc版，可以看成员的直播、弹幕和录播。</p>
+        <b className="color-[rgba(0, 0, 0, .85)]">使用手册：</b>
+        <a href="https://yzb1g5r02h.feishu.cn/docx/MxfydWlNaovZ5sxsbJ5crnAlnVb" target="_blank" rel="noopener noreferrer">
+          https://yzb1g5r02h.feishu.cn/docx/MxfydWlNaovZ5sxsbJ5crnAlnVb
+        </a>
+      </Fragment>
+    )
   },
   {
     title: 'qqtools',
     href: 'https://github.com/duan602728596/qqtools',
     description: (
       <Fragment>
-        <p>QQ群工具，提供48系成员直播监听，48系成员信息监听，微博监听，B站直播监听，群成员自动欢迎等功能。</p>
+        <p>QQ群工具，提供48系成员直播监听，48系成员信息监听，微博监听，抖音监听，小红书监听，B站直播监听，群成员自动欢迎，定时消息，自定义命令等功能。</p>
         <b className="color-[rgba(0, 0, 0, .85)]">使用手册：</b>
-        <a href="https://www.yuque.com/bbkkbkk/qqtools" target="_blank" rel="noopener noreferrer">
-          https://www.yuque.com/bbkkbkk/qqtools
+        <a href="https://yzb1g5r02h.feishu.cn/docx/R123d4UKKovQx0x1dM2cDce7n9c" target="_blank" rel="noopener noreferrer">
+          https://yzb1g5r02h.feishu.cn/docx/R123d4UKKovQx0x1dM2cDce7n9c
         </a>
       </Fragment>
     )
