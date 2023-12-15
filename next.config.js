@@ -69,9 +69,5 @@ module.exports = withMdx({
 
   sassOptions: {
     includePaths: [path.join(__dirname, 'src')]
-  },
-
-  experimental: {
-    runtime: 'nodejs'
   }
 });
