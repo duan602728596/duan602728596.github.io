@@ -1,15 +1,13 @@
-const path = require('path');
+const path = require('node:path');
+const process = require('node:process');
 const withMdx = require('@next/mdx');
 const MiniCssExtractPlugin = require('next/dist/compiled/mini-css-extract-plugin');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 
-module.exports = withMdx({
-  extension: /\.mdx?$/,
-  options: {
-    providerImportSource: '@mdx-js/react'
-  }
-})({
+const isOutputExport = process.env.OUTPUT === 'export';
+
+const nextConfig = {
   webpack(config, options) {
     /* 将antd打包到服务端生成的文件中 */
     if (options.isServer) {
@@ -70,4 +68,15 @@ module.exports = withMdx({
   sassOptions: {
     includePaths: [path.join(__dirname, 'src')]
   }
-});
+};
+
+if (isOutputExport) {
+  nextConfig.output = 'export';
+}
+
+module.exports = withMdx({
+  extension: /\.mdx?$/,
+  options: {
+    providerImportSource: '@mdx-js/react'
+  }
+})(nextConfig);
