@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
 import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
-import linkArticles from './link/articles.json' assert { type: 'json' };
-import linkFavorites from './link/favorites.json' assert { type: 'json' };
+import linkArticles from './link/articles.json' with { type: 'json' };
+import linkFavorites from './link/favorites.json' with { type: 'json' };
 
 const linkObject = {
   articles: linkArticles.data,
