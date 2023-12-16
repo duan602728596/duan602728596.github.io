@@ -6,7 +6,11 @@ export default function Document() {
     <Html lang="zh-cmn-Hans">
       <Head>
         <link rel="icon" href="/images/favicon.jpg" type="image/jpeg" />
-        <link rel="stylesheet" href={ `/styles/${ antdSSRJson.css }` } />
+        {
+          process.env.NODE_ENV === 'production'
+            ? <link rel="stylesheet" href={ `/styles/${ antdSSRJson.css }` } />
+            : null
+        }
         <link rel="stylesheet" href="/styles/github.css" />
         <script src="/scripts/live2dcubismcore.min.js" />
       </Head>

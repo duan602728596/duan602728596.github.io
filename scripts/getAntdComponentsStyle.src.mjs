@@ -88,7 +88,7 @@ async function getAntdComponentsStyleSrc() {
   await Promise.all([
     writeFile(antdSSRCssFile, styleText),
     writeFile(join(__dirname, '../src/antd.ssr.json'), JSON.stringify({
-      css: antdSSRCssFile
+      css: antdSSRCssFileName
     }))
   ]);
 }

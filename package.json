@@ -7,7 +7,7 @@
     "export": "rimraf out && cross-env NODE_ENV=production OUTPUT=export next build && node scripts/nojekyll.mjs",
     "server": "serve out -p 5058",
     "babel:style:ssr": "rimraf scripts/getAntdComponentsStyle.dist.mjs && babel scripts/getAntdComponentsStyle.src.mjs --out-file scripts/getAntdComponentsStyle.dist.mjs --config-file ./babel.node.config.js",
-    "build:style:ssr": "rimraf public/styles/antd.ssr.*.css && rimraf src/antd.ssr.json && node scripts/getAntdComponentsStyle.dist.mjs",
+    "build:style:ssr": "rimraf public/styles/antd.ssr.*.css && rimraf src/antd.ssr.json && cross-env NODE_ENV=production node scripts/getAntdComponentsStyle.dist.mjs",
     "style:ssr": "npm run babel:style:ssr && npm run build:style:ssr",
     "analyzes": "rimraf ./.analyzes-report && node scripts/analyzes.mjs",
     "eslint": "eslint ./ --fix",
