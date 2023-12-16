@@ -6,6 +6,9 @@
     "build": "rimraf .next && cross-env NODE_ENV=production next build",
     "export": "rimraf out && cross-env NODE_ENV=production OUTPUT=export next build && node scripts/nojekyll.mjs",
     "server": "serve out -p 5058",
+    "babel:style:ssr": "rimraf scripts/getAntdComponentsStyle.dist.mjs && babel scripts/getAntdComponentsStyle.src.mjs --out-file scripts/getAntdComponentsStyle.dist.mjs --config-file ./babel.node.config.js",
+    "build:style:ssr": "rimraf public/styles/antd.ssr.*.css && rimraf src/antd.ssr.json && node scripts/getAntdComponentsStyle.dist.mjs",
+    "style:ssr": "npm run babel:style:ssr && npm run build:style:ssr",
     "analyzes": "rimraf ./.analyzes-report && node scripts/analyzes.mjs",
     "eslint": "eslint ./ --fix",
     "update-version": "milktea-esm update",
@@ -29,6 +32,7 @@
     "react-no-ssr": "^1.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.6",
     "@babel/eslint-parser": "^7.23.3",
     "@mdx-js/loader": "^3.0.0",
@@ -47,6 +51,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",
+    "glob": "^10.3.10",
     "husky": "^8.0.3",
     "lighthouse": "^11.4.0",
     "lint-staged": "^15.2.0",
