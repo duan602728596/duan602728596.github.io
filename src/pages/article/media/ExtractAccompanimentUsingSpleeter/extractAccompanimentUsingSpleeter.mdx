@@ -1,0 +1,39 @@
+import { Typography } from 'antd';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
+import Demo from './Demo/Demo';
+
+export const { Text } = Typography;
+
+# 使用Spleeter提取伴奏
+
+<BlankLink href="https://github.com/deezer/spleeter">Spleeter</BlankLink>
+是由法国在线音乐流媒体服务提供商Deezer开源的分离音频库，可以将音频分离成人声、伴奏、鼓点、贝斯、钢琴等等。
+它是基于TensorFlow的深度学习模型，可以在CPU或GPU上运行。它的分离效果非常好，可以说是目前最好的分离音频库了。
+
+## 安装流程
+
+1. 安装pyenv（可选）
+
+    Spleeter要求Python版本为3.7 - 3.10，所以我们需要安装pyenv来管理Python版本。
+
+2. 安装python：推荐版本为v3.10.5。
+
+3. 安装FFmpeg
+
+4. 使用pip安装Spleeter
+
+    ```bash
+    /path/to/.pyenv/pyenv-win/versions/3.10.5/python.exe -m pip install spleeter
+    ```
+
+## 使用Spleeter提取伴奏
+
+通过执行命令来提取伴奏。
+
+```bash
+python.exe -m spleeter separate -p spleeter:2stems -o /path/to/output /path/to/audio.mp3
+```
+
+## 提取效果
+
+<Demo />
