@@ -1,6 +1,7 @@
 import { Tag, Typography } from 'antd';
 import style from './dioUploadFile.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import UploadFileExample from './codeExample/uploadFile.mdx';
 
 const { Title, Paragraph } = Typography;
@@ -12,7 +13,7 @@ function DioUploadFile() {
       <Title>使用dio上传文件</Title>
       <Paragraph>
         在Flutter开发中，使用
-        <a href="https://github.com/flutterchina/dio" target="_blank" rel="noopener noreferrer">dio</a>
+        <BlankLink href="https://github.com/flutterchina/dio">dio</BlankLink>
         实现上传文件的功能：
       </Paragraph>
       <UploadFileExample />
@@ -22,12 +23,8 @@ function DioUploadFile() {
         <Tag className={ style.tag }>Uint8List</Tag>类型转换成
         <Tag className={ style.tag }>Stream&lt;List&lt;int&gt;&gt;</Tag>
         类型。具体请参考dio的
-        <a href="https://github.com/flutterchina/dio/issues/485#issuecomment-552845924"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          issues
-        </a>，这块算是一个小坑吧。
+        <BlankLink href="https://github.com/flutterchina/dio/issues/485#issuecomment-552845924">issues</BlankLink>
+        ，这块算是一个小坑吧。
       </Paragraph>
     </ArticleLayout>
   );

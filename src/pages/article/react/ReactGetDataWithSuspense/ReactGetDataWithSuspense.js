@@ -1,5 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import WrapPromiseExample from './codeExample/wrapPromise.mdx';
 import WrapPromiseGetDataExample from './codeExample/wrapPromiseGetData.mdx';
 
@@ -24,15 +25,15 @@ function ReactGetDataWithSuspense(props) {
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React使用Suspense来获取数据的Demo：
-            <a href="https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js">
               https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/fakeApi.js
-            </a>
+            </BlankLink>
           </div>,
           <div key="webpack-module-federation" className="py-[8px]">
             React Suspense for Data Fetching官方文档：
-            <a href="https://reactjs.org/docs/concurrent-mode-suspense.html" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://reactjs.org/docs/concurrent-mode-suspense.html">
               https://reactjs.org/docs/concurrent-mode-suspense.html
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

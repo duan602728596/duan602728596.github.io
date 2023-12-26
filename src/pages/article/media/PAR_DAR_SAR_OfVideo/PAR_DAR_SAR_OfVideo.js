@@ -2,6 +2,7 @@ import { Typography, Alert } from 'antd';
 import style from './parDarSarOfVideo.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -54,21 +55,15 @@ function PAR_DAR_SAR_OfVideo(props) {
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="stackoverflow" className="py-[8px]">
             相同的问题：
-            <a href="https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl">
               https://stackoverflow.com/questions/5839475/ffmpeg-reports-different-wrong-video-resolution-compared-to-how-it-actually-pl
-            </a>
+            </BlankLink>
           </div>,
           <div key="ffmpeg" className="py-[8px]">
             FFmpeg基础概念之PAR，DAR和SAR：
-            <a href="https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/">
               https://www.yuv420.com/2020/02/20/ffmpeg-ji-chu-gai-nian-zhi-par-dar-he-sar/
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

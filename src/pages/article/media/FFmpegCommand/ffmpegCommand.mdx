@@ -1,4 +1,5 @@
 import { Typography } from 'antd';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 
 export const { Text } = Typography;
 
@@ -37,7 +38,7 @@ ffmpeg -ss 00:00:10 -t 00:00:10 -accurate_seek -i 1.mp4 --avoid_negative_ts 1 1_
 ```
 
 命令的具体功能可以在
-<a href="https://ffmpeg.org/ffmpeg-all.html" target="_blank" rel="noopener noreferrer">FFmpeg Documentation</a>找到。
+<BlankLink href="https://ffmpeg.org/ffmpeg-all.html">FFmpeg Documentation</BlankLink>找到。
 
 对于视频时长的计算可以使用这段代码：
 

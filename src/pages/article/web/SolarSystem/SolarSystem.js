@@ -3,6 +3,7 @@ import { Typography, Button } from 'antd';
 import classNames from 'classnames';
 import style from './solarSystem.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import loadPublicScript from '../../../../utils/loadPublicScript';
 
 const { Title, Paragraph } = Typography;
@@ -113,12 +114,7 @@ function SolarSystem(props) {
       <Title>基于Three.js + wasm开发的太阳系动画</Title>
       <Paragraph>
         太阳系动画。基于Three.js和wasm开发。
-        <a href="https://github.com/duan602728596/duan602728596.github.io/tree/dev/solar-system"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          （代码）
-        </a>
+        <BlankLink href="https://github.com/duan602728596/duan602728596.github.io/tree/dev/solar-system">（代码）</BlankLink>
       </Paragraph>
       <div className="mb-[16px] text-right">
         <Button type="primary" onClick={ handleRequestFullscreenClick }>全屏运行</Button>

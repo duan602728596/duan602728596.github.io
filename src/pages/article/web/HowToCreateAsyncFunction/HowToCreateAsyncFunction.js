@@ -1,5 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import CodeExample from './code/code.mdx';
 
 const { Title } = Typography;
@@ -16,9 +17,9 @@ function HowToCreateAsyncFunction(props) {
         message={ [
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="async-function-class" className="py-[8px]">
-            <a href="https://davidwalsh.name/async-function-class" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://davidwalsh.name/async-function-class">
               https://davidwalsh.name/async-function-class
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

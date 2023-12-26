@@ -1,5 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import ScreenSharingTest from './ScreenSharingTest/ScreenSharingTest';
 import ScreenSharingExample from './codeExample/screenSharing.mdx';
 
@@ -27,27 +28,27 @@ function BrowserScreenSharing(props) {
         <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
         <div key="using-screencapture" className="py-[8px]">
           使用屏幕捕获API：
-          <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen_Capture_API/Using_Screen_Capture" target="_blank" rel="noopener noreferrer">
+          <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen_Capture_API/Using_Screen_Capture">
             https://developer.mozilla.org/zh-CN/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
-          </a>
+          </BlankLink>
         </div>,
         <div key="getDisplayMedia" className="py-[8px]">
           MediaDevices.getDisplayMedia()：
-          <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia" target="_blank" rel="noopener noreferrer">
+          <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia">
             https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia
-          </a>
+          </BlankLink>
         </div>,
         <div key="MediaStream" className="py-[8px]">
           MediaStream：
-          <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream" target="_blank" rel="noopener noreferrer">
+          <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream">
             https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
-          </a>
+          </BlankLink>
         </div>,
         <div key="Signaling-and-video-calling" className="py-[8px]">
           信令与视频通话：
-          <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API/Signaling_and_video_calling">
+          <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API/Signaling_and_video_calling">
             https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API/Signaling_and_video_calling
-          </a>
+          </BlankLink>
         </div>
       ] } />
     </ArticleLayout>

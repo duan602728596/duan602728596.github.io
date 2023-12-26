@@ -1,5 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import Demo from './Demo/Demo';
 import ReadFileExample from './codeExample/readFile.mdx';
 import WriteFileExample from './codeExample/writeFile.mdx';
@@ -29,27 +30,19 @@ function FileSystemAccessApi(props) {
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="getting-started-with-the-file-system-access-api" className="py-[8px]">
             Getting Started With the File System Access API：
-            <a href="https://css-tricks.com/getting-started-with-the-file-system-access-api/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://css-tricks.com/getting-started-with-the-file-system-access-api/">
               https://css-tricks.com/getting-started-with-the-file-system-access-api/
-            </a>
+            </BlankLink>
           </div>,
           <div key="file" className="py-[8px]">
             File_System_Access_API：
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API">
               https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
-            </a>
+            </BlankLink>
           </div>,
           <div key="fileAPI" className="py-[8px]">
             FileAPI：
-            <a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener noreferrer">
-              https://w3c.github.io/FileAPI/
-            </a>
+            <BlankLink href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</BlankLink>
           </div>
         ] }
       />

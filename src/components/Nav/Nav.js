@@ -3,6 +3,7 @@ import { Layout, Tooltip, Space } from 'antd';
 import { InteractionOutlined as IconInteractionOutlined } from '@ant-design/icons';
 import style from './nav.module.sass';
 import Picture from '../Picture/Picture';
+import BlankLink from '../BlankLink/BlankLink';
 
 /* 导航地址 */
 const navs = [
@@ -50,11 +51,7 @@ function Nav(props) {
                 <IconInteractionOutlined className={ style.switchAddressIcon } />
               </a>
             </Tooltip>
-            <a className={ style.githubLink }
-              href="https://github.com/duan602728596"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink className={ style.githubLink } href="https://github.com/duan602728596">
               <Picture className="block w-full h-full"
                 imageClassName="block w-full h-full"
                 avifSrc="/images/github.avif"
@@ -62,7 +59,7 @@ function Nav(props) {
                 src="/images/github.png"
                 alt="github"
               />
-            </a>
+            </BlankLink>
           </Space>
         </div>
       </div>

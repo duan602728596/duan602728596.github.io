@@ -1,6 +1,7 @@
 import { Typography } from 'antd';
 import articleStyle from '../../article.module.sass';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import Demo from './Demo/Demo';
 import DomToImageExample from './codeExample/domToImage.mdx';
 
@@ -13,21 +14,16 @@ function DomToImage(props) {
       <Title>用JavaScript将DOM绘制成图片</Title>
       <Paragraph>
         之前看到了一个动画，
-        <a href="https://jdc.jd.com/lab/2018-ae2css/washer/" target="_blank" rel="noopener noreferrer">
+        <BlankLink href="https://jdc.jd.com/lab/2018-ae2css/washer/">
           https://jdc.jd.com/lab/2018-ae2css/washer/
-        </a>
+        </BlankLink>
         ，就琢磨着怎么简单实现一下。要做的，就是将DOM的内容原原本本复制，并绘制成图片。
       </Paragraph>
       {/* 实现原理 */}
       <Title level={ 2 }>实现原理</Title>
       <Paragraph>
         SVG的
-        <a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/foreignObject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          foreignObject
-        </a>
+        <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/foreignObject">foreignObject</BlankLink>
         标签，可以包含html片段，这样就可以将整个DOM片段转换成SVG。
       </Paragraph>
       <Paragraph>
@@ -40,7 +36,7 @@ function DomToImage(props) {
         使样式生效。可以使用
         <Text strong={ true } underline={ true }>window.getComputedStyle</Text>
         来获取DOM的样式。 如果嫌麻烦，还可以使用
-        <a href="https://github.com/niklasvh/html2canvas" target="_blank" rel="noopener noreferrer">html2canvas</a>
+        <BlankLink href="https://github.com/niklasvh/html2canvas">html2canvas</BlankLink>
         库。
       </Paragraph>
       <Paragraph>SVG内DOM节点的xmlns属性不能省略。</Paragraph>

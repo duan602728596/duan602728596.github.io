@@ -1,6 +1,7 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import PromiseRunExample from './codeExample/promiseRun.mdx';
 
 const { Title, Paragraph } = Typography;
@@ -46,14 +47,14 @@ function BrowserEventLoop(props) {
         message={ [
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="febook" className="py-[8px]">
-            <a href="https://febook.hzfe.org/awesome-interview/book3/browser-event-loop" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://febook.hzfe.org/awesome-interview/book3/browser-event-loop">
               https://febook.hzfe.org/awesome-interview/book3/browser-event-loop
-            </a>
+            </BlankLink>
           </div>,
           <div key="jianshu" className="py-[8px]">
-            <a href="https://www.jianshu.com/p/73164966c6fe" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://www.jianshu.com/p/73164966c6fe">
               https://www.jianshu.com/p/73164966c6fe
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

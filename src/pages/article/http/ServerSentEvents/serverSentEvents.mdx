@@ -1,4 +1,5 @@
 import { Typography, Alert } from 'antd';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import ServerSourceExample from './codeExample/server.mdx';
 import EventSourceExample from './codeExample/eventSource.mdx';
 
@@ -22,21 +23,21 @@ export const { Text } = Typography;
     <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
     <div key="server-sent-events" className="py-[8px]">
       Server-sent events：
-      <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events" target="_blank" rel="noopener noreferrer">
+      <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events">
         https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events
-      </a>
+      </BlankLink>
     </div>,
     <div key="server-sent-events-sse-streams-with-node-and-koa" className="py-[8px]">
       Server Sent Events (SSE) Streams with Node and Koa：
-      <a href="https://medium.com/trabe/server-sent-events-sse-streams-with-node-and-koa-d9330677f0bf" target="_blank" rel="noopener noreferrer">
+      <BlankLink href="https://medium.com/trabe/server-sent-events-sse-streams-with-node-and-koa-d9330677f0bf">
         https://medium.com/trabe/server-sent-events-sse-streams-with-node-and-koa-d9330677f0bf
-      </a>
+      </BlankLink>
     </div>,
     <div key="webpack-hot-middleware" className="py-[8px]">
       webpack-hot-middleware：
-      <a href="https://github.com/webpack-contrib/webpack-hot-middleware" target="_blank" rel="noopener noreferrer">
+      <BlankLink href="https://github.com/webpack-contrib/webpack-hot-middleware">
         https://github.com/webpack-contrib/webpack-hot-middleware
-      </a>
+      </BlankLink>
     </div>
   ] }
 />

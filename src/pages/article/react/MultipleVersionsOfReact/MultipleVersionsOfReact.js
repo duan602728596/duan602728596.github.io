@@ -1,6 +1,7 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
 import HighLight from '../../../../components/HighLight/HighLight';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import LegacyDemoExample from './codeExample/legacyDemo.mdx';
 import LoaderDemoExample from './codeExample/loaderDemo.mdx';
 import LoaderUseDemoExample from './codeExample/loaderUseDemo.mdx';
@@ -18,12 +19,9 @@ function MultipleVersionsOfReact(props) {
         &nbsp;错误。这是由于多个版本的React导致的。
       </Paragraph>
       <Paragraph>
-        <a href="https://reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <BlankLink href="https://reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation">
           在React@17中，事件系统进行了更改。
-        </a>
+        </BlankLink>
         这可以让我们使用React的多版本，解决多个版本的React导致的错误。
       </Paragraph>
       <Title level={ 2 }>导出组件出口</Title>
@@ -41,15 +39,15 @@ function MultipleVersionsOfReact(props) {
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="react-gradual-upgrade-demo" className="py-[8px]">
             React多版本的Demo：
-            <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact">
               https://github.com/reactjs/react-gradual-upgrade-demo/
-            </a>
+            </BlankLink>
           </div>,
           <div key="webpack-module-federation" className="py-[8px]">
             webpack联邦模块官方文档：
-            <a href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="src/pages/article/react/MultipleVersionsOfReact/MultipleVersionsOfReact">
               https://webpack.js.org/concepts/module-federation/
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

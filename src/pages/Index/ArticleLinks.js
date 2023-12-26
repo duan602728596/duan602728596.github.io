@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { List } from 'antd';
 import style from './articleLinks.module.sass';
+import BlankLink from '../../components/BlankLink/BlankLink';
 
 /* 文章链接列表 */
 function ArticleLinks(props) {
@@ -13,7 +14,7 @@ function ArticleLinks(props) {
       <List.Item key={ item.href } className={ item.blank ? style.blank : undefined }>
         {
           item.blank
-            ? <a className={ style.blankLink } href={ item.href } target="_blank" rel="noopener noreferrer">{ item.title }</a>
+            ? <BlankLink className={ style.blankLink } href={ item.href }>{ item.title }</BlankLink>
             : <Link className={ style.link } href={ item.href }>{ item.title }</Link>
         }
       </List.Item>

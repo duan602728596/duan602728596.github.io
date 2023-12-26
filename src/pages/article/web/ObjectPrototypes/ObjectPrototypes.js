@@ -1,5 +1,6 @@
 import { Typography, Alert } from 'antd';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import PersonExample from './codeExample/person.mdx';
 import ManExample from './codeExample/man.mdx';
 
@@ -25,25 +26,19 @@ function ObjectPrototypes(props) {
         message={ [
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="febook" className="py-[8px]">
-            <a href="https://febook.hzfe.org/awesome-interview/book2/js-inherite" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://febook.hzfe.org/awesome-interview/book2/js-inherite">
               https://febook.hzfe.org/awesome-interview/book2/js-inherite
-            </a>,
+            </BlankLink>,
           </div>,
           <div key="object-proto" className="py-[8px]">
-            <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto">
               https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
-            </a>
+            </BlankLink>
           </div>,
           <div key="object-getPrototypeOf" className="py-[8px]">
-            <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf">
               https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf
-            </a>
+            </BlankLink>
           </div>
         ] }
       />

@@ -1,6 +1,7 @@
 import { Typography, Anchor, Alert } from 'antd';
 import NoSSR from 'react-no-ssr';
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
 import isMobile from '../../../../utils/isMobile';
 import FlutterMaterialApp from './flutterComponents/MaterialApp.mdx';
 import FlutterScaffold from './flutterComponents/Scaffold.mdx';
@@ -75,21 +76,21 @@ function ComponentsCommonlyUsedInFlutter(props) {
           <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
           <div key="flutter-in-action" className="py-[8px]">
             Flutter实战：
-            <a href="https://book.flutterchina.club/" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://book.flutterchina.club/">
               https://book.flutterchina.club/
-            </a>
+            </BlankLink>
           </div>,
           <div key="rich_code_editor" className="py-[8px]">
             Flutter富文本编辑器：
-            <a href="https://pub.dev/packages/rich_code_editor" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://pub.dev/packages/rich_code_editor">
               https://pub.dev/packages/rich_code_editor
-            </a>
+            </BlankLink>
           </div>,
           <div key="FlutterTextSpanField" className="py-[8px]">
             Flutter自定义块样式输入框：
-            <a href="https://github.com/JiangJuHong/FlutterTextSpanField" target="_blank" rel="noopener noreferrer">
+            <BlankLink href="https://github.com/JiangJuHong/FlutterTextSpanField">
               https://github.com/JiangJuHong/FlutterTextSpanField
-            </a>
+            </BlankLink>
           </div>
         ] }
       />
