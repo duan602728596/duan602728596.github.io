@@ -28,11 +28,29 @@ export const { Text } = Typography;
 
 ## 使用Spleeter提取伴奏
 
-通过执行命令来提取伴奏。
+* 通过执行命令来提取伴奏
 
-```bash
-python.exe -m spleeter separate -p spleeter:2stems -o /path/to/output /path/to/audio.mp3
-```
+    ```bash
+    python.exe -m spleeter separate -p spleeter:2stems -o /path/to/output /path/to/audio.mp3
+    ```
+
+* 通过python执行代码（代码由AI生成）
+
+    ```python
+    import spleeter
+
+    # Separate vocals and accompaniment from an audio file
+    separator = spleeter.Separator('spleeter:2stems')
+    separator.separate_to_file('path/to/audio/file', 'output/path')
+
+    # Separate vocals, drums, bass, and other from an audio file
+    separator = spleeter.Separator('spleeter:4stems')
+    separator.separate_to_file('path/to/audio/file', 'output/path')
+
+    # Separate vocals, drums, bass, piano, and other from an audio file
+    separator = spleeter.Separator('spleeter:5stems')
+    separator.separate_to_file('path/to/audio/file', 'output/path')
+    ```
 
 ## 提取效果
 
