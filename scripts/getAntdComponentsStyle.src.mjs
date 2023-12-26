@@ -3,8 +3,6 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { glob } from 'glob';
 import { renderToString } from 'react-dom/server';
-import postcss from 'postcss';
-import cssnano from 'cssnano';
 import * as antd from 'antd';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN.js';
@@ -51,13 +49,6 @@ function createNode(component) {
   return <Component key={ component } />;
 }
 
-/* css压缩 */
-async function cssMinify(css) {
-  const result = await postcss([cssnano({ preset: 'default' })]).process(css);
-
-  return result.css;
-}
-
 async function getAntdComponentsStyleSrc() {
   // 获取next的所有js文件
   const pagesDir = join(__dirname, '../pages');
@@ -89,7 +80,7 @@ async function getAntdComponentsStyleSrc() {
     </StyleProvider>
   );
 
-  const styleText = await cssMinify(extractStyle(cache, true));
+  const styleText = extractStyle(cache, true);
   const styleTextHash = createHash('md5').update(styleText).digest('hex');
   const antdSSRCssFileName = `antd.ssr.${ styleTextHash.substring(0, 8) }.css`;
   const antdSSRCssFile = join(__dirname, `../public/styles/${ antdSSRCssFileName }`);
