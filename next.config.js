@@ -7,6 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 const isOutputExport = process.env.OUTPUT === 'export';
 
+/** @type { import('next').NextConfig } */
 const nextConfig = {
   webpack(config, options) {
     /* 将antd打包到服务端生成的文件中 */
