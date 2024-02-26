@@ -64,15 +64,15 @@ export async function loadModel() {
     item.model3.scale.set(scale, scale);
     item.loginIndex ??= item.model3.internalModel.motionManager.definitions[''].findIndex((o) => o.File.includes('login'));
 
-    item.mainIndex ??= do {
+    item.mainIndex ??= (() => {
       const indexArr = [];
 
       item.model3.internalModel.motionManager.definitions[''].forEach((o, i) => {
         o.File.includes('main_') && indexArr.push(i);
       });
 
-      indexArr;
-    };
+      return indexArr;
+    })();
   }
 
   await item.model3.internalModel.motionManager.startMotion('', item.loginIndex);
