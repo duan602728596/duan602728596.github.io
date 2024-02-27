@@ -47,9 +47,11 @@ function Main(props) {
       }
       { props?.children }
     </div>,
-    <NoSSR key="backTop">
-      { props?.goToTop ? goToTopRender() : null }
-    </NoSSR>
+    props?.goToTop ? (
+      <NoSSR key="backTop">
+        { goToTopRender() }
+      </NoSSR>
+    ) : null
   ];
 }
 
