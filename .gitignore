@@ -20,7 +20,8 @@ yarn-error.log
 out
 public/m
 .analyzes-report
-scripts/getAntdComponentsStyle.dist.mjs
+styles/antd.ssr.*.css
+src/antd.ssr.json
 
 dev.key
 dev.crt

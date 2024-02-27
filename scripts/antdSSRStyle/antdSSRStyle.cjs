@@ -8,9 +8,6 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN.js';
 import { geekblue } from '@ant-design/colors';
 import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
-import { metaHelper } from '@sweet-milktea/utils';
-
-const { __dirname } = metaHelper(import.meta.url);
 
 const blackList = ['ConfigProvider', 'Drawer', 'Grid', 'Modal', 'Popconfirm', 'Popover', 'Tooltip', 'Tour', 'message'];
 
@@ -51,8 +48,8 @@ function createNode(component) {
 
 async function getAntdComponentsStyleSrc() {
   // 获取next的所有js文件
-  const pagesDir = join(__dirname, '../pages');
-  const srcDir = join(__dirname, '../src');
+  const pagesDir = join(__dirname, '../../pages');
+  const srcDir = join(__dirname, '../../src');
   const nextFiles = (await Promise.all([
     glob(`${ pagesDir }/**/*.{js,jsx,cjs,mjs}`.replace(/\\/g, '/')),
     glob(`${ srcDir }/**/*.{js,jsx,cjs,mjs}`.replace(/\\/g, '/'))
@@ -83,11 +80,11 @@ async function getAntdComponentsStyleSrc() {
   const styleText = extractStyle(cache, true);
   const styleTextHash = createHash('md5').update(styleText).digest('hex');
   const antdSSRCssFileName = `antd.ssr.${ styleTextHash.substring(0, 8) }.css`;
-  const antdSSRCssFile = join(__dirname, `../public/styles/${ antdSSRCssFileName }`);
+  const antdSSRCssFile = join(__dirname, `../../public/styles/${ antdSSRCssFileName }`);
 
   await Promise.all([
     writeFile(antdSSRCssFile, styleText),
-    writeFile(join(__dirname, '../src/antd.ssr.json'), JSON.stringify({
+    writeFile(join(__dirname, '../../src/antd.ssr.json'), JSON.stringify({
       css: antdSSRCssFileName
     }))
   ]);
