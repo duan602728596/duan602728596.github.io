@@ -7,6 +7,7 @@ import { geekblue } from '@ant-design/colors';
 import { MDXProvider } from '@mdx-js/react';
 import MdxCodeHighLight from '../src/components/HighLight/MdxCodeHighLight';
 import Live2dSuspense from '../src/components/Live2d/Live2dSuspense';
+import Nav from '../src/components/Nav/Nav';
 import '../src/utils/Accessibility';
 import '../src/Accessibility.sass';
 import '../src/main.tailwindcss';
@@ -49,11 +50,12 @@ export default function App(props) {
         <meta name="copyright" content="段昊辰, duanhaochen@126.com" />
       </Head>
       <ConfigProvider locale={ zhCN } theme={{ token: { colorPrimary: geekblue.primary } }}>
+        <Nav />
         <MDXProvider components={ MDXComponents }>
           <Component { ...pageProps } />
         </MDXProvider>
+        <Live2dSuspense />
       </ConfigProvider>
-      <Live2dSuspense />
     </Fragment>
   );
 }

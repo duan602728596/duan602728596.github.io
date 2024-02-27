@@ -1,7 +1,5 @@
-import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
-import Nav from '../../components/Nav/Nav';
 import Main from '../../components/Main/Main';
 import linkArticles from './link/articles.json' with { type: 'json' };
 import linkFavorites from './link/favorites.json' with { type: 'json' };
@@ -31,12 +29,9 @@ function Index(props) {
   }
 
   return (
-    <Fragment>
-      <Nav />
-      <Main goToTop={ true }>
-        { articlesRender() }
-      </Main>
-    </Fragment>
+    <Main goToTop={ true }>
+      { articlesRender() }
+    </Main>
   );
 }
 
