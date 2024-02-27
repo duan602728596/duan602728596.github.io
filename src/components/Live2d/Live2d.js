@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import Script from 'next/script';
 import { Button } from 'antd';
 import { SettingOutlined as IconSettingOutlined } from '@ant-design/icons';
@@ -23,13 +23,9 @@ function Live2d(props) {
     live2dInit(canvasRef.current);
   }
 
-  useEffect(function() {
-    live2d();
-  }, []);
-
   return (
     <Fragment>
-      <Script src="/scripts/live2dcubismcore.min.js" />
+      <Script src="/scripts/live2dcubismcore.min.js" onReady={ live2d } />
       <div className={ style.root }>
         <canvas ref={ canvasRef } className="w-full h-full" width={ 230 } height={ 230 } />
         <Button className={ style.tapBtn }
