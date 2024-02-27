@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react';
+import Script from 'next/script';
 import { Button } from 'antd';
 import { SettingOutlined as IconSettingOutlined } from '@ant-design/icons';
 import style from './live2d.module.sass';
@@ -28,6 +29,7 @@ function Live2d(props) {
 
   return (
     <Fragment>
+      <Script src="/scripts/live2dcubismcore.min.js" />
       <div className={ style.root }>
         <canvas ref={ canvasRef } className="w-full h-full" width={ 230 } height={ 230 } />
         <Button className={ style.tapBtn }

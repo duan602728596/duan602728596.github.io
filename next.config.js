@@ -1,9 +1,6 @@
 const path = require('node:path');
 const process = require('node:process');
 const withMdx = require('@next/mdx');
-const MiniCssExtractPlugin = require('next/dist/compiled/mini-css-extract-plugin');
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
 
 const isOutputExport = process.env.OUTPUT === 'export';
 
@@ -23,45 +20,6 @@ const nextConfig = {
         return externalsFunc(ctx, callback);
       };
     }
-
-    /* tailwindcss */
-    const tailwindcssUse = [
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            mode: 'global',
-            exportOnlyLocals: options.isServer
-          }
-        }
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          postcssOptions: {
-            plugins: [
-              tailwindcss({
-                content: [
-                  './src/**/*.{ts,tsx,js,jsx,mdx}',
-                  './pages/**/*.{ts,tsx,js,jsx,mdx}'
-                ]
-              }),
-              autoprefixer()
-            ]
-          }
-        }
-      }
-    ];
-
-    if (!options.isServer) {
-      tailwindcssUse.unshift(options.dev ? 'style-loader' : MiniCssExtractPlugin.loader);
-    }
-
-    config.module.rules.push({
-      test: /\.tailwindcss$/i,
-      use: tailwindcssUse,
-      include: [/src/]
-    });
 
     return config;
   },

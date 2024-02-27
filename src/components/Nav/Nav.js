@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Layout, Tooltip, Space } from 'antd';
-import { InteractionOutlined as IconInteractionOutlined } from '@ant-design/icons';
+import { Space } from 'antd';
 import style from './nav.module.sass';
+import SwitchAddress from './SwitchAddress';
 import Picture from '../Picture/Picture';
 import BlankLink from '../BlankLink/BlankLink';
 
@@ -11,8 +11,6 @@ const navs = [
   { href: '/favorites', title: '收藏夹' },
   { href: '/project', title: '开源项目' }
 ];
-/* 域名 */
-const domain = ['github.io', 'vercel.app'];
 
 /* 渲染导航 */
 const navsRender = navs.map((item, index) => {
@@ -25,32 +23,15 @@ const navsRender = navs.map((item, index) => {
 
 /* 网站导航 */
 function Nav(props) {
-  // 切换网站地址
-  function handleSwitchAddressClick(event) {
-    const { pathname, hostname } = window.location;
-    const isGithub = /github\.io/.test(hostname);
-
-    window.location.href = new URL(pathname, `https://duan602728596.${ domain[isGithub ? 1 : 0] }/`);
-  }
-
   return (
-    <Layout.Header className={ style.antdHeader }>
+    <div className={ style.antdHeader }>
       <div className={ style.header }>
         <nav className={ style.headerLeft }>
           <ul className={ style.navList }>{ navsRender }</ul>
         </nav>
         <div className={ style.headerRight }>
           <Space size={ 16 }>
-            <Tooltip title="切换网站地址">
-              <a className={ style.switchAddress }
-                role="button"
-                tabIndex={ 0 }
-                aria-label="切换网站地址"
-                onClick={ handleSwitchAddressClick }
-              >
-                <IconInteractionOutlined className={ style.switchAddressIcon } />
-              </a>
-            </Tooltip>
+            <SwitchAddress />
             <BlankLink className={ style.githubLink } href="https://github.com/duan602728596">
               <Picture className="block w-full h-full"
                 imageClassName="block w-full h-full"
@@ -63,7 +44,7 @@ function Nav(props) {
           </Space>
         </div>
       </div>
-    </Layout.Header>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { FloatButton, Button } from 'antd';
 import { LeftOutlined as IconLeftOutlined, ToTopOutlined as IconToTopOutlined } from '@ant-design/icons';
 import NoSSR from 'react-no-ssr';
