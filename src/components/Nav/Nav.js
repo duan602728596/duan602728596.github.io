@@ -9,7 +9,8 @@ import BlankLink from '../BlankLink/BlankLink';
 const navs = [
   { href: '/', title: '文章' },
   { href: '/favorites', title: '收藏夹' },
-  { href: '/project', title: '开源项目' }
+  { href: '/project', title: '开源项目' },
+  { href: '/friends', title: '友情链接' }
 ];
 
 /* 渲染导航 */
