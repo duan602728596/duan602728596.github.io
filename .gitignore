@@ -20,7 +20,7 @@ yarn-error.log
 out
 public/m
 .analyzes-report
-styles/antd.ssr.*.css
+public/styles/*.ssr.css
 src/antd.ssr.json
 
 dev.key

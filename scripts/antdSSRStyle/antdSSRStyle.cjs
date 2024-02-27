@@ -79,7 +79,7 @@ async function getAntdComponentsStyleSrc() {
 
   const styleText = extractStyle(cache, true);
   const styleTextHash = createHash('md5').update(styleText).digest('hex');
-  const antdSSRCssFileName = `antd.ssr.${ styleTextHash.substring(0, 8) }.css`;
+  const antdSSRCssFileName = `${ styleTextHash.substring(0, 8) }.ssr.css`;
   const antdSSRCssFile = join(__dirname, `../../public/styles/${ antdSSRCssFileName }`);
 
   await Promise.all([

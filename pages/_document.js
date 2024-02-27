@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+// eslint-disable-next-line import/no-unresolved
 import antdSSRJson from '../src/antd.ssr.json' with { type: 'json' };
 
 export default function Document() {
