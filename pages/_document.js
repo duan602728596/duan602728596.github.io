@@ -7,7 +7,6 @@ export default function Document() {
     <Html lang="zh-cmn-Hans">
       <Head>
         <meta name="renderer" content="webkit" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Window-target" content="_top" />
         <meta name="author" content="段昊辰, duanhaochen@126.com" />
         <meta name="copyright" content="段昊辰, duanhaochen@126.com" />
