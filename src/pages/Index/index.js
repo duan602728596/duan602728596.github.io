@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
 import Main from '../../components/Main/Main';
+import Badge from '../../components/Badge/Badge';
 import linkArticles from './link/articles.json' with { type: 'json' };
 import linkFavorites from './link/favorites.json' with { type: 'json' };
 
@@ -30,6 +31,7 @@ function Index(props) {
 
   return (
     <Main goToTop={ true }>
+      <Badge />
       { articlesRender() }
     </Main>
   );

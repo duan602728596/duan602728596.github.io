@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import Main from '../../components/Main/Main';
 import BlankLink from '../../components/BlankLink/BlankLink';
+import Badge from '../../components/Badge/Badge';
 import Project from './Project';
 
 /* 项目信息 */
@@ -59,6 +60,7 @@ const projectList = [
 function Index(props) {
   return (
     <Main>
+      <Badge />
       <Project dataSource={ projectList } />
     </Main>
   );

@@ -1,5 +1,6 @@
 import Main from '../../components/Main/Main';
 import BlankLink from '../../components/BlankLink/BlankLink';
+import Badge from '../../components/Badge/Badge';
 import Project from '../Project/Project';
 
 /* 友情链接 */
@@ -27,6 +28,7 @@ const friendsList = [
 function Index(props) {
   return (
     <Main>
+      <Badge />
       <Project dataSource={ friendsList } />
     </Main>
   );
