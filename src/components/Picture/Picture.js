@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 
 /**
  * 展示不同的图片
- * @param { string } props.className: 样式
- * @param { string } props.imageClassName: picture内img的样式
- * @param { string } props.avifSrc: avif的地址
- * @param { string } props.webpSrc: webp的地址
- * @param { string } props.src: 图片地址
- * @param { string } props.alt: alt属性
+ * @param { string } props.className - 样式
+ * @param { string } props.imageClassName - picture内img的样式
+ * @param { string } props.avifSrc - avif的地址
+ * @param { string } props.webpSrc - webp的地址
+ * @param { string } props.src - 图片地址
+ * @param { string } props.alt - alt属性
  */
 function Picture(props) {
   const { className, imageClassName, avifSrc, webpSrc, src, alt } = props;

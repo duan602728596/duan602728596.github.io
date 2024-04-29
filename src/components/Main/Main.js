@@ -10,9 +10,9 @@ const { BackTop } = FloatButton;
 
 /**
  * 网站整体布局
- * @param { React.ReactNode } props.children: 子元素
- * @param { boolean } props.goToTop: 显示返回顶部
- * @param { boolean } props.goBack: 显示返回按钮
+ * @param { React.ReactNode } props.children - 子元素
+ * @param { boolean } props.goToTop - 显示返回顶部
+ * @param { boolean } props.goBack - 显示返回按钮
  */
 function Main(props) {
   const router = useRouter();

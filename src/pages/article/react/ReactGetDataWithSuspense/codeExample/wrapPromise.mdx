@@ -11,7 +11,7 @@ enum WrapStatus {
 
 /**
  * 加载器
- * @param { () => Promise<T> } promise: 一个返回Promise的函数
+ * @param { () => Promise<T> } promise - 一个返回Promise的函数
  */
 function wrapPromise<T = unknown>(promise: () => Promise<T>): WrapPromise<T> {
   let status: WrapStatus = WrapStatus.Pending;

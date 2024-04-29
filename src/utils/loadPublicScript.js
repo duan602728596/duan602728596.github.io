@@ -1,7 +1,7 @@
 /**
  * 加载脚本
- * @param { string } src: 脚本地址
- * @param { string } id: 脚本id
+ * @param { string } src - 脚本地址
+ * @param { string } id - 脚本id
  */
 function loadPublicScript(src, id) {
   if (document.getElementById(id)) return;

@@ -1,6 +1,6 @@
 /**
  * 获取类型
- * @param { string } filename: 文件名
+ * @param { string } filename - 文件名
  */
 export function mimeType(filename) {
   const ext = filename.match(/\.[a-zA-Z0-9]+$/);

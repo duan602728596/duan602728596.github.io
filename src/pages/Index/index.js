@@ -14,7 +14,7 @@ const linkObject = {
 
 /**
  * 首页
- * @param { 'articles' | 'favorites' } props.type: 文章类型
+ * @param { 'articles' | 'favorites' } props.type - 文章类型
  */
 function Index(props) {
   const { type = 'articles' } = props;

@@ -8,8 +8,8 @@ class Queue {
   /**
    * 执行一个任务
    * @param { number } index
-   * @param { Function } fn: 执行的函数
-   * @param { Array } args: 传递给执行函数的参数
+   * @param { Function } fn - 执行的函数
+   * @param { Array } args - 传递给执行函数的参数
    */
   *executionFunc(index, fn, ...args) {
     const _this = this;
@@ -24,7 +24,7 @@ class Queue {
 
   /**
    * 添加到任务队列
-   * @param { Array<any[]> } list: 任务队列
+   * @param { Array<any[]> } list - 任务队列
    */
   addList(list) {
     for (const item of list) {
