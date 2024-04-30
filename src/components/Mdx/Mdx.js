@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Typography } from 'antd';
 import { MDXProvider } from '@mdx-js/react';
 import MdxCodeHighLight from '../HighLight/MdxCodeHighLight';
@@ -35,9 +34,5 @@ function Mdx(props) {
     </MDXProvider>
   );
 }
-
-Mdx.propTypes = {
-  children: PropTypes.node
-};
 
 export default Mdx;

@@ -1,6 +1,5 @@
 ```javascript
 import { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 /**
  * 加载联邦模块
@@ -30,11 +29,6 @@ function Loader(props) {
 
   return <div ref={ containerRef } />;
 }
-
-Loader.propTypes = {
-  loader: PropTypes.func,
-  moduleProps: PropTypes.object
-};
 
 export default Loader;
 ```

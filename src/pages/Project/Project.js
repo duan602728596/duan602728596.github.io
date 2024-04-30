@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { List } from 'antd';
 import BlankLink from '../../components/BlankLink/BlankLink';
 
@@ -20,9 +19,5 @@ function Project(props) {
 
   return <List dataSource={ dataSource } renderItem={ projectListRender } bordered={ true } />;
 }
-
-Project.propTypes = {
-  dataSource: PropTypes.array
-};
 
 export default Project;

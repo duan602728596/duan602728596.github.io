@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -43,10 +42,5 @@ function HighLight(props) {
     </div>
   );
 }
-
-HighLight.propTypes = {
-  type: PropTypes.string,
-  children: PropTypes.string
-};
 
 export default HighLight;

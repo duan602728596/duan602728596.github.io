@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import ArticleLinks from './ArticleLinks';
 import Main from '../../components/Main/Main';
 import Badge from '../../components/Badge/Badge';
@@ -36,9 +35,5 @@ function Index(props) {
     </Main>
   );
 }
-
-Index.propTypes = {
-  type: PropTypes.string
-};
 
 export default Index;

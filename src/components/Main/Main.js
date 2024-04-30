@@ -1,5 +1,4 @@
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/navigation';
 import { FloatButton, Button } from 'antd';
 import { LeftOutlined as IconLeftOutlined, ToTopOutlined as IconToTopOutlined } from '@ant-design/icons';
@@ -54,11 +53,5 @@ function Main(props) {
     ) : null
   ];
 }
-
-Main.propTypes = {
-  children: PropTypes.node,
-  goToTop: PropTypes.bool,
-  goBack: PropTypes.bool
-};
 
 export default Main;

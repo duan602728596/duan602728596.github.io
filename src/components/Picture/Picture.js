@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 /**
  * 展示不同的图片
  * @param { string } props.className - 样式
@@ -20,13 +18,5 @@ function Picture(props) {
     </picture>
   );
 }
-
-Picture.propTypes = {
-  className: PropTypes.string,
-  imageClassName: PropTypes.string,
-  avifSrc: PropTypes.string,
-  webpSrc: PropTypes.string,
-  src: PropTypes.string
-};
 
 export default Picture;

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { List } from 'antd';
 import style from './articleLinks.module.sass';
@@ -23,9 +22,5 @@ function ArticleLinks(props) {
 
   return <List className={ style.list } size="small" dataSource={ data } renderItem={ linksRender } bordered={ true } />;
 }
-
-ArticleLinks.propTypes = {
-  data: PropTypes.array
-};
 
 export default ArticleLinks;
