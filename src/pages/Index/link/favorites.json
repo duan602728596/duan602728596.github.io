@@ -57,6 +57,13 @@
         { "href": "https://logomakerr.ai/", "title": "Logomakerr - Create a new logo with AI" },
         { "href": "https://www.worldtimebuddy.com/", "title": "World time buddy" }
       ]
+    },
+    {
+      "title": "漏洞",
+      "children": [
+        { "href": "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS", "title": "Regular expression Denial of Service - ReDoS" },
+        { "href": "https://blakeembrey.com/posts/2024-09-web-redos/", "title": "ReDoS the web" }
+      ]
     }
   ]
 }
