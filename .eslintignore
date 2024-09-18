@@ -1,9 +1,0 @@
-# node
-node_modules
-
-# build
-.next
-out
-public
-public/**/*
-scripts/getAntdComponentsStyle.dist.mjs
