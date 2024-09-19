@@ -5,26 +5,25 @@ import MdxCodeHighLight from '../HighLight/MdxCodeHighLight';
 const { Title, Paragraph } = Typography;
 
 /**
- * mdx h3组件
- * @param { React.ReactNode } props.children
+ * 创建mdx标题组件
+ * @param { 1 | 2 | 3 | 4 | 5 } level
  */
-function MdxH3(props) {
-  return <Title level={ 3 } id={ props.children }>{ props.children }</Title>;
-}
-
-/**
- * mdx h4组件
- * @param { React.ReactNode } props.children
- */
-function MdxH4(props) {
-  return <Title level={ 4 }>{ props.children }</Title>;
+function MdxTitle(level) {
+  /**
+   * @param { React.ReactNode } props.children
+   */
+  return function(props) {
+    return <Title level={ level } id={ props.children }>{ props.children }</Title>;
+  };
 }
 
 const MDXComponents = {
-  code: MdxCodeHighLight,
+  pre: MdxCodeHighLight,
   p: Paragraph,
-  h3: MdxH3,
-  h4: MdxH4
+  h1: MdxTitle(1),
+  h2: MdxTitle(2),
+  h3: MdxTitle(3),
+  h4: MdxTitle(4)
 };
 
 function Mdx(props) {

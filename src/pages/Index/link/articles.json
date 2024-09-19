@@ -75,7 +75,8 @@
       "children": [
         { "href": "/article/media/par-dar-sar-of-video", "title": "视频参数PAR、DAR、SAR的区别" },
         { "href": "/article/media/ffmpeg-command", "title": "FFmpeg常用的命令" },
-        { "href": "/article/media/extract-accompaniment-using-spleeter", "title": "使用Spleeter提取伴奏" }
+        { "href": "/article/media/extract-accompaniment-using-spleeter", "title": "使用Spleeter提取伴奏" },
+        { "href": "/article/media/audio-context", "title": "AudioContext的使用" }
       ]
     }
   ]

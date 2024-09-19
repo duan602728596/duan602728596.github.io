@@ -1,0 +1,62 @@
+import { Typography } from 'antd';
+import BlankLink from '../../../../components/BlankLink/BlankLink';
+import Demo from './Demo/Demo';
+
+export const { Text } = Typography;
+
+# AudioContext的使用
+
+## 加载音频并播放
+
+```javascript
+const audioContext = new AudioContext();
+
+// 加载音频文件
+const res = await fetch('public/1.mp3');
+const buffer = await res.arrayBuffer();
+const audioBuffer = await audioContext.decodeAudioData(buffer);
+
+// 播放
+let source;
+
+source = audioContext.createBufferSource();
+source.buffer = audioBuffer;
+source.connect(audioContext.destination);
+source.start();
+```
+
+## 实时处理音频
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode">Analyser</BlankLink>：表示了一个可以提供实时频域和时域分析信息的节点。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode">BiquadFilter</BlankLink>：一个简单低阶滤波器（双二阶滤波器）。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/ChannelMergerNode">ChannelMerger</BlankLink>：不同的单声道输入重新组合成单个输出。
+
+  ![](https://developer.mozilla.org/zh-CN/docs/Web/API/ChannelMergerNode/webaudiomerger.png)
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode">ChannelSplitter</BlankLink>：将音频源的不同声道分离为一组单声道输出。
+
+  ![](https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode/webaudiosplitter.png)
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode">Convolver</BlankLink>：执行线性卷积的 AudioNode，一般用来做音频混响效果。
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/DelayNode">Delay</BlankLink>：表示延迟线。
+
+  ![](https://developer.mozilla.org/en-US/docs/Web/API/DelayNode/webaudiodelaynode.png)
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode">DynamicsCompressor</BlankLink>：提供了一个压缩效果器，用以降低信号中最响部分的音量，来协助避免在多个声音同时播放并叠加在一起的时候产生的削波失真。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/GainNode">Gain</BlankLink>：表示音量的变化。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/IIRFilterNode">IIRFilter</BlankLink>：一个通用的无限脉冲响应 （IIR） 滤波器;这种类型的滤波器也可用于实现音调控制设备和图形均衡器。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode">Oscillator</BlankLink>：表示一个振荡器，它产生一个周期的波形信号（如正弦波）。
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/PannerNode">Panner</BlankLink>：音频源信号在模拟物理空间中的位置、方向和行为。
+
+  ![](https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/webaudiopannernode.png)
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode">StereoPannerNode</BlankLink>：一个简单的立体声平移器节点，可用于向左或向右平移音频流。
+
+  ![](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode/stereopannernode.png)
+
+* <BlankLink href="https://developer.mozilla.org/en-US/docs/Web/API/WaveShaperNode">WaveShaper</BlankLink>：表示一个非线性的畸变器。
+
+## 上传文件并处理音频
+
+<Demo />

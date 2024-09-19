@@ -64,6 +64,12 @@
         { "href": "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS", "title": "Regular expression Denial of Service - ReDoS" },
         { "href": "https://blakeembrey.com/posts/2024-09-web-redos/", "title": "ReDoS the web" }
       ]
+    },
+    {
+      "title": "媒体处理",
+      "children": [
+        { "href": "https://www.bilibili.com/read/cv21515913/", "title": "如何将MP3音乐转换为8-Bit音乐" }
+      ]
     }
   ]
 }
