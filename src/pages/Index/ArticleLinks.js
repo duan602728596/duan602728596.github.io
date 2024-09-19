@@ -20,7 +20,7 @@ function ArticleLinks(props) {
     );
   }
 
-  return <List className={ style.list } size="small" dataSource={ data } renderItem={ linksRender } bordered={ true } />;
+  return <List className="!mb-[16px]" size="small" dataSource={ data } renderItem={ linksRender } bordered={ true } />;
 }
 
 export default ArticleLinks;
