@@ -35,6 +35,12 @@
       ]
     },
     {
+      "title": "Python",
+      "children": [
+        { "href": "/article/python/use-label-studio-and-YOLO-to-identify-verification-codes", "title": "使用label-studio和YOLO识别验证码" }
+      ]
+    },
+    {
       "title": "Flutter",
       "children": [
         { "href": "/article/flutter/complex-style-in-text-field", "title": "在TextField中实现复杂的样式" },
