@@ -1,3 +1,4 @@
+import { Alert } from 'antd';
 import BlankLink from '../../../../components/BlankLink/BlankLink';
 
 # 使用label-studio和YOLO识别验证码
@@ -164,3 +165,19 @@ for i, r in enumerate(results):
     # r.save(filename=f'resources/result-images/results{i}.jpg')
     print(r.to_json())
 ```
+
+<Alert type="info" message={ [
+  <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+  <div key="0f87cd80" className="py-[8px]">
+    使用Label Studio标注YOLOv8数据集：
+    <BlankLink href="https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html">
+      https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html
+    </BlankLink>
+  </div>,
+  <div key="2a7262df" className="py-[8px]">
+    使用YOLOv8在Label Studio的自定义数据集上进行训练/推理：
+    <BlankLink href="https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html">
+      https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html
+    </BlankLink>
+  </div>,
+] } />
