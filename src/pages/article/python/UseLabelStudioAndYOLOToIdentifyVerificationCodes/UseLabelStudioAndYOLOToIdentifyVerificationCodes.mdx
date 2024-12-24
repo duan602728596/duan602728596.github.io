@@ -11,7 +11,6 @@ import BlankLink from '../../../../components/BlankLink/BlankLink';
 * 依赖：requirements.txt
 ```txt
 label-studio==1.15.0
-psycopg2==2.9.10
 psycopg[binary]==2.9.10
 ```
 
@@ -22,7 +21,7 @@ psycopg[binary]==2.9.10
 ```
 启动时的命令：
 ```bash
-.venv/Scripts/label-studio.exe start my_project --init -db postgresql --username postgres --password postgres
+.venv\Scripts\label-studio.exe start --init -db postgresql --username postgres --password postgres -p 13500 --data-dir .label-studio-data
 ```
 
 ## 安装YOLO
@@ -80,7 +79,7 @@ val: D:/repo/project/datasets/yolo/v8-1/images/val
 test: D:/repo/project/datasets/yolo/v8-1/images/test
 
 # number of classes
-nc: 8
+nc: 1
 
 # class names
 names: [
