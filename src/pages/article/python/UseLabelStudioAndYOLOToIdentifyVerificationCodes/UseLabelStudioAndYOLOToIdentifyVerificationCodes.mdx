@@ -9,20 +9,20 @@ import BlankLink from '../../../../components/BlankLink/BlankLink';
 <BlankLink href="https://github.com/HumanSignal/label-studio/">https://github.com/HumanSignal/label-studio/</BlankLink>
 
 * 依赖：requirements.txt
-```txt
-label-studio==1.15.0
-psycopg[binary]==2.9.10
-```
+  ```txt
+  label-studio==1.15.0
+  psycopg[binary]==2.9.10
+  ```
 
 * 安装后启动：
 安装时的环境变量，可以参考目录：
-```
-.venv/Lib/site-packages/label_studio/core/settings/label_studio.py
-```
-启动时的命令：
-```bash
-.venv\Scripts\label-studio.exe start --init -db postgresql --username postgres --password postgres -p 13500 --data-dir .label-studio-data
-```
+  ```
+  .venv/Lib/site-packages/label_studio/core/settings/label_studio.py
+  ```
+  启动时的命令：
+  ```bash
+  .venv\Scripts\label-studio.exe start --init -db postgresql --username postgres --password postgres -p 13500 --data-dir .label-studio-data
+  ```
 
 ## 安装YOLO
 
@@ -32,10 +32,10 @@ YOLO安装时要注意Python的版本，超过要求的版本是无法安装的�
 <BlankLink href="https://github.com/ultralytics/ultralytics">https://github.com/ultralytics/ultralytics</BlankLink>
 
 * 依赖：requirements.txt
-```txt
-ultralytics==8.3.51
-pillow==11.0.0
-```
+  ```txt
+  ultralytics==8.3.51
+  pillow==11.0.0
+  ```
 
 ## 编写label interface：
 ```xml
