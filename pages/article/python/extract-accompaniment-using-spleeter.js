@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import ExtractAccompanimentUsingSpleeter from '../../../src/pages/article/media/ExtractAccompanimentUsingSpleeter/ExtractAccompanimentUsingSpleeter';
+import ExtractAccompanimentUsingSpleeter from '../../../src/pages/article/python/ExtractAccompanimentUsingSpleeter/ExtractAccompanimentUsingSpleeter';
 
 export default function ExtractAudioUsingSpleeterPage(props) {
   return (

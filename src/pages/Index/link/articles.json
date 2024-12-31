@@ -22,7 +22,8 @@
         { "href": "/article/web/trigger-event", "title": "在浏览器中触发事件" },
         { "href": "/article/web/webrtc", "title": "浏览器中使用WebRTC进行通信" },
         { "href": "/article/web/mix-image", "title": "使用CSS的clip-path属性实现图片探照灯效果" },
-        { "href": "/article/web/special-effects-implemented-by-css", "title": "使用CSS动画实现各种特效" }
+        { "href": "/article/web/special-effects-implemented-by-css", "title": "使用CSS动画实现各种特效" },
+        { "href": "/article/web/audio-context", "title": "AudioContext的使用" }
       ]
     },
     {
@@ -37,7 +38,9 @@
     {
       "title": "Python",
       "children": [
-        { "href": "/article/python/use-label-studio-and-YOLO-to-identify-verification-codes", "title": "使用label-studio和YOLO识别验证码" }
+        { "href": "/article/python/use-label-studio-and-YOLO-to-identify-verification-codes", "title": "使用label-studio和YOLO识别验证码" },
+        { "href": "/article/python/common-api-of-pandas", "title": "pandas的常用API" },
+        { "href": "/article/python/extract-accompaniment-using-spleeter", "title": "使用Spleeter提取伴奏" }
       ]
     },
     {
@@ -80,9 +83,7 @@
       "title": "视频技术",
       "children": [
         { "href": "/article/media/par-dar-sar-of-video", "title": "视频参数PAR、DAR、SAR的区别" },
-        { "href": "/article/media/ffmpeg-command", "title": "FFmpeg常用的命令" },
-        { "href": "/article/media/extract-accompaniment-using-spleeter", "title": "使用Spleeter提取伴奏" },
-        { "href": "/article/media/audio-context", "title": "AudioContext的使用" }
+        { "href": "/article/media/ffmpeg-command", "title": "FFmpeg常用的命令" }
       ]
     }
   ]
