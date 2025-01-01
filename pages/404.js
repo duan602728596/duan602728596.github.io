@@ -6,7 +6,7 @@ export default function Page404(props) {
   return (
     <Fragment>
       <Head>
-        <title>404 - 段昊辰的个人主页</title>
+        <title>页面不存在 - 段昊辰的个人主页</title>
       </Head>
       <Page404Component />
     </Fragment>
