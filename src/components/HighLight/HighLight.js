@@ -8,6 +8,7 @@ import dart from 'highlight.js/lib/languages/dart';
 import bash from 'highlight.js/lib/languages/bash';
 import python from 'highlight.js/lib/languages/python';
 import yaml from 'highlight.js/lib/languages/yaml';
+import ini from 'highlight.js/lib/languages/ini';
 import style from './highLight.module.sass';
 import graphql from './languages/graphql';
 
@@ -21,6 +22,8 @@ hljs.registerLanguage('graphql', graphql);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('python', python);
 hljs.registerLanguage('yaml', yaml);
+hljs.registerLanguage('toml', ini);
+hljs.registerLanguage('ini', ini);
 
 /**
  * 代码高亮组件
