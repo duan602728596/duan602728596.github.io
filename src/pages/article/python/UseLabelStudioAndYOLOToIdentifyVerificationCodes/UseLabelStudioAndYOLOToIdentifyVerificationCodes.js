@@ -1,5 +1,5 @@
 import ArticleLayout from '../../components/ArticleLayout/ArticleLayout';
-import UseLabelStudioAndYOLOToIdentifyVerificationCodesMdx from './useLabelStudioAndYOLOToIdentifyVerificationCodes.mdx';
+import UseLabelStudioAndYOLOToIdentifyVerificationCodesMdx from './2.mdx';
 
 /* 使用label-studio和YOLO识别验证码 */
 function UseLabelStudioAndYOLOToIdentifyVerificationCodes(props) {
