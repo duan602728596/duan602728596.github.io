@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Flutter常用的组件</title><meta name="keywords" content="Flutter, Dart"/><meta name="description" content="Flutter常用的组件"/><meta name="next-head-count" content="5"/><meta name="renderer" content="webkit"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><link rel="stylesheet" href="/styles/c5ccefcc.ssr.css"/><link rel="stylesheet" href="/styles/github.css"/><link rel="preload" href="/_next/static/css/43d786727b4a0da1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/43d786727b4a0da1.css" data-n-g=""/><link rel="preload" href="/_next/static/css/a4df808e46541d42.css" as="style"/><link rel="stylesheet" href="/_next/static/css/a4df808e46541d42.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-1ffeff125a9c7adf.js" defer=""></script><script src="/_next/static/chunks/framework-945b357d4a851f4b.js" defer=""></script><script src="/_next/static/chunks/main-11c2773d1c73f78f.js" defer=""></script><script src="/_next/static/chunks/pages/_app-ba70b486d1ed55db.js" defer=""></script><script src="/_next/static/chunks/6338-49200556eef65fc8.js" defer=""></script><script src="/_next/static/chunks/5361-8c958e317aad9127.js" defer=""></script><script src="/_next/static/chunks/7307-36572323e58299a1.js" defer=""></script><script src="/_next/static/chunks/pages/article/flutter/components-commonly-used-in-flutter-84ac6be460b0beed.js" defer=""></script><script src="/_next/static/2wivkkvZC5ynaIdCqAnfv/_buildManifest.js" defer=""></script><script src="/_next/static/2wivkkvZC5ynaIdCqAnfv/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="nav_antdHeader__eCvl0"><div class="nav_header__y1mlw"><nav class="nav_headerLeft__PrT7_"><ul class="nav_navList__3HXot"><li class="nav_navListItem__hpAdz"><a href="/">文章</a></li><li class="nav_navListItem__hpAdz"><a href="/favorites">收藏夹</a></li><li class="nav_navListItem__hpAdz"><a href="/project">开源项目</a></li><li class="nav_navListItem__hpAdz"><a href="/friends">友情链接</a></li></ul></nav><div class="nav_headerRight__JfqYP"><div class="ant-space css-1fymfwf ant-space-horizontal ant-space-align-center" style="column-gap:16px;row-gap:16px"><div class="ant-space-item"><a class="nav_switchAddress__sVzqD" role="button" tabindex="0" aria-label="切换网站地址"><span role="img" aria-label="interaction" class="anticon anticon-interaction nav_switchAddressIcon__KLxGG"><svg viewBox="64 64 896 896" focusable="false" data-icon="interaction" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM304.8 524h50.7c3.7 0 6.8-3 6.8-6.8v-78.9c0-19.7 15.9-35.6 35.5-35.6h205.7v53.4c0 5.7 6.5 8.8 10.9 5.3l109.1-85.7c3.5-2.7 3.5-8 0-10.7l-109.1-85.7c-4.4-3.5-10.9-.3-10.9 5.3V338H397.7c-55.1 0-99.7 44.8-99.7 100.1V517c0 4 3 7 6.8 7zm-4.2 134.9l109.1 85.7c4.4 3.5 10.9.3 10.9-5.3v-53.4h205.7c55.1 0 99.7-44.8 99.7-100.1v-78.9c0-3.7-3-6.8-6.8-6.8h-50.7c-3.7 0-6.8 3-6.8 6.8v78.9c0 19.7-15.9 35.6-35.5 35.6H420.6V568c0-5.7-6.5-8.8-10.9-5.3l-109.1 85.7c-3.5 2.5-3.5 7.8 0 10.5z"></path></svg></span></a></div><div class="ant-space-item"><a class="nav_githubLink__BDzSl" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><picture class="block w-full h-full"><source srcSet="/images/github.avif" type="image/avif"/><source srcSet="/images/github.webp" type="image/webp"/><img class="block w-full h-full" src="/images/github.png" alt="github"/></picture></a></div></div></div></div></div><div class="main_main__IZXSv"><div class="mb-[16px] text-right"><button type="button" class="ant-btn css-1fymfwf ant-btn-default ant-btn-color-default ant-btn-variant-outlined"><span role="img" aria-label="left" class="anticon anticon-left mr-[6px]"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span><span>返回</span></button></div><article class="ant-typography css-1fymfwf"><h1 class="ant-typography css-1fymfwf">Flutter常用的组件</h1><h2 class="ant-typography css-1fymfwf" id="application">应用程序组件</h2><h3 class="ant-typography css-1fymfwf" id="MaterialApp">MaterialApp</h3>
-<div class="ant-typography css-1fymfwf">它是应用程序的入口。</div>
-<h4 class="ant-typography css-1fymfwf" id="API">API</h4>
+<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Flutter常用的组件</title><meta name="keywords" content="Flutter, Dart"/><meta name="description" content="Flutter常用的组件"/><meta name="next-head-count" content="5"/><meta name="renderer" content="webkit"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><link rel="stylesheet" href="/styles/c1c90ac7.ssr.css"/><link rel="stylesheet" href="/styles/github.css"/><link rel="preload" href="/_next/static/css/43d786727b4a0da1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/43d786727b4a0da1.css" data-n-g=""/><link rel="preload" href="/_next/static/css/a4df808e46541d42.css" as="style"/><link rel="stylesheet" href="/_next/static/css/a4df808e46541d42.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-71f769d571486ec5.js" defer=""></script><script src="/_next/static/chunks/framework-945b357d4a851f4b.js" defer=""></script><script src="/_next/static/chunks/main-11c2773d1c73f78f.js" defer=""></script><script src="/_next/static/chunks/pages/_app-a36903c5060062d1.js" defer=""></script><script src="/_next/static/chunks/6338-2f028fb1c6c2731a.js" defer=""></script><script src="/_next/static/chunks/5361-8c958e317aad9127.js" defer=""></script><script src="/_next/static/chunks/7307-36572323e58299a1.js" defer=""></script><script src="/_next/static/chunks/pages/article/flutter/components-commonly-used-in-flutter-f107cf77fe91a2ce.js" defer=""></script><script src="/_next/static/vV8tXnUtNBqD1rCINTYiW/_buildManifest.js" defer=""></script><script src="/_next/static/vV8tXnUtNBqD1rCINTYiW/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="nav_antdHeader__eCvl0"><div class="nav_header__y1mlw"><nav class="nav_headerLeft__PrT7_"><ul class="nav_navList__3HXot"><li class="nav_navListItem__hpAdz"><a href="/">文章</a></li><li class="nav_navListItem__hpAdz"><a href="/favorites">收藏夹</a></li><li class="nav_navListItem__hpAdz"><a href="/project">开源项目</a></li><li class="nav_navListItem__hpAdz"><a href="/friends">友情链接</a></li></ul></nav><div class="nav_headerRight__JfqYP"><div class="ant-space css-vfj00d ant-space-horizontal ant-space-align-center" style="column-gap:16px;row-gap:16px"><div class="ant-space-item"><a class="nav_switchAddress__sVzqD" role="button" tabindex="0" aria-label="切换网站地址"><span role="img" aria-label="interaction" class="anticon anticon-interaction nav_switchAddressIcon__KLxGG"><svg viewBox="64 64 896 896" focusable="false" data-icon="interaction" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM304.8 524h50.7c3.7 0 6.8-3 6.8-6.8v-78.9c0-19.7 15.9-35.6 35.5-35.6h205.7v53.4c0 5.7 6.5 8.8 10.9 5.3l109.1-85.7c3.5-2.7 3.5-8 0-10.7l-109.1-85.7c-4.4-3.5-10.9-.3-10.9 5.3V338H397.7c-55.1 0-99.7 44.8-99.7 100.1V517c0 4 3 7 6.8 7zm-4.2 134.9l109.1 85.7c4.4 3.5 10.9.3 10.9-5.3v-53.4h205.7c55.1 0 99.7-44.8 99.7-100.1v-78.9c0-3.7-3-6.8-6.8-6.8h-50.7c-3.7 0-6.8 3-6.8 6.8v78.9c0 19.7-15.9 35.6-35.5 35.6H420.6V568c0-5.7-6.5-8.8-10.9-5.3l-109.1 85.7c-3.5 2.5-3.5 7.8 0 10.5z"></path></svg></span></a></div><div class="ant-space-item"><a class="nav_githubLink__BDzSl" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><picture class="block w-full h-full"><source srcSet="/images/github.avif" type="image/avif"/><source srcSet="/images/github.webp" type="image/webp"/><img class="block w-full h-full" src="/images/github.png" alt="github"/></picture></a></div></div></div></div></div><div class="main_main__IZXSv"><div class="mb-[16px] text-right"><button type="button" class="ant-btn css-vfj00d ant-btn-default ant-btn-color-default ant-btn-variant-outlined"><span role="img" aria-label="left" class="anticon anticon-left mr-[6px]"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span><span>返回</span></button></div><article class="ant-typography css-vfj00d"><h1 class="ant-typography css-vfj00d">Flutter常用的组件</h1><h2 class="ant-typography css-vfj00d" id="application">应用程序组件</h2><h3 class="ant-typography css-vfj00d" id="MaterialApp">MaterialApp</h3>
+<div class="ant-typography css-vfj00d">它是应用程序的入口。</div>
+<h4 class="ant-typography css-vfj00d" id="API">API</h4>
 <ul>
 <li>{ ThemeData } theme: 默认视觉属性，例如颜色字体和形状。</li>
 <li>initialRoute: 初始化路由。</li>
@@ -31,9 +31,9 @@ class MaterialAppExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="Scaffold">Scaffold</h3>
-<div class="ant-typography css-1fymfwf">基本的视觉布局结构。此类提供用于显示抽屉和底部工作表的API。</div>
-<h4 class="ant-typography css-1fymfwf" id="API">API</h4>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="Scaffold">Scaffold</h3>
+<div class="ant-typography css-vfj00d">基本的视觉布局结构。此类提供用于显示抽屉和底部工作表的API。</div>
+<h4 class="ant-typography css-vfj00d" id="API">API</h4>
 <ul>
 <li>{ AppBar } appBar: 顶部</li>
 <li>body</li>
@@ -59,9 +59,9 @@ class Scaffold extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="AppBar">AppBar</h3>
-<div class="ant-typography css-1fymfwf">应用栏目。</div>
-<h4 class="ant-typography css-1fymfwf" id="API">API</h4>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="AppBar">AppBar</h3>
+<div class="ant-typography css-vfj00d">应用栏目。</div>
+<h4 class="ant-typography css-vfj00d" id="API">API</h4>
 <ul>
 <li>elevation: 阴影。</li>
 <li>backgroundColor: 背景颜色。</li>
@@ -69,9 +69,9 @@ class Scaffold extends StatelessWidget {
 <li>title: 导航标题。</li>
 <li>actions: 右侧小组件。</li>
 <li>leading: 左侧导航配置。</li>
-</ul><h2 class="ant-typography css-1fymfwf" id="box-model-layout">盒模型布局组件</h2><h3 class="ant-typography css-1fymfwf" id="Container">Container</h3>
-<div class="ant-typography css-1fymfwf">一个方便的小部件，结合了常见的绘画、定位和大小调整小部件。</div>
-<h4 class="ant-typography css-1fymfwf" id="API">API</h4>
+</ul><h2 class="ant-typography css-vfj00d" id="box-model-layout">盒模型布局组件</h2><h3 class="ant-typography css-vfj00d" id="Container">Container</h3>
+<div class="ant-typography css-vfj00d">一个方便的小部件，结合了常见的绘画、定位和大小调整小部件。</div>
+<h4 class="ant-typography css-vfj00d" id="API">API</h4>
 <ul>
 <li>width: 宽</li>
 <li>height: 高</li>
@@ -97,11 +97,11 @@ class ContainerExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="Column">Column</h3>
-<div class="ant-typography css-1fymfwf">在垂直阵列中显示其子项的小部件。</div><h3 class="ant-typography css-1fymfwf" id="Row">Row</h3>
-<div class="ant-typography css-1fymfwf">在水平阵列中显示其子项的小部件。</div><h3 class="ant-typography css-1fymfwf" id="Expanded">Expanded</h3>
-<div class="ant-typography css-1fymfwf">扩展 Row、Column 或 Flex 的子级以便子级填充可用空间的小部件。</div><h3 class="ant-typography css-1fymfwf" id="GridView">GridView</h3>
-<div class="ant-typography css-1fymfwf">网格组件。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="Column">Column</h3>
+<div class="ant-typography css-vfj00d">在垂直阵列中显示其子项的小部件。</div><h3 class="ant-typography css-vfj00d" id="Row">Row</h3>
+<div class="ant-typography css-vfj00d">在水平阵列中显示其子项的小部件。</div><h3 class="ant-typography css-vfj00d" id="Expanded">Expanded</h3>
+<div class="ant-typography css-vfj00d">扩展 Row、Column 或 Flex 的子级以便子级填充可用空间的小部件。</div><h3 class="ant-typography css-vfj00d" id="GridView">GridView</h3>
+<div class="ant-typography css-vfj00d">网格组件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 class GridViewExample extends StatelessWidget {
@@ -124,21 +124,21 @@ class GridViewExample extends StatelessWidget {
   }
 }
 </code></code></pre></div>
-<h4 class="ant-typography css-1fymfwf" id="API">API</h4>
+<h4 class="ant-typography css-vfj00d" id="API">API</h4>
 <ul>
 <li>{ bool } shrinkWrap: 该属性表示是否根据子组件的总长度来设置ListView的长度，默认值为false 。
 默认情况下，ListView的会在滚动方向尽可能多的占用空间。
 当ListView在一个无边界(滚动方向上)的容器中时，shrinkWrap必须为true。</li>
 <li>physics: NeverScrollableScrollPhysics()。禁止滑动。</li>
 <li>controller: ScrollController(keepScrollOffset: false)。禁止回弹效果。</li>
-</ul><h3 class="ant-typography css-1fymfwf" id="ListView">ListView</h3>
-<div class="ant-typography css-1fymfwf">列表组件，可以允许滚动。</div><h3 class="ant-typography css-1fymfwf" id="Stack">Stack</h3>
-<div class="ant-typography css-1fymfwf">重叠布局，允许子组件堆叠。</div><h3 class="ant-typography css-1fymfwf" id="Positioned">Positioned</h3>
-<div class="ant-typography css-1fymfwf">配合Stack实现绝对定位。</div><h3 class="ant-typography css-1fymfwf" id="SizedBox">SizedBox</h3>
-<div class="ant-typography css-1fymfwf">一般用来限制子控件的大小。</div><h2 class="ant-typography css-1fymfwf" id="style">样式组件</h2><h3 class="ant-typography css-1fymfwf" id="Center">Center</h3>
-<div class="ant-typography css-1fymfwf">将其子项置于自身中心的小部件。</div><h3 class="ant-typography css-1fymfwf" id="Align">Align</h3>
-<div class="ant-typography css-1fymfwf">对齐组件。</div><h3 class="ant-typography css-1fymfwf" id="Padding">Padding</h3>
-<div class="ant-typography css-1fymfwf">内边距组件。</div>
+</ul><h3 class="ant-typography css-vfj00d" id="ListView">ListView</h3>
+<div class="ant-typography css-vfj00d">列表组件，可以允许滚动。</div><h3 class="ant-typography css-vfj00d" id="Stack">Stack</h3>
+<div class="ant-typography css-vfj00d">重叠布局，允许子组件堆叠。</div><h3 class="ant-typography css-vfj00d" id="Positioned">Positioned</h3>
+<div class="ant-typography css-vfj00d">配合Stack实现绝对定位。</div><h3 class="ant-typography css-vfj00d" id="SizedBox">SizedBox</h3>
+<div class="ant-typography css-vfj00d">一般用来限制子控件的大小。</div><h2 class="ant-typography css-vfj00d" id="style">样式组件</h2><h3 class="ant-typography css-vfj00d" id="Center">Center</h3>
+<div class="ant-typography css-vfj00d">将其子项置于自身中心的小部件。</div><h3 class="ant-typography css-vfj00d" id="Align">Align</h3>
+<div class="ant-typography css-vfj00d">对齐组件。</div><h3 class="ant-typography css-vfj00d" id="Padding">Padding</h3>
+<div class="ant-typography css-vfj00d">内边距组件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 class PaddingExample extends StatelessWidget {
@@ -150,8 +150,8 @@ class PaddingExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="ClipRRect">ClipRRect</h3>
-<div class="ant-typography css-1fymfwf">圆角形状。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="ClipRRect">ClipRRect</h3>
+<div class="ant-typography css-vfj00d">圆角形状。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 class ClipRRectExample extends StatelessWidget {
@@ -163,8 +163,8 @@ class ClipRRectExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h2 class="ant-typography css-1fymfwf" id="functional">功能组件</h2><h3 class="ant-typography css-1fymfwf" id="ElevatedButton">ElevatedButton</h3>
-<div class="ant-typography css-1fymfwf">按钮组件。</div>
+</code></code></pre></div><h2 class="ant-typography css-vfj00d" id="functional">功能组件</h2><h3 class="ant-typography css-vfj00d" id="ElevatedButton">ElevatedButton</h3>
+<div class="ant-typography css-vfj00d">按钮组件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 class ElevatedButtonExample extends StatelessWidget {
@@ -186,8 +186,8 @@ class ElevatedButtonExample extends StatelessWidget {
   }
 }
 </code></code></pre></div>
-<h4 class="ant-typography css-1fymfwf" id="ElevatedButton.icon">ElevatedButton.icon</h4>
-<div class="ant-typography css-1fymfwf">带图标的按钮组件。</div>
+<h4 class="ant-typography css-vfj00d" id="ElevatedButton.icon">ElevatedButton.icon</h4>
+<div class="ant-typography css-vfj00d">带图标的按钮组件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 class ElevatedButtonIconExample extends StatelessWidget {
@@ -200,9 +200,9 @@ class ElevatedButtonIconExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="IconButton">IconButton</h3>
-<div class="ant-typography css-1fymfwf">图标按钮。</div><h3 class="ant-typography css-1fymfwf" id="TextField">TextField</h3>
-<div class="ant-typography css-1fymfwf">表单input输入组件。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="IconButton">IconButton</h3>
+<div class="ant-typography css-vfj00d">图标按钮。</div><h3 class="ant-typography css-vfj00d" id="TextField">TextField</h3>
+<div class="ant-typography css-vfj00d">表单input输入组件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 final TextEditingController controller = TextEditingController();
@@ -224,29 +224,29 @@ class TextFieldExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="Image">Image</h3>
-<div class="ant-typography css-1fymfwf">图片展示组件。</div>
-<h4 class="ant-typography css-1fymfwf" id="AssetImage">AssetImage</h4>
-<div class="ant-typography css-1fymfwf">响应式加载图片。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="Image">Image</h3>
+<div class="ant-typography css-vfj00d">图片展示组件。</div>
+<h4 class="ant-typography css-vfj00d" id="AssetImage">AssetImage</h4>
+<div class="ant-typography css-vfj00d">响应式加载图片。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">Image img = Image(image: AssetImage(&#x27;statics/images/1.png&#x27;));
 </code></code></pre></div>
-<h4 class="ant-typography css-1fymfwf" id="NetworkImage">NetworkImage</h4>
-<div class="ant-typography css-1fymfwf">加载网络图片。</div>
+<h4 class="ant-typography css-vfj00d" id="NetworkImage">NetworkImage</h4>
+<div class="ant-typography css-vfj00d">加载网络图片。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">Image img = Image(
   image: NetworkImage(&#x27;https://example.com/1.png&#x27;),
   fit: BoxFit.cover // 设置图片的背景展示
 );
 </code></code></pre></div>
-<h4 class="ant-typography css-1fymfwf" id="Image.file">Image.file</h4>
-<div class="ant-typography css-1fymfwf">加载本地图片。</div>
+<h4 class="ant-typography css-vfj00d" id="Image.file">Image.file</h4>
+<div class="ant-typography css-vfj00d">加载本地图片。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">Image image = Image.file(File(imagePath));
 </code></code></pre></div>
-<h4 class="ant-typography css-1fymfwf" id="Image.memory">Image.memory</h4>
-<div class="ant-typography css-1fymfwf">根据Uint8List渲染图片。</div>
+<h4 class="ant-typography css-vfj00d" id="Image.memory">Image.memory</h4>
+<div class="ant-typography css-vfj00d">根据Uint8List渲染图片。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">Uint8List img = getImage();
 Image image = Image.memory(img, fit: BoxFit.cover);
-</code></code></pre></div><h2 class="ant-typography css-1fymfwf" id="tools">工具组件</h2><h3 class="ant-typography css-1fymfwf" id="GestureDetector">GestureDetector</h3>
-<div class="ant-typography css-1fymfwf">手势检测的部件。</div>
+</code></code></pre></div><h2 class="ant-typography css-vfj00d" id="tools">工具组件</h2><h3 class="ant-typography css-vfj00d" id="GestureDetector">GestureDetector</h3>
+<div class="ant-typography css-vfj00d">手势检测的部件。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 /// 取消input的焦点
@@ -263,8 +263,8 @@ class GestureDetectorExample extends StatelessWidget {
     );
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="showDialog">showDialog</h3>
-<div class="ant-typography css-1fymfwf">展示弹出框。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="showDialog">showDialog</h3>
+<div class="ant-typography css-vfj00d">展示弹出框。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">import &#x27;package:flutter/material.dart&#x27;;
 
 /// 弹出框
@@ -287,8 +287,8 @@ void alert(BuildContext context, String message) {
     }
   );
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="InheritedWidget">InheritedWidget</h3>
-<div class="ant-typography css-1fymfwf">状态管理。</div>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="InheritedWidget">InheritedWidget</h3>
+<div class="ant-typography css-vfj00d">状态管理。</div>
 <div class="highLight_highLight__7oxZf"><pre><code><code class="language-dart">class InheritedWidgetProvider extends StatefulWidget {
   @override
   _InheritedWidgetProvider createState() =&gt; _InheritedWidgetProvider();
@@ -324,6 +324,6 @@ class InheritedWidgetExample extends InheritedWidget {
     return oldWidget.value != value;
   }
 }
-</code></code></pre></div><h3 class="ant-typography css-1fymfwf" id="Notification">Notification</h3>
-<div class="ant-typography css-1fymfwf">跨组件通信。网站参考：<a href="https://zhuanlan.zhihu.com/p/110120429">https://zhuanlan.zhihu.com/p/110120429</a>。</div><h3 class="ant-typography css-1fymfwf" id="RawKeyboardListener">RawKeyboardListener</h3>
-<div class="ant-typography css-1fymfwf">监听键盘事件。</div><div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon css-1fymfwf" role="alert"><div class="ant-alert-content"><div class="ant-alert-message"><h2 class="mb-0 py-[8px] text-[16px]">参考地址：</h2><div class="py-[8px]">Flutter实战：<a href="https://book.flutterchina.club/" target="_blank" rel="noopener noreferrer">https://book.flutterchina.club/</a></div><div class="py-[8px]">Flutter富文本编辑器：<a href="https://pub.dev/packages/rich_code_editor" target="_blank" rel="noopener noreferrer">https://pub.dev/packages/rich_code_editor</a></div><div class="py-[8px]">Flutter自定义块样式输入框：<a href="https://github.com/JiangJuHong/FlutterTextSpanField" target="_blank" rel="noopener noreferrer">https://github.com/JiangJuHong/FlutterTextSpanField</a></div></div></div></div><span></span></article></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/flutter/components-commonly-used-in-flutter","query":{},"buildId":"2wivkkvZC5ynaIdCqAnfv","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+</code></code></pre></div><h3 class="ant-typography css-vfj00d" id="Notification">Notification</h3>
+<div class="ant-typography css-vfj00d">跨组件通信。网站参考：<a href="https://zhuanlan.zhihu.com/p/110120429">https://zhuanlan.zhihu.com/p/110120429</a>。</div><h3 class="ant-typography css-vfj00d" id="RawKeyboardListener">RawKeyboardListener</h3>
+<div class="ant-typography css-vfj00d">监听键盘事件。</div><div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon css-vfj00d" role="alert"><div class="ant-alert-content"><div class="ant-alert-message"><h2 class="mb-0 py-[8px] text-[16px]">参考地址：</h2><div class="py-[8px]">Flutter实战：<a href="https://book.flutterchina.club/" target="_blank" rel="noopener noreferrer">https://book.flutterchina.club/</a></div><div class="py-[8px]">Flutter富文本编辑器：<a href="https://pub.dev/packages/rich_code_editor" target="_blank" rel="noopener noreferrer">https://pub.dev/packages/rich_code_editor</a></div><div class="py-[8px]">Flutter自定义块样式输入框：<a href="https://github.com/JiangJuHong/FlutterTextSpanField" target="_blank" rel="noopener noreferrer">https://github.com/JiangJuHong/FlutterTextSpanField</a></div></div></div></div><span></span></article></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/flutter/components-commonly-used-in-flutter","query":{},"buildId":"vV8tXnUtNBqD1rCINTYiW","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
