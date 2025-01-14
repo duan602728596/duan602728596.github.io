@@ -72,7 +72,12 @@ pandas的常用操作方法，便于快速查找。
 
 * 删除指定条件的行
   ```python
+  # 这个位置不能用is True, and这种方式
   con = df['a'] == 13
+  # 或
+  con = df.a == 13
+  # 或
+  con = df.a.isna() | df.b.empty
   df = df.drop(df[con].index, axis=0)
   ```
 
@@ -86,7 +91,9 @@ pandas的常用操作方法，便于快速查找。
   ```python
   insert_value_index = 2
   insert_value_df = pd.DataFrame(value, index=[insert_value_index])
-  df = pd.concat([df.loc[:insert_value_index], insert_value_df, df.loc[insert_value_index + 1:]],
+  df = pd.concat([df.loc[:insert_value_index],
+                  insert_value_df,
+                  df.loc[insert_value_index + 1:]],
                  ignore_index=True)
   ```
 
