@@ -119,6 +119,23 @@ pandas的常用操作方法，便于快速查找。
                  ignore_index=True)
   ```
 
+* 使用符号
+  ```python
+  import pandas as pd
+
+  raw_data = [
+      { 'a': 1, 'b': 1 },
+      { 'a': 1, 'b': 0 },
+      { 'a': 0 },
+  ]
+
+  df = pd.DataFrame(raw_data)
+  df['OR'] = (df.a < 1) | (df.b < 1)
+  df['AND'] = (df.a < 1) & (df.b < 1)
+  df['NOT'] = ~(df.a < 1)
+  print(df)
+  ```
+
 * 排序
   ```python
   # 高 -> 低
