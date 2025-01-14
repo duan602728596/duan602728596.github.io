@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>使用label-studio和YOLO识别验证码</title><meta name="keywords" content="label-studio, YOLO"/><meta name="description" content="使用label-studio和YOLO识别验证码"/><meta name="next-head-count" content="5"/><meta name="renderer" content="webkit"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><link rel="stylesheet" href="/styles/40d37e45.ssr.css"/><link rel="stylesheet" href="/styles/github.css"/><link rel="preload" href="/_next/static/css/43d786727b4a0da1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/43d786727b4a0da1.css" data-n-g=""/><link rel="preload" href="/_next/static/css/a4df808e46541d42.css" as="style"/><link rel="stylesheet" href="/_next/static/css/a4df808e46541d42.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-71f769d571486ec5.js" defer=""></script><script src="/_next/static/chunks/framework-945b357d4a851f4b.js" defer=""></script><script src="/_next/static/chunks/main-11c2773d1c73f78f.js" defer=""></script><script src="/_next/static/chunks/pages/_app-a36903c5060062d1.js" defer=""></script><script src="/_next/static/chunks/6338-2f028fb1c6c2731a.js" defer=""></script><script src="/_next/static/chunks/5361-8c958e317aad9127.js" defer=""></script><script src="/_next/static/chunks/7307-36572323e58299a1.js" defer=""></script><script src="/_next/static/chunks/pages/article/python/use-label-studio-and-YOLO-to-identify-verification-codes-4e8030b9ec7c9eed.js" defer=""></script><script src="/_next/static/vCE6vyh0t_KLSIKMEHaO2/_buildManifest.js" defer=""></script><script src="/_next/static/vCE6vyh0t_KLSIKMEHaO2/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="nav_antdHeader__eCvl0"><div class="nav_header__y1mlw"><nav class="nav_headerLeft__PrT7_"><ul class="nav_navList__3HXot"><li class="nav_navListItem__hpAdz"><a href="/">文章</a></li><li class="nav_navListItem__hpAdz"><a href="/favorites">收藏夹</a></li><li class="nav_navListItem__hpAdz"><a href="/project">开源项目</a></li><li class="nav_navListItem__hpAdz"><a href="/friends">友情链接</a></li></ul></nav><div class="nav_headerRight__JfqYP"><div class="ant-space css-vfj00d ant-space-horizontal ant-space-align-center" style="column-gap:16px;row-gap:16px"><div class="ant-space-item"><a class="nav_switchAddress__sVzqD" role="button" tabindex="0" aria-label="切换网站地址"><span role="img" aria-label="interaction" class="anticon anticon-interaction nav_switchAddressIcon__KLxGG"><svg viewBox="64 64 896 896" focusable="false" data-icon="interaction" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM304.8 524h50.7c3.7 0 6.8-3 6.8-6.8v-78.9c0-19.7 15.9-35.6 35.5-35.6h205.7v53.4c0 5.7 6.5 8.8 10.9 5.3l109.1-85.7c3.5-2.7 3.5-8 0-10.7l-109.1-85.7c-4.4-3.5-10.9-.3-10.9 5.3V338H397.7c-55.1 0-99.7 44.8-99.7 100.1V517c0 4 3 7 6.8 7zm-4.2 134.9l109.1 85.7c4.4 3.5 10.9.3 10.9-5.3v-53.4h205.7c55.1 0 99.7-44.8 99.7-100.1v-78.9c0-3.7-3-6.8-6.8-6.8h-50.7c-3.7 0-6.8 3-6.8 6.8v78.9c0 19.7-15.9 35.6-35.5 35.6H420.6V568c0-5.7-6.5-8.8-10.9-5.3l-109.1 85.7c-3.5 2.5-3.5 7.8 0 10.5z"></path></svg></span></a></div><div class="ant-space-item"><a class="nav_githubLink__BDzSl" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><picture class="block w-full h-full"><source srcSet="/images/github.avif" type="image/avif"/><source srcSet="/images/github.webp" type="image/webp"/><img class="block w-full h-full" src="/images/github.png" alt="github"/></picture></a></div></div></div></div></div><div class="main_main__IZXSv"><div class="mb-[16px] text-right"><button type="button" class="ant-btn css-vfj00d ant-btn-default ant-btn-color-default ant-btn-variant-outlined"><span role="img" aria-label="left" class="anticon anticon-left mr-[6px]"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span><span>返回</span></button></div><article class="ant-typography css-vfj00d"><h1 class="ant-typography css-vfj00d" id="使用label-studio和YOLO识别验证码">使用label-studio和YOLO识别验证码</h1>
+<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>使用label-studio和YOLO识别验证码</title><meta name="keywords" content="label-studio, YOLO"/><meta name="description" content="使用label-studio和YOLO识别验证码"/><meta name="next-head-count" content="5"/><meta name="renderer" content="webkit"/><meta http-equiv="Window-target" content="_top"/><meta name="author" content="段昊辰, duanhaochen@126.com"/><meta name="copyright" content="段昊辰, duanhaochen@126.com"/><link rel="icon" href="/images/favicon.jpg" type="image/jpeg"/><link rel="stylesheet" href="/styles/40d37e45.ssr.css"/><link rel="stylesheet" href="/styles/github.css"/><link rel="preload" href="/_next/static/css/43d786727b4a0da1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/43d786727b4a0da1.css" data-n-g=""/><link rel="preload" href="/_next/static/css/a4df808e46541d42.css" as="style"/><link rel="stylesheet" href="/_next/static/css/a4df808e46541d42.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-71f769d571486ec5.js" defer=""></script><script src="/_next/static/chunks/framework-945b357d4a851f4b.js" defer=""></script><script src="/_next/static/chunks/main-11c2773d1c73f78f.js" defer=""></script><script src="/_next/static/chunks/pages/_app-a36903c5060062d1.js" defer=""></script><script src="/_next/static/chunks/6338-2f028fb1c6c2731a.js" defer=""></script><script src="/_next/static/chunks/5361-8c958e317aad9127.js" defer=""></script><script src="/_next/static/chunks/7307-36572323e58299a1.js" defer=""></script><script src="/_next/static/chunks/pages/article/python/use-label-studio-and-YOLO-to-identify-verification-codes-95ded80731bf8a2e.js" defer=""></script><script src="/_next/static/v0BQIesmCYlHwuFCufN2_/_buildManifest.js" defer=""></script><script src="/_next/static/v0BQIesmCYlHwuFCufN2_/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="nav_antdHeader__eCvl0"><div class="nav_header__y1mlw"><nav class="nav_headerLeft__PrT7_"><ul class="nav_navList__3HXot"><li class="nav_navListItem__hpAdz"><a href="/">文章</a></li><li class="nav_navListItem__hpAdz"><a href="/favorites">收藏夹</a></li><li class="nav_navListItem__hpAdz"><a href="/project">开源项目</a></li><li class="nav_navListItem__hpAdz"><a href="/friends">友情链接</a></li></ul></nav><div class="nav_headerRight__JfqYP"><div class="ant-space css-vfj00d ant-space-horizontal ant-space-align-center" style="column-gap:16px;row-gap:16px"><div class="ant-space-item"><a class="nav_switchAddress__sVzqD" role="button" tabindex="0" aria-label="切换网站地址"><span role="img" aria-label="interaction" class="anticon anticon-interaction nav_switchAddressIcon__KLxGG"><svg viewBox="64 64 896 896" focusable="false" data-icon="interaction" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM304.8 524h50.7c3.7 0 6.8-3 6.8-6.8v-78.9c0-19.7 15.9-35.6 35.5-35.6h205.7v53.4c0 5.7 6.5 8.8 10.9 5.3l109.1-85.7c3.5-2.7 3.5-8 0-10.7l-109.1-85.7c-4.4-3.5-10.9-.3-10.9 5.3V338H397.7c-55.1 0-99.7 44.8-99.7 100.1V517c0 4 3 7 6.8 7zm-4.2 134.9l109.1 85.7c4.4 3.5 10.9.3 10.9-5.3v-53.4h205.7c55.1 0 99.7-44.8 99.7-100.1v-78.9c0-3.7-3-6.8-6.8-6.8h-50.7c-3.7 0-6.8 3-6.8 6.8v78.9c0 19.7-15.9 35.6-35.5 35.6H420.6V568c0-5.7-6.5-8.8-10.9-5.3l-109.1 85.7c-3.5 2.5-3.5 7.8 0 10.5z"></path></svg></span></a></div><div class="ant-space-item"><a class="nav_githubLink__BDzSl" href="https://github.com/duan602728596" target="_blank" rel="noopener noreferrer"><picture class="block w-full h-full"><source srcSet="/images/github.avif" type="image/avif"/><source srcSet="/images/github.webp" type="image/webp"/><img class="block w-full h-full" src="/images/github.png" alt="github"/></picture></a></div></div></div></div></div><div class="main_main__IZXSv"><div class="mb-[16px] text-right"><button type="button" class="ant-btn css-vfj00d ant-btn-default ant-btn-color-default ant-btn-variant-outlined"><span role="img" aria-label="left" class="anticon anticon-left mr-[6px]"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span><span>返回</span></button></div><article class="ant-typography css-vfj00d"><h1 class="ant-typography css-vfj00d" id="使用label-studio和YOLO识别验证码">使用label-studio和YOLO识别验证码</h1>
 <h2 class="ant-typography css-vfj00d" id="安装label-studio">安装label-studio</h2>
 <ul>
 <li>
@@ -145,6 +145,104 @@ try:
         run(playwright)
 except PlaywrightError as err:
     pass
+</code></code></pre></div>
+<h3 class="ant-typography css-vfj00d" id="将文件分组">将文件分组</h3>
+<div class="highLight_highLight__7oxZf"><pre><code><code>python
+from typing import TypedDict
+import os
+import json
+from shutil import move
+from settings import TrainSetting
+
+class NoteJsonInfo(TypedDict):
+    &quot;&quot;&quot; NoteJson[&#x27;info&#x27;] &quot;&quot;&quot;
+    year: int
+    version: str
+    contributor: str
+
+
+class NoteJsonCategoriesItem(TypedDict):
+    &quot;&quot;&quot; NoteJson[&#x27;categories&#x27;] &quot;&quot;&quot;
+    id: int
+    name: str
+
+
+class NoteJson(TypedDict):
+    &quot;&quot;&quot; 定义notes.json的类型 &quot;&quot;&quot;
+    categories: list[NoteJsonCategoriesItem]
+    info: NoteJsonInfo
+
+
+train_datasets_yolo = &#x27;/train_datasets_yolo/file&#x27;
+notes_json = &#x27;/train_datasets_yolo/file/notes.json&#x27;
+train_yolo_yaml_path = &#x27;/train_datasets_yolo/file/data.yaml&#x27;
+
+
+def delete_space(dir_name: str) -&gt; None:
+    &quot;&quot;&quot; 去掉文件中的尾空格 &quot;&quot;&quot;
+    dir1: str = train_datasets_yolo + &#x27;/&#x27; + dir_name
+    file_list: list[str] = os.listdir(dir1)
+    for file in file_list:
+        with open(dir1 + &#x27;/&#x27; + file, encoding=&#x27;utf-8&#x27;) as f:
+            text: str = f.read()
+            new_text: list[str] = text.split(&#x27;\n&#x27;)
+            new_text.remove(&#x27;&#x27;)
+            with open(dir1 + &#x27;/&#x27; + file, mode=&#x27;w+&#x27;, encoding=&#x27;utf-8&#x27;) as f2:
+                f2.write(&#x27;\n&#x27;.join(new_text))
+
+
+def copy_files_group() -&gt; None:
+    &quot;&quot;&quot;
+    对图片分组
+    train 80%
+    val   15%
+    test  5%
+    &quot;&quot;&quot;
+    images_dir: str = train_datasets_yolo + &#x27;/images/&#x27;
+    labels_dir: str = train_datasets_yolo + &#x27;/labels/&#x27;
+    file_list: list[str] = os.listdir(images_dir)
+    # 文件分组
+    for x in [&#x27;train&#x27;, &#x27;val&#x27;, &#x27;test&#x27;]:
+        os.mkdir(images_dir + x)
+        os.mkdir(labels_dir + x)
+    train_images_len: int = int(len(file_list) * 0.8)
+    val_images_len: int = int(len(file_list) * 0.15) + train_images_len
+    images_train_dir: str = images_dir + &#x27;train/&#x27;
+    images_val_dir: str = images_dir + &#x27;val/&#x27;
+    images_test_dir: str = images_dir + &#x27;test/&#x27;
+    labels_train_dir: str = labels_dir + &#x27;train/&#x27;
+    labels_val_dir: str = labels_dir + &#x27;val/&#x27;
+    labels_test_dir: str = labels_dir + &#x27;test/&#x27;
+    for index, file in enumerate(file_list):
+        file_name: str = os.path.basename(file).split(&#x27;.&#x27;)[0]
+        if index &lt; train_images_len:
+            move(images_dir + file , images_train_dir + file)
+            move(labels_dir + file_name + &#x27;.txt&#x27; , labels_train_dir + file_name + &#x27;.txt&#x27;)
+        elif train_images_len &lt;= index &lt; val_images_len:
+            move(images_dir + file , images_val_dir + file)
+            move(labels_dir + file_name + &#x27;.txt&#x27; , labels_val_dir + file_name + &#x27;.txt&#x27;)
+        else:
+            move(images_dir + file , images_test_dir + file)
+            move(labels_dir + file_name + &#x27;.txt&#x27; , labels_test_dir + file_name + &#x27;.txt&#x27;)
+
+
+def write_yaml() -&gt; None:
+    &quot;&quot;&quot; 写入yaml文件 &quot;&quot;&quot;
+    notes_json: NoteJson = json.load(open(notes_json, encoding=&#x27;utf-8&#x27;))
+    textwrap: list[str] = []
+    for category in notes_json[&#x27;categories&#x27;]:
+        textwrap.append(f&quot;&#x27;{category[&#x27;name&#x27;]}&#x27;&quot;)
+    with open(train_yolo_yaml_path, mode=&#x27;w+&#x27;, encoding=&#x27;utf-8&#x27;) as f:
+        f.write(f&#x27;train: {train_datasets_yolo}/images/train\n&#x27;)
+        f.write(f&#x27;val: {train_datasets_yolo}/images/val\n&#x27;)
+        f.write(f&#x27;test: {train_datasets_yolo}/images/test\n&#x27;)
+        f.write(f&quot;nc: {len(notes_json[&#x27;categories&#x27;])}\n&quot;)
+        f.write(f&quot;names: [{&#x27;, &#x27;.join(textwrap)}]\n&quot;)
+
+
+delete_space(&#x27;labels&#x27;)
+copy_files_group()
+write_yaml()
 
 </code></code></pre></div>
 <h3 class="ant-typography css-vfj00d" id="转换的代码">转换的代码</h3>
@@ -175,4 +273,4 @@ for i, r in enumerate(results):
     # r.save(filename=f&#x27;resources/result-images/results{i}.jpg&#x27;)
     print(r.to_json())
 </code></code></pre></div>
-<div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon css-vfj00d" role="alert"><div class="ant-alert-content"><div class="ant-alert-message"><h2 class="ant-typography css-vfj00d" id="参考地址：">参考地址：</h2><div class="py-[8px]">使用Label Studio标注YOLOv8数据集：<a href="https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html" target="_blank" rel="noopener noreferrer">https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html</a></div><div class="py-[8px]">使用YOLOv8在Label Studio的自定义数据集上进行训练/推理：<a href="https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html" target="_blank" rel="noopener noreferrer">https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html</a></div></div></div></div></article></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/python/use-label-studio-and-YOLO-to-identify-verification-codes","query":{},"buildId":"vCE6vyh0t_KLSIKMEHaO2","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+<div data-show="true" class="ant-alert ant-alert-info ant-alert-no-icon css-vfj00d" role="alert"><div class="ant-alert-content"><div class="ant-alert-message"><h2 class="ant-typography css-vfj00d" id="参考地址：">参考地址：</h2><div class="py-[8px]">使用Label Studio标注YOLOv8数据集：<a href="https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html" target="_blank" rel="noopener noreferrer">https://richelf.tech/posts/2023-09/0f87cd80-8c23-c2dd-40f3-e1d2df83c2f7.html</a></div><div class="py-[8px]">使用YOLOv8在Label Studio的自定义数据集上进行训练/推理：<a href="https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html" target="_blank" rel="noopener noreferrer">https://richelf.tech/posts/2024-09/2a7262df-2893-42af-8e66-0fb59d807aef.html</a></div></div></div></div></article></div><span></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/python/use-label-studio-and-YOLO-to-identify-verification-codes","query":{},"buildId":"v0BQIesmCYlHwuFCufN2_","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
