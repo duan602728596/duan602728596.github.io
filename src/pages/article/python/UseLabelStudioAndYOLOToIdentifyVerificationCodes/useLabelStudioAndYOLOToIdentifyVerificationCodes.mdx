@@ -35,6 +35,10 @@ import BlankLink from '../../../../components/BlankLink/BlankLink';
   ```bash
   .venv\Scripts\label-studio.exe start --init -db postgresql --username postgres --password postgres -p 13500 --data-dir .label-studio-data
   ```
+  启动时不创建新的project，可以使用命令
+  ```bash
+  .venv\Scripts\label-studio.exe -db postgresql --username postgres --password postgres -p 13500 --data-dir .label-studio-data
+  ```
 
 ## 安装YOLO
 
