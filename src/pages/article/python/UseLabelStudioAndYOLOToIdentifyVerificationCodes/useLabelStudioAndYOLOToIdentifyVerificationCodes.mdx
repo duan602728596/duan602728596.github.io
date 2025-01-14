@@ -150,6 +150,107 @@ try:
         run(playwright)
 except PlaywrightError as err:
     pass
+```
+
+### 将文件分组
+
+```
+python
+from typing import TypedDict
+import os
+import json
+from shutil import move
+from settings import TrainSetting
+
+class NoteJsonInfo(TypedDict):
+    """ NoteJson['info'] """
+    year: int
+    version: str
+    contributor: str
+
+
+class NoteJsonCategoriesItem(TypedDict):
+    """ NoteJson['categories'] """
+    id: int
+    name: str
+
+
+class NoteJson(TypedDict):
+    """ 定义notes.json的类型 """
+    categories: list[NoteJsonCategoriesItem]
+    info: NoteJsonInfo
+
+
+train_datasets_yolo = '/train_datasets_yolo/file'
+notes_json = '/train_datasets_yolo/file/notes.json'
+train_yolo_yaml_path = '/train_datasets_yolo/file/data.yaml'
+
+
+def delete_space(dir_name: str) -> None:
+    """ 去掉文件中的尾空格 """
+    dir1: str = train_datasets_yolo + '/' + dir_name
+    file_list: list[str] = os.listdir(dir1)
+    for file in file_list:
+        with open(dir1 + '/' + file, encoding='utf-8') as f:
+            text: str = f.read()
+            new_text: list[str] = text.split('\n')
+            new_text.remove('')
+            with open(dir1 + '/' + file, mode='w+', encoding='utf-8') as f2:
+                f2.write('\n'.join(new_text))
+
+
+def copy_files_group() -> None:
+    """
+    对图片分组
+    train 80%
+    val   15%
+    test  5%
+    """
+    images_dir: str = train_datasets_yolo + '/images/'
+    labels_dir: str = train_datasets_yolo + '/labels/'
+    file_list: list[str] = os.listdir(images_dir)
+    # 文件分组
+    for x in ['train', 'val', 'test']:
+        os.mkdir(images_dir + x)
+        os.mkdir(labels_dir + x)
+    train_images_len: int = int(len(file_list) * 0.8)
+    val_images_len: int = int(len(file_list) * 0.15) + train_images_len
+    images_train_dir: str = images_dir + 'train/'
+    images_val_dir: str = images_dir + 'val/'
+    images_test_dir: str = images_dir + 'test/'
+    labels_train_dir: str = labels_dir + 'train/'
+    labels_val_dir: str = labels_dir + 'val/'
+    labels_test_dir: str = labels_dir + 'test/'
+    for index, file in enumerate(file_list):
+        file_name: str = os.path.basename(file).split('.')[0]
+        if index < train_images_len:
+            move(images_dir + file , images_train_dir + file)
+            move(labels_dir + file_name + '.txt' , labels_train_dir + file_name + '.txt')
+        elif train_images_len <= index < val_images_len:
+            move(images_dir + file , images_val_dir + file)
+            move(labels_dir + file_name + '.txt' , labels_val_dir + file_name + '.txt')
+        else:
+            move(images_dir + file , images_test_dir + file)
+            move(labels_dir + file_name + '.txt' , labels_test_dir + file_name + '.txt')
+
+
+def write_yaml() -> None:
+    """ 写入yaml文件 """
+    notes_json: NoteJson = json.load(open(notes_json, encoding='utf-8'))
+    textwrap: list[str] = []
+    for category in notes_json['categories']:
+        textwrap.append(f"'{category['name']}'")
+    with open(train_yolo_yaml_path, mode='w+', encoding='utf-8') as f:
+        f.write(f'train: {train_datasets_yolo}/images/train\n')
+        f.write(f'val: {train_datasets_yolo}/images/val\n')
+        f.write(f'test: {train_datasets_yolo}/images/test\n')
+        f.write(f"nc: {len(notes_json['categories'])}\n")
+        f.write(f"names: [{', '.join(textwrap)}]\n")
+
+
+delete_space('labels')
+copy_files_group()
+write_yaml()
 
 ```
 
