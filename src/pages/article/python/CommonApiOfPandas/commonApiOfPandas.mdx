@@ -60,6 +60,28 @@ pandas的常用操作方法，便于快速查找。
   df = df.apply(apply_callback, axis=1)
   ```
 
+* 根据条件计算/添加列
+  ```python
+  import pandas as pd
+  import numpy as np
+
+  raw_data = [
+      { 'a': 1, 'b': 3, 'c': 4 },
+      { 'a': 2, 'b': None, 'c': 5 },
+      { 'a': 3, 'b': 8, 'c': None },
+      { 'a': 4, 'b': None, 'c': 7 },
+  ]
+  df = pd.DataFrame(raw_data)
+
+
+  def add(a, b, c):
+      return np.where(a.isna() | b.isna() | c.isna(), '算不出来', a + b + c)
+
+
+  df['sum'] = add(df.a, df.b, df.c)
+  print(df)
+  ```
+
 * 替换值
   ```python
   df.replace([np.inf, -np.inf], np.nan, inplace=True) # 删除inf
