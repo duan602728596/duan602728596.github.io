@@ -56,7 +56,7 @@ function ClipPathImageMixDemo(props) {
   return (
     <Fragment>
       <Card className={ style.card }
-        bodyStyle={{ textAlign: 'center' }}
+        styles={{ body: { textAlign: 'center' } }}
         extra={ <Button onClick={ switchIndex }>切换图片</Button> }
       >
         <div ref={ containerRef } className={ classNames('inline-block', style.container) }>

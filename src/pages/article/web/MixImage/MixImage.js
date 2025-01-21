@@ -21,7 +21,7 @@ function MixImage(props) {
       <ClipPathExample />
       <Alert type="info"
         message={ [
-          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+          <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
           <div key="browser_in_the_dark" className="py-[8px]">
             Browser in the Dark: flashlights with CSS and canvas：
             <BlankLink href="https://voussoir.net/writing/browser_in_the_dark">

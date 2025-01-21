@@ -73,7 +73,7 @@ function ComponentsCommonlyUsedInFlutter(props) {
       <FlutterRawKeyboardListener />
       <Alert type="info"
         message={ [
-          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+          <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
           <div key="flutter-in-action" className="py-[8px]">
             Flutter实战：
             <BlankLink href="https://book.flutterchina.club/">

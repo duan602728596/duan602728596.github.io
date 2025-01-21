@@ -15,7 +15,7 @@ function HowToCreateAsyncFunction(props) {
       <CodeExample />
       <Alert type="info"
         message={ [
-          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+          <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
           <div key="async-function-class" className="py-[8px]">
             <BlankLink href="https://davidwalsh.name/async-function-class">
               https://davidwalsh.name/async-function-class

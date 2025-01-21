@@ -37,7 +37,7 @@ function Demo(props) {
         <audio ref={ accompanimentRef } src="/media/extract-accompaniment-using-spleeter/accompaniment.wav"
           controls={ true } />
       </div>
-      <Button.Group className="mt-[12px]">
+      <Button.Group className="mt-[12px] mb-[16px]">
         <Button type="primary" onClick={ handlePlayClick }>同时播放</Button>
         <Button onClick={ handlePauseClick }>暂停</Button>
       </Button.Group>

@@ -1,3 +1,4 @@
+import { Alert } from 'antd';
 import BlankLink from '../../../../components/BlankLink/BlankLink';
 import Demo from './Demo/Demo';
 
@@ -22,6 +23,14 @@ import Demo from './Demo/Demo';
     ```bash
     /path/to/.pyenv/pyenv-win/versions/3.10.5/python.exe -m pip install spleeter
     ```
+
+5. 安装libsndfile
+
+    * Windows系统在<BlankLink href="http://www.mega-nerd.com/libsndfile/#Download">http://www.mega-nerd.com/libsndfile/#Download</BlankLink>下载。
+    * 使用brew下载：
+        ```bash
+        brew install libsndfile
+        ```
 
 ## 使用Spleeter提取伴奏
 
@@ -52,3 +61,15 @@ import Demo from './Demo/Demo';
 ## 提取效果
 
 <Demo />
+
+<Alert type="info"
+  message={ [
+    <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
+    <div key="WebRTC_API" className="py-[8px]">
+      Python audiolab install, unable to install (or find) libsndfile on Mac OSX：
+      <BlankLink href="https://stackoverflow.com/questions/13999790/python-audiolab-install-unable-to-install-or-find-libsndfile-on-mac-osx">
+        https://stackoverflow.com/questions/13999790/python-audiolab-install-unable-to-install-or-find-libsndfile-on-mac-osx
+      </BlankLink>
+    </div>
+  ] }
+/>

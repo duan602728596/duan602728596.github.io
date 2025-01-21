@@ -42,7 +42,7 @@ function ReactFastRefresh(props) {
       <WebpackExample />
       <Alert type="info"
         message={ [
-          <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+          <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
           <div key="fast-refresh" className="py-[8px]">
             Fast Refresh：
             <BlankLink href="https://github.com/facebook/react/issues/16604#issuecomment-528663101">

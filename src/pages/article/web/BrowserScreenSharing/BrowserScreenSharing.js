@@ -25,7 +25,7 @@ function BrowserScreenSharing(props) {
         <ScreenSharingTest />
       </div>
       <Alert type="info" message={ [
-        <h2 key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</h2>,
+        <div key="cankaodizhi" className="mb-0 py-[8px] text-[16px]">参考地址：</div>,
         <div key="using-screencapture" className="py-[8px]">
           使用屏幕捕获API：
           <BlankLink href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen_Capture_API/Using_Screen_Capture">
