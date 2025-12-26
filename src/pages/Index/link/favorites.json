@@ -13,7 +13,8 @@
         { "href": "https://css-loaders.com/", "title": "CSS loaders - The Biggest Collection of Loading Animations" },
         { "href": "https://developer.chrome.com/blog/css-wrapped-2023?hl=zh-cn#live-demo-scroll-timeline", "title": "CSS 封装：2023 年！" },
         { "href": "https://build-your-own.org/blog/20240813_css_vertical_center/", "title": "CSS finally adds vertical centering in 2024" },
-        { "href": "https://www.sonarsource.com/blog/union-intersection-difference-javascript-sets/", "title": "Union, intersection, difference, and more are coming to JavaScript Sets" }
+        { "href": "https://www.sonarsource.com/blog/union-intersection-difference-javascript-sets/", "title": "Union, intersection, difference, and more are coming to JavaScript Sets" },
+        { "href": "https://webkit.org/blog/17660/introducing-css-grid-lanes/", "title": "CSS Grid Lanes 布局" }
       ]
     },
     {
